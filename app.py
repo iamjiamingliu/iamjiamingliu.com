@@ -9,13 +9,26 @@ Bootstrap5(app)
 def index():
     return render_template('index.html')
 
-@app.route('/experience')
-def experience():
+
+@app.route('/projects')
+def projects():
     return render_template('base.html')
+
+
+@app.route('/leadership')
+def leadership():
+    return render_template('base.html')
+
+
+@app.route('/professional-experience')
+def professional_experience():
+    return render_template('base.html')
+
 
 @app.route('/blogs')
 def blogs():
     return render_template('base.html')
+
 
 @app.route('/contact')
 def contact():

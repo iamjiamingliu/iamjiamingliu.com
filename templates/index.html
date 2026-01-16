@@ -63,7 +63,7 @@
                     <h2 class="fw-bold mb-1">Personal Projects</h2>
                     <p class="text-muted mb-0">Building complex, impact software is where my passion goes 💕</p>
                 </div>
-                <a href="/projects" class="btn btn-outline-secondary rounded-pill px-3">View all →</a>
+                <a href="{{ url_for('projects') }}" class="btn btn-outline-secondary rounded-pill px-3">View all →</a>
             </div>
 
             <div class="row g-4">
@@ -203,7 +203,7 @@
                 <div>
                     <h2 class="fw-bold mb-0">Leadership and Research At UCSB</h2>
                 </div>
-                <a href="/leadership" class="btn btn-outline-secondary rounded-pill px-3">View all →</a>
+                <a href="{{ url_for('leadership') }}" class="btn btn-outline-secondary rounded-pill px-3">View all →</a>
             </div>
 
             <div class="row g-4">
@@ -374,7 +374,7 @@
                     <h2 class="fw-bold mb-1">Professional Experience</h2>
                     <p class="text-muted mb-0">Where I’ve interned or about to intern</p>
                 </div>
-                <a href="/experience" class="btn btn-outline-secondary rounded-pill px-3">See details →</a>
+                <a href="{{ url_for('professional_experience') }}" class="btn btn-outline-secondary rounded-pill px-3">See details →</a>
             </div>
 
             <div class="row g-4">
@@ -464,11 +464,6 @@
                         Finally, Cupertino, California for high school and now UCSB.
                         California is where I found my passion for software engineering :)
                     </p>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a href="/about" class="btn btn-outline-secondary rounded-pill px-4 py-2">
-                        Read more →
-                    </a>
                 </div>
             </div>
         </div>
