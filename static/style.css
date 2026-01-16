@@ -1,0 +1,11 @@
+body {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #6366f1, #22d3ee);
+}
+
+.nav-link {
+    font-weight: 500;
+}
