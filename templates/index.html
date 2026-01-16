@@ -3,7 +3,7 @@
 {% block title %}Jiaming Liu{% endblock %}
 
 {% block content %}
-    <section class="py-5">
+    <section class="py-4 mt-4">
         <div class="container">
             <div class="hero-glass p-4 p-lg-5">
                 <div class="row align-items-center g-5 position-relative">
@@ -56,7 +56,7 @@
     </section>
 
     <!-- Projects -->
-    <section class="py-5">
+    <section class="py-4">
         <div class="container">
             <div class="d-flex align-items-end justify-content-between gap-3 mb-4">
                 <div>
@@ -67,8 +67,16 @@
             </div>
 
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="card h-100 border-0 shadow-sm rounded-4">
+                        <div class="project-card-img-wrapper">
+                            <img
+                                    src="{{ url_for('static', filename='img/ucsbplat.png') }}"
+                                    alt="UCSBPlat screenshot"
+                                    class="w-100 project-card-img"
+                            >
+                        </div>
+
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <h5 class="fw-semibold mb-0">UCSBPlat</h5>
@@ -96,8 +104,17 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="card h-100 border-0 shadow-sm rounded-4">
+                        <!-- Image -->
+                        <div class="project-card-img-wrapper">
+                            <img
+                                    src="{{ url_for('static', filename='img/searchgit.png') }}"
+                                    alt="SearchGit screenshot"
+                                    class="w-100 project-card-img"
+                            >
+                        </div>
+
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <h5 class="fw-semibold mb-0">SearchGit</h5>
@@ -126,8 +143,17 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="card h-100 border-0 shadow-sm rounded-4">
+                        <!-- Image -->
+                        <div class="project-card-img-wrapper">
+                            <img
+                                    src="{{ url_for('static', filename='img/yearbookpro.png') }}"
+                                    alt="YearbookPro screenshot"
+                                    class="w-100 project-card-img"
+                            >
+                        </div>
+
                         <div class="card-body p-4">
                             <div class="d-flex justify-content-between align-items-start mb-2">
                                 <h5 class="fw-semibold mb-0">YearbookPro</h5>
@@ -254,7 +280,7 @@
             </div>
 
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="card h-100 border-0 shadow-sm rounded-4">
                         <div class="card-body p-4">
                             <h5 class="fw-semibold mb-2">OpenAI</h5>
@@ -266,7 +292,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="card h-100 border-0 shadow-sm rounded-4">
                         <div class="card-body p-4">
                             <h5 class="fw-semibold mb-2">Citadel</h5>
@@ -278,7 +304,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="card h-100 border-0 shadow-sm rounded-4">
                         <div class="card-body p-4">
                             <h5 class="fw-semibold mb-2">ByteDance</h5>
