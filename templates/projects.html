@@ -4,30 +4,180 @@
 {% block content %}
     <section class="py-5">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
+            <h1 class="fw-bold mb-3 gradient-text">My Projects</h1>
 
-                    <h1 class="fw-bold mb-3 gradient-text">My Projects</h1>
+            <p class="fs-5 text-muted mb-3">
+                Reading about new pieces of technology <span class="fw-semibold text-dark">and</span>
+                applying them to a real project is how I grew as a software engineer.
+            </p>
 
-                    <p class="fs-5 text-muted mb-3">
-                        Reading about new pieces of technology <span class="fw-semibold text-dark">and</span>
-                        applying them to a real project is how I grew as a software engineer.
-                    </p>
+            <p class="text-muted mb-3">
+                Most projects listed here took months of initial development, followed by
+                ongoing enhancement, refactoring, and maintenance.
+            </p>
 
-                    <p class="text-muted mb-3">
-                        Most projects listed here took months of initial development, followed by
-                        ongoing enhancement, refactoring, and maintenance.
-                    </p>
-
-                    <p class="text-muted mb-0">
-                        These are <span class="fw-semibold text-dark">serious, long-running systems</span>.
-                        I intentionally exclude most weekend experiments — otherwise this list would be much longer.
-                    </p>
-
-                </div>
-            </div>
+            <p class="text-muted mb-0">
+                These are <span class="fw-semibold text-dark">serious, long-running systems</span>.
+                I intentionally exclude most weekend experiments — otherwise this list would be much longer.
+            </p>
         </div>
     </section>
 
-    {# Project list starts below #}
+    <!-- Projects list -->
+    <section class="py-4">
+        <div class="container">
+
+            <div class="row row-cols-1 row-cols-lg-2 g-5">
+
+                <!-- UCSBPlat -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 project-card">
+                        <div class="project-card-img-wrapper">
+                            <img
+                                    src="{{ url_for('static', filename='img/projects/ucsbplat.png') }}"
+                                    alt="UCSBPlat screenshot"
+                                    class="w-100"
+                            >
+                        </div>
+
+                        <div class="card-body p-4 p-lg-5">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="fw-semibold mb-0">UCSBPlat</h4>
+                                <span class="badge text-bg-light border">Search</span>
+                            </div>
+
+                            <p class="text-muted mb-3">
+                                Aggregated search for UCSB courses, grades, professor reviews,
+                                and enrollment trends used daily by the UCSB community.
+                            </p>
+
+                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                <span class="badge rounded-pill text-bg-light border">Flask</span>
+                                <span class="badge rounded-pill text-bg-light border">Selenium</span>
+                                <span class="badge rounded-pill text-bg-light border">PostgreSQL</span>
+                                <span class="badge rounded-pill text-bg-light border">ElasticSearch</span>
+                            </div>
+
+                            <div class="small text-muted mb-3">
+                                <span class="fw-semibold text-dark">9K</span> monthly active users ·
+                                <span class="fw-semibold text-dark">1.4M</span> annual page views
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-3">
+                                <a class="link-primary text-decoration-none"
+                                   target="_blank"
+                                   href="https://ucsbplat.com">
+                                    Visit UCSBPlat.com →
+                                </a>
+                                <a class="link-primary text-decoration-none" href="[TO FILL OUT]">
+                                    Deep dive →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SearchGit -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 project-card">
+                        <div class="project-card-img-wrapper">
+                            <img
+                                    src="{{ url_for('static', filename='img/projects/searchgit.png') }}"
+                                    alt="SearchGit screenshot"
+                                    class="w-100"
+                            >
+                        </div>
+
+                        <div class="card-body p-4 p-lg-5">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="fw-semibold mb-0">SearchGit</h4>
+                                <span class="badge text-bg-light border">Search + ML</span>
+                            </div>
+
+                            <p class="text-muted mb-3">
+                                A Chrome extension that enhances GitHub search with autocomplete,
+                                multilingual semantic search, and ML-based ranking.
+                            </p>
+
+                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                <span class="badge rounded-pill text-bg-light border">FastAPI</span>
+                                <span class="badge rounded-pill text-bg-light border">ElasticSearch</span>
+                                <span class="badge rounded-pill text-bg-light border">Qdrant</span>
+                                <span class="badge rounded-pill text-bg-light border">Kafka</span>
+                                <span class="badge rounded-pill text-bg-light border">Flink</span>
+                            </div>
+
+                            <div class="small text-muted mb-3">
+                                Continuously crawls and indexes
+                                <span class="fw-semibold text-dark">3M+</span> public repositories
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-3">
+                                <a class="link-primary text-decoration-none"
+                                   target="_blank"
+                                   href="https://chromewebstore.google.com/detail/searchgit-typeahead-+-sem/akaelbkdkmbamiemfbhnkdenfdcccmga">
+                                    Chrome Web Store →
+                                </a>
+                                <a class="link-primary text-decoration-none" href="[TO FILL OUT]">
+                                    Architecture →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tinocs -->
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 project-card">
+                        <div class="project-card-img-wrapper rounded-top">
+                            <img
+                                    src="{{ url_for('static', filename='img/projects/apcs.png') }}"
+                                    alt="Tinocs curriculum screenshot"
+                                    class="w-100"
+                            >
+                        </div>
+
+                        <div class="card-body p-4 p-lg-5">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="fw-semibold mb-0">Tinocs.com</h4>
+                                <span class="badge text-bg-light border">Education</span>
+                            </div>
+
+                            <p class="text-muted mb-3">
+                                Official curriculum platform for Cupertino High School’s
+                                AP Computer Science and Intro to Java courses.
+                            </p>
+
+                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                <span class="badge rounded-pill text-bg-light border">Python</span>
+                                <span class="badge rounded-pill text-bg-light border">SQLite</span>
+                                <span class="badge rounded-pill text-bg-light border">Markdown</span>
+                                <span class="badge rounded-pill text-bg-light border">Bootstrap</span>
+                                <span class="badge rounded-pill text-bg-light border">Nginx</span>
+                            </div>
+
+                            <div class="small text-muted mb-3">
+                                Used by <span class="fw-semibold text-dark">250+</span> students
+                                daily for lectures and assignments
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-3">
+                                <a class="link-primary text-decoration-none"
+                                   href="https://apcs.tinocs.com"
+                                   target="_blank">
+                                    Visit apcs.tinocs.com →
+                                </a>
+                                <a class="link-primary text-decoration-none" href="[TO FILL OUT]">
+                                    Write-up →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more projects here -->
+
+            </div>
+        </div>
+    </section>
 {% endblock %}

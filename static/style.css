@@ -112,3 +112,11 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+.project-card {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.12);
+}
