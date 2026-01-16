@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block title %}Contact · Jiaming Liu{% endblock %}
+
+{% block content %}
+    <style>
+        .contact-card {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .contact-btn {
+            border-radius: 999px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.10);
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.85);
+        }
+
+        .contact-icon img {
+            height: 22px;
+            width: 22px;
+            object-fit: contain;
+        }
+
+        .contact-title {
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .contact-sub {
+            margin: 0;
+            color: rgba(0, 0, 0, 0.55);
+            font-size: 0.92rem;
+            line-height: 1.35;
+        }
+
+        .btn-neutral {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            color: rgba(0, 0, 0, 0.85);
+        }
+
+        .btn-soft {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.10);
+            color: rgba(0, 0, 0, 0.85);
+        }
+
+        .contact-right {
+            margin-left: auto;
+            color: rgba(0, 0, 0, 0.45);
+            font-size: 0.95rem;
+        }
+    </style>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="contact-card">
+                <div class="hero-glass p-4 p-lg-5">
+                    <div class="text-center mb-4">
+                        <h1 class="fw-bold mb-2">Contact Me</h1>
+                        <p class="text-muted mb-0">
+                            Happy to chat about tech, new opportunities, or just say hello :)
+                        </p>
+                    </div>
+
+                    <div class="d-grid gap-3">
+
+                        <!-- Email (neutral, NOT blue) -->
+                        <a href="mailto:jiamingliu888@gmail.com"
+                           class="contact-btn btn-neutral shadow-sm">
+            <span class="contact-icon">
+              <img src="/static/img/social_media/gmail.webp" alt="Email">
+            </span>
+                            <div>
+                                <p class="contact-title">Email (Best Way to Reach Me)</p>
+                                <p class="contact-sub">jiamingliu888@gmail.com</p>
+                            </div>
+                            <span class="contact-right">→</span>
+                        </a>
+
+                        <!-- LinkedIn (keep link if you already filled it) -->
+                        <a href="https://linkedin.com/in/iamjiamingliu"
+                           target="_blank" rel="noopener"
+                           class="contact-btn btn-soft shadow-sm">
+            <span class="contact-icon">
+              <img src="/static/img/social_media/linkedin.png" alt="LinkedIn">
+            </span>
+                            <div>
+                                <p class="contact-title">LinkedIn</p>
+                                <p class="contact-sub">I occasionally share professional updates</p>
+                            </div>
+                            <span class="contact-right">↗</span>
+                        </a>
+
+                        <!-- GitHub (link preserved + note added) -->
+                        <a href="https://github.com/iamjiamingliu"
+                           target="_blank" rel="noopener"
+                           class="contact-btn btn-soft shadow-sm">
+            <span class="contact-icon">
+              <img src="/static/img/social_media/github.svg" alt="GitHub">
+            </span>
+                            <div>
+                                <p class="contact-title">GitHub</p>
+                                <p class="contact-sub">
+                                    All of my projects are <span class="fw-semibold">private repos</span>,
+                                    but you can see my contribution history.
+                                </p>
+                            </div>
+                            <span class="contact-right">↗</span>
+                        </a>
+
+                        <!-- Instagram (RESTORED) -->
+                        <a href="https://instagram.com/iamjiamingliu"
+                           target="_blank" rel="noopener"
+                           class="contact-btn btn-soft shadow-sm">
+            <span class="contact-icon">
+              <img src="/static/img/social_media/instagram.webp" alt="Instagram">
+            </span>
+                            <div>
+                                <p class="contact-title">Instagram</p>
+                                <p class="contact-sub">Life updates and random thoughts. Private account.</p>
+                            </div>
+                            <span class="contact-right">↗</span>
+                        </a>
+
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <p class="text-muted small mb-0">
+                            I reply pretty fast
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

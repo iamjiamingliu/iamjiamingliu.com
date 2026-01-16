@@ -32,7 +32,7 @@ def blogs():
 
 @app.route('/contact')
 def contact():
-    return render_template('base.html')
+    return render_template('contact.html')
 
 
 if __name__ == '__main__':
