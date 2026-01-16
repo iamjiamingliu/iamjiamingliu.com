@@ -9,3 +9,42 @@ body {
 .nav-link {
     font-weight: 500;
 }
+
+.hero-glass {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.hero-glass::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    background: radial-gradient(600px 300px at 10% 20%, rgba(99, 102, 241, .25), transparent 60%),
+    radial-gradient(600px 300px at 90% 30%, rgba(34, 211, 238, .22), transparent 60%);
+    pointer-events: none;
+}
+
+.photo-halo {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.photo-halo::before {
+    content: "";
+    position: absolute;
+    inset: -14px;
+    border-radius: 50%;
+    background: linear-gradient(
+            135deg,
+            rgba(99, 102, 241, 0.5),
+            rgba(34, 211, 238, 0.45)
+    );
+    filter: blur(18px);
+    opacity: 0.6;
+    z-index: 0;
+}

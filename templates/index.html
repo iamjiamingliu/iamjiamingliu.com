@@ -5,47 +5,52 @@
 {% block content %}
     <section class="py-5">
         <div class="container">
-            <div class="row align-items-center g-5">
-                <!-- Photo -->
-                <div class="col-md-5 text-center">
-                    <img
-                            src="{{ url_for('static', filename='img/portrait.jpg') }}"
-                            alt="Jiaming Liu"
-                            class="img-fluid rounded-4 shadow-sm"
-                            style="max-width: 280px;"
-                    >
-                </div>
+            <div class="hero-glass p-4 p-lg-5">
+                <div class="row align-items-center g-5 position-relative">
 
-                <!-- Text -->
-                <div class="col-md-7">
-                    <h3 class="mb-0">Hello, I am</h3>
-                    <h1 class="fw-bold mb-3">
-                        Jiaming Liu
-                    </h1>
-
-                    <p class="fs-5 text-muted mb-2">
-                        UC Santa Barbara, Computer Science Class of 2027
-                    </p>
-
-                    <p class="text-muted mb-4">
-                        Passionate and experienced about backend systems, search engines, and applied AI.
-                        <br>
-                        Talented builder, leader, and thinker
-                    </p>
-
-                    <div class="d-flex gap-3 flex-wrap">
-                        <a href="/contact" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold shadow-sm">
-                            Contact Me
-                        </a>
-                        <a href="/experience" class="btn btn-outline-secondary rounded-pill px-4 py-2">
-                            My Experience
-                        </a>
-                        <a href="/blogs" class="btn btn-outline-secondary rounded-pill px-4 py-2">
-                            Blogs
-                        </a>
+                    <!-- Photo -->
+                    <div class="col-lg-5 text-center">
+                        <div class="photo-halo">
+                            <img
+                                    src="{{ url_for('static', filename='img/portrait.jpg') }}"
+                                    alt="Jiaming Liu"
+                                    class="img-fluid position-relative rounded-circle"
+                                    style="max-width: 280px;"
+                            >
+                        </div>
                     </div>
-                </div>
 
+                    <!-- Text -->
+                    <div class="col-lg-7">
+                        <h3 class="mb-0">Hello, I am</h3>
+                        <h1 class="fw-bold mb-3">
+                            Jiaming Liu
+                        </h1>
+
+                        <p class="fs-5 text-muted mb-2">
+                            UC Santa Barbara, Computer Science Class of 2027
+                        </p>
+
+                        <p class="text-muted mb-4">
+                            Passionate and experienced about backend systems, search engines, and applied AI.
+                            <br>
+                            Talented builder, leader, and thinker
+                        </p>
+
+                        <div class="d-flex gap-3 flex-wrap">
+                            <a href="/contact" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold shadow-sm">
+                                Contact Me
+                            </a>
+                            <a href="/experience" class="btn btn-outline-secondary rounded-pill px-4 py-2">
+                                My Experience
+                            </a>
+                            <a href="/blogs" class="btn btn-outline-secondary rounded-pill px-4 py-2">
+                                Blogs
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </section>
