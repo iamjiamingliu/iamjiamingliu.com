@@ -59,3 +59,86 @@ body {
 .project-card-img-wrapper {
     overflow: hidden;
 }
+
+.acm-branch-card {
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.acm-branch-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .75rem 2rem rgba(0, 0, 0, .08);
+}
+
+.acm-grad-dev {
+    background: linear-gradient(to right, rgb(29, 170, 46), rgb(45, 196, 57), rgb(29, 170, 46));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.acm-grad-research {
+    background: linear-gradient(to right, rgb(211, 167, 57), rgb(236, 185, 65), rgb(211, 167, 57));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.acm-grad-icpc {
+    background: linear-gradient(to right, rgb(185, 48, 22), rgb(227, 60, 30), rgb(185, 48, 22));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.acm-grad-industry {
+    background: linear-gradient(to right, rgb(8, 123, 144), rgb(10, 163, 191), rgb(8, 123, 144));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.acm-branch-desc {
+    margin-top: .25rem;
+    color: var(--bs-secondary-color);
+    font-size: .925rem;
+    line-height: 1.25rem;
+}
+
+.company-logo {
+    height: 32px; /* default larger size */
+    width: auto;
+}
+
+.company-logo.lg {
+    height: 48px; /* extra emphasis */
+}
+
+.company-logo.xl {
+    height: 60px; /* hero-level logos (optional) */
+}
+
+
+.btn-discord {
+    background-color: #5865F2; /* Discord blurple */
+    transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
+.btn-discord:hover {
+    background-color: #4752C4;
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1.25rem rgba(0, 0, 0, .18);
+}
+
+.discord-icon {
+    background: #ffffff;
+    border-radius: 999px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.discord-icon img {
+    height: 18px;
+    width: 18px;
+}
