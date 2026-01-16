@@ -20,11 +20,6 @@ def leadership():
     return render_template('base.html')
 
 
-@app.route('/professional-experience')
-def professional_experience():
-    return render_template('base.html')
-
-
 @app.route('/blogs')
 def blogs():
     return render_template('base.html')
