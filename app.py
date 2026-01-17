@@ -17,7 +17,7 @@ def projects():
 
 @app.route('/leadership')
 def leadership():
-    return render_template('base.html')
+    return render_template('leadership.html')
 
 
 @app.route('/blogs')
