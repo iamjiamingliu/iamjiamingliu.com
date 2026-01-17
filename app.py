@@ -22,7 +22,7 @@ def leadership():
 
 @app.route('/blogs')
 def blogs():
-    return render_template('base.html')
+    return render_template('blogs.html')
 
 
 @app.route('/contact')

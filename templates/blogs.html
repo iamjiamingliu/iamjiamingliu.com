@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block title %}Blog · Jiaming Liu{% endblock %}
+
+{% block content %}
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+
+                    <h1 class="fw-bold mb-3 gradient-text">Blog</h1>
+
+                    <p class="fs-5 text-muted mb-3">
+                        On the homepage of iamjiamingliu.com, I call myself a
+                        <span class="fw-semibold text-dark">builder</span>,
+                        <span class="fw-semibold text-dark">leader</span>, and
+                        <span class="fw-semibold text-dark">thinker</span>.
+                    </p>
+
+                    <p class="text-muted mb-3">
+                        My projects show the builder side. My leadership roles show the leader side.
+                        This blog is my attempt at showing the thinker side.
+                    </p>
+
+                    <p class="text-muted mb-3">
+                        “Thinker” might be too grand. At its core, this is a collection of deeper-than-resume
+                        narratives:
+                        the journey and architecture behind my projects and endeavors, plus some thoughts on tech,
+                        and on my world view.
+                    </p>
+
+                    <p class="text-muted mb-3">
+                        I write concisely and informally. Curse words are used strategically to emphasize.
+                        You may notice that many of the things described in my blogs are events that happened at least a year ago,
+                        and that's intentional: I cannot write ongoing things due to their volatile nature,
+                        and also because I haven't had time to think about them yet.
+                    </p>
+
+                    <p class="text-muted mb-3">
+                        有时候用中文写点，我文笔不咋地，毕竟我中文只是小学文凭。凑活看吧哈哈
+                    </p>
+
+                    <p class="text-muted mb-3">
+                        I want to especially highlight the "World View" section of my blogs.
+                        Yes, I am a tech guy, so you'd imagine I only talk about tech and is probably quite insensitive to the rest of the real world.
+                        But, from my unexplained penchant to devour BBC, DWW, 60 minutes documentaries; 柴静; biographies; history; and BBC nature,
+                        I guess I have devoured a pretty strong and sentimental view toward the greater society and world.
+                        And I would love to share them here.
+                        I have plenty of close friends to confide my passion for technology to,
+                        but folks around me don't watch documentaries or read books as much so the following blog is the only channel I can make a voice.
+                    </p>
+
+                    <p class="text-muted mb-3">
+                        你挑几篇读一下。你可以说，我忧国忧民，杞人忧天，瞎操功夫。你也可以说，此儿其实素有大义耶。看你怎么看啦~ 我任你评说
+                    </p>
+
+                    <p class="text-muted mb-3">
+                        Oh, why do I bother to spend all the time writing on this stuff?
+                        To flex my knowledge on you? Sure, and I'm not ashamed of flexing my knowledge because it's the cumulative result of hard honest thinking and doing.
+                        To share helpful knowledge and insights with you?
+                        Yes absolutely. If you are in college or hasn't started working for too long, my technical blogs will be helpful to you for sure.
+                        If you are an experienced engineer, then my technical blogs can still be a cool read,
+                        as they may be thin in terms of pure technical information gain relative to your experience,
+                        but rich nevertheless in terms of insights and thinking and might give you "oh, you can think about it that way too".
+                        But I believe the Worldview section of my blog will make a difference no matter who you are...
+                        Because everyone views the world differently, surely they can give you some extent of eye freshening stuff.
+                        Some of what I say might be common sense, some might be things you don't notice usually, some might be things you disagree with.
+                        But as I said, that's my world view, and everyone's world view is different.
+                    </p>
+
+                    <p class="text-muted mb-3">
+                        I welcome your comments and thoughts on anything I write!
+                        Happy to chat about any topic, technical or world view, via any one of my social media listed in <a href="/contact" target="_blank">Contact Me</a>
+                    </p>
+
+                    <hr class="my-4">
+
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge rounded-pill text-bg-light border px-3 py-2">Backend</span>
+                        <span class="badge rounded-pill text-bg-light border px-3 py-2">Search</span>
+                        <span class="badge rounded-pill text-bg-light border px-3 py-2">Applied AI</span>
+                        <span class="badge rounded-pill text-bg-light border px-3 py-2">Leadership</span>
+                        <span class="badge rounded-pill text-bg-light border px-3 py-2">Worldview</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Blog list will be rendered here later (MD files / sqlite) #}
+    <section class="pb-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4 p-lg-5">
+                            <div class="text-muted">
+                                <div class="fw-semibold text-dark mb-2">Coming soon</div>
+                                <div>
+                                    This page will list posts rendered from markdown files or a database.
+                                    For now, the header sets the tone.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
