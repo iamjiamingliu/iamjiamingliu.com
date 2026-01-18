@@ -5,30 +5,30 @@ app = Flask(__name__)
 Bootstrap5(app)
 
 
-@app.route('/')
+@app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template("index.html")
 
 
-@app.route('/projects')
+@app.route("/projects")
 def projects():
-    return render_template('projects.html')
+    return render_template("projects.html")
 
 
-@app.route('/leadership')
+@app.route("/leadership")
 def leadership():
-    return render_template('leadership.html')
+    return render_template("leadership.html")
 
 
-@app.route('/blogs')
+@app.route("/blogs")
 def blogs():
-    return render_template('blogs.html')
+    return render_template("blogs.html")
 
 
-@app.route('/contact')
+@app.route("/contact")
 def contact():
-    return render_template('contact.html')
+    return render_template("contact.html")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run()
