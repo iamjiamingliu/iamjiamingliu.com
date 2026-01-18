@@ -3,16 +3,16 @@ Description=iamjiamingliu.com Flask Gunicorn website
 After=network.target
 
 [Service]
-WorkingDirectory=~/iamjiamingliu.com
+WorkingDirectory=/root/iamjiamingliu.com
 
 # Use your venv gunicorn + python
-Environment="PATH=~/iamjiamingliu.com/.venv/bin"
+Environment="PATH=/root/iamjiamingliu.com/.venv/bin"
 Environment="PYTHONUNBUFFERED=1"
 
-ExecStartPre=~/iamjiamingliu.com/.venv/bin/pip install -r requirements.txt
+ExecStartPre=/root/iamjiamingliu.com/.venv/bin/pip install -r requirements.txt
 
 # IMPORTANT: do NOT use --daemon in systemd
-ExecStart=~/iamjiamingliu.com/.venv/bin/gunicorn app:app \
+ExecStart=/root/iamjiamingliu.com/.venv/bin/gunicorn app:app \
   --bind 127.0.0.1:8000 \
   --workers 2 \
   --access-logfile - \
