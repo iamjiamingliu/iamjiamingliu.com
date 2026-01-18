@@ -31,3 +31,8 @@ jobs:
       - name: Ruff lint
         run: |
           ruff check .
+
+      - name: Git leaks secrets check
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
