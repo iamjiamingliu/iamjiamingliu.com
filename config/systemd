@@ -1,0 +1,37 @@
+[Unit]
+Description=iamjiamingliu.com Flask Gunicorn website
+After=network.target
+
+[Service]
+WorkingDirectory=~/iamjiamingliu.com
+
+# Use your venv gunicorn + python
+Environment="PATH=~/iamjiamingliu.com/.venv/bin"
+Environment="PYTHONUNBUFFERED=1"
+
+ExecStartPre=~/iamjiamingliu.com/.venv/bin/pip install -r requirements.txt
+
+# IMPORTANT: do NOT use --daemon in systemd
+ExecStart=~/iamjiamingliu.com/.venv/bin/gunicorn app:app \
+  --bind 127.0.0.1:8000 \
+  --workers 2 \
+  --access-logfile - \
+  --error-logfile -
+
+# Graceful reload (rotate workers without dropping master)
+ExecReload=/bin/kill -HUP $MAINPID
+
+# Graceful stop
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+# Make it resilient
+Restart=on-failure
+RestartSec=2
+
+# Security-ish defaults (optional but good)
+PrivateTmp=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
