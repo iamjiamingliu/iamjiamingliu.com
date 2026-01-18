@@ -10,10 +10,11 @@
     <title>{% block title %}{{ title or 'Your Name' }}{% endblock %}</title>
     <meta name="description" content="Building software, products, and teams.">
     {% block styles %}
-        {{ bootstrap.load_css() }}
     {% endblock %}
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    {{ render_static('css', 'style.css') }}
+    <!-- Uses local CSS, because jsdelivr is slow somehow -->
+    {{ render_static('css', 'css/bootstrap.min.css') }}
+    {{ render_static('css', 'css/style.css') }}
     <link rel="icon" type="image/x-icon" href="/static/img/favicon.jpg">
     {% block head %}{% endblock %}
 </head>
