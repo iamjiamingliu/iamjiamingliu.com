@@ -26,7 +26,7 @@ jobs:
       # "Does it even run" guard (cheap smoke check)
       - name: Import smoke test
         run: |
-          python -c "import app" || python -c "import wsgi" || python -c "import main"
+          python -c "import app" || python -c "import wsgi" || python -c "import main" || python -c "import thisshuoldfail"
 
       # Lint (fast, high-signal)
       - name: Ruff lint
