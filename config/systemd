@@ -13,7 +13,7 @@ ExecStartPre=/root/iamjiamingliu.com/.venv/bin/pip install -r requirements.txt
 
 # IMPORTANT: do NOT use --daemon in systemd
 ExecStart=/root/iamjiamingliu.com/.venv/bin/gunicorn app:app \
-  --bind 127.0.0.1:8000 \
+  --bind 127.0.0.1:8888 \
   --workers 2 \
   --access-logfile - \
   --error-logfile -
