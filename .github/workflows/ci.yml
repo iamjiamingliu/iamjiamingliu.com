@@ -24,10 +24,12 @@ jobs:
           pip install ruff
 
       # "Does it even run" guard (cheap smoke check)
-      - name: Import smoke test
+      - name: Import smoke test (intentional failure demo)
         run: |
-          python -c "import app" || python -c "import wsgi" || python -c "import main" || python -c "import thisshuoldfail"
-
+          python -c "import app" \
+          || python -c "import wsgi" \
+          || python -c "import main" \
+          || (echo "❌ No valid entrypoint found — failing CI intentionally" && exit 1)
       # Lint (fast, high-signal)
       - name: Ruff lint
         run: |
