@@ -23,9 +23,6 @@ jobs:
           # tooling
           pip install ruff
 
-      - name: Intentional failure demo
-        run: exit 1
-
       # "Does it even run" guard (cheap smoke check)
       - name: Import smoke test (intentional failure demo)
         run: |
