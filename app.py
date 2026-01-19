@@ -6,6 +6,7 @@ import pathlib
 app = Flask(__name__)
 Bootstrap5(app)
 BLOG_ROOT = pathlib.Path("blogs")
+blog.ensure_articles_are_valid(BLOG_ROOT)
 
 
 @app.route("/")
