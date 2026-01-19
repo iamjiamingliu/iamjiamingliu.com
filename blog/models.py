@@ -21,3 +21,14 @@ class ArticleHTML(BaseModel):
     metadata: ArticleMetadata
     content: str
     table_of_content: str | None
+
+
+class ArticleIndexEntry(BaseModel):
+    metadata: ArticleMetadata
+    file_path: str
+
+
+class ArticlesIndex(BaseModel):
+    categories: list[str]
+    latest: list[ArticleIndexEntry]
+    per_category: dict[str, list[ArticleIndexEntry]]

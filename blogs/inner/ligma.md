@@ -1,2 +1,0 @@
-# BSDFIODJIFOSJIOF
-rrr

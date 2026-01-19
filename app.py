@@ -7,6 +7,7 @@ app = Flask(__name__)
 Bootstrap5(app)
 BLOG_ROOT = pathlib.Path("blogs")
 blog.ensure_articles_are_valid(BLOG_ROOT)
+BLOG_INDEX = blog.load_articles_index(BLOG_ROOT)
 
 
 @app.route("/")
@@ -26,7 +27,7 @@ def leadership():
 
 @app.route("/blogs")
 def blogs():
-    return render_template("blogs.html")
+    return render_template("blogs.html", index=BLOG_INDEX)
 
 
 @app.route("/blogs/<file_path>")
