@@ -3,68 +3,52 @@
 
 {% block content %}
     <div class="container py-4 py-md-5">
-
-        <header class="mb-4">
-            <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                <a class="text-decoration-none small text-muted" href="{{ url_for('blogs') }}">← Blogs</a>
-                <span class="text-muted">·</span>
-                <span class="badge text-bg-secondary">{{ article.metadata.category }}</span>
-            </div>
-
-            <h1 class="display-6 fw-semibold mb-2">{{ article.metadata.title }}</h1>
-
-            <div class="d-flex flex-wrap align-items-center gap-2 text-muted small mb-3">
-                <span>Created {{ article.metadata.created_at.strftime('%b %d, %Y') }}</span>
-                <span class="text-muted">·</span>
-                <span>Updated {{ article.metadata.updated_at.strftime('%b %d, %Y') }}</span>
-            </div>
-
-            {% if article.metadata.tags %}
-                <div class="d-flex flex-wrap gap-2 mb-3">
-                    {% for tag in article.metadata.tags %}
-                        <a class="badge rounded-pill text-bg-light border text-decoration-none"
-                           href="{{ url_for('blogs', tag=tag) }}">
-                            #{{ tag }}
-                        </a>
-                    {% endfor %}
-                </div>
-            {% endif %}
-
-            {% if article.metadata.img_url %}
-                <div class="ratio ratio-21x9 rounded-4 overflow-hidden border bg-light">
-                    <img src="{{ article.metadata.img_url }}"
-                         alt="{{ article.metadata.title }}"
-                         class="w-100 h-100"
-                         style="object-fit: cover;">
-                </div>
-            {% endif %}
-        </header>
-
         <div class="row g-4 g-lg-5 align-items-start">
             {# Main article #}
-            <main class="{% if article.table_of_content %}col-lg-8{% else %}col-lg-10 mx-auto{% endif %}">
-                <article >
-
-                    {# Rendered HTML content. Ensure you sanitize server-side before marking safe. #}
-                    <div class="article-content">
-                        {{ article.content | safe }}
+            <div class="{% if article.table_of_content %}col-lg-8{% else %}col-lg-10 me-auto{% endif %}">
+                <header class="mb-4">
+                    <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                        <a class="text-decoration-none small text-muted" href="{{ url_for('blogs') }}">← Blogs</a>
+                        <span class="text-muted">·</span>
+                        <span class="badge text-bg-secondary">{{ article.metadata.category }}</span>
                     </div>
 
+                    <h1 class="display-6 fw-semibold mb-2">{{ article.metadata.title }}</h1>
+
+                    <div class="d-flex flex-wrap align-items-center gap-2 text-muted small mb-3">
+                        <span>Created {{ article.metadata.created_at.strftime('%b %d, %Y') }}</span>
+                        <span class="text-muted">·</span>
+                        <span>Updated {{ article.metadata.updated_at.strftime('%b %d, %Y') }}</span>
+                    </div>
+
+                    {% if article.metadata.tags %}
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            {% for tag in article.metadata.tags %}
+                                <a class="badge rounded-pill text-bg-light border text-decoration-none"
+                                   href="{{ url_for('blogs', tag=tag) }}">
+                                    #{{ tag }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </header>
+                <article class="article-content">
+                    {{ article.content | safe }}
                 </article>
-            </main>
+            </div>
 
             {# Table of contents (optional) #}
             {% if article.table_of_content %}
-                <aside class="col-lg-4">
+                <div class="col-lg-4">
                     <div class="sticky-top" style="top: 1.25rem;">
                         <div class="border rounded-4 p-3 p-md-4 bg-body">
-                            <div class="fw-semibold mb-2">On this page</div>
+                            <div class="fw-semibold mb-2">Table of content</div>
                             <div class="toc small">
                                 {{ article.table_of_content | safe }}
                             </div>
                         </div>
                     </div>
-                </aside>
+                </div>
             {% endif %}
         </div>
     </div>
