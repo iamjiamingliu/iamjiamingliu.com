@@ -1,5 +1,6 @@
 ---
 title: My first blog
+description: Well well well!
 img_url: /static/img/portrait.jpg
 tags: [Python]
 category: Tech

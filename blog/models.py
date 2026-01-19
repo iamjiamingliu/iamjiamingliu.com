@@ -4,7 +4,8 @@ from datetime import datetime
 
 class ArticleMetadata(BaseModel):
     title: str
-    img_url: str
+    description: str
+    img_url: str | None
     tags: list[str]
     category: str
     created_at: datetime
