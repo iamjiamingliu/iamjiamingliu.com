@@ -38,13 +38,16 @@
                         </p>
 
                         <div class="d-flex gap-3 flex-wrap">
-                            <a href="/contact" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold shadow-sm">
+                            <a href="{{ url_for('contact') }}" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold shadow-sm">
                                 Contact Me
                             </a>
-                            <a href="/experience" class="btn btn-outline-secondary rounded-pill px-4 py-2">
-                                My Experience
+                            <a href="{{ url_for('projects') }}" class="btn btn-outline-secondary rounded-pill px-4 py-2">
+                                Projects
                             </a>
-                            <a href="/blogs" class="btn btn-outline-secondary rounded-pill px-4 py-2">
+                            <a href="{{ url_for('leadership') }}" class="btn btn-outline-secondary rounded-pill px-4 py-2">
+                                Leadership
+                            </a>
+                            <a href="{{ url_for('blogs') }}" class="btn btn-outline-secondary rounded-pill px-4 py-2">
                                 Blogs
                             </a>
                         </div>
