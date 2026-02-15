@@ -5,7 +5,7 @@ from datetime import datetime
 class ArticleMetadata(BaseModel):
     title: str
     description: str
-    img_url: str | None
+    img_url: str | None = None
     tags: list[str]
     category: str
     created_at: datetime
