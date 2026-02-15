@@ -30,7 +30,8 @@
 
                     <p class="text-muted mb-3">
                         I write concisely and informally. Curse words are used strategically to emphasize.
-                        You may notice that many of the things described in my blogs are events that happened at least a year ago,
+                        You may notice that many of the things described in my blogs are events that happened at least a
+                        year ago,
                         and that's intentional: I cannot write ongoing things due to their volatile nature,
                         and also because I haven't had time to think about them yet.
                     </p>
@@ -41,21 +42,26 @@
 
                     <p class="text-muted mb-3">
                         I want to especially highlight the "World View" section of my blogs.
-                        Yes, I am a tech guy, so you'd imagine I only talk about tech and is quite insensitive to the rest of the real world.
-                        But, from my unexplained penchant to devour BBC, DWW, 60 minutes documentaries; 柴静; biographies; history; and BBC nature,
-                        I guess I have developed a pretty strong and sentimental view on the greater society and world we live in.
+                        Yes, I am a tech guy, so you'd imagine I only talk about tech and is quite insensitive to the
+                        rest of the real world.
+                        But, from my unexplained penchant to devour BBC, DWW, 60 minutes documentaries; 柴静;
+                        biographies; history; and BBC nature,
+                        I guess I have developed a pretty strong and sentimental view on the greater society and world
+                        we live in.
                         I have plenty of close friends to confide my passion for technology to,
                         but folks around me don't watch documentaries or read books as much,
                         so blogging here is the only channel I can make my voice heard.
                     </p>
 
                     <p class="text-muted mb-3">
-                        你挑几篇读一下。你可以说，我忧国忧民，杞人忧天，瞎操功夫。你也可以说，此儿其实素有大义耶。看你怎么看啦~ 我任你评说
+                        你挑几篇读一下。你可以说，我忧国忧民，杞人忧天，瞎操功夫。你也可以说，此儿其实素有大义耶。看你怎么看啦~
+                        我任你评说
                     </p>
 
                     <p class="text-muted mb-3">
                         By the way, I greatly resent LinkedIn guru style posts or ChatGPT generated generic stuff.
-                        Thus, my writings use concrete examples and claims when applicable to avoid being cliché and corny.
+                        Thus, my writings use concrete examples and claims when applicable to avoid being cliché and
+                        corny.
                     </p>
 
 
@@ -63,44 +69,216 @@
                         I hope no matter where you are in tech, whether as a college kid or experienced professional,
                         my writing can offer some helpful insights.
                         And I welcome your comments and thoughts!
-                        Happy to chat about any topic, technical or world view, via any one of my social media listed in <a href="/contact" target="_blank">Contact Me</a>
+                        Happy to chat about any topic, technical or world view, via any one of my social media listed in
+                        <a href="/contact" target="_blank">Contact Me</a>
                     </p>
 
                     <p class="text-muted mb-3">
                         Why am I spending all the effort to write all of this?
-                        <ul>
-                            <li>If you know me well, I hope my writings can strengthen our understanding of each other.</li>
-                            <li>If you know me barely, I hope my writings can show you the deeper side of myself.
-                                Because from my observation, people who know me at the surface level are prone to classify me as a troll.
-                                With my words, I indeed do that for comical effects, and I'm not apologetic about it, because otherwise I would degenerate into another dull man.
-                            </li>
-                            <li>If you don't know me yet and want to determine if I would be a good new friend, colleague, team member, or whatever reason, these writings supplement the thoughts and bigger part of me besides the bullet points list of experience on my resume.</li>
-                        </ul>
+                    <ul>
+                        <li>If you know me well, I hope my writings can strengthen our understanding of each other.</li>
+                        <li>If you know me barely, I hope my writings can show you the deeper side of myself.
+                            Because from my observation, people who know me at the surface level are prone to classify
+                            me as a troll.
+                            With my words, I indeed do that for comical effects, and I'm not apologetic about it,
+                            because otherwise I would degenerate into another dull man.
+                        </li>
+                        <li>If you don't know me yet and want to determine if I would be a good new friend, colleague,
+                            team member, or whatever reason, these writings supplement the thoughts and bigger part of
+                            me besides the bullet points list of experience on my resume.
+                        </li>
+                    </ul>
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    {{ index }}
 
+    {# ===== Blog index ===== #}
     <section class="pb-5">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-9">
-                    <div class="card border-0 shadow-sm rounded-4">
-                        <div class="card-body p-4 p-lg-5">
-                            <div class="text-muted">
-                                <div class="fw-semibold text-dark mb-2">Coming soon</div>
-                                <div>
-                                    This page will list posts rendered from markdown files or a database.
-                                    For now, the header sets the tone.
-                                </div>
-                            </div>
+
+                    {# --- Latest --- #}
+                    <div class="d-flex align-items-end justify-content-between mb-3">
+                        <div>
+                            <h2 class="h4 fw-bold mb-1">Latest</h2>
+                            <div class="text-muted small">Newest updates across all categories.</div>
+                        </div>
+                        <div class="text-muted small d-none d-md-block">
+                            {{ index.latest|length }} posts shown
                         </div>
                     </div>
+
+                    <div class="row g-3 mb-5">
+                        {% for entry in index.latest %}
+                            {% set m = entry.metadata %}
+                            <div class="col-12">
+                                <a href="/blogs/{{ entry.file_path }}" class="text-decoration-none">
+                                    <div class="card border-0 shadow-sm rounded-4 h-100 hover-lift">
+                                        <div class="card-body p-4 p-lg-4">
+                                            <div class="d-flex flex-column flex-md-row gap-3">
+
+                                                {# Thumbnail (optional) #}
+                                                {% if m.img_url %}
+                                                    <div class="flex-shrink-0" style="width: 140px;">
+                                                        <img
+                                                                src="{{ m.img_url }}"
+                                                                alt="{{ m.title }}"
+                                                                class="img-fluid rounded-3 border"
+                                                                style="width: 140px; height: 92px; object-fit: cover;"
+                                                                loading="lazy"
+                                                        >
+                                                    </div>
+                                                {% endif %}
+
+                                                <div class="flex-grow-1">
+                                                    <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                          <span class="badge rounded-pill text-bg-dark">
+                            {{ m.category }}
+                          </span>
+                                                        {% if m.tags %}
+                                                            {% for t in m.tags[:4] %}
+                                                                <span class="badge rounded-pill text-bg-light border text-dark">
+                                {{ t }}
+                              </span>
+                                                            {% endfor %}
+                                                            {% if m.tags|length > 4 %}
+                                                                <span class="text-muted small">+{{ m.tags|length - 4 }}</span>
+                                                            {% endif %}
+                                                        {% endif %}
+                                                    </div>
+
+                                                    <div class="h5 fw-semibold text-dark mb-1">
+                                                        {{ m.title }}
+                                                    </div>
+                                                    <div class="text-muted mb-2">
+                                                        {{ m.description }}
+                                                    </div>
+
+                                                    <div class="d-flex flex-wrap gap-3 text-muted small">
+                                                        <div>
+                                                            <i class="bi bi-clock me-1"></i>
+                                                            Updated {{ m.updated_at.strftime("%b %d, %Y") }}
+                                                        </div>
+                                                        <div>
+                                                            <i class="bi bi-calendar-event me-1"></i>
+                                                            Created {{ m.created_at.strftime("%b %d, %Y") }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-none d-md-flex align-items-center">
+                        <span class="btn btn-sm btn-outline-dark rounded-pill px-3">
+                          Read <i class="bi bi-arrow-right ms-1"></i>
+                        </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    {# --- Browse by category --- #}
+                    <div class="d-flex align-items-end justify-content-between mb-3">
+                        <div>
+                            <h2 class="h4 fw-bold mb-1">Browse by category</h2>
+                            <div class="text-muted small">Pick a lane. Or binge everything.</div>
+                        </div>
+                        <div class="text-muted small">
+                            {{ index.categories|length }} categories
+                        </div>
+                    </div>
+
+                    <div class="accordion" id="blogCategories">
+                        {% for cat in index.categories %}
+                            {% set entries = index.per_category.get(cat, []) %}
+                            <div class="accordion-item border-0 mb-3">
+                                <h2 class="accordion-header" id="heading-{{ loop.index }}">
+                                    <button class="accordion-button collapsed rounded-4 shadow-sm" type="button"
+                                            data-bs-toggle="collapse"
+                                            data-bs-target="#collapse-{{ loop.index }}"
+                                            aria-expanded="false"
+                                            aria-controls="collapse-{{ loop.index }}">
+                                        <div class="d-flex align-items-center justify-content-between w-100 pe-2">
+                                            <div class="fw-semibold">{{ cat }}</div>
+                                            <span class="badge rounded-pill text-bg-light border text-dark">
+                      {{ entries|length }}
+                    </span>
+                                        </div>
+                                    </button>
+                                </h2>
+
+                                <div id="collapse-{{ loop.index }}" class="accordion-collapse collapse"
+                                     aria-labelledby="heading-{{ loop.index }}"
+                                     data-bs-parent="#blogCategories">
+                                    <div class="accordion-body pt-3">
+                                        <div class="list-group list-group-flush">
+                                            {% for entry in entries %}
+                                                {% set m = entry.metadata %}
+                                                <a href="/blogs/{{ entry.file_path }}"
+                                                   class="list-group-item list-group-item-action px-0 py-3 border-0">
+                                                    <div class="d-flex justify-content-between align-items-start gap-3">
+                                                        {# Thumbnail (optional) #}
+                                                        {% if m.img_url %}
+                                                            <img
+                                                                    src="{{ m.img_url }}"
+                                                                    alt="{{ m.title }}"
+                                                                    class="img-fluid rounded-3 border"
+                                                                    style="width: 140px; height: 92px; object-fit: cover;"
+                                                                    loading="lazy"
+                                                            >
+                                                        {% endif %}
+                                                        <div class="flex-grow-1">
+                                                            <div class="fw-semibold text-dark mb-1">{{ m.title }}</div>
+                                                            <div class="text-muted small">{{ m.description }}</div>
+
+                                                            {% if m.tags %}
+                                                                <div class="mt-2 d-flex flex-wrap gap-2">
+                                                                    {% for t in m.tags[:6] %}
+                                                                        <span class="badge rounded-pill text-bg-light border text-dark">
+                                    {{ t }}
+                                  </span>
+                                                                    {% endfor %}
+                                                                </div>
+                                                            {% endif %}
+                                                        </div>
+
+                                                        <div class="text-muted small text-nowrap">
+                                                            {{ m.updated_at.strftime("%b %d, %Y") }}
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                {% if not loop.last %}
+                                                    <hr class="my-0">
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+
                 </div>
             </div>
         </div>
     </section>
+
+    {# Optional: subtle lift on hover (kept local to this page) #}
+    <style>
+        .hover-lift {
+            transition: transform .15s ease, box-shadow .15s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 .75rem 1.5rem rgba(0, 0, 0, .08) !important;
+        }
+    </style>
 {% endblock %}
