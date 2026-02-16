@@ -4,63 +4,118 @@
 {% block content %}
     <div class="container py-4 py-md-5">
         <div class="row g-4 g-lg-5 align-items-start">
-            {# Main article #}
-            <div class="{% if article.table_of_content %}col-lg-8{% else %}col-lg-10 me-auto{% endif %}">
-                <header class="mb-4">
-                    <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                        <a class="text-decoration-none small text-muted" href="{{ url_for('blogs') }}">← Back</a>
-                        <span class="text-muted">·</span>
-                        <span class="badge text-bg-secondary">{{ article.metadata.category }}</span>
-                    </div>
 
-                    <h1 class="display-6 fw-semibold mb-2">{{ article.metadata.title }}</h1>
+            {# Left sidebar: metadata + TOC #}
+            <aside class="col-lg-3 order-2 order-lg-1">
+                <div class="position-sticky" style="top: 1.25rem;">
+                    <div class="vstack gap-3">
 
-                    <div class="d-flex flex-wrap align-items-center gap-2 text-muted small mb-3">
-                        <span>Created {{ article.metadata.created_at.strftime('%b %d, %Y') }}</span>
-                        <span class="text-muted">·</span>
-                        <span>Updated {{ article.metadata.updated_at.strftime('%b %d, %Y') }}</span>
-                    </div>
+                        <div class="card border-0 shadow-sm rounded-4">
+                            <div class="card-body p-3 p-md-4">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <a class="text-decoration-none small text-muted" href="{{ url_for('blogs') }}">←
+                                        Back</a>
+                                    <span class="badge text-bg-secondary">{{ article.metadata.category }}</span>
+                                </div>
 
-                    {% if article.metadata.tags %}
-                        <div class="d-flex flex-wrap gap-2 mb-3">
-                            {% for tag in article.metadata.tags %}
-                                <a class="badge rounded-pill text-bg-light border text-decoration-none"
-                                   href="{{ url_for('blogs', tag=tag) }}">
-                                    #{{ tag }}
-                                </a>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
-                </header>
-                <article class="article-content">
-                    {{ article.content | safe }}
-                </article>
-            </div>
+                                <div class="small text-muted mb-2">Article</div>
+                                <div class="fw-semibold lh-sm mb-3">{{ article.metadata.title }}</div>
 
-            {# Table of contents (optional) #}
-            {% if article.table_of_content %}
-                <div class="col-lg-4">
-                    <div class="sticky-top" style="top: 1.25rem;">
-                        <div class="border rounded-4 p-3 p-md-4 bg-body">
-                            <div class="fw-semibold mb-2">Table of content</div>
-                            <div class="toc small">
-                                {{ article.table_of_content | safe }}
+                                <div class="d-flex flex-column gap-2 small">
+                                    <div class="d-flex justify-content-between">
+                                        <span class="text-muted">Created</span>
+                                        <span>{{ article.metadata.created_at.strftime('%b %d, %Y') }}</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="text-muted">Updated</span>
+                                        <span>{{ article.metadata.updated_at.strftime('%b %d, %Y') }}</span>
+                                    </div>
+                                </div>
+
+                                {% if article.metadata.tags %}
+                                    <hr class="my-3">
+                                    <div class="d-flex flex-wrap gap-2">
+                                        {% for tag in article.metadata.tags %}
+                                            <a class="badge rounded-pill text-bg-light border text-decoration-none"
+                                               href="{{ url_for('blogs', tag=tag) }}">
+                                                #{{ tag }}
+                                            </a>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
+
+                        {% if article.table_of_content %}
+                            <div class="card border-0 shadow-sm rounded-4">
+                                <div class="card-body p-3 p-md-4">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <div class="fw-semibold">Table of Content</div>
+                                    </div>
+
+                                    {# Mobile-friendly collapsible TOC #}
+                                    <details class="d-lg-none">
+                                        <summary class="small text-muted">Show / hide</summary>
+                                        <div class="toc small mt-2">
+                                            {{ article.table_of_content | safe }}
+                                        </div>
+                                    </details>
+
+                                    <div class="toc small d-none d-lg-block">
+                                        {{ article.table_of_content | safe }}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+
                     </div>
                 </div>
-            {% endif %}
+            </aside>
+
+            {# Main article #}
+            <main class="col-lg-9 order-1 order-lg-2" id="top">
+                <div class="card border-0 shadow-sm rounded-4">
+                    <div class="card-body p-3 p-md-5">
+
+                        <header class="mb-4">
+                            <h1 class="display-6 fw-semibold mb-2">{{ article.metadata.title }}</h1>
+
+                            <div class="d-flex flex-wrap align-items-center gap-2 text-muted small">
+                                <span>{{ article.metadata.category }}</span>
+                                <span class="text-muted">·</span>
+                                <span>Created {{ article.metadata.created_at.strftime('%b %d, %Y') }}</span>
+                                <span class="text-muted">·</span>
+                                <span>Updated {{ article.metadata.updated_at.strftime('%b %d, %Y') }}</span>
+                            </div>
+                        </header>
+
+                        <article class="article-content">
+                            {{ article.content | safe }}
+                        </article>
+
+                        <hr class="my-4">
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a class="text-decoration-none" href="{{ url_for('blogs') }}">← Back to posts</a>
+                            <a class="text-decoration-none" href="#top">Back to top ↑</a>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+
         </div>
     </div>
 
-    {# Optional: light opinionated styling for markdown-rendered HTML #}
     <style>
+        /* Article typography */
         .article-content :where(h1,h2,h3,h4,h5,h6) {
             scroll-margin-top: 90px;
         }
 
         .article-content h2 {
-            margin-top: 2rem;
+            margin-top: 2.25rem;
+            padding-top: .25rem;
         }
 
         .article-content h3 {
@@ -68,33 +123,56 @@
         }
 
         .article-content p {
-            line-height: 1.75;
+            line-height: 1.8;
             margin: 0.9rem 0;
+        }
+
+        .article-content li {
+            line-height: 1.75;
+            margin: .35rem 0;
         }
 
         .article-content img {
             max-width: 100%;
             height: auto;
             border-radius: 1rem;
+            box-shadow: 0 .5rem 1.25rem rgba(0, 0, 0, .06);
         }
 
         .article-content pre {
-            padding: 1rem;
+            padding: 1rem 1.1rem;
             border-radius: 1rem;
             overflow-x: auto;
+            background: rgba(0, 0, 0, .03);
+            border: 1px solid rgba(0, 0, 0, .06);
         }
 
         .article-content code {
             padding: 0.15rem 0.35rem;
             border-radius: 0.4rem;
+            background: rgba(0, 0, 0, .04);
         }
 
         .article-content blockquote {
-            padding-left: 1rem;
-            border-left: 0.25rem solid rgba(0, 0, 0, .15);
-            color: rgba(0, 0, 0, .7);
+            margin: 1.25rem 0;
+            padding: .75rem 1rem;
+            border-left: .25rem solid rgba(13, 110, 253, .35); /* uses BS primary vibe */
+            background: rgba(13, 110, 253, .05);
+            border-radius: .75rem;
         }
 
+        .article-content table {
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        .article-content table :is(th, td) {
+            padding: .65rem .75rem;
+            border-bottom: 1px solid rgba(0, 0, 0, .08);
+            vertical-align: top;
+        }
+
+        /* TOC styling */
         .toc a {
             color: inherit;
             text-decoration: none;
@@ -105,8 +183,50 @@
         }
 
         .toc ul {
-            padding-left: 1.0rem;
-            margin-bottom: 0;
+            padding-left: 1rem;
+            margin: .25rem 0 0 0;
+        }
+
+        .toc li {
+            margin: .25rem 0;
+        }
+
+        .toc > ul {
+            padding-left: 0;
+        }
+
+        .toc > ul > li {
+            list-style: none;
+        }
+
+        .toc > ul > li > a {
+            font-weight: 400;
+        }
+
+        /* Make deep TOC less noisy */
+        .toc ul ul a {
+            color: rgba(0, 0, 0, .72);
+        }
+
+        /* Nice cards in dark mode too */
+        @media (prefers-color-scheme: dark) {
+            .article-content pre {
+                background: rgba(255, 255, 255, .05);
+                border-color: rgba(255, 255, 255, .08);
+            }
+
+            .article-content code {
+                background: rgba(255, 255, 255, .06);
+            }
+
+            .article-content blockquote {
+                background: rgba(13, 110, 253, .12);
+                border-left-color: rgba(13, 110, 253, .5);
+            }
+
+            .toc ul ul a {
+                color: rgba(255, 255, 255, .72);
+            }
         }
     </style>
 {% endblock %}
