@@ -6,7 +6,7 @@
         <div class="row g-4 g-lg-5 align-items-start">
 
             {# Left sidebar: metadata + TOC #}
-            <aside class="col-lg-3 order-2 order-lg-1">
+            <aside class="col-lg-3 order-2 order-lg-1 d-none d-lg-block">
                 <div class="position-fixed" style="top: 6rem;">
                     <div class="vstack gap-3">
 
@@ -68,6 +68,10 @@
                     </div>
                 </div>
             </aside>
+
+            <div class="col-12 d-lg-none">
+                <a class="text-decoration-none" href="{{ url_for('blogs') }}">← Back to all blogs</a>
+            </div>
 
             {# Main article #}
             <main class="col-lg-9 order-1 order-lg-2" id="top">
