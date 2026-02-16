@@ -104,3 +104,12 @@ Then the leadership transition means:
 5. Meanwhile, ensure the system is still stable in light of changes
 6. Step back to have the new leader play the proactive execution role and take on a reactive advisory role
 7. Fully exit
+
+
+## A few final points
+
+1. People is everything. Competent and passionate teammates make leadership 10x easier and output 10x more
+2. Leadership can not be effective if it's only supported by title and rules. It must be bolstered by trust, respect, and competency.
+3. Leadership is hard. The big ideas make up less than 10%, the other 90% are intuition, judgement, and playbook from one's experience and thinking
+4. Effort is non-linear. Sometimes the leader has nothing to do, other times the leader has every battle in the world to fight.
+5. Nothing stays the same but change
