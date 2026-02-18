@@ -27,6 +27,7 @@ The following blog condenses my understanding of PostgreSQL from what I've read 
 Hopefully this can be a fun, informative read for you, so that you can take away the most important information without
 having to read the full books.
 It's not exhaustive, just the big ideas, and sometimes simplified.
+And this blog assumes you as the reader is already familiar with SQL and the usage of PostgreSQL.
 
 ## The Purpose of PostgreSQL
 
@@ -84,11 +85,39 @@ So how to support efficiently querying relevant data given filter conditions?
 Think about this analogy. If we are writing an in-memory program,
 the raw heap is like an unsorted list.
 And if we want to find things more efficiently,
-we would then have to put our data as a dictionary/hashmap or a sorted list.
-Then, looking up the relevant data just means dict.find(key) or binary searching over that sorted list,
+we would then have to put our data as a dictionary/hashmap or a binary search tree.
+Then, looking up the relevant data just means dict.find(key) or searching over that binary search tree,
 which is super efficient comparing to having check everything one by one.
 
 Now back to PostgreSQL.
-To support efficient querying, PostgreSQL uses the same ideas as if we need to write an in-memory program:
+To support efficient querying, PostgreSQL uses the same ideas as if we need to write an in-memory program.
+It gives us as user the options to create auxiliary indexes to order our data in some particular way.
+If you create a HASH index, it means the data is stored as a hashmap on disk and lookup is logically dict.find(key).
+If you create a BTree index, it means the data is stored as a B+Tree on disk and lookup is logically same as binary
+searching over an in memory binary search tree. B+Tree is just the on disk variant of binary search tree
+to be more efficient in the disk environment.
 
-# TODO
+Note that, the original "heap" storage is here to stay.
+The HASH and BTree index are just auxiliary indexes whose "keys" are the columns you order them by and the "values"
+are pointers to the actual data in the heap location.
+
+You might ask, "why not just make the original heap a HASH or BTree"?
+This is because a PostgreSQL table frequently has more than 1 indexes,
+so it's the design decision of PostgreSQL to just store the original data in heap and impose ordered indexes separately.
+For PostgreSQL's competitor MySQL though, the original data is stored in B+Tree though. It really is just a design
+choice.
+
+B+Tree is more commonly used, because with caching, its querying is empirically as fast as HASH.
+AND, HASH only lets you support point querying. What if you want to find `SELECT * FROM user WHERE age BETWEEN 10 AND 20`?
+BTree can be used here, but HASH would be useless.
+
+As said earlier, we as users can and should explicitly create indexes on relevant columns to speedup querying.
+But note that, by default, PostgreSQL already automatically creates BTree indexes for:
+
+1. Primary key
+2. UNIQUE constraint
+
+So this means, for an SQL query, PostgreSQL would consider and use the best indexes to speed up the query execution.
+For an update query, it means PostgreSQL would not only update the original heap data, but also the relevant indexes.
+
+But there's a catch, and we are about to explain that in the immediate section below.
