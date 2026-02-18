@@ -63,15 +63,15 @@ When you delete or modify some rows, things get interesting. Hold on to that for
 
 Okay, you have all of your rows stored in heap. Great. Now let's run some example SQL queries:
 
-```
+```sql
 SELECT * FROM my_table LIMIT 10
 ```
 
-```
+```sql
 SELECT * FROM my_table WHERE user_id = 123
 ```
 
-```
+```sql
 DELETE * FROM my_table WHERE user_id = 123
 ```
 
@@ -121,3 +121,68 @@ So this means, for an SQL query, PostgreSQL would consider and use the best inde
 For an update query, it means PostgreSQL would not only update the original heap data, but also the relevant indexes.
 
 But there's a catch, and we are about to explain that in the immediate section below.
+
+
+## Concurrent querying and updates
+
+If PostgreSQL only supports 1 person querying and updating the data, then none of the following architecture components
+needs to be there. However, for any backend / app that have a lot of users, every instant,
+there would be multiple users querying and updating the data in PostgreSQL.
+
+Why is this a problem? In 2 regards:
+
+1. Visibility
+2. Locking
+
+### Visibility
+
+Well, consider Alice writing this query:
+
+```sql
+BEGIN;
+INSERT INTO products(id, name, price) VALUES (1, 'Nike Air', 46.99);
+INSERT INTO products(id, name, price) VALUES (2, 'Jordan', 123.99);
+INSERT INTO products(id, name, price) VALUES (3, 'Adidas', 38.99);
+UPDATE products SET price = price + 10 WHERE id = 2;
+// hundreds more data
+COMMIT;
+```
+
+Meanwhile Bob writes this query:
+
+```sql
+SELECT * FROM products WHERE name LIKE 'Jordan%'
+```
+
+By requirements of SQL transactions and concurrency protocols,
+if Bob `SELECT` after Alice `COMMIT`, then Bob should see the new Jordan there.
+But if Bob `SELECT` any time before the Alice `COMMIT`, even as new rows are being inserted,
+Bob should NOT see the new Jordan there.
+To make it even more complicated, Alice actually should see her own rows while Bob shouldn't.
+
+To summarize, it means, for rows created, updated, or deleted for a transaction issued by user A,
+user A should see all of their own changes even before `COMMIT`,
+but user B should NOT see user A's changes until user A `COMMIT`.
+
+This visibility rule doesn't matter as much for product listings, but for banks, ecommerce inventory control, it matters.
+
+So, how does PostgreSQL's architecture support this concurrent visibility requirement?
+Aka. how does it let different users see different data?
+
+The idea is simple: for every insert, update, or delete, instead of modifying the actual row,
+we simply create a new version of the row and put a transaction ID on it.
+
+Then, for every user, when a `SELECT` or `UPDATE` or `DELETE` is issued,
+PostgreSQL would compare the current user's transaction ID with the transaction ID on the versioned row,
+and check, "okay, is this versioned row a row I created? If it's my row, then I should always see it. If it's others', then I should only see it if that transaction had been marked as COMMITed."
+
+This way, PostgreSQL allows different users to see different data based on the SQL's concurrent visibility control requirements.
+In jargon, this is called "Multiversion Concurrency Control" (MVCC).
+
+Going back to how updates affect heap and secondary indexes.
+This means, Heap data is never updated in place, only new versions are appended.
+For indexes, multiple versions can exist there too.
+Of course, PostgreSQL would periodically delete old row versions that are no longer used by any transactions
+to release space.
+The takeaway is, with the row version mechanism,
+PostgreSQL only have to insert and delete row versions, but doesn't have to directly update things in-place.
