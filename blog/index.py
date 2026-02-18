@@ -124,6 +124,8 @@ def load_articles_index(
         try:
             md = render_to_markdown(fpath.as_posix())
             metadata = md.metadata
+            if metadata.excludes_from_index:
+                continue
         except Exception:
             if skip_bad_articles:
                 continue

@@ -10,6 +10,7 @@ class ArticleMetadata(BaseModel):
     category: str
     created_at: datetime
     updated_at: datetime
+    excludes_from_index: bool = False
 
 
 class ArticleMD(BaseModel):
