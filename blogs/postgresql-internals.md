@@ -186,3 +186,41 @@ Of course, PostgreSQL would periodically delete old row versions that are no lon
 to release space.
 The takeaway is, with the row version mechanism,
 PostgreSQL only have to insert and delete row versions, but doesn't have to directly update things in-place.
+
+
+### Locking
+
+Now consider another scenario, equally if not more important than the previous example. We have Alice do this:
+
+```sql
+BEGIN;
+UPDATE product_inventory SET count = count - 1 WHERE product_id = 12345 AND count > 0;
+// Some other stuff is done in between
+INSERT INTO user_orders(user_id, product_id) VALUES (123, 12345);
+COMMIT;
+```
+
+This is means for an ecommerce website, Alice is trying to place a order,
+and PostgreSQL must update the inventory and create the order record in 1 transaction.
+
+We also Bob trying to order the same product:
+```sql
+BEGIN;
+UPDATE product_inventory SET count = count - 1 WHERE product_id = 12345 AND count > 0;
+// Some other stuff is done in between
+INSERT INTO user_orders(user_id, product_id) VALUES (123, 12345);
+COMMIT;
+```
+
+And guess what, it's a popular product item, so Bob and Alice actually try to order the item at the same instant.
+
+Why is this a problem?
+
+While Alice is deducting product 12345's inventory count and trying to create a order, in that split millisecond,
+any other user, including Bob, is allowed to still read product 12345's inventory count but NOT update it.
+This is another requirement of SQL's concurrency protocol.
+
+Multiversion concurrency control enable concurrent reads, but we still need to ensure non-current, exclusive update,
+one at a time.
+
+So how does PostgreSQL's architecture ensure exclusive update?
