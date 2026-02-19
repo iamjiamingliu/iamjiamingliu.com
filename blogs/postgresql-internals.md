@@ -39,11 +39,13 @@ PostgreSQL's purpose is to:
 2. Support efficient querying and updating of data
 3. Support different users querying and updating data concurrently while ensuring everyone still sees the right data (
    the "I" in ACID, which is "Isolation")
-4. Meanwhile, also ensure the updates are durable and are all or nothing (the "A" "C" "D" in ACID, which are atomic,
-   consistent, and durable)
+4. Ensure the updates are durable (the "D" in ACID, which is "Durability")
+5. Ensure the updates in a transaction are atomic ("A" in ACID)
+6. Ensure the updates don't affect the data consistency ("C" in ACID)
+
 
 Thus, to understand the internal architecture and implementation of Postgres,
-we can dissect it in the order for each of the above 4 points.
+we can dissect it in the order for each of the above points.
 
 ## Store the data
 
@@ -303,11 +305,30 @@ To illustrate the locking with an example:
 ## Durability
 
 If you go back to the earlier section [The Purpose of PostgreSQL](#the-purpose-of-postgresql),
-we said that PostgreSQL is designed to do 4 things:
+we said that PostgreSQL is designed to do these things:
 
 1. Store data in the "relational" paradigm
 2. Support efficient querying and updates
 3. Support concurrent querying and updates
 4. Support durable updates
+5. Ensure the updates in a transaction are atomic ("A" in ACID)
+6. Ensure the updates don't affect the data consistency ("C" in ACID)
 
-We have already talked about the first 3 points. Now, let's talk about the last point: durability.
+We have already talked about the first 3 points. Now, let's talk about durability.
+After we are done with durability,
+it's easy to realize that "atomic updates" and "data consistency"
+are already supported with all the mechanisms we introduced earlier.
+
+Ok so back to the discussion on durability.
+
+First, we need to understand that, disks are naturally durable.
+SSD and HDD have mechanisms built-in (like, RAID) to ensure data won't easily be loss even if a part of the disk fails.
+And, SSD and HDD exposes a hardware level API to ensure any data update in a 4KB unit would all succeed or fail,
+but no partial updates.
+
+Then why does PostgreSQL's architecture need to worry about durability?
+
+As said earlier, to facilitate caching, PostgreSQL uses Buffer Cache which reads and writes data to disk in 8KB units.
+That introduces 2 problems:
+
+1. Disk supports 4KB automic write, but 8KB PostgreSQL would
