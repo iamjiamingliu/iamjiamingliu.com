@@ -65,21 +65,15 @@ When you delete or modify some rows, things get interesting. Hold on to that for
 Okay, you have all of your rows stored in heap. Great. Now let's run some example SQL queries:
 
 ```sql
-SELECT *
-FROM my_table
-LIMIT 10
+SELECT * FROM my_table LIMIT 10
 ```
 
 ```sql
-SELECT *
-FROM my_table
-WHERE user_id = 123
+SELECT * FROM my_table WHERE user_id = 123
 ```
 
 ```sql
-DELETE *
-FROM my_table
-WHERE user_id = 123
+DELETE * FROM my_table WHERE user_id = 123
 ```
 
 Look at the first query. You just want 10 rows, so just grab them from heap.
@@ -148,15 +142,10 @@ Consider Alice writing this query:
 
 ```sql
 BEGIN;
-INSERT INTO products(id, name, price)
-VALUES (1, 'Nike Air', 46.99);
-INSERT INTO products(id, name, price)
-VALUES (2, 'Jordan', 123.99);
-INSERT INTO products(id, name, price)
-VALUES (3, 'Adidas', 38.99);
-UPDATE products
-SET price = price + 10
-WHERE id = 2;
+INSERT INTO products(id, name, price) VALUES (1, 'Nike Air', 46.99);
+INSERT INTO products(id, name, price) VALUES (2, 'Jordan', 123.99);
+INSERT INTO products(id, name, price) VALUES (3, 'Adidas', 38.99);
+UPDATE products SET price = price + 10 WHERE id = 2;
 // hundreds more data
 COMMIT;
 ```
@@ -164,9 +153,7 @@ COMMIT;
 Meanwhile Bob writes this query:
 
 ```sql
-SELECT *
-FROM products
-WHERE name LIKE 'Jordan%'
+SELECT * FROM products WHERE name LIKE 'Jordan%'
 ```
 
 By requirements of SQL transactions and concurrency protocols,
@@ -209,13 +196,9 @@ Now consider another scenario, equally if not more important than the previous e
 
 ```sql
 BEGIN;
-UPDATE product_inventory
-SET count = count - 1
-WHERE product_id = 12345
-  AND count > 0;
+UPDATE product_inventory SET count = count - 1 WHERE product_id = 12345 AND count > 0;
 // Some other stuff is done in between
-INSERT INTO user_orders(user_id, product_id)
-VALUES (123, 12345);
+INSERT INTO user_orders(user_id, product_id) VALUES (123, 12345);
 COMMIT;
 ```
 
@@ -226,13 +209,9 @@ We also Bob trying to order the same product:
 
 ```sql
 BEGIN;
-UPDATE product_inventory
-SET count = count - 1
-WHERE product_id = 12345
-  AND count > 0;
+UPDATE product_inventory SET count = count - 1 WHERE product_id = 12345 AND count > 0;
 // Some other stuff is done in between
-INSERT INTO user_orders(user_id, product_id)
-VALUES (123, 12345);
+INSERT INTO user_orders(user_id, product_id)VALUES (123, 45678);
 COMMIT;
 ```
 
