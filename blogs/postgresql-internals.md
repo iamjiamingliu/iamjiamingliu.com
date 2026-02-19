@@ -83,6 +83,8 @@ If there X rows, on average we have to check X/2 of them and that's very slow.
 
 So how to support efficiently querying relevant data given filter conditions?
 
+### Secondary Indexes
+
 Think about this analogy. If we are writing an in-memory program,
 the raw heap is like an unsorted list.
 And if we want to find things more efficiently,
@@ -123,7 +125,50 @@ When an SQL query is actually executed, PostgreSQL would evaluate and use the be
 execution.
 For an update query, it means PostgreSQL would not only update the original heap data, but also the relevant indexes.
 
-But there's a catch, and we are about to explain that in the immediate section below.
+### Caching
+What else can we do to make querying faster? Caching.
+
+For durability and cost-effectiveness, PostgreSQL is meant to store the data on disk instead of in RAM.
+So like, if we have a million rows, and it takes 100 GB, we just need 100 GB of disk and little RAM.
+However, disk access is 1000x slower than RAM.
+Had we had the luxury of storing all the data in RAM instead of on disk,
+then our queries can be 1000x faster because RAM is faster than disk.
+But once again we must use disk primarily instead of RAM.
+
+Here's where a great idea comes in: caching.
+The philosophy of caching exists everywhere in software, from CPU to OS to distributed systems.
+The big idea behind caching is, even if all the data is stored on disk,
+if we store a fraction of the data also in RAM,
+as long as we are wise on choosing what should also be in RAM,
+we can still speed up the overall performance by magnitudes while using a fraction of RAM proportional to all the data.
+
+Here's how PostgreSQL does caching.
+Naively, all the heap row data and the secondary indexes reads and writes would directly happen to the underlying disk.
+But no, PostgreSQL doesn't do that.
+Instead, all low level data reads and writes go to a proxy layer called "Buffer Cache".
+And, for later convenience, each data read and write must happen 8KB unit at a time,
+and that 8KB unit is called a "page".
+
+Buffer Cache essentially proxies all the page reads and writes and caches frequently accessed pages in RAM.
+If full, it evicts pages using a "clock-sweep" algorithm
+that is conceptually analogous to FIFO eviction, with second chances given for the more frequently accessed pages.
+
+At the high level, this means, if a row is read from heap more frequently,
+or if a tree node in the BTree index data structure is traversed more frequently,
+or if a hash bucket in the HASH index data structure is checked more frequently,
+these data will very likely already to be in the Buffer Cache, which is in RAM,
+which means we don't have to read the disk and that's 1000x faster.
+
+Without Buffer Cache, every write might need, say, 7 disk page reads.
+With Buffer Cache, it's super likely that the 6 or 7 of the disk pages are already in RAM in the cache,
+which means we just need to issue 1 more disk read and that's a lot faster.
+
+To clarify, Caching doesn't speed up writes, but speed up reads by a lot.
+Usually there's far more reads than writes, so caching increases the overall PostgreSQL performance by a lot.
+
+By the way, PostgreSQL could not have simply used OS's native page cache or MMAP.
+PostgreSQL must manage its own buffer pool as cache because it also needs to
+ensure some fine-grained control mechanism called "pinning", which OS's native page cache or MMAP doesn't provide.
 
 ## Concurrent querying and updates
 
