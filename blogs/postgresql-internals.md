@@ -88,7 +88,7 @@ the raw heap is like an unsorted list.
 And if we want to find things more efficiently,
 we would then have to put our data as a dictionary/hashmap or a binary search tree.
 Then, looking up the relevant data just means dict.find(key) or searching over that binary search tree,
-which is super efficient comparing to having check everything one by one.
+which is super efficient compared to having check everything one by one.
 
 Now back to PostgreSQL.
 To support efficient querying, PostgreSQL uses the same ideas as if we need to write an in-memory program.
@@ -99,8 +99,8 @@ searching over an in memory binary search tree. B+Tree is just the on disk varia
 to be more efficient in the disk environment.
 
 Note that, the original "heap" storage is here to stay.
-The HASH and BTree index are just auxiliary indexes whose "keys" are the columns you order them by and the "values"
-are pointers to the actual data in the heap location.
+The HASH and BTree index are just auxiliary indexes whose "keys" are the columns you explicitly order them by
+and the "values" are pointers to the actual data in the heap location.
 
 You might ask, "why not just make the original heap a HASH or BTree"?
 This is because a PostgreSQL table frequently has more than 1 indexes,
@@ -108,7 +108,7 @@ so it's the design decision of PostgreSQL to just store the original data in hea
 For PostgreSQL's competitor MySQL though, the original data is stored in B+Tree though. It really is just a design
 choice.
 
-B+Tree is more commonly used, because with caching, its querying is empirically as fast as HASH.
+B+Tree is more commonly used than HASH, because with caching, its querying is empirically as fast as HASH.
 AND, HASH only lets you support point querying. What if you want to find `SELECT * FROM user WHERE age BETWEEN 10 AND 20`?
 BTree can be used here, but HASH would be useless.
 
@@ -118,7 +118,7 @@ But note that, by default, PostgreSQL already automatically creates BTree indexe
 1. Primary key
 2. UNIQUE constraint
 
-So this means, for an SQL query, PostgreSQL would consider and use the best indexes to speed up the query execution.
+When an SQL query is actually executed, PostgreSQL would evaluate and use the best indexes to speed up the query execution.
 For an update query, it means PostgreSQL would not only update the original heap data, but also the relevant indexes.
 
 But there's a catch, and we are about to explain that in the immediate section below.
@@ -137,7 +137,7 @@ Why is this a problem? In 2 regards:
 
 ### Visibility
 
-Well, consider Alice writing this query:
+Consider Alice writing this query:
 
 ```sql
 BEGIN;
@@ -175,18 +175,16 @@ we simply create a new version of the row and put a transaction ID on it.
 
 Then, for every user, when a `SELECT` or `UPDATE` or `DELETE` is issued,
 PostgreSQL would compare the current user's transaction ID with the transaction ID on the versioned row,
-and check, "okay, is this versioned row a row I created? If it's my row, then I should always see it. If it's others', then I should only see it if that transaction had been marked as COMMITed."
+and check, "okay, is this versioned row a row I created? If it's my row, then I should always see it. If it's others', then I should only see it if that transaction had already committed."
 
 This way, PostgreSQL allows different users to see different data based on the SQL's concurrent visibility control requirements.
 In jargon, this is called "Multiversion Concurrency Control" (MVCC).
 
 Going back to how updates affect heap and secondary indexes.
-This means, Heap data is never updated in place, only new versions are appended.
-For indexes, multiple versions can exist there too.
+This means, rows in heap is never updated in place; rather, new row versions are appended.
+For indexes, it points to row versions instead of the raw rows.
 Of course, PostgreSQL would periodically delete old row versions that are no longer used by any transactions
 to release space.
-The takeaway is, with the row version mechanism,
-PostgreSQL only have to insert and delete row versions, but doesn't have to directly update things in-place.
 
 
 ### Locking
