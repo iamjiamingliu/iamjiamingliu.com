@@ -65,15 +65,21 @@ When you delete or modify some rows, things get interesting. Hold on to that for
 Okay, you have all of your rows stored in heap. Great. Now let's run some example SQL queries:
 
 ```sql
-SELECT * FROM my_table LIMIT 10
+SELECT *
+FROM my_table
+LIMIT 10
 ```
 
 ```sql
-SELECT * FROM my_table WHERE user_id = 123
+SELECT *
+FROM my_table
+WHERE user_id = 123
 ```
 
 ```sql
-DELETE * FROM my_table WHERE user_id = 123
+DELETE *
+FROM my_table
+WHERE user_id = 123
 ```
 
 Look at the first query. You just want 10 rows, so just grab them from heap.
@@ -109,7 +115,8 @@ For PostgreSQL's competitor MySQL though, the original data is stored in B+Tree 
 choice.
 
 B+Tree is more commonly used than HASH, because with caching, its querying is empirically as fast as HASH.
-AND, HASH only lets you support point querying. What if you want to find `SELECT * FROM user WHERE age BETWEEN 10 AND 20`?
+AND, HASH only lets you support point querying. What if you want to find
+`SELECT * FROM user WHERE age BETWEEN 10 AND 20`?
 BTree can be used here, but HASH would be useless.
 
 As said earlier, we as users can and should explicitly create indexes on relevant columns to speedup querying.
@@ -118,11 +125,11 @@ But note that, by default, PostgreSQL already automatically creates BTree indexe
 1. Primary key
 2. UNIQUE constraint
 
-When an SQL query is actually executed, PostgreSQL would evaluate and use the best indexes to speed up the query execution.
+When an SQL query is actually executed, PostgreSQL would evaluate and use the best indexes to speed up the query
+execution.
 For an update query, it means PostgreSQL would not only update the original heap data, but also the relevant indexes.
 
 But there's a catch, and we are about to explain that in the immediate section below.
-
 
 ## Concurrent querying and updates
 
@@ -141,10 +148,15 @@ Consider Alice writing this query:
 
 ```sql
 BEGIN;
-INSERT INTO products(id, name, price) VALUES (1, 'Nike Air', 46.99);
-INSERT INTO products(id, name, price) VALUES (2, 'Jordan', 123.99);
-INSERT INTO products(id, name, price) VALUES (3, 'Adidas', 38.99);
-UPDATE products SET price = price + 10 WHERE id = 2;
+INSERT INTO products(id, name, price)
+VALUES (1, 'Nike Air', 46.99);
+INSERT INTO products(id, name, price)
+VALUES (2, 'Jordan', 123.99);
+INSERT INTO products(id, name, price)
+VALUES (3, 'Adidas', 38.99);
+UPDATE products
+SET price = price + 10
+WHERE id = 2;
 // hundreds more data
 COMMIT;
 ```
@@ -152,7 +164,9 @@ COMMIT;
 Meanwhile Bob writes this query:
 
 ```sql
-SELECT * FROM products WHERE name LIKE 'Jordan%'
+SELECT *
+FROM products
+WHERE name LIKE 'Jordan%'
 ```
 
 By requirements of SQL transactions and concurrency protocols,
@@ -165,7 +179,8 @@ To summarize, it means, for rows created, updated, or deleted for a transaction 
 user A should see all of their own changes even before `COMMIT`,
 but user B should NOT see user A's changes until user A `COMMIT`.
 
-This visibility rule doesn't matter as much for product listings, but for banks, ecommerce inventory control, it matters.
+This visibility rule doesn't matter as much for product listings, but for banks, ecommerce inventory control, it
+matters.
 
 So, how does PostgreSQL's architecture support this concurrent visibility requirement?
 Aka. how does it let different users see different data?
@@ -175,9 +190,11 @@ we simply create a new version of the row and put a transaction ID on it.
 
 Then, for every user, when a `SELECT` or `UPDATE` or `DELETE` is issued,
 PostgreSQL would compare the current user's transaction ID with the transaction ID on the versioned row,
-and check, "okay, is this versioned row a row I created? If it's my row, then I should always see it. If it's others', then I should only see it if that transaction had already committed."
+and check, "okay, is this versioned row a row I created? If it's my row, then I should always see it. If it's others',
+then I should only see it if that transaction had already committed."
 
-This way, PostgreSQL allows different users to see different data based on the SQL's concurrent visibility control requirements.
+This way, PostgreSQL allows different users to see different data based on the SQL's concurrent visibility control
+requirements.
 In jargon, this is called "Multiversion Concurrency Control" (MVCC).
 
 Going back to how updates affect heap and secondary indexes.
@@ -186,16 +203,19 @@ For indexes, it points to row versions instead of the raw rows.
 Of course, PostgreSQL would periodically delete old row versions that are no longer used by any transactions
 to release space.
 
-
 ### Locking
 
 Now consider another scenario, equally if not more important than the previous example. We have Alice do this:
 
 ```sql
 BEGIN;
-UPDATE product_inventory SET count = count - 1 WHERE product_id = 12345 AND count > 0;
+UPDATE product_inventory
+SET count = count - 1
+WHERE product_id = 12345
+  AND count > 0;
 // Some other stuff is done in between
-INSERT INTO user_orders(user_id, product_id) VALUES (123, 12345);
+INSERT INTO user_orders(user_id, product_id)
+VALUES (123, 12345);
 COMMIT;
 ```
 
@@ -203,11 +223,16 @@ This is means for an ecommerce website, Alice is trying to place a order,
 and PostgreSQL must update the inventory and create the order record in 1 transaction.
 
 We also Bob trying to order the same product:
+
 ```sql
 BEGIN;
-UPDATE product_inventory SET count = count - 1 WHERE product_id = 12345 AND count > 0;
+UPDATE product_inventory
+SET count = count - 1
+WHERE product_id = 12345
+  AND count > 0;
 // Some other stuff is done in between
-INSERT INTO user_orders(user_id, product_id) VALUES (123, 12345);
+INSERT INTO user_orders(user_id, product_id)
+VALUES (123, 12345);
 COMMIT;
 ```
 
@@ -219,7 +244,34 @@ While Alice is deducting product 12345's inventory count and trying to create a 
 any other user, including Bob, is allowed to still read product 12345's inventory count but NOT update it.
 This is another requirement of SQL's concurrency protocol.
 
-Multiversion concurrency control enable concurrent reads, but we still need to ensure non-current, exclusive update,
-one at a time.
+Multiversion concurrency control enable concurrent reads on the same row, but we still need to ensure non-current,
+exclusive update for a given row.
 
-So how does PostgreSQL's architecture ensure exclusive update?
+So how does PostgreSQL's architecture ensure mutually exclusive update?
+
+Consider this analogy. If we are writing a simple in-memory computer program of some sorts
+and we need to ensure mutually exclusive update, what do we do?
+We use a Lock.
+
+And that's logically what PostgreSQL does. PostgreSQL logically would put a lock on the row
+to ensure mutually exclusive update.
+
+But if we have, say, 100 thousand rows, does it mean PostgreSQL would need to create and maintain 100 thousand locks?
+No, that would destroy the memory efficiency.
+Instead, PostgreSQL relies on the fact that there's already a transaction ID on the row version,
+and that row version's logical lock would only be released upon the whole transaction's commit or abort.
+Because of this, PostgreSQL simply need to maintain lock / waiting at the transaction ID level instead of actual rows.
+
+To illustrate the locking with an example:
+
+1. Alice (transaction id = 1) is updating row (id = 123). A new row version is created, and Alice's transaction id 1 is
+   written on there. Alice goes on to modify some other rows, so the transaction is NOT committed yet
+2. Bob (transaction id = 2) also wants to update row (id = 123). It checks the latest row version and see that:
+    - It's the row version Alice just created
+    - Alice's transaction id = 1 hasn't committed yet
+    - This means Bob should NOT update row (id = 123) until Alice has committed her transaction
+    - So PostgreSQL would use lock to remember that, "transaction id = 2 is waiting for transaction id = 1 to commit or
+      rollback", and transaction id = 2 (Bob's) is now blocked from doing anything further
+3. After Alice transaction id = 1 commits or abort, PostgreSQL removes the blocking for Bob's transaction id = 2.
+4. Bob then checks to see that Alice's row version is already committed / aborted (which, it is), and can safely proceed
+   with next steps
