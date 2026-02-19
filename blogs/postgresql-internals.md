@@ -254,3 +254,15 @@ To illustrate the locking with an example:
 3. After Alice transaction id = 1 commits or abort, PostgreSQL removes the blocking for Bob's transaction id = 2.
 4. Bob then checks to see that Alice's row version is already committed / aborted (which, it is), and can safely proceed
    with next steps
+
+## Durability
+
+If you go back to the earlier section [The Purpose of PostgreSQL](#the-purpose-of-postgresql),
+we said that PostgreSQL is designed to do 4 things:
+
+1. Store data in the "relational" paradigm
+2. Support efficient querying and updates
+3. Support concurrent querying and updates
+4. Support durable updates
+
+We have already talked about the first 3 points. Now, let's talk about the last point: durability.
