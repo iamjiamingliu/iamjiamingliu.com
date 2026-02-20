@@ -5,7 +5,6 @@ tags: [ Internal Architecture ]
 category: Tech
 created_at: 2026-02-18 00:15:13
 updated_at: 2026-02-18 00:15:13
-excludes_from_index: True
 ---
 
 ## Foreword
@@ -17,21 +16,20 @@ compared to the so-called NoSQL contestants.
 
 PostgreSQL is here to stay, understanding its architecture has helped me a lot with using it more effectively,
 and by understanding PostgreSQL's architecture, many of the ideas carried over to other types of databases too,
-so it laid a foundational for my understanding of other databases too.
+so it laid the foundation for my understanding of other databases.
 
 I've read PostgreSQL's documentations a number of times
 (and, given the richness of the information, I frankly still can't name every detail),
 I've taken the "Implementation of Database" class at UCSB under database expert Professor Divy Agrawal,
 and I've read a few books and a number of blogs on it too.
-
 The following blog condenses my understanding of PostgreSQL from what I've read and learned.
+
 Hopefully this can be a fun, informative read for you, so that you can take away the most important information without
 having to read the full books.
 It's not exhaustive, just the big ideas, and sometimes simplified.
-And this blog assumes you as the reader is already familiar with SQL and the usage of PostgreSQL.
+But it's still quite long because PostgreSQL has so many interesting aspects to be talked about!
 
-Arguably, PostgreSQL is the most sophisticated system I've looked into.
-My explanation might not make much sense because PostgreSQL is just so complicated, sorry in advance.
+This blog assumes you as the reader is already familiar with SQL, transactions, and the usage of PostgreSQL.
 
 ## The Purpose of PostgreSQL
 
@@ -55,12 +53,12 @@ we can dissect it in the order for each of the above points.
 When we insert rows to a table, PostgreSQL would store your rows in its "heap",
 which is just a file on disk that has your rows and some metadata.
 
-The rows are usually not ordered here or anything. They are simply thrown there.
+The rows are not ordered here or anything. They are simply thrown there.
 
 Logically this is the same as appending a new JSON to a big blob of JSONS in a .json file you created.
 
 The difference is that, since a PostgreSQL table has a defined schema of what columns it contains,
-it doesn't need to store the field names again like JSON. And, since each column's type is also defined,
+for each row, it doesn't need to store the field names again like JSON. And, since each column's type is also defined,
 PostgreSQL would store an integer not as a readable string like JSON but as a byte if you know what I mean.
 
 When you delete or modify some rows, things get interesting. Hold on to that for now.
@@ -82,8 +80,9 @@ DELETE * FROM my_table WHERE user_id = 123
 ```
 
 Look at the first query. You just want 10 rows, so just grab them from heap.
-Now look at the second and third query. You need just that 1 row with `user_id = 123`.
-If we purely rely on the heap, we would have to check every row in the heap until we find something.
+Now look at the second and third query.
+Even if uou need only that 1 row with `user_id = 123`,
+we would have to check every row in the heap until we find something.
 If there X rows, on average we have to check X/2 of them and that's very slow.
 
 So how to support efficiently querying relevant data given filter conditions?
@@ -100,14 +99,14 @@ which is super efficient compared to having check everything one by one.
 Now back to PostgreSQL.
 To support efficient querying, PostgreSQL uses the same ideas as if we need to write an in-memory program.
 It gives us as user the options to create auxiliary indexes to order our data in some particular way.
-If you create a HASH index, it means the data is stored as a hashmap on disk and lookup is logically dict.find(key).
-If you create a BTree index, it means the data is stored as a B+Tree on disk and lookup is logically same as binary
-searching over an in memory binary search tree. B+Tree is just the on disk variant of binary search tree
-to be more efficient in the disk environment.
+If you create a HASH index on a column, it means the data is stored as a hashmap on disk and lookup is logically dict.find(key).
+If you create a BTree index on some columns,
+it means the data is stored as a B+Tree on disk and lookup is logically same as binary searching over an in memory binary search tree.
+B+Tree is just the on disk variant of binary search tree to be more efficient in the disk environment.
 
 Note that, the original "heap" storage is here to stay.
 The HASH and BTree index are just auxiliary indexes whose "keys" are the columns you explicitly order them by
-and the "values" are pointers to the actual data in the heap location.
+and the "values" are pointers to the actual data in the heap location called "tuple IDs".
 
 You might ask, "why not just make the original heap a HASH or BTree"?
 This is because a PostgreSQL table frequently has more than 1 indexes,
@@ -115,7 +114,7 @@ so it's the design decision of PostgreSQL to just store the original data in hea
 For PostgreSQL's competitor MySQL though, the original data is stored in B+Tree though. It really is just a design
 choice.
 
-B+Tree is more commonly used than HASH, because with caching, its querying is empirically as fast as HASH.
+B+Tree is more commonly used than HASH, because with caching (discussed next), its querying is empirically as fast as HASH.
 AND, HASH only lets you support point querying. What if you want to find
 `SELECT * FROM user WHERE age BETWEEN 10 AND 20`?
 BTree can be used here, but HASH would be useless.
@@ -223,11 +222,11 @@ So, how does PostgreSQL's architecture support this concurrent visibility requir
 Aka. how does it let different users see different data?
 
 The idea is simple: for every insert, update, or delete, instead of modifying the actual row,
-we simply create a new version of the row and put a transaction ID on it.
+we simply create a new version of the row called "row version" and put a transaction ID on it.
 
 Then, for every user, when a `SELECT` or `UPDATE` or `DELETE` is issued,
-PostgreSQL would compare the current user's transaction ID with the transaction ID on the versioned row,
-and check, "okay, is this versioned row a row I created? If it's my row, then I should always see it. If it's others',
+PostgreSQL would compare the current user's transaction ID with the transaction ID on the row version,
+and check, "okay, is this row version a row I created? If it's my row, then I should always see it. If it's others',
 then I should only see it if that transaction had already committed."
 
 This way, PostgreSQL allows different users to see different data based on the SQL's concurrent visibility control
@@ -354,7 +353,7 @@ PostgreSQL might only be able to support, say, 100 modification queries per seco
 With Write-Ahead Log, PostgreSQL is able to, say, do 5000 modification queries per second.
 Not an exact number, just for intuitive explanation.
 
-And the reason why Write-Ahead Log would speed it page modifications by so much is because,
+And the reason why Write-Ahead Log would speed up page modifications by so much is because,
 it only appends the changes in dozens or hundreds of bytes instead of writing a 8KB page,
 and it's able to defer the logged changes to be flushed to disk in batch too until a transaction commits.
 This ties back to the "two observations" said a few paragraphs ago.
@@ -428,8 +427,8 @@ we said that PostgreSQL is designed to do these things:
 
 1. Store data in the "relational" paradigm
 2. Support efficient querying and updates
-3. Support concurrent querying and updates
-4. Support durable updates
+3. Support concurrent querying and updates ("I" in ACID)
+4. Support durable updates ("D" in ACID)
 5. Ensure the updates in a transaction are atomic ("A" in ACID)
 6. Ensure the updates don't affect the data consistency ("C" in ACID)
 
@@ -437,9 +436,10 @@ We have gone through all the mechanisms PostgreSQL is architectured with to sati
 These mechanisms are:
 
 1. Heap storage
-2. Indexes and Buffer Cache
-3. MVCC with row versions and locking
+2. Indexes
+3. Buffer Cache
 4. Write-ahead log (WAL)
+5. MVCC with row versions and locking
 
 But that's not all.
 There are still a couple more important architectural components to be discussed.
@@ -503,12 +503,12 @@ Step 1 is just converting a raw string of SQL statement to a data structure so t
 
 For step 2, as a recap, MVCC compares the current transaction ID to the transaction ID on row versions
 to resolve which row versions should be visible to the current transaction.
-And step 2 simply initializes the various metadata data structures needed to make MVCC transactions happen.
+And step 2 simply initializes the various metadata data structures needed to facilitate MVCC transactions.
 
 For step 3 and 4, let's zoom in a bit.
 They are called "query planning and execution". A lot of important things happen here.
 
-### Query planning and execution
+### Query planning
 
 At the lower level, PostgreSQL can:
 
@@ -555,12 +555,12 @@ Now the question explodes even further:
 4. What parts of the query can be parallelized onto multiple CPUs / forked workers?
 5. Should we rewrite the query so that top level filter conditions are pushed down further?
 
-In short, there's so many different ways to execute the same SQL query and all arrive at a correct result.
+In short, there's so many different ways to execute the same SQL query and all arrive at the equivalent correct result.
 
 It would take a few chapters of a book to explain them in depth.
 But, in short, just know that, when the user writes a SQL and executes it in PostgreSQL,
-PostgreSQL would evaluate the different execution plan for the JOIN clause, SELECT, GROUP BY, etc,
-compare their cost against each other, pick the execution plan with the least cost, and just executes it.
+PostgreSQL would evaluate the different execution plan of the SQL by considering the individual and collective costs of the JOIN clause, SELECT, GROUP BY, etc,
+and pick the execution plan with the least cost.
 
 Now the question boils down to, what exactly do we mean by the "cost" of a plan? It means:
 
@@ -576,7 +576,7 @@ Cool. If we can calculate the cost for each plan, we know which plan is the best
 But how do we estimate, say, how many rows might the index scan return, might the JOIN return, etc?
 
 ### Table and index statistics
-If you remember in the opening paragraph of [query planning and execution](#query-planning-and-execution),
+If you remember in the opening paragraph of [query planning](#query-planning),
 PostgreSQL has a "Statistics collector" process always running in the background collecting statistics on data in indexes and tables.
 Why is this needed? This is needed so that we can use the statistics to estimate query plan costs!
 
@@ -622,10 +622,10 @@ and PostgreSQL's query parsing, planning, and execution will faithfully give us 
 Isn't it magical?
 
 It's not magic. It's the fruit of decades of database research and engineering.
-
 Ever since Ted Codd laid forth the conceptual foundation of relational databases,
 from Oracle to MySQL, corporations and open source projects alike never stopped chasing
 bringing the conceptual to practicality.
+
 Among the available relational database systems,
 PostgreSQL remains my favorite, for its powerful set of features, intuitive usage, and timeless architecture.
 The more NoSQL databases I get more exposed, the more I realized that,
@@ -644,8 +644,20 @@ I realized indexes exist (should have found out about it earlier!), I realized p
 I sporadically read about MVCC, vacuum, buffer cache, to name a few,
 but the concepts were so hard to grasp, as they are so scattered.
 
-This article condenses the past few years of my understanding of PostgreSQL's internal architecture.
+This article cohesively condenses the past few years of my understanding of PostgreSQL's internal architecture.
 There's definitely errors in it, please [contact me](/contact) and I'll correct them accordingly.
 Or, if you have something to share, let me know too!
 
 I love PostgreSQL.
+
+Jiaming Liu
+
+Feb 20, 2026
+
+## Next Steps
+
+If you want to learn more about the internals of PostgreSQL, these are the resources that helped me the most:
+
+1. [The PostgreSQL Internals Book](https://edu.postgrespro.com/postgresql_internals-14_en.pdf)
+2. [The Official PostgreSQL Documentation](https://www.postgresql.org/docs/current/index.html)
+3. [The PostgreSQL Source Code on Github](https://github.com/postgres/postgres?referrer_channel=typeahead&referrer_query=postgre)
