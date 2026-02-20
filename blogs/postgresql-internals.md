@@ -419,3 +419,29 @@ How does PostgreSQL's architecture ensure consistency then?
 It's relatively straightforward. For every new row version created, check if it's valid based on
 field types, UNIQUE constraint, foreign key constraints, custom constraints, whatever.
 If it's not, then rollback the entire transaction with MVCC.
+
+
+## A quick recap before continuing
+
+If you go back to the earlier section [The Purpose of PostgreSQL](#the-purpose-of-postgresql),
+we said that PostgreSQL is designed to do these things:
+
+1. Store data in the "relational" paradigm
+2. Support efficient querying and updates
+3. Support concurrent querying and updates
+4. Support durable updates
+5. Ensure the updates in a transaction are atomic ("A" in ACID)
+6. Ensure the updates don't affect the data consistency ("C" in ACID)
+
+We have gone through all the mechanisms PostgreSQL is architectured with to satisfy each of the above requirements.
+These mechanisms are:
+
+1. Heap storage
+2. Indexes and Buffer Cache
+3. MVCC with row versions and locking
+4. Write-ahead log (WAL)
+
+But that's not all.
+There are still a couple more important architectural components to be discussed.
+In the next few sections, we will use the Life Cycle of an SQL Query to illustrate
+how everything we've talked about come together, and explore the stuff we haven't talked about yet.
