@@ -31,25 +31,8 @@
                                     </div>
                                 </div>
 
-                                {% if article.metadata.tags %}
-                                    <hr class="my-3">
-                                    <div class="d-flex flex-wrap gap-2">
-                                        {% for tag in article.metadata.tags %}
-                                            <a class="badge rounded-pill text-bg-light border text-decoration-none"
-                                               href="{{ url_for('blogs', tag=tag) }}">
-                                                #{{ tag }}
-                                            </a>
-                                        {% endfor %}
-                                    </div>
-                                {% endif %}
-
-
                                 {% if article.table_of_content %}
-
-                                    <div class="mt-4 d-flex align-items-center justify-content-between mb-2">
-                                        <div class="fw-semibold">Table of Content</div>
-                                    </div>
-
+                                    <hr>
                                     {# Mobile-friendly collapsible TOC #}
                                     <details class="d-lg-none">
                                         <summary class="small text-muted">Show / hide</summary>
