@@ -518,8 +518,62 @@ At the lower level, PostgreSQL can:
 
 For a simple query like `SELECT * FROM users WHERE id = 123`, to execute the query, we have a few options:
 
-1. Just scan all the row versions from users, resolve the visible ones against MVCC, and
+1. Just scan all the row versions from users, resolve the visible ones against MVCC, and return the ones that match the filter criteria id = 123
+2. If there's a BTree index ordered by id, then we can just the BTree data structure to efficiently find tuple IDs where id = 123, lookup the actual row versions from heap, resolve visibility against MVCC, and return them
 
+Which one to choose? Likely option 2, because looking up by BTree would be a lot faster than scanning every row.
+
+Now consider a more complicated query like this:
+
+```sql
+SELECT
+    name, username, age
+FROM users
+WHERE
+    (is_active = true AND nation IN ('China', 'United States') AND age BETWEEN 28 AND 36)
+    OR (is_active = false AND is_flagged = true)
+ORDER BY login_frequency DESC
+```
+
+And suppose there's a few different indexes out there:
+
+1. A BTree unique index on username
+2. A BTree index sorted by (age ASC, login_frequency DESC)
+3. A HASH index on nation
+4. A BTree index sorted by (is_active ASC, nation DESC)
+
+To execute the above query, which indexes should PostgreSQL use?
+
+To make the matter even worse, suppose we also JOIN the query 4 more times on a few other tables,
+have 3 subqueries, aggregate by some columns, and finally sort the result by some columns.
+
+Now the question explodes even further:
+
+1. What order should the JOIN happen? Table A join B join C is equivalent to B join C to A. There's like O(N!) join possibilities. And different JOIN order result in different performance because joining A and B first would make the result super small, but joining B and C first would make the result set explode
+2. For each adjacent pair of table, like, table A and B and B and C, should the relevant rows be joined by a double for loop, by a hashmap, or by two pointers if they are both sorted?
+3. For aggregation, can we fit all the data in RAM, or do we need to spill it to disk? Do we build a hashmap or use a for loop if the data is already sorted?
+4. What parts of the query can be parallelized onto multiple CPUs / forked workers?
+5. Should we rewrite the query so that top level filter conditions are pushed down further?
+
+In short, there's so many different ways to execute the same SQL query and all arrive at a correct result.
+
+It would take a few chapters of a book to explain them in depth.
+But, in short, just know that, when the user writes a SQL and executes it in PostgreSQL,
+PostgreSQL would evaluate the different execution plan for the JOIN clause, SELECT, GROUP BY, etc,
+compare their cost against each other, pick the execution plan with the least cost, and just executes it.
+
+Now the question boils down to, what exactly do we mean by the "cost" of a plan? It means:
+
+1. How many rows it would have to touch. For a full heap scan, it's however many rows is in there. For a BTree index scan, it's Log(N) of rows. Joining A and B first might give 1 million rows while B and C first might give just 1 thousand  rows
+2. How big is the average row width? If a BTree index have 2 integer columns it would be 8 bytes. A heap scan might be like 120 bytes
+3. CPU overhead. If we do a double for loop join it's O(N^2) for number of rows
+
+And the final cost is something like rows * row width * 5 + cpu overhead. I forgot the exact number.
+See PostgreSQL source code for exact numbers.
+
+Cool. If we can calculate the cost for each plan, we know which plan is the best, and we just executes that plan.
+
+But how do we estimate, say, how many rows might the index scan return, might the JOIN return, etc?
 
 ## Conclusion
 
