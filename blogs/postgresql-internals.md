@@ -445,3 +445,123 @@ But that's not all.
 There are still a couple more important architectural components to be discussed.
 In the next few sections, we will use the Life Cycle of an SQL Query to illustrate
 how everything we've talked about come together, and explore the stuff we haven't talked about yet.
+
+
+## The Life Cycle of an SQL Query
+
+When PostgreSQL is started on a machine, its master process spawns,
+and also spins a few background processes, some being:
+
+1. WAL writer (writes WAL entries to disk)
+2. Writer (eventually flushes modified pages in Buffer Cache to disk)
+3. Auto vacuumer (removes old row versions, etc.)
+4. Statistics collector (collects statistics on tables and indexes. More on this in a second.)
+
+The master process also allocates a global memory region for Buffer Cache, transaction management, etc.
+
+Now, whenever a new connection is established to PostgreSQL,
+the master process forks a new worker process and hands off the connection to that worker process
+to serve all future SQL executions for that new connection.
+Meanwhile, the master process tracks and monitors the health of all worker processes present
+and respawn ones if they die.
+
+Now, suppose the user issues a few SQLs like this:
+
+```sql
+SELECT * FROM users WHERE id = 123;
+```
+
+```sql
+BEGIN;
+UPDATE users set username = 'iam_joe' WHERE id = 123;
+COMMIT;
+```
+
+```sql
+SELECT
+    user.id,
+    user.name,
+    COUNT(order),
+    SUM(order.amount) OVER PARTITION BY (country.continent)
+FROM user
+JOIN order ON order.user_id = user.id
+JOIN country ON user.country_id = country.id
+GROUP BY user.id, user.name
+ORDER BY SUM(order.amount) OVER PARTITION BY (country.continent)
+LIMIT 10
+```
+
+Upon receiving each SQL query, the worker process primarily:
+
+1. Parses the SQL query string into a structuralized language tree called "abstract syntax tree" and ensure it's grammatically correct
+2. Initializes transaction context and MVCC metadata
+3. From the structuralized language tree, evaluates a few different execution plans and choose the seemingly optimal plan
+4. Executes the optimal execution plan
+5. Return result rows
+
+Step 1 is just converting a raw string of SQL statement to a data structure so that computer can understand better.
+
+For step 2, as a recap, MVCC compares the current transaction ID to the transaction ID on row versions
+to resolve which row versions should be visible to the current transaction.
+And step 2 simply initializes the various metadata data structures needed to make MVCC transactions happen.
+
+For step 3 and 4, let's zoom in a bit.
+They are called "query planning and execution". A lot of important things happen here.
+
+### Query planning and execution
+
+At the lower level, PostgreSQL can:
+
+1. Scan row versions from heap, unordered
+2. Lookup row versions from heap, given their tuple IDs (low level identifiers for a row)
+3. Scan tuple IDs from secondary BTree and HASH indexes, given some filter condition
+
+For a simple query like `SELECT * FROM users WHERE id = 123`, to execute the query, we have a few options:
+
+1. Just scan all the row versions from users, resolve the visible ones against MVCC, and
+
+
+## Conclusion
+
+As developers, we just issue SQLs to PostgreSQL and it just works.
+
+But so much effort goes behind the curtains of PostgreSQL's architecture to ensure our SQL queries:
+
+1. Can be concurrent
+2. While still being correct and safe. In jargon, it means atomic, consistent, isolated, and durable (ACID)
+3. While still being fast
+
+The SQL query can be as simple as a CRUD lookup,
+or a complicated 300 lines analytical SQL with subqueries, common table expressions, JOINS, window functions, aggregations, sorting, etc.
+and PostgreSQL's query parsing, planning, and execution will faithfully give us the correct rows / updates.
+
+Isn't it magical?
+
+It's not magic. It's the fruit of decades of database research and engineering.
+
+Ever since Ted Codd laid forth the conceptual foundation of relational databases,
+from Oracle to MySQL, corporations and open source projects alike never stopped chasing
+bringing the conceptual to practicality.
+Among the available relational database systems,
+PostgreSQL remains my favorite, for its powerful set of features, intuitive usage, and timeless architecture.
+The more NoSQL databases I get more exposed, the more I realized that,
+many NoSQL databases' in effect are only faster than PostgreSQL by sacrificing their features, ACID, or other aspects.
+
+I built my first software project Leetdeal (see [Projects](/projects)) with SQLite, then migrated to MySQL.
+Ever since UCSBPlat, my projects had been PostgreSQL, and many pain points just miraculously disappeared.
+
+By the time I finished high school, I thought I had learned it all about database --- and of course I was wrong haha.
+
+As I built more projects, I realized that common table expressions exist, window functions exist,
+you can JOIN things again and again, you can create materialized views, schemas...
+I realized you can natively replicate PostgreSQL to different instances to multiply its read capacity.
+I realized that with open source options like Citus, you can shard PostgreSQL to multiply its write capacity.
+I realized indexes exist (should have found out about it earlier!), I realized permission control exist.
+I sporadically read about MVCC, vacuum, buffer cache, to name a few,
+but the concepts were so hard to grasp, as they are so scattered.
+
+This article condenses the past few years of my understanding of PostgreSQL's internal architecture.
+There's definitely errors in it, please [contact me](/contact) and I'll correct them accordingly.
+Or, if you have something to share, let me know too!
+
+I love PostgreSQL.
