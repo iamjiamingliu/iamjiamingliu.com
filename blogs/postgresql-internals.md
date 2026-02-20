@@ -575,6 +575,36 @@ Cool. If we can calculate the cost for each plan, we know which plan is the best
 
 But how do we estimate, say, how many rows might the index scan return, might the JOIN return, etc?
 
+### Table and index statistics
+If you remember in the opening paragraph of [query planning and execution](#query-planning-and-execution),
+PostgreSQL has a "Statistics collector" process always running in the background collecting statistics on data in indexes and tables.
+Why is this needed? This is needed so that we can use the statistics to estimate query plan costs!
+
+For each table and index, PostgreSQL collects these statistics:
+
+1. How many rows there are
+2. How many pages (the 8KB units) does it occupy
+3. What portion of the column values are NULL values
+4. How many distinct values are for each column
+5. What are the most common values for each column
+6. Histogram of column values
+7. For each column, average length. If it's a int then its 4 bytes. If it's text then it could be like 10 bytes or 100 bytes
+8. How correlated are all the rows relative to this column. If a column is called "timestamp", then the rows are likely very sorted by the timestamp
+
+Note that the statistics do NOT need to be 100% accurate.
+They just need to be somewhat accurate to guide query planning.
+
+With all of these statistics, PostgreSQL is able to look at a query plan,
+and infer how many rows might it need to look through and how wide are the rows.
+And then pick the optimal plan and executes it.
+
+### Executing query
+
+From the optimal query plan, PostgreSQL finally can execute it.
+It runs the BTree traversal code, checks MVCC visibility,
+interacts with the Buffer Cache and the underlying Write Ahead Log,
+actually runs the JOIN for loop or hash tables, and more.
+
 ## Conclusion
 
 As developers, we just issue SQLs to PostgreSQL and it just works.
