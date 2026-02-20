@@ -30,6 +30,9 @@ having to read the full books.
 It's not exhaustive, just the big ideas, and sometimes simplified.
 And this blog assumes you as the reader is already familiar with SQL and the usage of PostgreSQL.
 
+Arguably, PostgreSQL is the most sophisticated system I've looked into.
+My explanation might not make much sense because PostgreSQL is just so complicated, sorry in advance.
+
 ## The Purpose of PostgreSQL
 
 In jargon, PostgreSQL is an ACID compliant relational database. If we break it down in plain english, it means
@@ -304,23 +307,6 @@ To illustrate the locking with an example:
 
 ## Durability
 
-If you go back to the earlier section [The Purpose of PostgreSQL](#the-purpose-of-postgresql),
-we said that PostgreSQL is designed to do these things:
-
-1. Store data in the "relational" paradigm
-2. Support efficient querying and updates
-3. Support concurrent querying and updates
-4. Support durable updates
-5. Ensure the updates in a transaction are atomic ("A" in ACID)
-6. Ensure the updates don't affect the data consistency ("C" in ACID)
-
-We have already talked about the first 3 points. Now, let's talk about durability.
-After we are done with durability,
-it's easy to realize that "atomic updates" and "data consistency"
-are already supported with all the mechanisms we introduced earlier.
-
-Ok so back to the discussion on durability.
-
 First, we need to understand that, disks are naturally durable.
 SSD and HDD have mechanisms built-in (like, RAID) to ensure data won't easily be loss even if a part of the disk fails.
 And, SSD and HDD exposes a hardware level API to ensure any data update in a 4KB unit would all succeed or fail,
@@ -375,3 +361,61 @@ This ties back to the "two observations" said a few paragraphs ago.
 
 To summarize, Buffer Cache constrains low level data movement to 8KB pages and massively speeds-up reads,
 and our Write-Ahead Log enable pages to be modified with great throughput while ensuring durability.
+
+## Atomic updates
+
+In SQL's ACID requirements, atomic updates means, in a transaction commit or abort,
+all changes must occur or not together as 1 inseparate thing, hence atomic.
+
+Here's a concrete example:
+
+```sql
+BEGIN;
+UPDATE balances SET money = money - 10 WHERE user_id = 1;
+UPDATE balances SET money = money + 10 WHERE user_id = 2;
+```
+
+And then we might do `COMMIT` or `ROLLBACK`.
+
+This example means user 1 wants to send user 2 $10.
+
+If the commit goes through, then user 1 should end up with $10 less and user 2 $10 more.
+If the commit doesn't go through because of rollback, or because it violates some data constraints,
+or because it creates a deadlock, or PostgreSQL crashes in between,
+then user 1 and user 2's balances should not be changed at all.
+
+How does PostgreSQL's architecture support the atomic update requirement?
+
+Through MVCC and WAL. And we've explained these earlier.
+
+With its row version mechanisms, MVCC never updates rows in place,
+but instead MVCC always create new versions of a row
+and tracks whichever transaction id created that row veresion as metadata.
+
+Then, if commit goes through, we just mark that transaction id as completed.
+And logically all the changes would kick in together as one, thus atomically.
+On the other hand, if we need to rollback, we just mark that transaction id as failed.
+And logically all the changes would disappear together as one, thus atomically.
+
+Finally, as explained earlier, WAL is there to ensure committed changes are durable and uncommitted changes are not
+in light of power outage or any RAM failure.
+
+
+## Consistency
+We've talked about atomic, isolation, and durability in ACID. Let's finally talk about consistency.
+
+Consistency is a murkier topic than the previous 3, and it seems that people have varying definitions on this.
+But in general, consistency in PostgreSQL and relational databases as a whole means:
+
+1. All the inserted rows must match the table definition or be rejected.
+   - If a field is an integer, then the inserted row must have that field as an integer
+   - If a varchar field says the length must be under 255, then the inserted row must have that field be short enough
+2. UNIQUE constraint, foreign key constraint, primary key constraints must be respected
+3. Custom defined CHECK constraint must be respected
+4. Logical data consistency. If Alice sends Bob $10, then their balances at the end of the transaction must match up and be consistent. However, this bleeds into "Atomic, Isolation, and Durability" though, and this point, from my reading, frequently have varying definitions.
+
+
+How does PostgreSQL's architecture ensure consistency then?
+It's relatively straightforward. For every new row version created, check if it's valid based on
+field types, UNIQUE constraint, foreign key constraints, custom constraints, whatever.
+If it's not, then rollback the entire transaction with MVCC.
