@@ -328,7 +328,50 @@ but no partial updates.
 
 Then why does PostgreSQL's architecture need to worry about durability?
 
-As said earlier, to facilitate caching, PostgreSQL uses Buffer Cache which reads and writes data to disk in 8KB units.
-That introduces 2 problems:
+As said earlier, PostgreSQL has the Buffer Cache mechanism
+that coordinates all disk accesses into 8KB units called "page" and caches popular pages to increase read performance.
 
-1. Disk supports 4KB automic write, but 8KB PostgreSQL would
+Thus, to achieve durability,
+don't we just need to flush the updated page to disk and update the cached person in RAM too?
+
+In theory yes. PostgreSQL simply needs to flush the pages to disk as they get updated,
+and durability is achieved. But the problem is performance.
+For a UPDATE query, a new row version is created in the heap, a few index entries in BTree might be affected,
+the transaction status also needs to be updated. This means at least 1 if not multiple 8KB pages need to be changed.
+Now suppose we have 100 transactions all updating different data.
+If we proactively flush pages everytime it's changed, PostgreSQL would quickly be overwhelmed with all the disk IOs...
+
+So how to ensure durability without having to flush a 8KB page everytime its changed?
+
+The key observation is that, every time a page is changed,
+it's likely that only dozens or at most hundreds of bytes are affected within that page.
+Another observation is that, the changes only need to be flushed to disk upon the acting transaction's commit.
+If the transaction hasn't committed and the machine fails, by SQL requirements,
+the changes shouldn't take place, that's why we don't need to flush it to disk until that transaction commits.
+
+Driven by these two observations,
+PostgreSQL's architecture is engineered with a powerful mechanism that ensures data durability and performance:
+Write-Ahead Log (WAL).
+
+The big idea behind Write-Ahead Log is that,
+instead of having to flush those 8KB pages to disk every time they are changed, we defer their flush indefinitely.
+Instead, we would record all page modification events
+(ex. "page id = 123's bytes between 125 to 434 had been changed" to 0x123aoifasdf...)
+across all the pages to a centralized log, and that log is called our Write-Ahead Log.
+Write-Ahead Log is implemented as a series of files on disk.
+
+And guess what, write-ahead log itself doesn't need to be flushed to disk immediately too.
+It just needs to be flushed to disk whenever a transaction commits.
+
+Had we used the naive method of flushing a page every time it's changed,
+PostgreSQL might only be able to support, say, 100 modification queries per second.
+With Write-Ahead Log, PostgreSQL is able to, say, do 5000 modification queries per second.
+Not an exact number, just for intuitive explanation.
+
+And the reason why Write-Ahead Log would speed it page modifications by so much is because,
+it only appends the changes in dozens or hundreds of bytes instead of writing a 8KB page,
+and it's able to defer the logged changes to be flushed to disk in batch too until a transaction commits.
+This ties back to the "two observations" said a few paragraphs ago.
+
+To summarize, Buffer Cache constrains low level data movement to 8KB pages and massively speeds-up reads,
+and our Write-Ahead Log enable pages to be modified with great throughput while ensuring durability.
