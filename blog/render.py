@@ -14,7 +14,9 @@ def render_to_markdown(file_path: Path | str) -> models.ArticleMD:
 
 def render_to_html(file_path: Path | str) -> models.ArticleHTML:
     md = render_to_markdown(file_path)
-    html = markdown2.markdown(md.content, extras=["toc", "fenced-code-blocks"])
+    html = markdown2.markdown(
+        md.content, extras=["toc", "fenced-code-blocks", "tables"]
+    )
     return models.ArticleHTML(
         metadata=md.metadata, content=str(html), table_of_content=html.toc_html
     )
