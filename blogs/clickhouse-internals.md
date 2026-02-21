@@ -44,9 +44,157 @@ Clickhouse's architecture is a lot cleaner to understand than [PostgreSQL](/blog
 I have a lot less experience with Clickhouse than PostgreSQL,
 but the big ideas in the following blog should be accurate.
 
-Let's dive in.
+This reading assumes the reader is familiar with SQL and PostsgreSQL,
+which is used as occasional comparison for illustrative purpose. Let's dive in.
 
 ## Data storage
+
+### Columnar storage layout
+
+When a batch of rows is inserted, ClickHouse builds them into a "part".
+1000 new rows become a part. Another 5000 rows become another part.
+The rows within a part are ordered by whatever primary key the users specifies.
+And over time, ClickHouse merges parts together.
+
+Within a part, ClickHouse would store the column values together as a file.
+For example, "user id" would be stored in a file together, and "purchased product id" would be in another file.
+
+This is different from transactional databases like PostgreSQL.
+PostgreSQL ensures a row stays together,
+but ClickHouse would break up a row into its columns and store all the values for a column together instead.
+
+As a Python psuedo code, Clickhouse would:
+
+```python
+user_ids = [1, 2, 34, 451]  # This gets stored in a file, ordered by primary key
+purchased_product_ids = [2342, 923234, 34, 13423]  # This gets stored in another file, ordered by primary key
+```
+
+While PostgreSQL would:
+
+```python
+rows = [
+    {'user_id': 1, 'purchased_product_id': 2342},
+    {'user_id': 2, 'purchased_product_id': 923234}
+    # etc.
+]
+```
+
+Why does ClickHouse store data in columnar fashion?
+
+This is because for analytical databases, a table would frequently have, say, dozens to a hundred fields.
+And when we write analytical SQL queries, usually we would be querying through a lot of rows, but only, say, 10 columns.
+
+With ClickHouse's columnar storage layout,
+if our SQL query aggregates 10 out of 100 columns of 10 million rows in a table, we touch 1 / 10th of total data.
+
+Had we stored rows together instead of columns, we would have touched ALL the data,
+because in that case we have to scan all the rows and not use the 90 / 100 columns in each row,
+which is very inefficient.
+
+However, columnar storage layout suffers from point query.
+Suppose we run `SELECT * FROM users WHERE id = 100`,
+then ClickHouse would need to touch 100 files to assemble all the column values for that row together.
+
+But that's totally fine,
+because ClickHouse's use case is for analytical queries that touches a lot of rows but a few columns.
+Columnar storage layout wins here.
+
+For transactional databases that emphasize on point query and updates, storing rows together is a must,
+which is what PostgreSQL do.
+
+### Compression
+
+When we store columns together instead of rows together, compression becomes super easy and effective.
+This is because the same column would have the same data type,
+and due to data semantics, the same column's data usually gives huge room for compression.
+
+Why does compression matter? 2 reasons:
+
+1. Less disk usage, so that saves cost
+2. Less IO needed. Compression trades data size against CPU. If you can compress 10 MB to 5 MB, that means you are doing half of disk IOs at the cost of CPU overhead with compression. But that's win, because CPU is super fast compared to disk IO. So the overall performance increases
+
+### Primary key and granule
+
+TODO
+
+### Partitions
+
+For transactional databases like PostgreSQL,
+BTree or HASH indexes allow us to find rows efficiently and avoid scanning unnecesary data given some filter condition.
+
+When we write a large analytical SQL with a lot of filter conditions,
+ClickHouse is able to use the mechanisms of partitions to avoid scanning unnecessary data.
+These mechanisms differ from BTree or HASH indexes, but the purpose is the same: avoid scanning unnecessary data.
+
+When a table is defined in ClickHouse, we have the option to instruct it to "partition" the data by time range.
+For example, all the July 2025 data goes in 1 partition, August 2025 in another, February 2026 in another, and so on.
+Each partition is manifested on disk as a folder.
+
+Then, when a "part" is created, it would be split up by the partition rule into the correct partition folders.
+For example, all the newly inserted rows with timestamp July 2025 goes under 1 partition, February 2026 in another, and so on.
+
+So roughly, the underlying data storage would look like this folder structure:
+
+```
+July 2025
+   Part 1
+        user id column.file
+        purchased product id column.file
+   Part 2
+        user id column.file
+        purchased product id column.file
+Janurary 2026
+   Part 1
+        user id column.file
+        purchased product id column.file
+   Part 2
+        user id column.file
+        purchased product id column.file
+   Part 3
+        user id column.file
+        purchased product id column.file
+```
+
+For analytical databases like ClickHouse, timestamp is a first class concept,
+because analytical databases usually ingest rows that are semantically "events" of some sorts,
+and time is what defines an event.
+
+Thus, when we write analytical queries, we frequently filter by timestamp.
+With the partition mechanism, as the data is already partitioned by timestamps,
+we are able to identify what partitions are relevant and avoid scanning partitions that don't match the timestamp filter.
+
+We also commonly have the use case of removing data that is too old.
+With the partition mechanism, this because easy,
+because ClickHouse just needs to periodically delete the entire partition folder once they become too old.
+
+### Skip Indexes
+
+Skip index is another mechanism for ClickHouse to avoid scanning data that do not match the filter condition for an analytical SQL query.
+
+ClickHouse only supports partitioning by timestamp (I think.)
+What if we need to filter by conditions in addition to timestamps?
+Partition lets us avoid scanning parts that are out of the time range in their entirely.
+But can we go a step further to avoid scanning data within a part too?
+
+As an example:
+
+```sql
+SELECT
+    country,
+    SUM(money)
+FROM purchase_events
+GROUP BY country
+WHERE
+    timestamp BETWEEN '2025-12-01' AND '2026-2-05'
+    AND money > 100
+```
+
+Partitioning by timestamp lets us skip all the data that are not in December 2025 or February 2026.
+But we still have to scan all the parts' country and money column files within December 2025 and February 2026 partitions
+despite we only care about a purchase event if money > 10.
+
+That's where skip index kicks in.
 
 ## Query execution
 
