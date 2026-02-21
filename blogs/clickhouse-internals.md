@@ -5,7 +5,6 @@ tags: [ Internal Architecture ]
 category: Tech
 created_at: 2026-02-20 2:26:13
 updated_at: 2026-02-20 2:26:13
-excludes_from_index: True
 ---
 
 ## Foreword
@@ -16,7 +15,7 @@ but the use case is for analytical queries instead of transactional updates and 
 
 This means, usage wise, we do NOT need to be concerned with:
 
-1. ACID transactions. Aka not too worried about atomic updates, consistency, durability, or concurrency isolation
+1. ACID transactions. Aka not too worried about atomic updates, consistency, concurrency isolation, or durability
 2. Point querying. Aka not too worried about `SELECT * FROM users where id = 123`
 3. Updates. Aka not too worried about `UPDATE users SET username = 'joe' WHERE id = 123`
 
@@ -35,7 +34,7 @@ ORDER BY COUNT(*)
 ```
 
 And that's what ClickHouse is built for.
-As a over simplification, ClickHouse is engineered for fast analytical querying,
+ClickHouse is engineered for fast analytical querying,
 and its architecture achieves this performance by:
 
 1. Not needing MVCC, Write Ahead Log, etc.
@@ -64,7 +63,7 @@ This is different from transactional databases like PostgreSQL.
 PostgreSQL ensures a row stays together,
 but ClickHouse would break up a row into its columns and store all the values for a column together instead.
 
-As a Python psuedo code, Clickhouse would:
+To illustrate the idea, Clickhouse would the store data like:
 
 ```python
 user_ids = [1, 2, 34, 451]  # This gets stored in a file, ordered by primary key
@@ -87,13 +86,13 @@ This is because for analytical databases, a table would frequently have, say, do
 And when we write analytical SQL queries, usually we would be querying through a lot of rows, but only, say, 10 columns.
 
 With ClickHouse's columnar storage layout,
-if our SQL query aggregates 10 out of 100 columns of 10 million rows in a table, we touch 1 / 10th of total data.
+if our SQL query mentions 10 out of 100 columns, when we execute the query, we touch 1 / 10th of total data.
 
 Had we stored rows together instead of columns, we would have touched ALL the data,
 because in that case we have to scan all the rows and not use the 90 / 100 columns in each row,
 which is very inefficient.
 
-However, columnar storage layout suffers from point query.
+The drawback is that, columnar storage layout suffers from point query.
 Suppose we run `SELECT * FROM users WHERE id = 100`,
 then ClickHouse would need to touch 100 files to assemble all the column values for that row together.
 
@@ -110,7 +109,7 @@ When we store columns together instead of rows together, compression becomes sup
 This is because the same column would have the same data type,
 and due to data semantics, the same column's data usually gives huge room for compression.
 
-Why does compression matter? 2 reasons:
+Compression brings 2 benefits:
 
 1. Less disk usage, so that saves cost
 2. Less IO needed. Compression trades data size against CPU. If you can compress 10 MB to 5 MB, that means you are doing half of disk IOs at the cost of CPU overhead with compression. But that's win, because CPU is super fast compared to disk IO. So the overall performance increases
@@ -153,13 +152,6 @@ As a result, when we query ClickHouse and we filter on primary key,
 ClickHouse is able to use the sparse index to locate the relevant granules and avoid scanning irrelevant granules.
 
 ### Partitions
-
-For transactional databases like PostgreSQL,
-BTree or HASH indexes allow us to find rows efficiently and avoid scanning unnecesary data given some filter condition.
-
-When we write a large analytical SQL with a lot of filter conditions,
-ClickHouse is able to use the mechanisms of partitions to avoid scanning unnecessary data.
-These mechanisms differ from BTree or HASH indexes, but the purpose is the same: avoid scanning unnecessary data.
 
 When a table is defined in ClickHouse, we have the option to instruct it to "partition" the data by time range.
 For example, all the July 2025 data goes in 1 partition, August 2025 in another, February 2026 in another, and so on.
@@ -244,6 +236,11 @@ By the way, skip indexes can also be configured on composite columns,
 and not just for min and max, but also for membership set to support, for example, `country IN ('US', 'China')` type of query.
 That set can be implemented as the full set or as bloom filter.
 
+As a quick recap and comparison, for transactional databases like PostgreSQL,
+BTree or HASH indexes allow us to find rows efficiently and avoid scanning unnecessary data given some filter condition.
+For ClickHouse, since the data is stored in columnar fashion, ClickHouse do not have BTree indexes,
+but instead relies on partition, sparse primary key index, and skip indexes to avoid scanning unnecessary data.
+
 ## Query execution
 
 Okay cool. We have all of our data there, stored with these mechanisms in place:
@@ -271,7 +268,7 @@ the big steps boils down to:
 3. Execute that execution plan
 
 Actually, ClickHouse's architecture doesn't support JOIN very well.
-This is because as an analytical database, ClickHouse's data is usually denormalized,
+This is because as an analytical database, ClickHouse's data is usually and expected to be denormalized,
 so JOINs is frowned upon.
 This means, the query execution is usually concerned with just 1 table in particular.
 
