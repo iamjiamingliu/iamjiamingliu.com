@@ -246,4 +246,58 @@ That set can be implemented as the full set or as bloom filter.
 
 ## Query execution
 
+Okay cool. We have all of our data there, stored with these mechanisms in place:
+
+1. Partitions
+2. Parts
+3. Columnar storage, compressed
+4. Sparse primary key index
+5. Skip indexes
+
+Now, how do we actually execute an SQL query, such as,
+
+```sql
+SELECT user_id, MONTH(timestamp), AVG(HOUR(timestamp)) FROM click_events
+JOIN users ON users.id = click_events.user_id
+GROUP BY user_id, MONTH(timestamp)
+ORDER BY COUNT(*)
+```
+
+As with any relational database system, analogous to [PostgreSQL's query execution](/blogs/postgresql-internals.md#the-life-cycle-of-an-sql-query),
+the big steps boils down to:
+
+1. Parse the raw SQL query string into a structuralized query tree data structure
+2. Come up with an optimal query execution plan
+3. Execute that execution plan
+
+Actually, ClickHouse's architecture doesn't support JOIN very well.
+This is because as an analytical database, ClickHouse's data is usually denormalized,
+so JOINs is frowned upon.
+This means, the query execution is usually concerned with just 1 table in particular.
+
+This means, to come up with a query execution plan, we just need to resolve:
+
+1. What partitions match the query's filtering
+2. For every part in the partition, which granule's primary key match the query's filtering
+3. If there's skip indexes, which skip indexes can and should be used to filter out even more granules based on the query
+
+Once the relevant partitions and granules within the parts are resolved,
+ClickHouse would execute the query by reading targeted portions of column files,
+applying final rounds of filtering, performing aggregations, transformations, and other operations defined in SQL.
+
+If aggregation is involved, ClickHouse would leverage the CPU's SIMD ability to speedup query processing.
+
+Finally, ClickHouse would use multiple threads to speed up aggregations and transformations as needed.
+
 ## Conclusion
+
+As an analytical relational database, ClickHouse organizes its data in columnar fashion with compression partitions, parts, sparse primary key index, and sparse indexes.
+Upon query execution, ClickHouse would aggressively prune away irrelevant granules and execute the query on the relevant granules with SIMD, multithreading, and other techniques.
+
+Unlike PostgreSQL, ClickHouse does not need to worry about ACID transactions, updates, or even point queries.
+It's built and optimized for bulk analytical queries.
+
+## Further reading
+
+1. [The ClickHouse Official Documentation](https://clickhouse.com/docs/academic_overview#4-query-processing-layer)
+2. [The ClickHouse Github Repo](https://github.com/ClickHouse/ClickHouse)
