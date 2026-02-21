@@ -25,7 +25,7 @@ Instead, our usage will mostly be for analytical queries, such as analyzing clic
 So the SQLs we need to worry about are mostly:
 
 1. Batch insert. Example: `INSERT INTO click_events VALUES (10000 rows here)`
-2. Long, analytical queries instead of point querying or updates. Example:
+2. Big analytical queries instead of point querying or updates. Example:
 
 ```sql
 SELECT user_id, MONTH(timestamp), AVG(HOUR(timestamp)) FROM click_events
@@ -166,16 +166,15 @@ With the partition mechanism, as the data is already partitioned by timestamps,
 we are able to identify what partitions are relevant and avoid scanning partitions that don't match the timestamp filter.
 
 We also commonly have the use case of removing data that is too old.
-With the partition mechanism, this because easy,
+With the partition mechanism, this becomes easy,
 because ClickHouse just needs to periodically delete the entire partition folder once they become too old.
 
 ### Skip Indexes
 
-Skip index is another mechanism for ClickHouse to avoid scanning data that do not match the filter condition for an analytical SQL query.
+Skip index is another mechanism for ClickHouse to avoid scanning data that do not match the filter condition for an analytical SQL query,
+at a finer granularity than partitions.
 
-ClickHouse only supports partitioning by timestamp (I think.)
-What if we need to filter by conditions in addition to timestamps?
-Partition lets us avoid scanning parts that are out of the time range in their entirely.
+Partition lets us avoid scanning parts that are out of the time range (or other partition ranges) in their entirely.
 But can we go a step further to avoid scanning data within a part too?
 
 As an example:
@@ -195,7 +194,7 @@ Partitioning by timestamp lets us skip all the data that are not in December 202
 But we still have to scan all the parts' country and money column files within December 2025 and February 2026 partitions
 despite we only care about a purchase event if money > 10.
 
-That's where skip index kicks in.
+Can we make it even more efficient by skipping irrelevant data at an even finer granularity? Enters skip index.
 
 ## Query execution
 
