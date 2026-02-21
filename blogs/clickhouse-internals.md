@@ -117,7 +117,40 @@ Why does compression matter? 2 reasons:
 
 ### Primary key and granule
 
-TODO
+Unlike PostgreSQL, primary keys in ClickHouse do NOT ensure uniqueness.
+Instead, ClickHouse primary keys:
+
+1. Dictate the order the columns values are stored in. Aka the rows are first sorted by primary keys and then stored per column
+2. Dictate the creation of granules, which dictates the creation of sparse primary indexes
+
+Granules are purely logical. By default, ClickHouse logically considers every 8192 rows as one "granule".
+As all the rows had been sorted by primary key, thus,
+the primary key of the first row in each granule is strictly increasing too.
+
+ClickHouse would grab each granule's first primary key and store them separately,
+forming a "sparse index" of primary keys.
+
+As a concrete example, if we have these rows inserted, and the primary key is (user_id, timestamp):
+
+
+| user_id | timestamp           | product_id | action_type |
+|---------|---------------------|------------|-------------|
+| 123     | 2026-01-01          | 1          | click       |
+| 123     | 2026-01-02          | 1          | buy         |
+| etc.    | 8190 more rows here |            |             |
+| 456     | 2026-01-01          | 2          | click       |
+
+
+Then the first 8192 rows are logically granule 1, the next granule 2, and so on.
+
+And the sparse index, stored as a file, would have these primary keys:
+
+`[(123, 2026-01-01), (456, 2026-01-01)]`
+
+And as said before, the columns would be stored separately, so there would be a user id file, timestamp file, product id file, and action type file.
+
+As a result, when we query ClickHouse and we filter on primary key,
+ClickHouse is able to use the sparse index to locate the relevant granules and avoid scanning irrelevant granules.
 
 ### Partitions
 
