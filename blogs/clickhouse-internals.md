@@ -204,13 +204,17 @@ because ClickHouse just needs to periodically delete the entire partition folder
 
 ### Skip Indexes
 
-Skip index is another mechanism for ClickHouse to avoid scanning data that do not match the filter condition for an analytical SQL query,
-at a finer granularity than partitions.
+Skip index is another mechanism for ClickHouse to avoid scanning data that do not match the filter condition.
 
-Partition lets us avoid scanning parts that are out of the time range (or other partition ranges) in their entirely.
-But can we go a step further to avoid scanning data within a part too?
+Partition lets us avoid scanning parts that are out of the time range (or other partition ranges) in their entirely at the bigger level.
 
-As an example:
+Sparse primary key index let us skip data based on primary key filters at the granules level.
+
+ClickHouse gives us one more the option to skip data at the granules level: Skip Indexes.
+As said before, sparse primary key index skips granules based on primary key,
+and now our skip indexes skip granules based on any column we configure.
+
+Consider this query:
 
 ```sql
 SELECT
@@ -224,10 +228,21 @@ WHERE
 ```
 
 Partitioning by timestamp lets us skip all the data that are not in December 2025 or February 2026.
-But we still have to scan all the parts' country and money column files within December 2025 and February 2026 partitions
-despite we only care about a purchase event if money > 10.
+If we have a skip index defined on the "money" column, then ClickHouse can skip granules within the December 2025 and February 2026 partitions.
 
-Can we make it even more efficient by skipping irrelevant data at an even finer granularity? Enters skip index.
+Here's how it works. For every granule, aka every 8192 logical rows, ClickHouse finds the min and max "money" value within that granule.
+And the skip index is created by storing all the min and max across all granules in a file, like:
+
+```python
+money_skip_index = [(123.99, 234.99), (56.99, 88.99)]
+```
+
+Then, at query time, if our query filters by `money > 100`,
+we know from the `money_skip_index` that we need to check the first granule, but not the second.
+
+By the way, skip indexes can also be configured on composite columns,
+and not just for min and max, but also for membership set to support, for example, `country IN ('US', 'China')` type of query.
+That set can be implemented as the full set or as bloom filter.
 
 ## Query execution
 
