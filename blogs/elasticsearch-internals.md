@@ -106,3 +106,65 @@ it was the first time I get some seriously hands-on with data engineering and ML
 and I was able to learn about how backend, data, and ML come together to form the architecture of modern software.
 
 ### Where Elasticsearch comes in
+
+For both vertical search engine (the searchbar within a site, like Amazon's searchbar)
+and horizontal search engine (search engine for world-wide-web, like Google) alike,
+the workflow boils down to **ingestion, indexing, searching, and tracking.**
+
+For vertical search engine, ingestion means bulk loading or listening for changes of domain data (ex. Amazon product items)
+so that they can be indexed next.
+For horizontal search engine, ingestion is a magnitude more complicated, as it means crawling the world wide web.
+
+For indexing, search engines would normalize, distill, and derive analyzed / inferred insights from the original content.
+For example, Amazon product search might first normalize the description to raw string,
+distill the information by extracting brand names mentioned in the description and converting the information to ML embeddings,
+and infer how popular this product might become given the seller's past sales volume.
+For Google search, the derived insights would include page rank, page quality score, to name a few.
+
+Then, all the original, normalized, distilled, and analyzed information will be stored to a search database
+to facilitate fast retrieval.
+Google has its own storage and retrieval engine,
+Amazon builds theirs on top of Lucene, and Github directly uses ElasticSearch.
+So this is where ElasticSearch / Lucene comes in for a complex search engine: **as the storage and retrieval engine**.
+For any of the previous steps like ingestion and content analysis, that's not for ElasticSearch to do.
+
+Now, whenever a user types in a query, specifies some filters, and hit "search", 2 workflows happen:
+
+1. Typeahead: autocomplete queries, directly search items as they type, and correct typo
+2. The actual search: after the user hit "search", the search engine would
+    - Perform query understanding
+    - Retrieval candidate items, aka items that might be relevant
+    - Rank the candidate items, aka what which items are actually relevant and how to order them
+    - Pack and return the items
+
+For typeahead, ElasticSearch exposes built-in typo correction, prefix search, and query suggestion features based on classical algorithms,
+so smaller search engines would **directly use ElasticSearch to build the typeahead experience**,
+while more robust search engines like WeChat search, TikTok Shop search, and definately Google would
+build their own typo correction and query suggestion functionalities with ML, personalization, and more.
+
+For the actual search,
+ElasticSearch of courses facilitates **classical BM25 retrieval as well as embedding cosine similarity retrieval**,
+and exposes the option to **rank the results with hard-coded weights**.
+For more robust search engines, the retrieval functionality of ElasticSearch is efficient and powerful,
+as the underlying data structures are state of the art and don't justify using other options anyways.
+But for ranking, more robust search engines frequently need to calculate personalization score,
+boost by trending metrics that need to be looked up separately,
+and by many more things that isn't within ElasticSearch.
+Thus, more robust search engines would have a separate ranking phase after the initial retrieval.
+
+Finally, robust search engines would track every user's impression, click, purchase, and other relevant business events
+to further understand the quality of each piece of content, relevant, and more.
+This means computing the all-time, hourly, etc. click-through rate of each search result,
+refund-rate, and more. ElasticSearch plays no role in the calculation of these metrics,
+and once these metrics are calculated, they can be stored elsewhere to be used during the separate ranking phase
+or be inserted into ElasticSearch in its bundled ranking capability.
+
+In short, for simple search engines,
+you don't need content analysis,
+you don't need complicated ranking,
+you don't need user behavior tracking,
+so just **dump relevant content to ElasticSearch and have it do everything**
+from retrieval and ranking to typo correction and query suggestions.
+
+For complex search engines though, ElasticSearch sits in the exact middle of the long lifecycle of a search engine's workflow
+that facilitates content **storage and retrieval**, and everything else is separate code.
