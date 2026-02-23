@@ -136,7 +136,6 @@ def load_articles_index(
         file_path = (
             _relpath(fpath, root_resolved) if store_relative_paths else fpath.as_posix()
         )
-        word_count = len(md.content.split())
         entry = ArticleIndexEntry(
             metadata=metadata,
             file_path=file_path,

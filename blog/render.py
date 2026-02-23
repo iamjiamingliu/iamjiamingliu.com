@@ -4,6 +4,12 @@ import frontmatter
 import markdown2
 import math
 from datetime import timedelta
+import re
+
+
+def count_words(text: str) -> int:
+    words = re.findall(r"\b\w+\b", text)
+    return len(words)
 
 
 def estimate_reading_time(word_count: int, wpm=150) -> timedelta:
@@ -15,7 +21,7 @@ def render_to_markdown(file_path: Path | str) -> models.ArticleMD:
     if isinstance(file_path, str):
         file_path = Path(file_path)
     payload = frontmatter.load(str(file_path))
-    word_count = len(payload.content.split())
+    word_count = count_words(payload.content)
     estimated_reading_time = estimate_reading_time(word_count)
     metadata = models.ArticleMetadata(
         **payload.to_dict(),
