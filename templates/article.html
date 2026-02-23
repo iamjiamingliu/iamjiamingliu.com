@@ -63,7 +63,7 @@
                     <div class="card-body p-3 px-md-5 py-2">
 
                         <header class="mb-4">
-                            <h1 class="display-6 fw-semibold mb-2">{{ article.metadata.title }}</h1>
+                            <h1 class="display-6 fw-bold mb-2 gradient-text">{{ article.metadata.title }}</h1>
 
                             <div class="d-flex flex-wrap align-items-center gap-2 text-muted small">
                                 <span>{{ article.metadata.category }}</span>
@@ -71,6 +71,10 @@
                                 <span>Created {{ article.metadata.created_at.strftime('%b %d, %Y') }}</span>
                                 <span class="text-muted">·</span>
                                 <span>Updated {{ article.metadata.updated_at.strftime('%b %d, %Y') }}</span>
+                                <span class="text-muted">·</span>
+                                <span>{{ article.metadata.word_count }} words</span>
+                                <span class="text-muted">·</span>
+                                <span>{{ article.metadata.estimated_reading_time.total_seconds() // 60 }} minutes read</span>
                             </div>
                         </header>
 

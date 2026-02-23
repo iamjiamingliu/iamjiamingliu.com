@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
 class ArticleMetadata(BaseModel):
@@ -11,6 +11,8 @@ class ArticleMetadata(BaseModel):
     created_at: datetime
     updated_at: datetime
     excludes_from_index: bool = False
+    word_count: int
+    estimated_reading_time: timedelta
 
 
 class ArticleMD(BaseModel):

@@ -136,7 +136,11 @@ def load_articles_index(
         file_path = (
             _relpath(fpath, root_resolved) if store_relative_paths else fpath.as_posix()
         )
-        entry = ArticleIndexEntry(metadata=metadata, file_path=file_path)
+        word_count = len(md.content.split())
+        entry = ArticleIndexEntry(
+            metadata=metadata,
+            file_path=file_path,
+        )
         all_entries.append(entry)
 
         cat = (metadata.category or "").strip() or "Uncategorized"
