@@ -160,19 +160,15 @@
 
                                                     <div class="d-flex flex-wrap gap-3 text-muted small">
                                                         <div>
-                                                            <i class="bi bi-clock me-1"></i>
                                                             Updated {{ m.updated_at.strftime("%b %d, %Y") }}
                                                         </div>
                                                         <div>
-                                                            <i class="bi bi-calendar-event me-1"></i>
                                                             Created {{ m.created_at.strftime("%b %d, %Y") }}
                                                         </div>
                                                         <div>
-                                                            <i class="bi bi-calendar-event me-1"></i>
                                                             {{ m.word_count }} words
                                                         </div>
                                                         <div>
-                                                            <i class="bi bi-calendar-event me-1"></i>
                                                             {{ m.estimated_reading_time.total_seconds() // 60 }} minutes read
                                                         </div>
                                                     </div>
