@@ -199,3 +199,80 @@ It also exposes a HTTP JSON API, supports replication and sharding, and high-lev
 The rest of this article discusses Lucene the library first,
 and then discusses how ElasticSearch sits on top of Lucene.
 OpenSearch is not discussed but its big ideas are inherited from ElasticSearch anyways.
+
+## Lucene
+
+At the top level, the Lucene library does 3 things:
+
+1. Models any searchable item as document, and models a search query as a Query object
+2. Breaks down fulltext field in a document or a query into a list of tokens
+3. Stores documents to disk and retrieve documents based on query
+
+Lucene exposes these java classes to implement each of the above bullet point:
+
+1. `Document`, `Field`, and `Query` class
+2. `Analyzer` and `QueryParser`
+3. `IndexWriter`, `IndexSearcher`, `Codec`, `Directory`, and `DirectoryReader`
+
+Let's look into each of them. My explanations are not word-to-word correct, but the big ideas should be correct.
+
+### Document and fields
+
+Document is simply a data holder object to store searchable fields each with different types.
+For ecommerce, a "product item" is a document with fields like product name (fulltext), category (keyword), price (double).
+For Github, a "git repo" is a document with fields like repo name, stars, etc.
+
+Analogous to relational databases like PostgreSQL,
+each document would be a "row" in a table.
+The difference is that Lucene does not require a strict table schema,
+thus each document could have completely different fields and Lucene can handle that just fine.
+This boils down to the fact that PostgreSQL is designed with strict data consistency philosophy,
+while Lucene doesn't care about data consistency as long as they are searchable.
+At the lower level it's because Lucene's data ingestion is on a per-segment basis (more on this later)
+instead of row by row basis,
+so the metadata with what fields exist and what's their types is on a per-segment basis instead of globally.
+ElasticSearch wraps on top of Lucene and can be configured to ensure data schema consistency though.
+
+For each field within a document, we have numeric field types that exist everywhere: double, float, and int.
+Boolean doesn't exist natively so it is achieved with int or string instead.
+
+But for string family of fields, we have something interesting here:
+Lucene exposes two types of string family fields, `Text` and `Keyword`. What's the difference?
+
+`Keyword` is the type of string we expect normally.
+We can filter it by `=`, `>`, `<`, `IN`, `LIKE`.
+Logically it's like a normal string you see in Python, C++, etc.
+
+`Text` is not "normal" in the sense that it doesn't behave as a normal string you see in Python, C++.
+Instead, `Text` field is meant to be tokenized, retrieved, and scored with BM25 or TF-IDF or any other full text matching methods.
+And `Text` is the backbone of classical search that Lucene provides.
+
+Here's a concrete example. Suppose we have a `Document` with the following fields, their types TBD:
+
+```python
+# Psuedocode
+news_article = Document(
+   id=12345,
+   title='Donald Trump visited Canada',
+   description='Today, our President Donald Trump visited Canada and talked to their prime minister, talked about trade, etc.',
+   category='Politics',
+   timestamp='2026-02-23'
+)
+```
+
+And you can imagine that, when a user types a query like _"trump's official visit to Canada"_ with a hard filter on category = politics, document 12345 should come up.
+
+So what type should we give to field `category`? It should be a `Keyword` field.
+Because we need to perform `=` on it. It should behave like a normal string in Python and C++.
+
+What about `title` and `description`? It should be a `Text` field.
+We should not perform `=` on it. Instead, we would be performing full text match like BM25 on it.
+This is because a user would almost never type the full title, but a few relevant keywords,
+and defining our field as `Text` tells Lucene to break it down as tokens and perform partial match instead of strict `=`.
+The process of breaking down a `Text` field into tokens is called text analysis and will be discussed soon.
+
+Traditionally, `Text` is what powered search.
+In recent years, with the rise of transformers embeddings,
+cosine vector similarity search has become another pillar to search.
+In response, recent updates to Lucene supports the `KNNFloatVector` field type
+to facilitate embeddings and cosine similarity match.
