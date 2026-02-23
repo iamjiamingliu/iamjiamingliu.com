@@ -168,3 +168,34 @@ from retrieval and ranking to typo correction and query suggestions.
 
 For complex search engines though, ElasticSearch sits in the exact middle of the long lifecycle of a search engine's workflow
 that facilitates content **storage and retrieval**, and everything else is separate code.
+
+### Can't we just use Postgres?
+
+Or, can't we just scan every piece of content and regex match it against the query?
+
+Of course you can. For a simple site with not much content, just scanning everything and do regex match is enough.
+ElasticSearch here would be an overkill.
+For a medium site that has some content but doesn't require many other functionalities,
+using PostgreSQL's built in `LIKE` statement or `ts_vector` is also sufficient.
+
+When there's a lot of data, we cannot afford scanning everything.
+When we need efficient search as you type, typo correction, weighted scoring,
+complex filtering rules, text analysis, facade search,
+and all the features crucial to a complete search experience,
+PostgreSQL's `ts_vector` or `LIKE` statements simply do not support these features and are too slow.
+
+Thus the need for a dedicated search database like ElasticSearch.
+
+### Lucene, ElasticSearch, and OpenSearch
+
+Lucene is the java **library** to facilitate text analysis, data structures for storage and retrieval,
+and the underlying IO interactions to manifest the data structures.
+It also comes with typo correction and other nice features needed in search.
+It is just a library, not a standalone server.
+
+ElasticSearch sits on top of Lucene by leveraging Lucene's capability and packaging it as a **standalone server**.
+It also exposes a HTTP JSON API, supports replication and sharding, and high-level declarative usage instead of imperative code.
+
+The rest of this article discusses Lucene the library first,
+and then discusses how ElasticSearch sits on top of Lucene.
+OpenSearch is not discussed but its big ideas are inherited from ElasticSearch anyways.
