@@ -464,8 +464,8 @@ we can narrow it down to the documents that are in `title_index['trump']` or `ti
 
 Of course, Lucene `Codec` would need to serialize the logical inverted index to disk,
 plus some statistics for BM25 scoring,
-plus some cool tricks to speedup top K BM25 scoring.
-Let's take a look.
+plus skiplist to facilitate docID jumping.
+Let's take a closer look.
 
 When serialized to disk, the inverted index would be manifested into multiple physical files, each with a specific role:
 
