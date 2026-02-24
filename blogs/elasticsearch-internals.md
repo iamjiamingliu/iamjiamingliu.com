@@ -429,6 +429,54 @@ Here are the most important data structures.
 
 #### Inverted Index
 
+The core of Lucene is BM25 retrieval that performs partial match on tokenized query and document fields.
+How to design a data structure to avoid scanning every document?
+
+What if we have a hashmap that records, for every token, which field / documents it appeared in. As an example:
+
+```python
+title_index = {
+   'trump': [
+      Doc(id=123, positions_appeared_in=[1, 40, 80], frequency=3),
+      Doc(id=456, positions_appeared_in=[20, 562], frequency=2),
+      ...
+   ],
+   'canada': [
+      Doc(id=123, positions_appeared_in=[70], frequency=1),
+      ...
+   ],
+   ...
+}
+
+description_index = ...
+
+# An index like this for every TEXT field
+```
+
+And that is exactly what inverted index is.
+It's a mapping from token to what documents it appears in.
+To explain the name, forward index would store for every document, what tokens appear in that document.
+Inverted index, as we see here, stores stuff inverted: for every token, which documents contains that token.
+
+With inverted index, now, suppose the user's tokenized query is [trump, official, visit, canada] and we want to BM25 match it against the title,
+then, instead of having to scan every document,
+we can narrow it down to the documents that are in `title_index['trump']` or `title_index['official']` or `title_index['visit']` or `title_index['canada']`.
+
+Of course, Lucene `Codec` would need to serialize the logical inverted index to disk,
+plus some statistics for BM25 scoring,
+plus some cool tricks to speedup top K BM25 scoring.
+Let's take a look.
+
+When serialized to disk, the inverted index would be manifested into multiple physical files, each with a specific role:
+
+1. `.tip` file: uses finite-state-transducer (FST) data structure that maps a term to a file offset in the `.tim` file
+2. `.tim` file: given a term's file offset in `.tim` file, we get a few more file pointers to `.doc` `.pos` and `.pay`. We also get the global frequency of this term across all documents in the segment, as it is needed for BM25 scoring
+3. `.doc` file: given a term's file offset in `.doc` file, we get the list of document IDs that term appear in, and the frequency this term appears in each document. Look at the earlier pseudocode, this corresponds to `id` and `frequency` for the docs
+4. `.pos` file: given a term's file offset in `.pos` file, we get the list of positions that term appear in for each document. This is `positions_appeared_in` in the earlier pseudocode. Why is this in a separate file? Because it can be configured to be turned on and off. And even when positions are enabled, it's not used in the actual BM25 scoring, it's only used for queries like PHRASE query and for text highlighting.
+5. `.pay` file: given a term's file offset in `.pos` file, we get a list of custom payloads. This is used a lot less and it's not in our pseudocode.
+
+That's 2 pointer chasing in `.tip` first and then `.tim`, then we finally read the actual data of which documents the term appear in, at what frequency, at what positions, and other payloads.
+
 #### BKDTree
 
 #### HNSW
