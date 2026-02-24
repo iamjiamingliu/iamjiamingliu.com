@@ -423,6 +423,21 @@ Thus, we need data structures to support efficient retrieval. This is where Code
 
 ### Codec
 
+For a batch of documents to be inserted, `IndexWriter` checks each field type against `Codec`
+to resolve what data structures and metadata needs to be created, and use Codec to serialize them to disk.
+Here are the most important data structures.
+
+#### Inverted Index
+
+#### BKDTree
+
+#### HNSW
+
+#### DocValues
+
+#### Stored Values
+
+
 ### Let's search!
 
 ### Putting it all together
