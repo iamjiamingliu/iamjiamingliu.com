@@ -169,7 +169,7 @@
                                                             {{ m.word_count }} words
                                                         </div>
                                                         <div>
-                                                            {{ m.estimated_reading_time.total_seconds() // 60 }} minutes read
+                                                            {{ (m.estimated_reading_time.total_seconds() / 60) | int }} minutes read
                                                         </div>
                                                     </div>
                                                 </div>

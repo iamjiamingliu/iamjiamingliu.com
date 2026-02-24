@@ -74,7 +74,7 @@
                                 <span class="text-muted">·</span>
                                 <span>{{ article.metadata.word_count }} words</span>
                                 <span class="text-muted">·</span>
-                                <span>{{ article.metadata.estimated_reading_time.total_seconds() // 60 }} minutes read</span>
+                                <span>{{ (article.metadata.estimated_reading_time.total_seconds() / 60) | int }} minutes read</span>
                             </div>
                         </header>
 

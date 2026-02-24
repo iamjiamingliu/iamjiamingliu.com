@@ -2,7 +2,6 @@ from . import models
 from pathlib import Path
 import frontmatter
 import markdown2
-import math
 from datetime import timedelta
 import re
 
@@ -14,7 +13,7 @@ def count_words(text: str) -> int:
 
 def estimate_reading_time(word_count: int, wpm=150) -> timedelta:
     minutes = word_count / wpm
-    return timedelta(minutes=math.ceil(minutes))
+    return timedelta(seconds=minutes * 60)
 
 
 def render_to_markdown(file_path: Path | str) -> models.ArticleMD:
