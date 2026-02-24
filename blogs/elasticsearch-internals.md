@@ -344,3 +344,49 @@ And `Analyzer` is the first step to using BM25 for text retrieval: breaking down
 
 Soon, we will see the rest of the picture where Lucene organizes tokens in efficient data structures to facilitate
 fast lookup and scoring.
+
+### IndexWriter
+
+### Putting it all together
+
+This is the official starter code from Lucene's docs that illustrate all the concepts we talked about.
+Note that, "codec" is not directly shown here, as by default, `Text` field would trigger the set of inverted index codec,
+int field would use BKDTree codec, KNN would use HNSW, etc. so codec happens automatically.
+
+```java
+Analyzer analyzer = new StandardAnalyzer(); // to tokenize query and doc fields alike into tokens
+
+Path indexPath = Files.createTempDirectory("tempIndex"); // create tmp folder on disk for demo
+
+try (Directory directory = FSDirectory.open(indexPath)) {   // open the disk directory
+   IndexWriterConfig config = new IndexWriterConfig(analyzer);    // use our analyzer
+   try (IndexWriter iwriter = new IndexWriter(directory, config)) {
+      Document doc = new Document();   // creates docs
+      String text = "This is the text to be indexed.";
+      doc.add(new Field("fieldname", text, TextField.TYPE_STORED));
+      iwriter.addDocument(doc);
+      // add it do writer, which will trigger inverted index codec, etc.
+      // flush it to disk eventually into segments
+      // fyi there's also a background thread merging the segments together
+   }
+
+   // Now search the index:
+   try (DirectoryReader ireader = DirectoryReader.open(directory)) {
+      IndexSearcher isearcher = new IndexSearcher(ireader);
+      // Parse a simple query that searches for "text":
+      QueryParser parser = new QueryParser("fieldname", analyzer);
+      Query query = parser.parse("text");
+      // So this uses inverted index + BM25 scoring
+      ScoreDoc[] hits = isearcher.search(query, 10).scoreDocs;
+      assertEquals(1, hits.length);
+      // Iterate through the results:
+      StoredFields storedFields = isearcher.storedFields();
+      for (int i = 0; i < hits.length; i++) {
+         Document hitDoc = storedFields.document(hits[i].doc);
+         assertEquals("This is the text to be indexed.", hitDoc.get("fieldname"));
+      }
+   }
+} finally {
+IOUtils.rm(indexPath);
+}
+```
