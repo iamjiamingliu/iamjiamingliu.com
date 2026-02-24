@@ -276,3 +276,71 @@ In recent years, with the rise of transformers embeddings,
 cosine vector similarity search has become another pillar to search.
 In response, recent updates to Lucene supports the `KNNFloatVector` field type
 to facilitate embeddings and cosine similarity match.
+
+### Analyzer
+
+In previous section, we dropped jargon like BM25 and TF-IDF to convey the idea that,
+search databases don't simply do exact equality match,
+but on partial string match and scoring.
+
+Let's zoom in to BM25 and TF-IDF.
+The entirety of Lucene's architecture is designed around BM25 and TF-IDF text matching,
+and we need to understand them first, otherwise all the text analysis tokenization, codec data structures, and text scoring would be nonsense.
+
+Suppose a user searches, _"Trump's official VISIT to Canada"_,
+out of the millions of documents in Lucene that represent news articles,
+which ones should we return? Aka which ones are relevant?
+
+At a bare-minimum, we should return documents that mention one of:
+
+1. trump
+2. official
+3. visit
+4. to
+5. canada
+
+And this is where tokenization comes in, which is the job of `Analyzer`.
+`Analyzer` allows us to define a pipeline that converts a raw document field or query string a like to a list of tokens.
+It does it in 3 customizable phases one after another:
+
+1. Characters filtering and transformations
+2. Tokenizer
+3. Tokens filtering and transformations
+
+Back to the example of _"Trump's official VISIT to Canada"_. To illustrate each of the above bullet points
+(the following explanation is incorrect for sake of simplicity):
+
+1. For each character, we want to lowercase them and remove apostrophes. Now it becomes _trump official visit to canada_
+2. Now, tokenizer breaks down the string into a list of strings. We might just break it down by word boundary which is how we normally think, so it becomes `[trump, official, visit, to, canada]`. It's also common practice to break down not just per word, but also do something called "ngram". It's a strange name but this example should illustrate the point of ngram=up to 3: `[t, r, u, m, p, tr, um, mp, tru, rum, ump, o, f, of, off...]`. The benefit is typo tolerance at the cost of extra storage. For foreign languages like Chinese, tokenization becomes harder because there's no clear whitespace separating things, so the practice is to use probability based tokenization algorithm like "jieba" or ML based partitioning
+3. Now we have a list of tokens, we apply one final round of filtering and transformation. Common practices include
+   - Removing stopwords like "to", "and", "a". They usually do not indicate relevance and only bloat up our storage
+   - Stemming verbs to their root forms. So "running" becomes "run", "visited" becomes "visit"
+   - Expanding common or custom defined synonyms. So one "iphone" might be expanded into `[iphone, cellphone, smartphone]`
+   - Adding shingles. Previously we had "ngram" that groups at letter level. Shingle is the same idea but at the token level. So [trump, visit, canada] with a shingle <= 3 would become [trump, visit, canada, trump visit, visit canada, trump visit canada]. Previously, we said that letter level ngram help with typo and typeahead; shingle doesn't help in these, instead, shingles capture the relative position ordering of neighboring tokens
+
+At the end of this process, `Analyzer` gives us a list of tokens and their original positions (if applicable).
+
+Lucene have a `StandardAnalyzer` that comes with lowercasing and word boundary splitting out of the box,
+and we have the option to add and custom as needed too.
+
+With our document `Text` fields tokenized (but not `Keyword` fields),
+upon search time, we just need to tokenize the search query with the same `Analyzer` pipeline we used to tokenize documents,
+and any document whose tokenized text fields overlap the tokenized query are considered relevant.
+
+However, simply telling which documents are relevant is not enough.
+We must also be able to tell which documents are more relevant than the other.
+
+This is where BM25 or TF-IDF comes in.
+TF-IDF stands for "term frequency - inverse document frequency".
+The idea is, we can rank which documents are more relevant to a query by weighting each token based on:
+
+1. How frequently that token appeared in that document
+2. How rare that token is across all documents. So "visit" might appear in 1 million documents, "trump" might be in 100,000, so the term "trump" gets weighted more.
+
+And BM25 is an improvement over TF-IDF by punishing long document length and normalizing too many same tokens in 1 doc.
+
+Lucene uses BM25 by default.
+And `Analyzer` is the first step to using BM25 for text retrieval: breaking down a query string or document field into tokens.
+
+Soon, we will see the rest of the picture where Lucene organizes tokens in efficient data structures to facilitate
+fast lookup and scoring.
