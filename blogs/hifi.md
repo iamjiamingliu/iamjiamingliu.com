@@ -15,7 +15,7 @@ Whenever mom and dad and I visited my aunt in middle school,
 I would blast rap and pop songs on the harman-kardon and be amazed by its thundering beats.
 I've now heard a lot more powerful speakers and listen to more than rap and pop,
 so that harman-kardon is nowhere considered "good" by my standard today now.
-Still, I guess the significance is that, that harman-kardon is an early-day proof
+Still, I guess the significance is that, that harman-kardon is a proof
 that even the kid version of me already appreciated good quality sounds, sounds beyond what cheap laptop speakers can produce.
 
 Fast-forward to sophomore year of college.
@@ -51,7 +51,7 @@ For the next 15 minutes, I carefully listened to Simon & Garfunkel's _Sound of S
 The Weekend's _Die for You_,
 and Taylor Swift's _Cruel Summer_.
 I tried to compare the monster towers to my little Sony soundbar.
-Yeah the bass was greater, the vocals were clearer, but besides that, I couldn't tell too much apart.
+Yeah the bass was greater, the vocals were clearer, but besides that, I couldn't tell the towers too much apart from my Sony.
 
 "So, how much is this thing?"
 
@@ -64,7 +64,7 @@ Yeah the bass was greater, the vocals were clearer, but besides that, I couldn't
 What? Who the heck would pay this much for a speaker? Yeah it's all great and all, but, 250k?!!
 
 I drove home and blasted the same 3 songs on my Sony soundbar.
-_Surely my Sony can sound not too much worse than the towers,_ I thought.
+_Surely my Sony sounds not too much worse than the towers,_ I thought.
 And boy was I wrong.
 The louder I turned up my Sony, the murkier the sound became.
 And no matter at what volume I played on my Sony, its impact was no match near the towers.
@@ -95,10 +95,10 @@ I've got its name down: Focal Grande Utopia.
 
 ## How it's going
 
-That $600 speaker is still with me:
+That $600 speaker system is still with me:
 the Onkyo receiver,
 Klipsch 8 inch downwards firing subwoofer,
-and 5 satellite speakers for Dolby surround.
+and 5 Klipsch satellite for Dolby surround.
 Although recently I upgraded the satellite to 2 Klipsch RP 600M bookshelf speakers.
 
 Compared to Sony soundbar, Klipsch:
@@ -121,9 +121,9 @@ I heard that, with orchestra, the difference would be astronomical.
 Every once in a while, I would visit the nearest Bestbuy with Magnolia showroom
 and lose myself in the bowers wilkins, kef, and SVSs.
 Just when I thought my Klipsch was good enough, I realized that there's always something better.
-Especially during climax of songs when there's so many instruments playing,
+Especially during the climax of songs when there's so many instruments playing,
 my Klipsch just blur everything, while for speakers like bowers wilkins,
-the vocals each instrument stay clear from each other and you can always tell them apart.
+the vocals each instrument stay clear from each other.
 
 Oh boy, if I don't plan accordingly, my wallet would lose itself too while I lost myself in the music.
 So here's my plan:
@@ -135,9 +135,9 @@ So here's my plan:
 5. Then maybe the ultimate prize, if I win the lottery (jk i dont do lottery) or something, is that 250K Focal Grande Utopia?
 
 Meh, I don't have many hobbies anyways.
-I'm just super glad I found something other than coding that I would be willing to dive into and lose myself in.
+I'm just super glad I found something other than coding that I can happily dive into and lose myself in.
 I remember when I got the Klipsch satellite,
-I spent days tuning the speaker position and Onkyo receivers config and totally just forget about time.
+I spent days tuning the speaker position and Onkyo receivers config and totally just forget about the time.
 Every other change made some difference. It was awesome.
 
 Whenever I make a new friend, I would take them to my lab room at night and blast them their favorite songs on my Klisch.
