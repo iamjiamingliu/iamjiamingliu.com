@@ -109,22 +109,22 @@ and I was able to learn about how backend, data, and ML come together to form th
 
 For both vertical search engine (the searchbar within a site, like Amazon's searchbar)
 and horizontal search engine (search engine for world-wide-web, like Google) alike,
-the workflow boils down to **ingestion, indexing, searching, and tracking.**
+the lifecycle of a search engine boils down to **ingestion, indexing, searching, and tracking.**
 
 For vertical search engine, ingestion means bulk loading or listening for changes of domain data (ex. Amazon product items)
 so that they can be indexed next.
 For horizontal search engine, ingestion is a magnitude more complicated, as it means crawling the world wide web.
 
 For indexing, search engines would normalize, distill, and derive analyzed / inferred insights from the original content.
-For example, Amazon product search might first normalize the description to raw string,
+For example, Amazon product search might first normalize the HTML description to raw string,
 distill the information by extracting brand names mentioned in the description and converting the information to ML embeddings,
 and infer how popular this product might become given the seller's past sales volume.
 For Google search, the derived insights would include page rank, page quality score, to name a few.
 
-Then, all the original, normalized, distilled, and analyzed information will be stored to a search database
+Then, all the original, normalized, distilled, and analyzed information will be stored to a search database aka engine
 to facilitate fast retrieval.
 Google has its own storage and retrieval engine,
-Amazon builds theirs on top of Lucene, and Github directly uses ElasticSearch.
+Amazon shopping builds theirs on top of Lucene, and Github directly uses ElasticSearch.
 So this is where ElasticSearch / Lucene comes in for a complex search engine: **as the storage and retrieval engine**.
 For any of the previous steps like ingestion and content analysis, that's not for ElasticSearch to do.
 
@@ -149,8 +149,7 @@ For more robust search engines, the retrieval functionality of ElasticSearch is 
 as the underlying data structures are state of the art and don't justify using other options anyways.
 But for ranking, more robust search engines frequently need to calculate personalization score,
 boost by trending metrics that need to be looked up separately,
-and by many more things that isn't within ElasticSearch.
-Thus, more robust search engines would have a separate ranking phase after the initial retrieval.
+and do many more things outside ElasticSearch.
 
 Finally, robust search engines would track every user's impression, click, purchase, and other relevant business events
 to further understand the quality of each piece of content, relevant, and more.
@@ -166,14 +165,16 @@ you don't need user behavior tracking,
 so just **dump relevant content to ElasticSearch and have it do everything**
 from retrieval and ranking to typo correction and query suggestions.
 
-For complex search engines though, ElasticSearch sits in the exact middle of the long lifecycle of a search engine's workflow
-that facilitates content **storage and retrieval**, and everything else is separate code.
+For complex search engines though, ElasticSearch sits in the middle phase of the long lifecycle of a search engine
+to facilitate just content **storage and retrieval**; everything else would be separate code on their own.
 
 ### Can't we just use Postgres?
 
-Or, can't we just scan every piece of content and regex match it against the query?
+If the original data like Amazon product items is already stored in PostgreSQL, why a separate ElasticSearch?
 
-Of course you can. For a simple site with not much content, just scanning everything and do regex match is enough.
+If we are a simple blog site and our articles are just markdown files, can't we just scan every piece of content and regex match it against the query?
+
+Of course we can. For a simple site with not much content, just scanning everything and do regex match is enough.
 ElasticSearch here would be an overkill.
 For a medium site that has some content but doesn't require many other functionalities,
 using PostgreSQL's built in `LIKE` statement or `ts_vector` is also sufficient.
@@ -186,7 +187,12 @@ PostgreSQL's `ts_vector` or `LIKE` statements simply do not support these featur
 
 Thus the need for a dedicated search database like ElasticSearch.
 
+And it is a common practice to sync data that needs to be indexed from PostgreSQL into ElasticSearch
+via a PostgreSQL change capture middle ware like Debezium and apply that change to ElasticSearch.
+
 ### Lucene, ElasticSearch, and OpenSearch
+
+The rest of the articles discusses 2 things: Lucene and ElasticSearch.
 
 Lucene is the java **library** to facilitate text analysis, data structures for storage and retrieval,
 and the underlying IO interactions to manifest the data structures.
@@ -196,9 +202,12 @@ It is just a library, not a standalone server.
 ElasticSearch sits on top of Lucene by leveraging Lucene's capability and packaging it as a **standalone server**.
 It also exposes a HTTP JSON API, supports replication and sharding, and high-level declarative usage instead of imperative code.
 
-The rest of this article discusses Lucene the library first,
-and then discusses how ElasticSearch sits on top of Lucene.
-OpenSearch is not discussed but its big ideas are inherited from ElasticSearch anyways.
+OpenSearch is ElasticSearch's complicated twin.
+Long story short, the company behind ElasticSearch "Elastic" tried to close-source ElasticSearch,
+people got worried, and forked ElasticSearch into a permanently open source project called "OpenSearch".
+OpenSearch is not discussed here but since it's the twin to ElasticSearch, we at least have to drop the name here.
+
+That was a very long writing just to give you the context. Let's finally dive in.
 
 ## Lucene
 
@@ -208,22 +217,22 @@ At the top level, the Lucene library does 3 things:
 2. Breaks down fulltext field in a document or a query into a list of tokens
 3. Stores documents to disk and retrieve documents based on query
 
-Lucene exposes these java classes to implement each of the above bullet point:
+Lucene implements each of the above phase of the life cycle with these java classes:
 
 1. `Document`, `Field`, and `Query` class
 2. `Analyzer` and `QueryParser`
 3. `IndexWriter`, `IndexSearcher`, `Codec`, `Directory`, and `DirectoryReader`
 
-Let's look into each of them. My explanations are not word-to-word correct, but the big ideas should be correct.
+Let's look into each of them.
 
 ### Document and fields
 
-Document is simply a data holder object to store searchable fields each with different types.
+Document is simply a data holder to store searchable fields each with different types.
 For ecommerce, a "product item" is a document with fields like product name (fulltext), category (keyword), price (double).
 For Github, a "git repo" is a document with fields like repo name, stars, etc.
 
 Analogous to relational databases like PostgreSQL,
-each document would be a "row" in a table.
+each document would be the "row" in a table.
 The difference is that Lucene does not require a strict table schema,
 thus each document could have completely different fields and Lucene can handle that just fine.
 This boils down to the fact that PostgreSQL is designed with strict data consistency philosophy,
@@ -241,7 +250,7 @@ Lucene exposes two types of string family fields, `Text` and `Keyword`. What's t
 
 `Keyword` is the type of string we expect normally.
 We can filter it by `=`, `>`, `<`, `IN`, `LIKE`.
-Logically it's like a normal string you see in Python, C++, etc.
+It's like a normal string you see in Python, C++, etc.
 
 `Text` is not "normal" in the sense that it doesn't behave as a normal string you see in Python, C++.
 Instead, `Text` field is meant to be tokenized, retrieved, and scored with BM25 or TF-IDF or any other full text matching methods.
@@ -266,8 +275,8 @@ So what type should we give to field `category`? It should be a `Keyword` field.
 Because we need to perform `=` on it. It should behave like a normal string in Python and C++.
 
 What about `title` and `description`? It should be a `Text` field.
-We should not perform `=` on it. Instead, we would be performing full text match like BM25 on it.
-This is because a user would almost never type the full title, but a few relevant keywords,
+We should not perform `=` on it. Instead, we would be performing partial text match like BM25 on it.
+This is because a user would almost never type the exact title, but a few relevant keywords,
 and defining our field as `Text` tells Lucene to break it down as tokens and perform partial match instead of strict `=`.
 The process of breaking down a `Text` field into tokens is called text analysis and will be discussed soon.
 
@@ -276,6 +285,17 @@ In recent years, with the rise of transformers embeddings,
 cosine vector similarity search has become another pillar to search.
 In response, recent updates to Lucene supports the `KNNFloatVector` field type
 to facilitate embeddings and cosine similarity match.
+
+Embeddings are basically, given a text like "trump visiting canada" as input , the transformer model can spit out a vector of size 768 (or 368 or however large it needs to be)
+of floats, like, `[0.23234, -0.9, 0.22, 0.001, ...]`.
+And, when we search a query, we use the model to convert it to an embedding, and retrieve documents based on the
+cosine similarity between the query vector and the document vector.
+
+Compared to traditional search, embedding allows semantic match, multilingual search, typo tolerance, and more.
+However, BM25 absolutely still shine when the user searches something specific.
+Thus, modern search retrieval uses both BM25 and embedding vector KNN.
+
+What's BM25? Discussed in the next section. Along with text tokenization analysis.
 
 ### Analyzer
 
@@ -308,7 +328,7 @@ It does it in 3 customizable phases one after another:
 3. Tokens filtering and transformations
 
 Back to the example of _"Trump's official VISIT to Canada"_. To illustrate each of the above bullet points
-(the following explanation is incorrect for sake of simplicity):
+( for sake of simplicity, the following explanation is not 100% correct):
 
 1. For each character, we want to lowercase them and remove apostrophes. Now it becomes _trump official visit to canada_
 2. Now, tokenizer breaks down the string into a list of strings. We might just break it down by word boundary which is how we normally think, so it becomes `[trump, official, visit, to, canada]`. It's also common practice to break down not just per word, but also do something called "ngram". It's a strange name but this example should illustrate the point of ngram=up to 3: `[t, r, u, m, p, tr, um, mp, tru, rum, ump, o, f, of, off...]`. The benefit is typo tolerance at the cost of extra storage. For foreign languages like Chinese, tokenization becomes harder because there's no clear whitespace separating things, so the practice is to use probability based tokenization algorithm like "jieba" or ML based partitioning
@@ -318,7 +338,7 @@ Back to the example of _"Trump's official VISIT to Canada"_. To illustrate each 
    - Expanding common or custom defined synonyms. So one "iphone" might be expanded into `[iphone, cellphone, smartphone]`
    - Adding shingles. Previously we had "ngram" that groups at letter level. Shingle is the same idea but at the token level. So [trump, visit, canada] with a shingle <= 3 would become [trump, visit, canada, trump visit, visit canada, trump visit canada]. Previously, we said that letter level ngram help with typo and typeahead; shingle doesn't help in these, instead, shingles capture the relative position ordering of neighboring tokens
 
-At the end of this process, `Analyzer` gives us a list of tokens and their original positions (if applicable).
+At the end of this process, `Analyzer` gives us a list of tokens and their original positions.
 
 Lucene have a `StandardAnalyzer` that comes with lowercasing and word boundary splitting out of the box,
 and we have the option to add and custom as needed too.
@@ -345,7 +365,13 @@ And `Analyzer` is the first step to using BM25 for text retrieval: breaking down
 Soon, we will see the rest of the picture where Lucene organizes tokens in efficient data structures to facilitate
 fast lookup and scoring.
 
+### Directory
+
 ### IndexWriter
+
+### Codec
+
+### Let's search!
 
 ### Putting it all together
 
