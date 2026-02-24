@@ -473,9 +473,20 @@ When serialized to disk, the inverted index would be manifested into multiple ph
 2. `.tim` file: given a term's file offset in `.tim` file, we get a few more file pointers to `.doc` `.pos` and `.pay`. We also get the global frequency of this term across all documents in the segment, as it is needed for BM25 scoring
 3. `.doc` file: given a term's file offset in `.doc` file, we get the list of document IDs that term appear in, and the frequency this term appears in each document. Look at the earlier pseudocode, this corresponds to `id` and `frequency` for the docs
 4. `.pos` file: given a term's file offset in `.pos` file, we get the list of positions that term appear in for each document. This is `positions_appeared_in` in the earlier pseudocode. Why is this in a separate file? Because it can be configured to be turned on and off. And even when positions are enabled, it's not used in the actual BM25 scoring, it's only used for queries like PHRASE query and for text highlighting.
-5. `.pay` file: given a term's file offset in `.pos` file, we get a list of custom payloads. This is used a lot less and it's not in our pseudocode.
+5. `.pay` file: given a term's file offset in `.pay` file, we get a list of custom payloads. This is used a lot less and it's not in our pseudocode.
 
 That's 2 pointer chasing in `.tip` first and then `.tim`, then we finally read the actual data of which documents the term appear in, at what frequency, at what positions, and other payloads.
+
+Let's look at `.doc` even closer, because this is the most important data used for BM25.
+
+The most important thing in `.doc` is what docIDs do each term appear in. There are two important mechanisms in-place:
+
+1. First, all the docIDs are sorted
+2. Then, every 128 docIDs are logically grouped into a "block"
+3. For each block, the docIDs within it are compressed by their neighbor delta. So [982342, 982346, 982368...] will become start=982342 and deltas = [0, 4, 22]. Delta compression massively saves storage and IO as each docID uses 6 bits instead of like 24 bits, and it is a well-known technique within the search engine domain. This is due to docID distribution locality for a given term. Somewhat analogous to cache locality for CPU and caching in general.
+4. Now, we also build a SkipList data structure on top of the docID blocks. This is because for a given term, we need to support the first docID after, say, docID=10000, and then skip until the next docID > 20000. As each the docIDs within each block had already been compressed, we must have a separate SkipList data structure on top of the blocks to facilitate this docID skipping mechanism.
+
+With these techniques, we save storage and facilitate docID jumping for a given term. This comes in handy during search, which will be explained in that later section.
 
 #### BKDTree
 
