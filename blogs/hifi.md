@@ -140,4 +140,10 @@ I remember when I got the Klipsch satellite,
 I spent days tuning the speaker position and Onkyo receivers config and totally just forget about time.
 Every other change made some difference. It was awesome.
 
+Whenever I make a new friend, I would take them to my lab room at night and blast them their favorite songs on my Klisch.
+It's awesome to put smiles on people's faces.
+It's awesome to hear music they like that I also like.
+
+Asking ChatGPT, Googleling, watching Youtube reviews on hifi... it's an awesome way to spend time.
+
 It's nice to have a hobby. It's nice to lose myself in something other than CS.
