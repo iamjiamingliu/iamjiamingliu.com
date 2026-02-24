@@ -488,14 +488,167 @@ The most important thing in `.doc` is what docIDs do each term appear in. There 
 
 With these techniques, we save storage and facilitate docID jumping for a given term. This comes in handy during search, which will be explained in that later section.
 
+`Text` fields first go through `Analyzer` you configured to become tokens and be stored in the inverted index.
+`Keyword` fields do not go through any tokenization and goes straight to the inverted index.
+
 #### BKDTree
 
-#### HNSW
+Inverted index stores the two types of string columns: text and keyword.
+BKDTree stores numeric scalar or vector with dimension < 8 types of columns: int and float.
+
+To illustrate with a Yelp restaurant example, these fields will each go to a BKDTree:
+
+```python
+restaurant = Document(
+   avg_price=123.99,
+   coordinate=(57.9, 23.1),       # longitude, latitude
+   price_range=(20, 100),
+)
+```
+
+Note that:
+
+1. We could store longitude and latitude as two separate fields, but BKDTree allows more efficient filtering mechanism if we store them together
+2. The max size of the vector is 8. This is because BKDTree performs well when the vector dimension is small and becomes horrible for large dimension vectors.
+3. For large dimension vectors like embeddings, Lucene offers the HNSW data structure, which will explained in a future section
+
+But what exactly is a BKDTree tree? Let's first understand binary search tree, then KDTree, and finally BKDTree.
+
+Binary search tree is a tree data structure that has the following properties:
+
+1. Every node has a value
+2. The left subtree's values must all be smaller than the parent node's value
+3. The right subtree's values must all be greater or equal to the parent node's value
+4. Thus, to build a balanced binary search tree, we pick the median as the root, and recursively build and left and right nodes from the values left and right of median
+5. Upon search time, we can traverse the node left and right to find the relevant range of values we are looking for
+
+Here's the Python pseudocode:
+
+```python
+class BinarySearchTree:
+    class Node:
+        value: int | float
+        left_child: Node | None
+        right_child: Node | None
+
+    def __init__(self, values: list[int | float]):
+        def build(vals):
+            if len(vals) == 0:
+                return None
+            mid = len(vals) // 2
+            return Node(value=vals[mid], left_child=build(vals[:mid]), right_child=build(vals[mid + 1:]))
+        values.sort()
+        self.root = build(values)
+
+    def find_between(self, small: int | float, big: int | float):
+        def traverse(node):
+            if small <= node.val <= big:
+               yield node.val
+            if small < node.val:
+               yield from traverse(node.left)
+            if node.val <= big:
+               yield from traverse(node.right)
+        yield from traverse(self.root)
+
+# Usage example
+tree = BinarySearchTree([1, 345, 35434, 24234234...])
+print(len(tree.find_between(345, 345)) > 0)     # Does 345 exist
+print(list(tree.find_between(100, 10000)))      # Which values are between 100, 10000
+```
+
+Geometrically, we can interpret the behavior of binary search tree like this:
+
+1. All the sorted values correspond to points on a line
+2. The root of partitions that line into left and right line segments
+3. And each recursive root partitions recursively into small line segments
+4. When we want to find all points between a range, to traverse the root cursively to touch on all line segments that intersect with the query (left, right) to some extent until we spit out the actual points
+
+Binary search tree lets us efficiently store and query on range of scalar int and float values.
+In the yelp restaurant example earlier, binary search tree could store the `avg_price` perfectly.
+But it only supports 1D scalar value, so it can't handle `coordinate`.
+
+KDTree stands for K-dimensional tree. And guess what it does?
+It generalizes binary search tree to any higher dimension of values.
+So KDTree can handle 2D values like `coordinate` as well as `avg_price` alike.
+
+Binary search tree partitions on a line segment in half.
+KDTree partitions a KDSpace in half along a coordinate and a split value.
+It sounds abstract, but lemme show you the pseudocode, and it would make sense easily:
+
+```python
+import random
+
+class KDTree:
+    class Node:
+        split_dimension: int
+        split_value: float | int
+        left_child: Node | None
+        right_child: Node | None
+        points: list[list[int | float]] | None
+
+    def __init__(self, values: list[list[int | float]], per_node_threshold=16):        # A list of vectors instead of a list of scalars
+       dimension = len(values[0])   # For the coordinate example, it would be 2
+       def build(vals):
+            if len(vals) == 0:
+                return None
+            if len(vals) < per_node_threshold:
+               return Node(points=vals)
+            # Pick a random split dimension, as randomness guarantee consistent performance
+            split_dimension = random.randint(0, dimension)
+            values_in_dimension = [v[split_dimension] for v in vals]
+            values_in_dimension.sort()
+            median_value_in_dimension = values_in_dimension[len(values_in_dimension) // 2]
+            smaller_points_in_dimension = [v for v in vals if v[split_dimension] < median_value_in_dimension]
+            greater_points_in_dimension = [v for v in vals if v[split_dimension] >= median_value_in_dimension]
+            return Node(
+               split_dimension=split_dimension,
+               split_value=median_value_in_dimension,
+               left_child=build(smaller_points_in_dimension),
+               right_child=build(greater_points_in_dimension)
+            )
+        self.root = build(values)
+
+    def find_between(self, lower_left_point: list[int | float], upper_right_point: list[int | float]):
+       def traverse(node):
+          if node.points:       # It's a leaf
+             for p in node.points:
+                if lower_left_point <= p <= upper_right_point:      # This is pseudocode
+                    yield p
+          else:
+             left = lower_left_point[node.split_dimension]
+             right = upper_right_point[node.split_dimension]
+             if left < node.split_value:
+                yield from traverse(node.left_child)
+             if node.split_value < right:
+                yield from traverse(node.right_child)
+       yield from traverse(self.root)
+
+# Usage example on coordinate
+points = [
+   (234, 3453),
+   (232.234, -1324.234)
+   ...
+]
+kdtree = KDTree(points)
+print(kdtree.find_between((-200, 2342), (1212, 23342)))     # Which points are between these bounding points?
+```
+
+Finally, BKDTree means block optimized KDTree,
+which is a variant of KDTree that optimizes KDTree for disk storage.
+As we know, disk storage requires fetching 4KB or block of data at once,
+and BKDTree is optimized for block IO.
+
+TODO
+
+We can see that, for fields like `avg_price` that is 1d,
+BKDTree is in essence a binary search tree serialized to disk
+For 2D fields like `coordinate`, then it behaves like KDTree.
 
 #### DocValues
 
 #### Stored Values
 
+#### HNSW
 
 ### Let's search!
 
