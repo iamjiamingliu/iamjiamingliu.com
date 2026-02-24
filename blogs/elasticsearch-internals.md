@@ -367,6 +367,20 @@ fast lookup and scoring.
 
 ### Directory
 
+Great. We have some documents with text, keyword, and numeric fields.
+And we have an analyzer configured to tokenize the text fields.
+It's time to finally save these documents to disk.
+
+We need to tell Lucene where on disk to store the documents.
+`Directory.open(filepath)` lets us to that.
+That's it. Super simple. And all the data structures, metadata, etc. will be saved there.
+
+The significance is that, `Directory` can be not just an actual disk directory,
+but it could also be a `MMAPDirectory` that is also on disk, but leverages the OS mmap mechanism to speedup IO reads.
+It could also be a `ByteBuffersDirectory` that lives only in RAM,
+which would be a lot faster than the on disk directories at the cost of using RAM.
+And from what I remember, Amazon shopping does use the RAM directory for searching popular product items.
+
 ### IndexWriter
 
 ### Codec
