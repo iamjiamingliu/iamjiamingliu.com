@@ -383,6 +383,44 @@ And from what I remember, Amazon shopping does use the RAM directory for searchi
 
 ### IndexWriter
 
+With directory and analyzer specified, we can finally throw documents to `IndexWriter`,
+which will coordinate the process of saving documents to disk.
+
+`IndexWriter` would first batch newly added documents before flushing them to disk.
+We can configure max number of documents in the staging area before a flush would be triggered,
+or by max RAM of staging documents.
+We can also just explicitly call `.flush()`.
+The reason for batching is about throughput and less IO overhead:
+if we flush documents to disk one by one,
+we would be doing too much IO, so we flush in batch instead.
+
+Upon flush, `IndexWriter`:
+
+1. Builds the important data structures like inverted index, BKDTree, HNSW graph. More on this in the next section "Codec"
+2. Adds other metadata
+3. Serializes data structures and metadata to bytes and writes them to a file to `Directory`
+
+The flushed data on disk is logically called a "segment".
+
+As we flush more and more batches, more segments are created on disk.
+When we update a document, we have to add it to `IndexWriter` to replace it in full.
+This means, the same document would be in an older segment and a newer segment.
+Upon search time, we need to search every segment and use the latest one.
+Thus, for search efficiency and reducing redundant storage,
+`IndexWriter` has a background thread to periodically and conditionally merge segments together
+by pooling together their documents, resolving the latest documents,
+building a new segment around the merged documents, and deleting the old segments.
+
+We see this recurring theme of flushing in batch and merging them later in Clickhouse, RocksDB, and so many other data storage solutions.
+This is commonly used when point lookup is less important than bulk lookup and bulk ingestion.
+PostgreSQL is update one by one than batching though, as point lookup and transactional update is critical to Postgres.
+
+Now, in theory, `IndexWriter` can literally just write the documents to disk as-is without any data structures;
+aka it would be dumping a segment as a big JSON file.
+But that means upon search, we need to check every document and compute their relevancy score which is inefficient.
+
+Thus, we need data structures to support efficient retrieval. This is where Codec comes in.
+
 ### Codec
 
 ### Let's search!
