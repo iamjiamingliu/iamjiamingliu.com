@@ -33,7 +33,7 @@ and how I connect the dots together with different technologies.
 I guess it's about adding my own touch and saying it in my own voice that matters more.
 
 So here we go. ElasticSearch and Lucene internal architecture. Explained in my own voice.
-I assume you as the reader is familiar with the usage of ElasticSearch.
+Beginner to medium level of usage experience with ElasticSearch is recommended before reading the following article.
 
 ## Context
 
@@ -41,18 +41,18 @@ I assume you as the reader is familiar with the usage of ElasticSearch.
 
 For databases like PostgreSQL,
 since almost every software application needs some structuralized data to be stored,
-its usage and intuition behind its architecture are more familiar to the general masses.
+its usage and intuition behind its architecture are relevant for a rather ubiquitous use case.
 
-For ElasticSearch, its use case is primarily for search engineering on core content or server logs.
-Yes occasionally ElasticSearch is also used as analytical databases, but it's used there a lot less so than, say, ClickHouse.
+For ElasticSearch, its use case is very specific for search engineering.
+Yes ElasticSearch can also be used for other stuff, but its core use case is search engineering which is very specific.
 
 Thus, before we dive into ElasticSearch's architecture,
-it's helpful to first understand a bit of context on the domain of search engineering,
-as it is a very specific usage domain.
+it's helpful to first understand some context on search engineering,
+as it is a very specific use case.
 
 ### Search engineering
 
-At a very abstract level, many software products are all about [domain driven design](https://en.wikipedia.org/wiki/Domain-driven_design).
+At a very abstract level, software product is all about [domain driven design](https://en.wikipedia.org/wiki/Domain-driven_design).
 In my taxonomy, a software must facilitate:
 
 1. Users' discovery of domain objects
@@ -60,21 +60,21 @@ In my taxonomy, a software must facilitate:
 3. Computer derived analysis on business events
 4. Computer inferred prediction for relevant business forecasts
 
-Take Amazon shopping as an example. To plug it into the above 4 bullet points:
+Take Amazon shopping as an example. To plug it into the above taxonomy:
 
-1. The domain objects in this case includes products for sale. Users must browse categories, search for, or get recommended products
-2. The user triggered workflows include adding products to shopping cart, purchasing items, and requesting for refund.
-3. The computer derived analysis include how many users viewed a particular item last hour and what's the conversion rate.
-4. The computer inferred prediction include which products are inferred to be similar and what's the predicted demand for a product
+1. The domain objects: products for sale. Users must browse categories, search for, or get recommended products
+2. The user triggered workflows: adding products to shopping cart, purchasing items, and requesting for refund.
+3. The computer derived analysis: how many users viewed a particular item last hour and what's the conversion rate.
+4. The computer inferred prediction: which products are inferred to be similar and what's the predicted demand for a product
 
-Take any other well known internet-scale software, and they will fit these 4 bullet points in one way or another.
+Take any other well known internet-scale software, and they will fit this 4 bullet points taxonomy in one way or another.
 
 And each of the 4 bullet points **roughly** correspond to 4 different but overlapping and intertwined domains of software engineering:
 
 1. Content discovery: search and recommendation engineering
-2. Backend engineering: all about workflows, business rules, and state changes
-3. Data engineering: all about analyzed / derived data
-4. ML engineering: all about predicting
+2. Workflows, business rules, and state changes: backend engineering
+3. Analyzed / derived data: data engineering
+4. Predicted and inferred data: ML engineering
 
 So we see that content discovery sits at the first layer of the user journey,
 because without them, the users won't even know what is there.
@@ -92,24 +92,29 @@ plus implicit intent analyzed from the user query and past user behavior, trendi
 
 ### The beauty of search engineering
 
-So in a way, search engineering uses recommendation engineering, as the search results are often times personalized.
-Actually, search engineering also uses data engineering, as it needs metrics like item click-through rate
+The beauty of search engineering is that, search engineering encompasses so many disciplines.
+Search engineering encompasses recommendation engineering, as the search results are often times personalized.
+Search engineering also encompasses data engineering, as it needs metrics like item click-through rate
 to boost search results, and computing such metrics is data engineering.
+Of course, search engineering is also backend engineering, as it needs databases, APIs, microservices, to name a few.
 Finally, search engineering definitely uses ML engineering too,
 as the latest retrieval technology involves using text embeddings and rankings generated by transformer models,
 content and query analysis powered by NLP NER, and many more.
 
-This is why I was so fascinated with search engineering and decided to build my own search engine project [SearchGit](/projects).
-This experience allowed me to learn about and practice backend, data engineering, and ML engineering
-all at once;
-it was the first time I get some seriously hands-on with data engineering and ML engineering;
-and I was able to learn about how backend, data, and ML come together to form the architecture of modern software.
+This is why I was so fascinated with search engineering and decided to build my own search engine project [SearchGit](/projects),
+so that I can hone my skills in all the disciplines search engineering encompasses.
+This experience was the first time I get some seriously hands-on with data engineering and ML engineering;
+I saw and practiced how everything comes together, it was great.
 
 ### Where Elasticsearch comes in
 
-For both vertical search engine (the searchbar within a site, like Amazon's searchbar)
-and horizontal search engine (search engine for world-wide-web, like Google) alike,
-the lifecycle of a search engine boils down to **ingestion, indexing, searching, and tracking.**
+To understand where ElasticSearch comes in the big picture,
+we need to first understand the lifecycle of vertical and horizontal search engines.
+
+The lifecycle of a search engine boils down to **ingestion, indexing, searching, and tracking.**
+And there are two types of search engines: vertical and horizontal.
+Vertical search engine is the searchbar within a site, like Amazon's searchbar.
+Horizontal search engine is for world-wide-web, like Google.
 
 For vertical search engine, ingestion means bulk loading or listening for changes of domain data (ex. Amazon product items)
 so that they can be indexed next.
@@ -194,12 +199,12 @@ via a PostgreSQL change capture middle ware like Debezium and apply that change 
 
 The rest of the articles discusses 2 things: Lucene and ElasticSearch.
 
-Lucene is the java **library** to facilitate text analysis, data structures for storage and retrieval,
+Lucene is the java **search library** to facilitate text analysis, data structures for storage and retrieval,
 and the underlying IO interactions to manifest the data structures.
 It also comes with typo correction and other nice features needed in search.
 It is just a library, not a standalone server.
 
-ElasticSearch sits on top of Lucene by leveraging Lucene's capability and packaging it as a **standalone server**.
+ElasticSearch sits on top of Lucene by leveraging Lucene's capability and packaging it as a **standalone search server**.
 It also exposes a HTTP JSON API, supports replication and sharding, and high-level declarative usage instead of imperative code.
 
 OpenSearch is ElasticSearch's complicated twin.
