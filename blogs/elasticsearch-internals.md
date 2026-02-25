@@ -230,11 +230,11 @@ Lucene implements each of the above phase of the life cycle with these java clas
 
 Let's look into each of them.
 
-### Document and fields
+### Documents
 
 Document is simply a data holder to store searchable fields each with different types.
-For ecommerce, a "product item" is a document with fields like product name (fulltext), category (keyword), price (double).
-For Github, a "git repo" is a document with fields like repo name, stars, etc.
+For ecommerce, a document could represent "product item" with fields like product name, category, and price.
+For Github, a document could represent "git repo" with fields like repo name, stars, etc.
 
 Analogous to relational databases like PostgreSQL,
 each document would be the "row" in a table.
@@ -247,11 +247,57 @@ instead of row by row basis,
 so the metadata with what fields exist and what's their types is on a per-segment basis instead of globally.
 ElasticSearch wraps on top of Lucene and can be configured to ensure data schema consistency though.
 
-For each field within a document, we have numeric field types that exist everywhere: double, float, and int.
-Boolean doesn't exist natively so it is achieved with int or string instead.
+### Fields
 
-But for string family of fields, we have something interesting here:
-Lucene exposes two types of string family fields, `Text` and `Keyword`. What's the difference?
+Lucene offers a rich set of fields for us to add into a document, differentiated in these regards:
+
+1. Numeric or textual
+2. 32 bit or 64 bit? Aka double or float? Long or int?
+3. Single valued vs multi-valued
+4. Used for filtering, or used for sorting and aggregation, or used for storage only
+5. (for textual fields) whether to apply text analysis on it
+
+And based on different field types, Lucene would use different data structures to index / store them.
+This will be explained in depth in [codec](#codec).
+
+Here are the most commonly used field types:
+
+| Name                        | Type                                | Size    | Single or multi                            | Purpose                                                                                                 |
+|-----------------------------|-------------------------------------|---------|--------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| TextField                   | textual                             | vary    | single                                     | For BM25 or TF-IDFT fulltext search. This is the backbone of classical text search                      |
+| StringField                 | textual                             | vary    | single                                     | For exact string comparison                                                                             |
+| IntPoint                    | numeric int                         | 32 bits | multi. max 8                               | For filtering                                                                                           |
+| LongPoint                   | numeric int                         | 64 bits | multi. max 8                               | For filtering                                                                                           |
+| FloatPoint                  | numeric float                       | 32 bits | multi. max 8                               | For filtering                                                                                           |
+| DoublePoint                 | numeric float                       | 64 bits | multi. max 8                               | For filtering                                                                                           |
+| NumericDocValuesField       | numeric                             | 64 bits | single                                     | For sorting and aggregation                                                                             |
+| SortedDocValuesField        | textual                             | vary    | single                                     | For sorting and aggregation                                                                             |
+| SortedNumericDocValuesField | numeric                             | 32 bits | multi                                      | For sorting and aggregation                                                                             |
+| SortedSetDocValuesField     | textual                             | vary    | multi                                      | For sorting and aggregation                                                                             |
+| KnnFloatVectorField         | numeric float                       | 32 bits | multi, usually very large like 512 or 1028 | For cosine or other types of nearest neighbor search on vectors. This is the backbone of AI text search |
+| StoredField                 | textual or float. any bytes is fine | vary    | multi                                      | For storing the original data. If you don't use this, Lucene cannot return to you the actual value      |
+
+For numeric field type, Lucene gives us these options:
+
+- `IntPoint`
+- `LongPoint`
+- `DoublePoint`
+- `FloatPoint`
+- `NumericDocValuesField`
+- `SortedNumericDocValuesField`
+
+The first 4 `Point` family numeric fields are used for filtering.
+They can be a scalar, or a vector. The difference is int vs float and their size.
+So if we want to filter a product's price to be between 40.99 to 100.99,
+we would need to use `DoublePoint` or `FloatPoint`.
+If it's an int field, we would use `IntPoint` or `LongPoint`.
+If it's longitude and latitude, we can put it into one field called "location" and be of type `DoublePoint`
+and we can filter it to be between (-123.234, 40.2) to (23.5, 89.2).
+
+The last 2 `DocValues` family numeric fields are not used for filtering, but for aggregation and sorting.
+`NumericDocValuesField` requires each field to be a scalar, while `SortedNumericDocValuesField` is for
+
+Now for string family of fields. We have 2 options: `Text` and `Keyword`. What's the difference?
 
 `Keyword` is the type of string we expect normally.
 We can filter it by `=`, `>`, `<`, `IN`, `LIKE`.
