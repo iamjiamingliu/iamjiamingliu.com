@@ -494,15 +494,16 @@ With these techniques, we save storage and facilitate docID jumping for a given 
 #### BKDTree
 
 Inverted index stores the two types of string columns: text and keyword.
-BKDTree stores numeric scalar or vector with dimension < 8 types of columns: int and float.
+
+BKDTree stores numeric types of columns: int and float. The numeric can be scalar or vector.
 
 To illustrate with a Yelp restaurant example, these fields will each go to a BKDTree:
 
 ```python
 restaurant = Document(
-   avg_price=123.99,
-   coordinate=(57.9, 23.1),       # longitude, latitude
-   price_range=(20, 100),
+   avg_price=123.99,    # Scalar
+   coordinate=(57.9, 23.1),       # Vector of dimension 2: longitude, latitude
+   price_range=(20, 100),         # Vector of dimension 2
 )
 ```
 
@@ -514,7 +515,8 @@ Note that:
 
 But what exactly is a BKDTree tree? Let's first understand binary search tree, then KDTree, and finally BKDTree.
 
-Binary search tree is a tree data structure that has the following properties:
+As a must learn for university computer science curriculum,
+binary search tree is a tree data structure that has the following properties:
 
 1. Every node has a value
 2. The left subtree's values must all be smaller than the parent node's value
@@ -572,7 +574,7 @@ It generalizes binary search tree to any higher dimension of values.
 So KDTree can handle 2D values like `coordinate` as well as `avg_price` alike.
 
 Binary search tree partitions on a line segment in half.
-KDTree partitions a KDSpace in half along a coordinate and a split value.
+KDTree partitions a higher dimensional space in half along a coordinate and a split value.
 It sounds abstract, but lemme show you the pseudocode, and it would make sense easily:
 
 ```python
@@ -586,12 +588,13 @@ class KDTree:
         right_child: Node | None
         points: list[list[int | float]] | None
 
-    def __init__(self, values: list[list[int | float]], per_node_threshold=16):        # A list of vectors instead of a list of scalars
+    # The values stored would be a list of 1d or 2d or any higher dimension point
+    def __init__(self, values: list[list[int | float]], leaf_capacity=16):
        dimension = len(values[0])   # For the coordinate example, it would be 2
        def build(vals):
             if len(vals) == 0:
                 return None
-            if len(vals) < per_node_threshold:
+            if len(vals) <= leaf_capacity:
                return Node(points=vals)
             # Pick a random split dimension, as randomness guarantee consistent performance
             split_dimension = random.randint(0, dimension)
@@ -638,7 +641,12 @@ which is a variant of KDTree that optimizes KDTree for disk storage.
 As we know, disk storage requires fetching 4KB or block of data at once,
 and BKDTree is optimized for block IO.
 
-TODO
+Lucene's BKDTree borrows some ideas from the [2003 BKDTree paper](https://users.cs.duke.edu/~pankaj/publications/papers/bkd-sstd.pdf)
+with a few variations.
+Lucene's BKDTree uses the following rules to ensure the logical KDTree remains performant on disk:
+
+1. For each leaf node, Lucene's BKDTree strives to store up to 1024 points. This is so that a leaf node is large enough to fit in 1 or multiple disk blocks of 4KB
+2. For all the intermediate nodes, Lucene's BKDTree would store them compactly as a bytearray and flush them to disk. This would mean the root, and many shallow nodes, would fit in the first disk block, then a few more disk blocks are needed to traverse until the relevant leaf node. But with MMAP directory on top, it's expected that the disk blocks carrying shallower nodes should be cached in RAM and thus reduce disk IO
 
 We can see that, for fields like `avg_price` that is 1d,
 BKDTree is in essence a binary search tree serialized to disk
