@@ -15,7 +15,7 @@ The following article are **subjective** observations and opinions based on my s
 The following article references ideas from [big ideas of leadership](/blogs/big-idea-of-leadership.md),
 skim it through if you haven't :)
 
-Real leadership can get complicated.
+Leadership is complicated.
 It is never the case that someone is leading strictly within one level of leadership principles.
 Rather, one would be leading with principles across the different levels I categorized here,
 depending on their role, experience level, and style.
@@ -55,4 +55,39 @@ Many of these skills carry over to the next level of leadership.
 
 ## The People Manager
 
-## The Leader
+At this level, the leader concerns themselves with one level above workflows and processes: the people that power them.
+
+Whereas the project manager is all about projects,
+the people manager is all about team / sub-organization level mission, org chart, workflows, incentives, rules, and culture.
+
+
+Thus, the role as a people manager includes:
+
+1. Understand and continuously define the team / sub-organization's scope and mission with higher level stakeholders
+2. Secure sufficient resources from higher level stakeholders
+3. Recruit talented, committed, and collaborative individuals contributors or lower level people managers
+4. Assemble the team in an effective organization chart by giving everyone clear ownership of responsibilities and defining clear flow of communication and collaboration
+5. Establish incentives relevant to each team member, great work ethics, non-conflicting collaboration and communication, and reasonable logistical policies
+6. Gravitate the team's tactical and strategic direction towards the overall scope and mission
+7. Stay aware of what everyone is up to and offer support and advice as needed
+8. Handle crisis: internal people conflicts, external breaking news, etc.
+9. Cultivate and maintain good rapport, communication, and collaboration with higher level stakeholders, same level teams, and lower level teammates
+10. Be the face of the team / sub-organization
+11. Adjust aspects of the team / sub-organization accordingly to internal or external change drivers
+
+
+The role is less so of an execution role, and much more so of traditional sense of management and leadership.
+
+To do well as a people manager, the leader needs to:
+
+1. TODO
+
+And, the leader must not:
+
+1. Micromanage, unless during crisis or something super important
+2. Disrespect people
+3. Stir up politics
+4. Be out of touch
+5. Disengage from what everyone is up to
+
+## The Strategic Leader
