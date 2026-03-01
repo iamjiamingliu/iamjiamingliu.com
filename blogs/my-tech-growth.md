@@ -68,9 +68,13 @@ I do not achieve 5 anywhere yet.
 
 ## What I Don't Know
 
+Never got hands on with any of these:
+
 - Hardware
 - Low level kernel stuff
 - Computer security
+- Android, iOT, and other frontends
+- Edge computing
 
 ## My Builder Journey
 
