@@ -132,6 +132,7 @@ Thus, from my understanding, at the highest level of leadership, a strategic exe
 
 1. In light of all the changes, steer the organization to further its lifecycle and continue to deliver its missions
 2. Be the figure-head and top-diplomat of the organization
+3. Be the top decision maker and strategist on people, money, and mission
 
 It's like, in response to all the shit that happens, you still wanna advance the organization to fulfill its missions,
 so as the strategic executive you juggle the existing systems here and there.
