@@ -91,4 +91,50 @@ And, the leader must not:
 4. Be out of touch
 5. Disengage from what everyone is up to
 
-## The Strategic Leader
+## The Strategic Executive
+
+System is already in place.
+So in a static world, we just need a lot of people manager with recursive people managers and individual contributors,
+then the organization's missions will be fulfilled.
+
+But we live in a dynamic world, dynamic in the sense that, everything changes for better or worse. Change could mean:
+
+1. Global events. An armed conflict. An economic sanction. Tariffs. A re-opened relation with another country.
+2. National, state, and local policy changes. Decrease in tax. Increase in minimal wage. No alcohol can be sold after 1am.
+3. Market events. Economy is better, so there's more market demand.
+4. Technological breakthroughs. Someone just discovered the Transformer AI architecture and published the paper on it.
+5. Supply chain events. A supplier raised the price. Another bankrupted. We have a old supply chain provider wanting to do business again.
+6. Competitor events. A competitor is struggling, should we buy them or let it die? Another competitor just secured 100 million funding.
+7. Customer events. If B2B, a customer just had a technical breakthrough, and now has the need for a new type of product we can provide them. If B2C, then there's a serious boycotting going on against us
+8. Internal events. Our head of AI got poached. Our headhunter is able to convince a god-tier salesman from a competitor to join us instead.
+9. Legal conflicts. A customer sued us. A contractor sued us. Somebody is suing us.
+10. Whatever random shit that happens. An alligator attacked a customer's kid in our hotel resort (Walt Disney example)
+
+On another axis, a company is also driven by its own lifecycle. Lifecycle could mean:
+
+1. Our company is on the rise, so we need to try to innovate more products and services
+2. Our company culture is rotting
+3. Our company is running out of cashflow
+4. Our company secured 1 billion funding
+5. Our company is about to go public on NYSE exchange
+6. Our company is about to go be delisted on NYSE exchange
+
+Nothing stays but change.
+
+For an organization, well-designed existing systems should be able to absorb
+some aspects the different dimensions, scopes, and magnitudes of changes that happen in the world.
+They should also be able to autonomously push themselves in their lifecycle.
+
+However, for many super important things,
+existing systems isn't capable to absorb it in entirety unless the top leadership steps in to contribute some effort and steer the ship.
+
+Thus, from my understanding, at the highest level of leadership, a strategic executive's role includes:
+
+1. In light of all the changes, steer the organization to further its lifecycle and continue to deliver its missions
+2. Be the figure-head and top-diplomat of the organization
+
+What are the qualities and skills needed at the strategic executive level?
+
+I don't know.
+I mean I can list out some cliché ones, but from my student leadereship experience, I've never dealt with any strategic things beyond a school scope.
+Thus, I will leave this part empty as I am not qualified enough to discuss it.
