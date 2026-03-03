@@ -137,6 +137,11 @@ Thus, from my understanding, at the highest level of leadership, a strategic exe
 It's like, in response to all the shit that happens, you still wanna advance the organization to fulfill its missions,
 so as the strategic executive you juggle the existing systems here and there.
 
+So much had been said about leadership being a hands-on, push style role;
+"Stewardship", "Run the company", "Executive Officer", such titles strongly imply being hands-on and directing around.
+But at a higher level, leadership really is a mix of reactive, hands-off empowering others kind of role,
+plus decision-making, plus some push style role.
+
 What are the qualities and skills needed at the strategic executive level?
 
 I don't know.
