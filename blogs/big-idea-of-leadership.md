@@ -1,32 +1,36 @@
 ---
-title: The Big Idea of Leadership
+title: The Big Ideas of Leadership
 description: What does managing an organization really boil down to?
 tags: [ ]
 category: Leadership
 created_at: 2026-02-15 0:44:57
-updated_at: 2026-02-15 0:44:57
+updated_at: 2026-03-06 14:01:57
 ---
 
 ## Foreword
 
 I'm NOT a corporate manager.
-However, I've been actively involved with student leadership since middle school.
-Yes, it's a common place for someone to be involved in student leadership,
-but for me, I wasn't just involved: I avidly thought hard about the **fundamental conceptual** behind leadership and
-management by reading books, blogs, and comments,
-applying what I read to lead endeavors with concrete outcomes, and correcting my beliefs from errors.
+However, I've been actively involved with student leadership for 7 years now.
+Yes, it's common for someone to simply hold student leadership titles,
+but for me, I went beyond the titles:
+I avidly thought hard about the **fundamental conceptual** beneath leadership and management.
+I digested books, blogs, and talks,
+observed how others lead,
+applied what I saw to my leadership endeavors,
+reflected on what I did right and wrong,
+and corrected myself from the iterations.
 
-This blog captures my belief on what managing an organization really boils down to.
+This blog captures my understanding on what managing an organization really boils down to.
 It's not an exhausting listing, just the big ideas.
-Yes, I acknowledge that everything here is backed by my student but not corporate leadership,
+Everything here is backed by my student but not corporate leadership experience,
 but I think the big ideas do carry over.
 
 ## The goal
 
-The goal of a leader is:
+The goal of a leader is, within an organization:
 
 1. Given a set of resources: human, money, authority, etc.
-2. Given a hierarchy of missions, some are one time and others continuous
+2. Given a hierarchy of missions
 3. Do whatever it takes to use the above set of resources to fulfill the missions
 
 ## The bootstrapping phase
@@ -36,7 +40,7 @@ For a new organization, the leader(s) must bootstrap the organization by:
 1. Bootstrap the set of resources
     - Recruit the team
     - Secure funding
-    - Establish authority if it's a self-bootstrapped endeavor, otherwise it's given to you
+    - Secure
 2. Define its hierarchy of missions
     - Why does this organization exist? To create value in some area.
     - What kinds of value? Money, convenience, happiness, anything that is good
@@ -59,6 +63,8 @@ growing an organization means adding, subtracting, and optimizing for:
 3. The products and services, processes and workflows, people structure, and incentives, rules, and culture.
    - This part is driven by changing resources and hierarchy of missions
    - And or, driven by the need to be more efficient
+
+This is the most exciting phase.
 
 ## The maintenance phase
 
@@ -97,7 +103,7 @@ But, here's my big ideas on leadership transition. Whenever the leader needs to 
 
 Then the leadership transition means:
 
-1. Scout potential replacements, if it's in the leader's control
+1. Scout potential replacements
 2. Identify and settle on the best replacement
 3. Empower the new leader to establish their own top leadership team
 4. Empower the new leader to adjust the organization's missions, resources, implementations, etc. as needed
