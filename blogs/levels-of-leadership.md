@@ -4,8 +4,7 @@ description: What level of principles is someone leading at?
 tags: [ ]
 category: Leadership
 created_at: 2026-02-25 10:38:57
-updated_at: 2026-02-25 10:38:57
-excludes_from_index: True
+updated_at: 2026-03-06 14:14:57
 ---
 
 ## Foreword
@@ -52,8 +51,6 @@ To do well as a project manager, the leader just needs to:
 6. Knows how to keep track of requirements, todos, and deadlines
 7. Care about the project
 
-Many of these skills carry over to the next level of leadership.
-
 ## The People Manager
 
 At this level, the leader concerns themselves with one level above workflows and processes: the people that power them.
@@ -77,11 +74,15 @@ Thus, the role as a people manager includes:
 11. Adjust aspects of the team / sub-organization accordingly to internal or external change drivers
 
 
-The role is less so of an execution role, and much more so of traditional sense of management and leadership.
+When we talk about a "manager", this is what comes up in our head.
 
 To do well as a people manager, the leader needs to:
 
-1. TODO
+1. Understand human incentives, human psychology, and human compassion
+2. Be great at designing organizational chart, communication patterns, and collaboration patterns
+3. Handle interpersonal stuff well
+4. Present an inspiring, approachable image to the team
+5. Be great at cultivating team culture and morale
 
 And, the leader must not:
 
@@ -93,9 +94,15 @@ And, the leader must not:
 
 ## The Strategic Executive
 
+The Project Manager deals with workflows and processes,
+the People Manager deals with team-wide organizational chart, incentives, and all people related things,
+and finally the Strategic Executive deals with organizational-wide missions, resources, organizational chart,
+and everything at the top strategic level.
+
 System is already in place.
-So in a static world, we just need a lot of people manager with recursive people managers and individual contributors,
-then the organization's missions will be fulfilled.
+So in a static world, we just need a lot of people manager, project managers, and individual contributors,
+then the organization should run itself with existing workflows and processes, org chart, resources, and mission.
+In a static world, there won't be that much for the Strategic Executive to do.
 
 But we live in a dynamic world, dynamic in the sense that, everything changes for better or worse. Change could mean:
 
@@ -104,13 +111,13 @@ But we live in a dynamic world, dynamic in the sense that, everything changes fo
 3. Market events. Economy is better, so there's more market demand.
 4. Technological breakthroughs. Someone just discovered the Transformer AI architecture and published the paper on it.
 5. Supply chain events. A supplier raised the price. Another bankrupted. We have a old supply chain provider wanting to do business again.
-6. Competitor events. A competitor is struggling, should we buy them or let it die? Another competitor just secured 100 million funding.
+6. Competitor events. A competitor is struggling, should we buy them or let it die? Another competitor just secured 100 million funding. And another industry is encroaching our business.
 7. Customer events. If B2B, a customer just had a technical breakthrough, and now has the need for a new type of product we can provide them. If B2C, then there's a serious boycotting going on against us
-8. Internal events. Our head of AI got poached. Our headhunter is able to convince a god-tier salesman from a competitor to join us instead.
+8. Internal events. Our head of AI got poached. Our headhunter is able to convince a god-tier salesman from a competitor to join us instead. One of our business units is booming, another is dying, another is going through internal strife.
 9. Legal conflicts. A customer sued us. A contractor sued us. Somebody is suing us.
 10. Whatever random shit that happens. An alligator attacked a customer's kid in our hotel resort (Walt Disney example)
 
-On another axis, a company is also driven by its own lifecycle. Lifecycle could mean:
+On another axis, a company is dynamic in the sense that, it is on a ticking-clock driven by its own lifecycle. Lifecycle could mean:
 
 1. Our company is on the rise, so we need to try to innovate more products and services
 2. Our company culture is rotting
@@ -130,20 +137,26 @@ existing systems isn't capable to absorb it in entirety unless the top leadershi
 
 Thus, from my understanding, at the highest level of leadership, a strategic executive's role includes:
 
-1. In light of all the changes, steer the organization to further its lifecycle and continue to deliver its missions
+1. In light of all the changes, steer the organization to further its lifecycle and continue to deliver its evolving missions
 2. Be the figure-head and top-diplomat of the organization
 3. Be the top decision maker and strategist on people, money, and mission
-
-It's like, in response to all the shit that happens, you still wanna advance the organization to fulfill its missions,
-so as the strategic executive you juggle the existing systems here and there.
 
 So much had been said about leadership being a hands-on, push style role;
 "Stewardship", "Run the company", "Executive Officer", such titles strongly imply being hands-on and directing around.
 But at a higher level, leadership really is a mix of reactive, hands-off empowering others kind of role,
-plus decision-making, plus some push style role.
+plus decision-making, plus some push style role for innovation and crisis handling.
 
 What are the qualities and skills needed at the strategic executive level?
 
 I don't know.
-I mean I can list out some cliché ones, but from my student leadereship experience, I've never dealt with any strategic things beyond a school scope.
-Thus, I will leave this part empty as I am not qualified enough to discuss it.
+I mean I can list out some cliché ones:
+
+1. Have a thorough understanding of the organization, the industry, and the world
+2. Appreciate and be great at continuous innovation
+3. Be inspiring
+4. Understand the nitty-gritty of corporate law, finance, and human resources
+
+
+But from my student leadership experience,
+I've never dealt with any strategic things beyond a school scope.
+Thus, I acknowledge my weakness in this final part of the writing as I am not qualified enough to discuss it.
