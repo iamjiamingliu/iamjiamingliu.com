@@ -63,9 +63,68 @@ Along the way, I did competitive programming and research as explained in their 
 
 ### CLI apps
 
-### TKInter apps
+You know those YouTube tutorials from freecodecamp?
+That's how I got started. Everything started with this video in freshman year of high school:
+
+<iframe src="https://www.youtube.com/embed/rfscVS0vtbw" title="Learn Python - Full Course for Beginners [Tutorial]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Absolutely legendary video. I made it from this to OpenAI. Holy crap.
+
+Anyways. Throughout this video, several exercises, from a simple CLI calculator to mad lib game,
+established the theme of my first few months with coding.
+I built the classic number guessing game, hangman, rabbit population simulation (because biology class was teaching about it),
+tower of hannoi, and many more.
+
+At some point, my Python interpreter stopped working, so I hopped on repl.it (the awesome online IDE before it became just another vibe coding platform)
+and coded all of my CLI there.
+I implemented basic password login.
+I implemented storage with dumping data to pickle and json.
+I tried web scraping with BeautifulSoup,
+I tried SQLite and failed to understand SQL for several weeks (before it ultimately became the love of my life)
+I tried many things...
+
+I just left middle school from Maryland and joined high school in California,
+so, to salvage a friendship, I invited a great friend of mine back in Maryland to hop on repl.it and code stuff together.
+I never get bored. Every runtime error only trigger my excitement to conquer even more.
+He didn't share my enthusiasm though, so after a few coding sessions together, he quit.
+He didn't get very far.
+Imagine how far he would have got too if he stayed for all the subsequent endeavors I did...
+
+### TKInter and web apps
+
+I thought real production apps aren't in CLI, but in GUI.
+In hindsight that's statement was not completely true, because many developer apps are in the form of CLI,
+but I was right to conclude that consumer-facing apps are GUI though.
+
+So I googled how to do GUI in Python, and of course, the `TKinter` library came up.
+So I binge-read and followed all the tutorials on TKinter.
+Then, I went out to build a GUI desktop app for SQLite DB management,
+calculator, chat room, and more.
+
+Then I tried HTML frontend with Flask, starting with this video:
+
+<iframe src="https://www.youtube.com/embed/MwZwr5Tvyxo?list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH" title="Python Flask Tutorial: Full-Featured Web App Part 1 - Getting Started" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+Actually, I tried Django first. Then my stupid brain couldn't understand all of its complexity.
+I was frustrated until I found out about flask, then I was relieved.
+A few years later I look back at Django, and I still think it's still too complicated than it needs to be.
+
+As I was building all of these random things, COVID came.
+I never paid attention in my Zoom classes,
+I literally was just coding and blasting music from Youtube with ads blocker on.
+I carried over this habit to this day:
+_I don't go to classes, or even when I go, I don't pay attention. I learn on my own.
+And when I code, I blast music. Now on [my hi-fi gears](/blogs/hifi.md) though._
+
+### Ambedu and Trookio
 
 ### Leetdeal
+
+first users of fastapi!
+
+studying all the UIs
+
+web scraping perfected my HTML and UI design
 
 ### TinoCS
 
@@ -138,4 +197,10 @@ Never got hands on with any of these:
 2. Continue getting hands on with data engineering. I need to get hands on with Apache Spark and Airflow
 3. Finish writing about backend internals. Lucene / ElasticSearch is underway, then I should write about Redis, Kafka, MiniIO, and FastAPI. Writing them aloud weeds out the black spots in my understanding.
 
-As always, I must stay curious.
+## Conclusion
+
+There's many more small things I've built along the way, that I have forgot...
+
+Man, I was a different beast back then. I was easily curious. I was easily excited.
+
+I wish I could stay curious. Stay passionate.
