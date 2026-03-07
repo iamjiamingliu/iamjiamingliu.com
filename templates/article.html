@@ -21,19 +21,7 @@
 
                                 <div class="fw-semibold lh-sm mb-3">{{ article.metadata.title }}</div>
 
-                                <div class="d-flex flex-column gap-2 small">
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-muted">Created</span>
-                                        <span>{{ article.metadata.created_at.strftime('%b %d, %Y') }}</span>
-                                    </div>
-                                    <div class="d-flex justify-content-between">
-                                        <span class="text-muted">Updated</span>
-                                        <span>{{ article.metadata.updated_at.strftime('%b %d, %Y') }}</span>
-                                    </div>
-                                </div>
-
                                 {% if article.table_of_content %}
-                                    <hr>
                                     {# Mobile-friendly collapsible TOC #}
                                     <details class="d-lg-none">
                                         <summary class="small text-muted">Show / hide</summary>
