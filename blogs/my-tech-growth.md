@@ -4,7 +4,7 @@ description: How did I start? How did I learn and grow? Where am I going?
 tags: [ Lore ]
 category: Life
 created_at: 2026-02-28 23:21:57
-updated_at: 2026-02-28 23:21:57
+updated_at: 2026-03-06 22:32:57
 excludes_from_index: True
 ---
 
@@ -42,6 +42,24 @@ learn something, build something with what I learned, and enjoy the beautiful pr
 This blog is my reflection of how I got here, what I know, what I don't know, and where I plan to grow next.
 
 ## How I Got Here
+
+As I am reviewing my `/Users/PycharmProjects` to write this part of the blog,
+I couldn't stop but laugh at all the random things I did back in the day.
+When I first started, there wasn't much of a theme:
+it was just code out as many different projects as my curiosity pushed me to.
+
+Then, the theme converged to building web applications for my school, from TinoCS to UCSBPlat.
+
+As the web applications' backend evolved in complexity,
+I realized that backend is the love of my life,
+so many of the later endeavors evolved around backend,
+from my Bytedance internship to all the database internals, system design, and domain driven design I delved into.
+
+Finally, as I built out SearchGit, which saw the intersection of backend, data engineering, and ML,
+I realized the importance of the backend, data, and ML holy trilogy,
+and now I'm devoting more effort towards data engineering and ML.
+
+Along the way, I did competitive programming and research as explained in their own sections.
 
 ### CLI apps
 
