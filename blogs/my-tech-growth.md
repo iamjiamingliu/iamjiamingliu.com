@@ -41,6 +41,38 @@ learn something, build something with what I learned, and enjoy the beautiful pr
 
 This blog is my reflection of how I got here, what I know, what I don't know, and where I plan to grow next.
 
+## How I Got Here
+
+### CLI apps
+
+### TKInter apps
+
+### Leetdeal
+
+### TinoCS
+
+### TinoClubs
+
+### System Design
+
+### UCSBPlat
+
+### ByteDance Internship
+
+### Deep dive into backend internals
+
+### SearchGit
+
+### Starting data engineering
+
+### Starting ML
+
+## Competitive Programming and Leetcode
+
+## Research
+
+## Technical Leadership
+
 
 ## What I know
 
@@ -82,36 +114,10 @@ Never got hands on with any of these:
 - Android, iOT, and other frontends
 - Edge computing
 
-## My Builder Journey
-
-### CLI apps
-
-### TKInter apps
-
-### Leetdeal
-
-### TinoCS
-
-### TinoClubs
-
-### System Design
-
-### UCSBPlat
-
-### ByteDance Internship
-
-### Deep dive into backend engineering
-
-### SearchGit
-
-### Starting data engineering
-
-### Starting ML
-
-## Competitive Programming and Leetcode
-
-## Research
-
-## Technical Leadership
-
 ## What's next
+
+1. Continue learning about ML. I've got to convolutional neural networks now, the goal is to eventually understand GPT training
+2. Continue getting hands on with data engineering. I need to get hands on with Apache Spark and Airflow
+3. Finish writing about backend internals. Lucene / ElasticSearch is underway, then I should write about Redis, Kafka, MiniIO, and FastAPI. Writing them aloud weeds out the black spots in my understanding.
+
+As always, I must stay curious.
