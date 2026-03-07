@@ -13,6 +13,8 @@ class ArticleMetadata(BaseModel):
     excludes_from_index: bool = False
     word_count: int
     estimated_reading_time: timedelta
+    is_new: bool = False
+    is_recently_updated: bool = False
 
 
 class ArticleMD(BaseModel):

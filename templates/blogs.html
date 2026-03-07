@@ -136,9 +136,18 @@
 
                                                 <div class="flex-grow-1">
                                                     <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                          <span class="badge rounded-pill text-bg-dark">
-                            {{ m.category }}
-                          </span>
+                                                    {% if m.is_new %}
+                                                        <span class="badge rounded-pill text-bg-info border bg-info text-white">
+                                                            New
+                                                        </span>
+                                                    {% elif m.is_recently_updated %}
+                                                        <span class="badge rounded-pill text-bg-info border bg-info text-white">
+                                                            Recently updated
+                                                        </span>
+                                                    {% endif %}
+                                                      <span class="badge rounded-pill text-bg-light border text-dark">
+                                                        {{ m.category }}
+                                                      </span>
                                                         {% if m.tags %}
                                                             {% for t in m.tags[:4] %}
                                                                 <span class="badge rounded-pill text-bg-light border text-dark">
