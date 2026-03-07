@@ -162,4 +162,5 @@ def load_articles_index(
         categories=categories,
         latest=all_sorted[:latest_n],
         per_category=per_category,
+        new_count=len([c for c in all_sorted if c.metadata.is_new]),
     )

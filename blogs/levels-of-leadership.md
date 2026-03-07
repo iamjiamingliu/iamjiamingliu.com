@@ -3,7 +3,7 @@ title: Levels of Leadership
 description: What level of principles is someone leading at?
 tags: [ ]
 category: Leadership
-created_at: 2026-02-25 10:38:57
+created_at: 2026-03-06 10:38:57
 updated_at: 2026-03-06 14:14:57
 ---
 

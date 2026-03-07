@@ -37,3 +37,4 @@ class ArticlesIndex(BaseModel):
     categories: list[str]
     latest: list[ArticleIndexEntry]
     per_category: dict[str, list[ArticleIndexEntry]]
+    new_count: int
