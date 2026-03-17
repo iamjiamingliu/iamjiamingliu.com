@@ -51,6 +51,8 @@ Experience with the usage of AWS S3 or MinIO is necessary for understanding the 
 
 ## Content Delivery Network
 
+## HDFS
+
 ## A Fun Question
 
 Why not just store everything in Postgres or RocksDB?
