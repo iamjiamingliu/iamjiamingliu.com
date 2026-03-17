@@ -5,11 +5,8 @@ tags: [ Internal Architecture ]
 category: Tech
 created_at: 2026-02-18 00:15:13
 updated_at: 2026-02-18 00:15:13
-excludes_from_index: True
+excludes_from_index: False
 ---
-
-## TODO
-How does searching on multiple columns get executed?
 
 ## Foreword
 
