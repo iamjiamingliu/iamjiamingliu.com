@@ -23,7 +23,7 @@ basically everything school-wide events related.
 Compared to the ASB in other schools,
 Cupertino ASB got things done pretty well, events were all organized timely and nicely.
 However, we did suffer the sins almost every ASB suffered:
-nepotism, lack of even distribution of work, and lack of innovation.
+nepotism, uneven distribution of work, and lack of innovation.
 The majority of ASB officers got in because they were in the cool-kids league with the ASB President / VP,
 so if you are not one of them, you naturally get singled out.
 There's no rewards or punishments for doing a lot or little work,
@@ -86,6 +86,8 @@ Actually, it all started with TNT.
 ## TinoClubs.com
 
 ## A Few More Failures
+
+## Bundling Clubs, TNT, and TinoClubs.com
 
 ## Applaud
 
