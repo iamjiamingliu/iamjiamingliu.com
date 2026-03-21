@@ -14,19 +14,19 @@ As I said in my blog's overview paragraph,
 I would only "write about events that happened at least a year ago"
 because I can't write about ongoing events due to their volatile nature.
 
-So, here's something that mattered to be a lot at least a year ago.
-It was about my time at Cupertino High School (CHS) Associated Student Body (ASB).
+So, here's something that mattered to me a lot back in the days.
+It was Cupertino High School (CHS) Associated Student Body (ASB).
 Aka the student government of CHS. Cupertino ASB, just like the student government in almost every school,
 is tasked with organizing school dances, rallies, club fairs,
 basically everything school-wide events related.
 
 Compared to the ASB in other schools,
 Cupertino ASB got things done pretty well, events were all organized timely and nicely.
-However, we did suffer the sins almost every ASB inflicts:
-nepotism, lack of event distribution of work, and lack of innovation.
+However, we did suffer the sins almost every ASB suffered:
+nepotism, lack of even distribution of work, and lack of innovation.
 The majority of ASB officers got in because they were in the cool-kids league with the ASB President / VP,
 so if you are not one of them, you naturally get singled out.
-There's no rewards or punishments for the extent of lack of each individual officer's contribution,
+There's no rewards or punishments for doing a lot or little work,
 so usually for each team within ASB, one person is carrying that team and the rest just ride along,
 and it would be a blessing if those riding along simple doesn't cause any trouble or roadblocks.
 Finally, for any proposal trying to change to the existing system or simply trying something new,
@@ -34,8 +34,8 @@ you would go up to the podium, introduce your proposal, and get bombarded with a
 
 I suffered all three vices.
 I wasn't in the cool-kids league.
-I tried to get things done so I had to carry the team many times.
-And I tried to initiate a lot of innovations and got hit with many "_it's great, but..._".
+I tried to get things done, so I had to carry the team many times.
+And I tried to initiate a lot of innovations, and, as a result, got hit with many "_it's great, but..._".
 
 
 Still, I loved Cupertino ASB.
@@ -47,7 +47,13 @@ Let me write the lore down before I eventually forget it all.
 There's not that many precious memories one would be able to have,
 so you gotta hang on tight to your memories.
 
-## The First Contact
+By the way, my lore with Cupertino ASB intersected with my journey of founding Tino News Today (TNT),
+the beloved (I think lol) newscast program that everyone watches at CHS nowadays.
+So, this article will touch on TNT too.
+
+Actually, it all started with TNT.
+
+## My Very First Attempt to TNT
 
 ## My Failed Club Application
 
@@ -55,19 +61,21 @@ so you gotta hang on tight to your memories.
 
 ## Giving Up
 
-## My Failed Election
+## Reading and Learning
+
+## Preparing for TNT, didn't work again
 
 ## My Successful Club Application, Kind Of
 
-## What? How?
+## What? How? I'm In I guess
 
 ## Singled Out
 
 ## Crashing Out
 
-## Let's Try This Again
+## Let's Try TNT Again
 
-## Fighting for Survival
+## Fighting for TNT's Survival
 
 ## Being Valued
 
@@ -77,8 +85,10 @@ so you gotta hang on tight to your memories.
 
 ## TinoClubs.com
 
-## Two More Failures
+## A Few More Failures
 
 ## Applaud
 
-## But Never Allowed Back
+## But Never Invited Back
+
+## Why Try So Hard?
