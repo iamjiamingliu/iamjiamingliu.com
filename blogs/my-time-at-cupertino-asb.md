@@ -162,17 +162,98 @@ And, for the years passed since freshman year of high school,
 I've read even more, applied them even more, corrected my belief from errors,
 and continue to practice this feedback loop.
 
-## Preparing for TNT, didn't work again
+## Preparing for TNT
+
+I _really_ thought I deserved to shoot another shot at Tino News Today.
+After all, newscasting worked in my middle school in Maryland,
+and it makes sense to do announcements video style because audio style is too unengaging to be effective.
+
+My first attempt to pitch TNT on my 3rd day of school failed because I was not ill prepared.
+Sure, I had a vision, but I had not thought about the implementation of the vision at all.
+I didn't think about what exactly should each episode contain,
+how the production workflow for the episodes would be organized,
+and how the organization to power the production would be recruited and lead.
+
+So, using the leadership and management ideas as I read them from the books,
+I drew out some organizational charts, production workflow graphs,
+and meticulous planned out the episodes content layouts on the Google Docs.
+
+It was still quarantine, I didn't know when school will return in-person so that I can attempt TNT again,
+and I knew very well that even if I try again, I very likely would fail.
+Nevertheless, I was on a mission to do something big, and I was determined to make it happen.
 
 ## My Successful Club Application, Kind Of
 
+Meanwhile, a friend of mine approached me to help him Co-Found a Table Tennis club.
+The club would be functional after quarantine, he argued.
+He lacked experience navigating the ASB paperworks,
+and since I battled ASB with Minecraft Club's founding and arguments,
+he invited me to Co-Found the Table Tennis Club and navigate the application paperwork.
+Once again, much like the irony to founding Minecraft Club,
+I didn't even play Table Tennis...
+
+The New Club Application Process only accepts 5 out of 30 to 40 applicants every year.
+I knew the chance were slim, but the downside is small.
+So he filled out the application, I gave some advice along the way,
+and I was shocked and happy to see Table Tennis Club getting approved.
+
+That was the first time at CHS I succeeded in something;
+even though I was a secondary if not minor character in contribution,
+it was a great boost to my confidence and self-drive
+as I thought earlier that all the doors were closed to me.
+
+Later on, I served as VP to Table Tennis Club,
+helped to host the weekly practice events, secured our own table, and fulfilled my duty
+despite not actually playing table tennis myself.
+The President went on to become the President of FBLA. Small world.
+
 ## What? How? I'm In I guess
+
+Towards the end of Sophomore year,
+I got an email in my school inbox about applying for ASB Commissioners.
+Despite having annoyed the ASB Teacher with my daring attempt to start video announcements,
+annoyed the Club Commissioners with my stupid Minecraft Club Application,
+and annoyed the Assistant Principal and the ASB Teacher and Club Commissioners
+with my drama for Minecraft Division vs. its parent Gaming Club,
+I dropped my resume to apply to be a — how dare I — Club Commissioner.
+I guess when you are an unknown little character,
+you just need to put your face aside and shoot your shot at whatever opportunity you can try for.
+
+I knew I would be competing against the cool kids club who were already friends with the ASB President since elementary school.
+I knew I would be competing against much more popular and competent candidates who were already very experienced with student leadership.
+But I didn't blink.
+I went into the interview fully prepared with my plan on what I want to accomplish as a Clubs Commissioner.
+I told them what was wrong with the new clubs application process,
+what was wrong with the clubs rulesbook and enforcement,
+and proposed my vision for a simpler new clubs application process,
+cleaner clubs rulesbook and enforcement, and more.
+I wouldn't have been able to think strategically and tactically well had I not read the biographies and leadership books during quarantine.
+
+A week later, I got the "You Are In" email.
+Nowadays, I am perceived by friends as a very competent guy in leadership and software engineering,
+but back then, I didn't have that much experience on my resume really.
+Minecraft was a flop, Table Tennis Club hasn't begun operating,
+yes I've read the leadership books, but I haven't taken on any concrete leadership endeavors
+when I received my appointment to serve as Clubs Commissioner.
+
+Holy crap. I am now the Clubs Commissioner.
+I would be sitting on the other side of the table that the overlords of clubs would sit.
+I would now serve for the very same ASB Teacher that probably despised me for all the reasons.
+The Gaming Club officers who looked me down all of a sudden offered me the olive branch.
+I finally understood how Imposter Syndrome feels like. I shouldn't be there.
+
+I don't want to be an imposter. I must pick up more skills, pour in my heart and soul,
+and just do as best as I can to prove myself that I can be competent and be a good Clubs Commissioner.
+Eventually, I shined in my role as Clubs Commissioner and later in founding Tino News Today.
+But for the first half of my journey with Cupertino ASB, it was a socially and politically rough water.
 
 ## Singled Out
 
 ## Crashing Out
 
 ## A Simple Innovation, And An Opposite Prediction
+
+## The Thanksgiving Speech
 
 ## Let's Try TNT Again
 
