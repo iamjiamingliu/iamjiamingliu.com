@@ -263,7 +263,72 @@ But for the first half of my journey with Cupertino ASB, it was a socially and p
 
 ## Crashing Out
 
-## A Simple Innovation, And An Opposite Prediction
+## A Simple Innovation, And An Outlier Prediction
+
+ASB hosted school rallies in the football field.
+During each rally, some of us get tasked with "megaphone duty":
+that is, we shout at the audience crowd via megaphones as they arrive at the football field,
+"freshman and juniors please go to the left, sophomore and seniors please go to the right."
+
+I was on megaphone duty a couple of times and realized,
+why not just make a cardboard sign that says this? Then we don't need to shout.
+
+So I told the team in charge of planning rallies about my idea,
+and, despite being such an initiative proposal that couldn't be any smaller and simpler,
+I got scoffed at and my idea was dismissed. And after many years, I still don't know why.
+Maybe it was just because I was not a part of the popular kids, so anything I say seems unwanted meddling?
+
+I proceeded with my idea anyway.
+So for the next rally, you had both the presence of people on megaphone duty,
+as well as my cardboard.
+Fortunately, it didn't take another rally for ASB people to realize that, my cardboard actually works.
+So from that point on, each time there's a rally,
+the person in charge of rally planning came up to me and requested me to make my cardboard sign.
+
+It's a small example, but I just wanted to illustrate how ASB,
+driven by herd psychology and whatever reasons, refused to try new things.
+
+And here's another example where the herd psychology of ASB failed.
+We were planning for the Homecoming (HOCO) Night Market, the first event of the year.
+The ASB teacher asked everyone to predict the turnout for HOCO Night,
+everybody talked among themselves and said something from 40 to 80 people;
+I predicted the turnout to be 400, which was quite an outlier.
+
+How did I come to my conclusion?
+I shared to those who asked, perhaps out of jeering curiosity, well, CHS has 2,000 students.
+This is the first event of the year, so enthusiasm will be high.
+And actually, this is the first in-person event after COVID,
+do you not know how much people crave for interpersonal connections after being jailed at home for 2 years?
+As one more reason: ASB has 40 members,
+suppose each of our friend group will be here,
+that's 40 x 5 = 200 people who will show up for sure because their friend organized HOCO night;
+and it's not outrageous to assume that another 200 out of 1,800 non ASB related people will show up simply because they heard about it.
+
+The actual turnout of HOCO night disproved all of us.
+From the Google spreadsheet of event entry records, 1,000 students showed up to HOCO night!
+That's 10x the median prediction and twice of my seemingly outlier prediction.
+
+When I presented my argument of why at least 400 people will show up,
+those who even bothered to ask simply walked away with "okay" with no consideration given into my reasoning.
+The consequence is that, since ASB thought not many attendees will show up,
+we only purchased boba and other food items for 100 headcount,
+so during the event, we scrambled to refill our supply, and everytime someone came back from picking up more stuff,
+they had to immediately return to their car upon hearing that there's ever-growing more attendees;
+and attendees waited in line forever to get their food items.
+
+Prediction aside, it was a great thing to see half of the school at HOCO night.
+And actually, during HOCO night, surprise! My crush, who I thought was the prettiest girl in my grade,
+walked up to me during the event and started talking to me.
+Yeah, I am surely not the most handsome guy in my grade, but miracles do happen and I still don't know why.
+It really was a miracle that I could not have imagined happening.
+She soon became my very first girlfriend, and my only girlfriend to-date, excluding situationships.
+This roller-coaster story deserves an article on its own; I digressed.
+
+Anyways,
+the rally poster telling people go left and right, and the HOCO prediction,
+pushed me to arrive at an unfortunate conclusion that was only proven even further by many later events:
+ASB is reluctant for embracing even the smallest change,
+and ASB as a whole is unable to reason and think properly.
 
 ## The Thanksgiving Speech
 
