@@ -395,6 +395,23 @@ suppose I was the ASB President responsible for the performance and culture of t
 
 ## Why Try So Hard?
 
+As you surely have noticed from now,
+I dedicated abnormal effort and thoughts into ASB and TNT. Why? Why try so hard?
+
+Long story short, it's because God forbid man have dreams and does work to make dreams happen.
+For whatever reaons, it was my dream to found a newscasting program at CHS.
+It was my dream to be able to change the clubs ecosystem at CHS because I suffered the vices of it,
+and now I sit in the other side of the table as a Clubs Commissioner,
+it's a sin if I do nothing.
+
+I got happily lost in time while pursing the dream of TNT and a better clus ecosystem at CHS.
+
+I'm glad I tried very hard back in high school student leadership.
+Because, I tried to replicate what I did in high school at UCSB.
+And UCSB student government and newcasting / newspaper
+are so unpassionate and uninteresting compared to Cupertino ASB and TNT,
+so I'm glad I gave everything I could while in an interesting place.
+
 ## In Hindsight
 
 In hindsight, perhaps the title "My Time at Cupertino ASB, and TNT"
