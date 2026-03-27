@@ -373,6 +373,26 @@ In reality, now that I've been long gone from TNT, here's what actually happened
 
 ## Unfinished Wishes, ASB
 
+In my 2-year tenure as a Clubs Commissioner,
+I accomplished every initiative I promised when I first joined ASB.
+I made the club rules cleaner, I made new club application process simpler;
+I made TinoClubs.com, doubled the Clubs Grant, and established the clubs merger process.
+Besides these innovations, during my tenure,
+I also handled the day-to-day operations and events super well.
+There wasn't a single ghosted email or email with delayed reply,
+clubs respected our administration,
+and for the few angry appeals that always come up when people get rejected for their new club proposals,
+I handled them to my best extent.
+
+So there's no unfinished wishes, Clubs Commissioner-wise.
+
+However, driven by the many grievances I experienced first-hand and many more grievances I heard from the next two generation of ASB people I was friends with,
+suppose I was the ASB President responsible for the performance and culture of the entire Cupertino ASB, I would have for sure:
+
+1. Set each commissioner's performance clear, with enforcement and consequences. There was nothing done about people slacking and doing no work, which really hurts the morale of those who cared. Commissioners need to know that there's consequence for not performing, and one or two commissioners per year must be made examples of being discharged, and the herd will watch and follow the examples.
+2. Establish awards, honors, and clearly let people know if they do a good job, more interesting tasks will be given to them. There's consequences for those doing nothing, there's nothing for those doing something, and there's something for those doing beyond something.
+3. Avoid getting the popular clique at all cost. This is extra hard, because ASB had been and is continuously being the popular kids friend group, plus a few loners. The problem? So many. First, you need direct connections to the rest of the school community for events turnout and engagement, and having a clique of friends running ASB makes ASB isolated from the rest of the school community. Second, when you are all just a clique of the popular gang, it usually means many of you there are not merited, and having not merited people in a place drive out people with merit. Third, when your team is made of clique, you can't effectively motivate or discipline as needed to run an organization, which is why much of ASB are slackers. Diversity matters. And lack of diversity reinforces itself in a downward spiral. And this issue of ASB being run only by the popular gang, from my recent interaction with current ASB, have gotten worse.
+
 ## Why Try So Hard?
 
 ## In Hindsight
