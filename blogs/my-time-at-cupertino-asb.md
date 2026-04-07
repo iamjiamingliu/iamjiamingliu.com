@@ -421,6 +421,10 @@ As what I wrote on my Student of the Year poster,
 from my CHS journey, "I transformed myself from the naive, ignorant, and foolish
 version of me to a still very naive but a lot less ignorant and foolish version of me today".
 
+But actually, if I wasn't ignorant, how else was I gonna break through all the skepticism and setbacks?
+Ignorance is a double-edged sword: it cuts through doubts but also cuts your reputation.
+Actually, what if ignorance is just a derogatory term for confidence?
+
 It was a good run. There were many moments, especially early on, that were absolutely foolish and cringe.
 But who am I to blame a very driven kid who was just trying to make a name of himself,
 especially he had just drove all the way from Maryland with no friends or anything?
