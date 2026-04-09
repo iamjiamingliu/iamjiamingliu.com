@@ -23,8 +23,14 @@ def render_to_markdown(file_path: Path | str) -> models.ArticleMD:
     if isinstance(file_path, str):
         file_path = Path(file_path)
     payload = frontmatter.load(str(file_path))
-    word_count = count_words(payload.content)
-    estimated_reading_time = estimate_reading_time(word_count)
+    if "中文" in payload.get("tags", []):
+        word_count = len(payload.content)
+        estimated_reading_time = estimate_reading_time(
+            word_count, wpm=300
+        )  # Chinese WPM
+    else:
+        word_count = count_words(payload.content)
+        estimated_reading_time = estimate_reading_time(word_count)
     metadata = models.ArticleMetadata(
         **payload.to_dict(),
         word_count=word_count,
