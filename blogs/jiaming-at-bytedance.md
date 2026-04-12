@@ -5,6 +5,7 @@ tags: [ 中文 ]
 category: Tech
 created_at: 2026-02-10 01:50:13
 updated_at: 2026-04-09 01:50:13
+excludes_from_index: True
 ---
 
 > 字节实习的时光，是我18岁最难忘的一段经历。我从男孩变成了男人。这段经历深深影响了我接下来的轨迹。
