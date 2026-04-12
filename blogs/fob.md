@@ -101,7 +101,6 @@ Time flew.
 At the end of the semester, somehow, I earned an A in every class except science,
 which I was horrified by the B+ until I realized
 I and another girl named Hannah Magliola
-who I never confessed my crush on because she was gorgeous and smart
 were the only receipients of B+,
 and B+ was the highest grade given in that class.
 
