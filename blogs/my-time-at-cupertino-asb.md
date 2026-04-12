@@ -446,5 +446,10 @@ for it was quite a journey with tears, failures, success, and growth.
 
 And nope, I did not peak in high school, LOL.
 
-<hr>
-END OF STORY.
+## Appendix 1: The Failure of Clubs Commission
+
+Draft ideas:
+
+- Clubs Commission's importance
+- But it's not treated seriously
+- Needs more competence and seriouesness
