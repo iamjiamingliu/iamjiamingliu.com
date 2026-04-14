@@ -8,7 +8,7 @@ updated_at: 2026-03-10 14:36:57
 excludes_from_index: True
 ---
 
-## Foreword
+## Why Object Storage
 
 As human computer users, we create folders and files on our laptops to store txt, PDFs, videos, spreadsheet, or whatever file we want.
 We are also able to edit the files via Word, Excel, or any editor we desire.
@@ -47,11 +47,14 @@ Many things in software engineering, or in the world in general, that have funny
 Let's take a closer look at the architecture behind MinIO, the open-source object storage database.
 Experience with the usage of AWS S3 or MinIO is recommended for understanding the rest of this article.
 
+## The Distributed Architecture
+
+
 ## Content Delivery Network
 
 ## HDFS
 
-## A Fun Question
+## One More Thought
 
 Why do we need object storage?
 Why not just store the bytes data of, say, a user profile image directly in Postgres or RocksDB?
