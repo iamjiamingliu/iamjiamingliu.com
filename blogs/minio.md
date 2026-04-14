@@ -36,18 +36,16 @@ to store and retrieve whatever files need to be stored,
 with mechanisms like fault-tolerance and replication built-in.
 
 Actually, the "files" in such object storage database is not called "files", but "objects".
-This is because, unlike files, objects:
+This is because, unlike files, objects cannot be partially edited. If you are on a local file, you can edit it.
+But for architectural simplicity and use case design, object storage database only support creation and deletion of objects in full.
 
-1. Cannot be partially edited. If you are on a local file, you can edit it. But for architectural simplicity and use case design, object storage database only support creation and deletion of objects in full.
-2. TODO
-
-But really, objects and files are the same thing. They are just whatever arbitrary content you want to be stored.
+But really, objects and files are the same thing. They are just whatever arbitrary bytes you want to be stored.
 Whether it's a TXT, image, PDF, Excel sheet, Parquet click logs... anything.
 
 Many things in software engineering, or in the world in general, that have funny names, but really, they are not complicated.
 
 Let's take a closer look at the architecture behind MinIO, the open-source object storage database.
-Experience with the usage of AWS S3 or MinIO is necessary for understanding the rest of this article.
+Experience with the usage of AWS S3 or MinIO is recommended for understanding the rest of this article.
 
 ## Content Delivery Network
 
@@ -55,13 +53,14 @@ Experience with the usage of AWS S3 or MinIO is necessary for understanding the 
 
 ## A Fun Question
 
-Why not just store everything in Postgres or RocksDB?
+Why do we need object storage?
+Why not just store the bytes data of, say, a user profile image directly in Postgres or RocksDB?
 
 You can, but you shouldn't.
 PostgreSQL and RocksDB can store arbitrary bytes, however,
 if you look into their architectures, their internals are designed around the assumption that
-the payloads would be a small row or a small key-value pair,
-but for PDF, images, or whatever file content, the payload size can be a, say, 2MB image file or 100 gigabytes click logs Parquet file,
+the payloads would be a small row or a small key-value pair.
+But for PDF, images, or whatever file content, the payload size can be a, say, 2MB image file or 100 gigabytes click logs Parquet file,
 which will kill the performance of PostgreSQL and RocksDB.
 
 It's all about different granularity. Pick the right tool for the right use case.
@@ -70,3 +69,8 @@ thus, use object storage.
 
 Or, as said in the beginning of this article, if everything can fit comfortably in one local file system,
 just use the local file system.
+
+And at the end of the day, object storage, relational databases, KV store...
+they are all just some abstractions over the file system,
+which by transitivity abstracts over the underlying disk or SSD.
+At the end of the day, the bytes need to be stored somewhere.
