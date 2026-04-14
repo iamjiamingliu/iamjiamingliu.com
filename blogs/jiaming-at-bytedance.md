@@ -8,6 +8,17 @@ updated_at: 2026-04-14 01:08:13
 excludes_from_index: True
 ---
 
+<style>
+body {
+  font-family:
+    "PingFang SC",        /* macOS */
+    "Microsoft YaHei",    /* Windows */
+    "Noto Sans CJK SC",   /* cross-platform */
+    "Heiti SC",
+    sans-serif;
+}
+</style>
+
 > 字节实习的时光，是我18岁最难忘的一段经历。我从男孩变成了男人。这段经历深深影响了我接下来的轨迹。
 >
 > 此文由我实习结束后，许多个夜晚抽时间写成，以忆这段时光。
