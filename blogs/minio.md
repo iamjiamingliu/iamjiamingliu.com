@@ -49,6 +49,71 @@ Experience with the usage of AWS S3 or MinIO is recommended for understanding th
 
 ## The Distributed Architecture
 
+### Erasure Coding
+
+MinIO's architecture is designed around the erasure coding mechanism,
+which provides fault tolerance by
+slicing the stored data into chunks,
+computing some derived data based on the chunks,
+and storing the derived data along with the original chunks.
+Then, in case some chunks become unavailable due to crashes or network error,
+the derived data would enable constructing the missing chunks,
+thus enabling fault tolerance.
+
+In a world without erasure coding,
+to enable fault tolerance,
+we need to duplicate the same data N times
+so that if N - 1 of the nodes crash,
+at least 1 node alive will still have the data.
+
+But simply duplicating the data N times is highly inefficient.
+In the smallest case when N is 2,
+to provide fault tolerance for 1 TB of original data,
+you need to use 2 TB of actual storage.
+If N is 3, you need 3 TB.
+
+So the golden question of engineering comes in:
+how can we do better?
+How can we provide fault tolerance without having to incur so much overhead?
+
+Enters erasure coding.
+Suppose we have a file of size 100 GB.
+We split it up into 2 chunks each of 50 GB.
+Next, we compute the XOR of the 2 chunks, which is another 50 GB.
+Finally, we store the 2 chunks each of 50 GB, and the XOR 50 GB, for the total of 150 GB;
+each chunk and the XOR would be stored on different physical nodes.
+
+During retrieval, suppose all nodes are healthy,
+then we just need to fetch the two original chunks from the nodes they live in.
+Now suppose one of the nodes storing the original chunks fail.
+Then, we just need to grab the XOR 50 GB, apply XOR against the other chunk of 50 GB original data that's still available,
+which, by property of XOR, will reconstruct the other 50 GB chunk of original data!
+
+In effect, we used 150 GB of storage to enable fault tolerance for 100 GB of original data using XOR erasure coding.
+Had we used simple duplication, we would have used at least 200 GB of storage.
+
+The actual erasure coding used in practice, in MinIO and in other systems,
+is not XOR. XOR is simply to illustrate the concept.
+The actual erasure coding used is a more sophisticated algorithm
+called Reed Solomon,
+which provides strictly storage efficiency and higher fault tolerance than simple XOR.
+
+### Reed Solomon Erasure Coding
+
+TODO
+
+### The Actual Architecture
+
+TODO
+
+### All the Overhead, For What?
+
+Arguably, if MinIO doesn't care about fault tolerance or scalability,
+then doesn't need erasure coding,
+and its architecture could degenerate into a simple HTTP wrapper over the file system.
+
+But MinIO must care about fault tolerance and scalability,
+thus its architecture must be orchestrated around the complexity of erasure coding.
 
 ## Content Delivery Network
 
