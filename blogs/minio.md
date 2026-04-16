@@ -47,7 +47,7 @@ Many things in software engineering, or in the world in general, that have funny
 Let's take a closer look at the architecture behind MinIO, the open-source object storage database.
 Experience with the usage of AWS S3 or MinIO is recommended for understanding the rest of this article.
 
-## The Distributed Architecture
+## Understanding MinIO's Architecture
 
 ### Erasure Coding
 
@@ -98,7 +98,7 @@ The actual erasure coding used is a more sophisticated algorithm
 called Reed Solomon,
 which provides strictly storage efficiency and higher fault tolerance than simple XOR.
 
-### Reed Solomon, In Theory
+### Reed Solomon
 
 As the industry-standard erasure coding algorithm,
 the idea behind Reed Solomon is very similar to XOR erasure coding:
@@ -181,12 +181,8 @@ These specialized multiplication and division operations
 are applied as if each bytestream is a finite field,
 which I don't understand fully, so I will leave it to you the reader to carry out your own exploration.
 
-### Reed Solomon, In Practice
 
-When MinIO implements Reed Solomon,
-
-
-### The Actual Architecture
+### MinIO's Implementation
 
 TODO
 
