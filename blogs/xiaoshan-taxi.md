@@ -9,6 +9,17 @@ updated_at: 2026-04-16 01:04:57
 excludes_from_index: True
 ---
 
+<style>
+body {
+  font-family:
+    "PingFang SC",        /* macOS */
+    "Microsoft YaHei",    /* Windows */
+    "Noto Sans CJK SC",   /* cross-platform */
+    "Heiti SC",
+    sans-serif;
+}
+</style>
+
 > 标题曰：“居然社会还有如此不公”
 >
 > 很明显，我“不食肉糜了”。
@@ -38,6 +49,8 @@ excludes_from_index: True
 “额，余杭区仓前景苑。谢谢。”
 
 哦，听口音，师傅是河南人？我对口音不了解，但是从岳云鹏的相声来对号入座，应该师傅是河南人。
+
+## 夹缝生存
 
 夜色弥弥，出租车匆匆穿梭过了杭州的霓虹闪烁。
 高楼大厦，灯火通明，繁华至极。
