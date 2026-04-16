@@ -6,6 +6,7 @@ language: zh
 category: Thinking
 created_at: 2026-04-15 21:38:57
 updated_at: 2026-04-15 21:38:57
+excludes_from_index: True
 ---
 
 ## 关于我与学生会的几点经历
