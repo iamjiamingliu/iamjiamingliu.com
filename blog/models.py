@@ -15,6 +15,7 @@ class ArticleMetadata(BaseModel):
     estimated_reading_time: timedelta
     is_new: bool = False
     is_recently_updated: bool = False
+    language: str = "en"
 
 
 class ArticleMD(BaseModel):

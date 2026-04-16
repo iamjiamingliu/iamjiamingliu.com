@@ -14,7 +14,7 @@ def count_words(text: str) -> int:
     return len(words)
 
 
-def estimate_reading_time(word_count: int, wpm=150) -> timedelta:
+def estimate_reading_time(word_count: int, wpm=200) -> timedelta:
     minutes = word_count / wpm
     return timedelta(seconds=minutes * 60)
 
@@ -23,10 +23,10 @@ def render_to_markdown(file_path: Path | str) -> models.ArticleMD:
     if isinstance(file_path, str):
         file_path = Path(file_path)
     payload = frontmatter.load(str(file_path))
-    if "中文" in payload.get("tags", []):
+    if payload.get("language") == "zh":
         word_count = len(payload.content)
         estimated_reading_time = estimate_reading_time(
-            word_count, wpm=300
+            word_count, wpm=500
         )  # Chinese WPM
     else:
         word_count = count_words(payload.content)

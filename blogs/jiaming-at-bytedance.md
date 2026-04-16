@@ -1,7 +1,8 @@
 ---
 title: 字节4月，胜读书3年
 description: 忆在杭州的时光 Jiaming's Bytedance Internship Experience (Chinese)
-tags: [ 中文, Lore ]
+tags: [ Lore ]
+language: zh
 category: Life
 created_at: 2026-02-10 01:50:13
 updated_at: 2026-04-14 21:42:13
