@@ -50,7 +50,7 @@ body {
 
 夜色弥弥，出租车匆匆穿梭过了杭州的霓虹闪烁。
 高楼大厦，灯火通明，繁华至极。
-各个商业街的Gucci Louis Vuitton Channel橱窗，额外耀眼。
+各个商业街的Gucci Louis Vuitton Chanel橱窗，额外耀眼。
 
 随即上了高速。路面平整，沥青成新，比美国的高速公路好太多了。
 司机师傅说，前几年杭州为了办亚运会，花了很多亿，
@@ -190,8 +190,8 @@ What? 几点？
 
 我希望在繁华的城市的所有人，都能舒适的安居乐业，享受不同街景的意境，而不是在不同街景里奔波。
 
-夜色弥弥，每当我再穿梭过了各种霓虹闪烁，各种Gucci Channel Louis Vuitton，我只能哑口无言了。
+夜色弥弥，每当我再穿梭过了各种霓虹闪烁，各种Gucci Chanel Louis Vuitton，我只能哑口无言了。
 
-额然，Gucci Channel Louis Vuitton，我也买不起。
+额，Gucci Chanel Louis Vuitton，我也买不起。
 
 [^1]: Transformers 是 ChatGPT等GPT的底层架构。真正懂点AI的人都知道它是啥。Transformers和变形金刚，对，就是擎天柱大黄蜂那个，英文里是一个词。
