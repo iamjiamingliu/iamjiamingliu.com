@@ -98,9 +98,93 @@ The actual erasure coding used is a more sophisticated algorithm
 called Reed Solomon,
 which provides strictly storage efficiency and higher fault tolerance than simple XOR.
 
-### Reed Solomon Erasure Coding
+### Reed Solomon, In Theory
 
-TODO
+As the industry-standard erasure coding algorithm,
+the idea behind Reed Solomon is very similar to XOR erasure coding:
+split up the data into chunks, compute the derived chunks,
+and store the original chunks and the derived chunks.
+Then upon failures, retrieve the derived chunks to reconstruct the missing original chunks.
+The difference between Reed Solomon and simple XOR lies in how the derived chunks are computed,
+and how to reconstruct the original chunks with the derived chunks upon failure.
+
+In Reed Solomon,
+the derived chunks are called **parity** chunks,
+and the original chunks are called **data** chunks.
+
+Suppose the original data had been split into 3 data chunks, denoted as C1, C2, and C3.
+In the simple XOR erasure coding,
+we would create exactly 1 parity chunk: `P1 = C1 XOR C2 XOR C3`.
+In Reed Solomon,
+we would create multiple parity chunks, differentiated by the coefficients in front of each data chunk.
+For example, we might have P1 still being `C1 XOR C2 XOR C3`,
+but we will also have `P2 = (1 * C1) XOR (2 * C2) XOR (3 * C3)`.
+
+By adding coefficients in front of the XORs,
+Reed Solomon allows us to create many distinct combinations of the original data chunks that result in different parity chunks.
+The coefficients are the core enhancement Reed Solomon offers over the simple XOR erasure coding.
+
+When we have K data chunks and M parity chunks,
+Reed Solomon requires that
+any coefficient vectors subset of size K must be linearly independent.
+
+In the above example, the coefficient vectors are the `[1, 1, 1]` for P1, `[1, 2, 3]` for P2,
+and `[1, 0, 0]` for C1, `[0, 1, 0]` for C2, and `[0, 0, 1]` for C3.
+The coefficient vectors in this example are valid for Reed Solomon,
+because any K=3 subset of them are linearly independent.
+
+Why this linearly independent rule?
+Well, for M data chunks and K data chunks for a total of K + M chunks,
+Reed Solomon tolerates up to any M of the K + M chunks failing.
+Then, this leaves us with at least K chunks, some being data chunks and some being parity chunks,
+and we can recover the missing data chunks by solving a system of linear equations,
+based on the linearly independent coefficient vectors.
+
+Using our example above, suppose with only have P1, P2, and C3 available, with C1 and C2 dead,
+we can still construct C1 and C2 because we have a system of these linear equations:
+
+```text
+1 * C3 = C3
+(1 * C1) XOR (1 * C2) XOR (1 * C3) = P1
+(1 * C1) XOR (2 * C2) XOR (3 * C3) = P2
+```
+
+Because Reed Solomon enforce that any subset of size K of the coefficient vectors are linearly independent,
+there's a guaranteed solution to the above problem.
+
+To illustrate, if we solve it manually, the process is:
+
+```text
+(1 * C1) XOR (1 * C2) = P1 XOR C3
+(1 * C1) XOR (2 * C2) = P2 XOR (3 * C3)
+
+Let:
+A = P1 XOR C3
+B = P2 XOR (3 * C3)
+
+(1 XOR 2) * C2 = A XOR B
+
+C2 = (A XOR B) / (1 XOR 2)
+C1 = A XOR C2
+```
+
+Note that, C1, C2, C3, P1, P2...
+these are not simple integers.
+These are arbitrarily large bytestream.
+If C1, C2, and C3 are the data chunks that represent user avatar image for example,
+then each chunk could be like 20MB large.
+
+That means, the `XOR` operation would still work perfectly fine on them.
+The multiplication `*` and division `/` are somewhat different than multiplication and division on integers though,
+since we are dealing with bytestream.
+These specialized multiplication and division operations
+are applied as if each bytestream is a finite field,
+which I don't understand fully, so I will leave it to you the reader to carry out your own exploration.
+
+### Reed Solomon, In Practice
+
+When MinIO implements Reed Solomon,
+
 
 ### The Actual Architecture
 
