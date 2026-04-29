@@ -64,23 +64,33 @@ The goal is already satisfied by k-12, the internet, and major specific lower di
 
 _Then, maybe universities simply want students to have a breath of knowledge outside their specialized major curriculum
 just for the sake of breath._
-
-So, GE classes don't seem to align with specialized major curriculum at all.
-Then the remaining explanation might be that,
-perhaps universities require students to take GE classes
-simply for the sake of having breath outside of that student's major.
+Surely, forcing someone to learn about European Art History would extend one's breath of understanding
+outside beyond major they are.
+But actually, I contend that this is the wrong way to go,
+because students' incentives are very misaligned from learning about anything other than their major curriculum.
 
 ## The Misaligned Incentives
 
-I think the reason boils down to misaligned incentives
-between what universities believe one should take away from an undergraduate education
-versus what we as the students are looking for.
+Before World War Two, universities were meant to elevate the elite and the top scholars,
+and having a breath of elegant knowledge is necessary and relevant for these groups.
+After all, if you are at a fancy tea party and everyone there is
+talking about Baroque music and Byzantine literature,
+you are left out.
+If you are an English scholar studying Shakespeare, learning about English in the 1300s are very relevant too.
 
+World War Two expanded universities for we the commoners,
+and to its credit, it's done it well.
+Thanks to universities, the average person's knowledge is much higher
+than a factory worker or farmer's knowledge a hundred years ago.
 
-But from a student perspective, we don't care about none of that.
-For most of us, we just want one thing: job.
-Say whatever you want about furthering critical thinking and intellectual curiosity,
-if we can't pay rent and food after graduation,
+But the breath of elegant knowledge for the elite still linger in university curriculum today in the form of general education.
+The goal of having a breath of elegant knowledge that used to be relevant to the elites and top scholars who attended universities
+no longer appeal to the common class of people attending universities today.
+From a middle class student perspective, we don't care about none of that unnecessary breath outside our major.
+For most of us common undergraduate students, we just want one thing: job.
+
+Say whatever you want about furthering critical thinking and intellectual curiosity outside of one's major,
+but if we can't pay rent and food after graduation,
 we are not taking any of those GE classes.
 After all, on our job application resume, only the most relevant major curriculum gets highlighted,
-and everything merely collapse into a 4.0 scale number representing our GPA.
+and all the GE classes merely collapse into a part of the 4.0 scale number that represent our GPA.
