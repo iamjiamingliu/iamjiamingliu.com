@@ -34,27 +34,43 @@ At least for me and almost all of my friends, we concur on our strong disgust ag
 People outside my circle hate general education to varying extent too,
 and at least, nobody ever said they love general education.
 
-## Why GEs exist, for outdated and wrong reasons
+## Why GEs exist, for the wrong reasons
 
-Perhaps universities designed GE classes to first build strong foundational knowledge in students
-to then make specialized major curriculum possible.
-This reasoning sounds outdated to me:
-from modern k-12 education and the easily accessible information online,
-students coming into college already have decent exposure to the breath of foundational knowledge.
+I'm not a university administrator, but from my research,
+I think GEs exist because universities want:
+
+1. Students to first build strong foundational knowledge that then makes specialized major curriculum possible
+2. Students to simply have a breath of knowledge outside their specialized major curriculum
+
+Suppose my speculated reasons are correct. Then, I believe that the above intents are well justified.
+It makes sense to first build foundation that empower the later specialization.
+It also makes sense to be somewhat knowledgeable outside of one's specialization.
+However, these reasons do not justify the existence of a general education curriculum,
+because GEs are unnecessary and ineffective for meeting the above two goals.
+
+_Perhaps universities designed GE classes to first build strong foundational knowledge in students
+to then make specialized major curriculum possible._
+This reasoning sounds outdated to me.
+From modern k-12 education and the easily accessible information online,
+students coming into college already have decent foundational knowledge.
 People already spent years learning about english, math, some foreign language, history, and science.
 Major specific curriculum give major specific foundational knowledge too.
-For Computer Science, you first need to learn about basic programming, then data structure and algorithms,
+For Computer Science, you will first learn about basic programming, then data structure and algorithms,
 and finally whatever domains it may be, from machine learning to databases.
-Forcing another Ethnic Studies GE class with the argument that without it
+Forcing an Ethnic Studies GE class with the argument that without it
 students won't have sufficient foundational knowlege for machine learning engineering or advanced chemistry
-sounds too far stretched.
+or other specialized major courses sounds too far stretched.
+The goal is already satisfied by k-12, the internet, and major specific lower division curriculum.
+
+_Then, maybe universities simply want students to have a breath of knowledge outside their specialized major curriculum
+just for the sake of breath._
 
 So, GE classes don't seem to align with specialized major curriculum at all.
 Then the remaining explanation might be that,
 perhaps universities require students to take GE classes
 simply for the sake of having breath outside of that student's major.
 
-## Why students hate GEs
+## The Misaligned Incentives
 
 I think the reason boils down to misaligned incentives
 between what universities believe one should take away from an undergraduate education
