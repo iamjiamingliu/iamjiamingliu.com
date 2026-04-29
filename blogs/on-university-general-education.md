@@ -94,3 +94,36 @@ but if we can't pay rent and food after graduation,
 we are not taking any of those GE classes.
 After all, on our job application resume, only the most relevant major curriculum gets highlighted,
 and all the GE classes merely collapse into a part of the 4.0 scale number that represent our GPA.
+
+
+## The Solution
+
+A rant is a rant if it has no solution proposed.
+So, I'm going to talk in a voice like Greta Thunberg's to naively put forth my proposed solution,
+which might make my essay sound even more like a rant but why not:
+
+Universities need wake up and realize that the majority of their attendees are not longer
+elites and top scholars pushing the bounds of humanity (or perhaps ruining it, if you are an Oil Barron),
+but rather the common class of people trying to use this college degree to find a job afterward.
+
+We as the common class of people don't care about elegant Baroque music.
+We don't care about big words like critical thinking and intellectual curiosity.
+We care about one thing and one thing only: job.
+
+General education can stay as optional, but it must not be a requirement anymore.
+The curriculum should be oriented and optimized for one thing and one thing only: job.
+
+That's my solution to GEs: make them optional.
+And I'm going to push my talking even further beyond GEs on what an ideal university in the modern age should look like:
+
+- Professor wise, they must consist of industry professionals as well as the academia. At the moment, the hiring focus seems to be exclusively on research professors instead of professors with hands-on industry experience. If the outcome for an undergraduate experience is job, it makes sense for the teachers to have hold jobs themselves too
+- Curriculum wise, emphasize hands on learning and tie it to the conceptual. Some universities are already doing this well, some other universities are still focused heavily on the conceptual
+- Drop GEs as requirements, and shrink departments that do not lead to jobs for its students. This is a cruel point, but time has changed. Universities must be oriented for jobs, and departments that are weakly oriented to jobs are no longer relevant and must earn reduced resources
+- Expand research labs for undergraduate students, because hands-on experience in labs will contribute to job outcomes, even though an undergraduate lab assistant's role might not directly be relevant to their future job
+- Fund student organizations more. Simply getting a 4.0 GPA is no longer getting any jobs. People compete on the extracurriculars. Competitions, clubs, etc. And student organizations supporting these causes are massively underfunded. They should be funded as well as the curriculum itself because its important have exceeded the curriculum itself, and it would mean adult supervision on the student clubs are necessary as a result
+- Fund outdoor adventure and events for face to face social connections. This is becoming very needed in the post COVID social media age, and official attention and funding from the university seems necessary. And the moment, such events are self funded and organized by students
+
+Some universities seem to be already on track for the university 2.0 vision to varying extent.
+I hope to see more universities waking up,
+realizing that people go to universities today because they need a job afterward,
+and optimizing its professors, curriculum, and extracurricular for jobs.
