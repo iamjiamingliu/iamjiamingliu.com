@@ -7,6 +7,8 @@ created_at: 2026-04-29 11:07:57
 updated_at: 2026-04-29 11:07:57
 ---
 
+## Students hate GEs
+
 You can probably guess why I'm writing this article:
 I am an undergraduate at UCSB,
 I'm suffering through all the general education classes,
@@ -27,7 +29,42 @@ whereas major curriculum courses are restricted within one's major and thus have
 
 Given that general education only makes up a minority of one's undergraduate curriculum,
 and that there's a variety of subject options,
-why do they seem so annoying?
-At least for me and almost all of my close friends, we concur on our strong disgust against general education courses.
+why are GEs so annoying nevertheless?
+At least for me and almost all of my friends, we concur on our strong disgust against general education courses.
 People outside my circle hate general education to varying extent too,
-and at least, nobody ever said they love general education, so it must suck for sure.
+and at least, nobody ever said they love general education.
+
+## Why GEs exist, for outdated and wrong reasons
+
+Perhaps universities designed GE classes to first build strong foundational knowledge in students
+to then make specialized major curriculum possible.
+This reasoning sounds outdated to me:
+from modern k-12 education and the easily accessible information online,
+students coming into college already have decent exposure to the breath of foundational knowledge.
+People already spent years learning about english, math, some foreign language, history, and science.
+Major specific curriculum give major specific foundational knowledge too.
+For Computer Science, you first need to learn about basic programming, then data structure and algorithms,
+and finally whatever domains it may be, from machine learning to databases.
+Forcing another Ethnic Studies GE class with the argument that without it
+students won't have sufficient foundational knowlege for machine learning engineering or advanced chemistry
+sounds too far stretched.
+
+So, GE classes don't seem to align with specialized major curriculum at all.
+Then the remaining explanation might be that,
+perhaps universities require students to take GE classes
+simply for the sake of having breath outside of that student's major.
+
+## Why students hate GEs
+
+I think the reason boils down to misaligned incentives
+between what universities believe one should take away from an undergraduate education
+versus what we as the students are looking for.
+
+
+But from a student perspective, we don't care about none of that.
+For most of us, we just want one thing: job.
+Say whatever you want about furthering critical thinking and intellectual curiosity,
+if we can't pay rent and food after graduation,
+we are not taking any of those GE classes.
+After all, on our job application resume, only the most relevant major curriculum gets highlighted,
+and everything merely collapse into a 4.0 scale number representing our GPA.
