@@ -95,6 +95,18 @@ we are not taking any of those GE classes.
 After all, on our job application resume, only the most relevant major curriculum gets highlighted,
 and all the GE classes merely collapse into a part of the 4.0 scale number that represent our GPA.
 
+True, GEs only make up a minority of one's undergraduate curriculum.
+But forcing one to do things that distract them from their main goals would give disproportional pain,
+so a 6:4 emphasis on major curriculum versus general education might result in 3:7 pain with the 70% coming from the general education.
+Imagine you come back from a day fighting off data structure and algorithms,
+Claude-prompting your next CS project to put on your resume,
+and preparing for the ICPC tryout,
+but all of a sudden you remember that you need to write that essay to
+analyze but must not summarize a medieval literature about Sir Gawain and the Green Knight,
+that's disproportional pain right there.
+Sure, coding might be busy work, but at least you enjoy it, or you would lie to yourself to enjoy it because it's necessary for your job.
+What about Sir Gawain and the Green Knight?
+Just an unfortunate hurdle you have to jump through.
 
 ## The Solution
 
