@@ -56,7 +56,7 @@ of college admission meritocracy:
 
 1. A guy with USACO Gold and then Platinum: UC San Diego
 2. Several guys with 4x or more AIME math competition qualifications: UC Santa Cruz, UCSB, etc.
-3. A guy with USACO Platinum and, if I remember correctly, IOI Camp: UCSB
+3. A guy with USACO Platinum: UCSB
 4. A guy with IOI Camp: De Anza community college and then UCSD
 5. Several guys with super strong and **genuine** extracurriculars (no B.S. non-profit or anything) and leadership experience: UC Santa Cruz, UCSB
 6. A guy with top 100 math competition ranking from China: UCSB
@@ -88,7 +88,7 @@ One comforting fact, though, is that a bad admissions outcome did not stop these
 They seem to be doing very well afterward.
 In the same order:
 
-1. Became the best competitor on the UCSD ICPC team, scored top 2 in ICPC Southern California regionals in the past two years, placed top 25 in the North America Championship, and is now heading to Citadel Securities. He also got 7th place in picoCTF and top 100 in Putnam
+1. Became the best competitor on the UCSD ICPC team, scored top 2 in ICPC Southern California regionals in the past two years, placed top 25 in the North America Championship, and is now heading to Citadel Securities. He also got 7th place in picoCTF and top 200 in Putnam
 2. Interned at top companies, made Putnam top 250, and qualified for ICPC regionals
 3. Became the best competitor on the UCSB ICPC team and made it all the way to ICPC World Finals, beating teams from big-name schools like UC Berkeley, UCLA, and Harvard
 4. Made it to ICPC World Finals from De Anza College, and now, I think, is going to a quantitative finance firm
