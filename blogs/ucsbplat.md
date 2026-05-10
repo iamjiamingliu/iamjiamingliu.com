@@ -1,11 +1,37 @@
 ---
-title: The Evolution of UCSBPlat
-description: A skeleton timeline of how ucsbplat.com grew from a scraper into a full student platform
+title: The Evolution of UCSBPlat.com
+description: Same mission, but the implementation keeps on getting better
 tags: []
 category: Tech
 created_at: 2026-05-10 15:45:00
 updated_at: 2026-05-10 15:45:00
 ---
+
+## We Love UCSBPlat.com
+
+If you are a student at UCSB,
+chances are,
+you are already a happy user of UCSBPlat.com yourself,
+or you've had at least heard of it,
+and likely that many of your friends are happy users of UCSBPlat.com too.
+
+You open UCSBPlat.com, gets greeted with a beautiful, clean UI like this:
+
+![](/static/img/projects/ucsbplat.webp)
+
+Then you go on your business using it,
+whether it's looking up the grading trends and enrollment trends of a class you are thinking of taking
+or trying to fill your schedule with whichever GE class that satisfy the most areas.
+
+Today, UCSBPlat.com has the pleasure of serving 9,000+ monthly active students,
+helping Gauchos find classes with better reviews, grading trends, enrollment trends, and more.
+Actually, the Google Analytics page of UCSBPlat.com indicate that there's 17,000 unique visitors of UCSBPlat.com
+in a given month. However, for mysterious reasons, around 7,000 of them are from mainland China, Singapore,
+and various other countries...
+I don't know why someone on the other side of the ocean of UCSB would bother to look at UCSB courses,
+so I suspect these are merely automated scraping bots and ignoed them from the 9,000+ monthly active users calculation.
+
+![](/static/img/projects/ucsbplat_google_analytics.png)
 
 > This is a commit-history-based skeleton draft.
 > I still need to add the actual story, emotions, mistakes, motivations, launch anecdotes, and hindsight.
