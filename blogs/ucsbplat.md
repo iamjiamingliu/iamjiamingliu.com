@@ -187,6 +187,91 @@ but many also faired in anonymity.
 But you never know. You just have to try it.
 Shoot the shot.
 
+## The Winter Break
+
+Thus the grind has begun.
+If I remembered correctly,
+during weeks leading up to the freshman year fall quarter finals,
+I was just sketching all the time away with pencil and paper about Plat.
+I just had to swallow the fact that, I'm about to fight a monster,
+I might fail, but I have to shoot this shot, and no matter what, I will grow from this journey.
+I wrote a few scripts and concluded that it's technically feasible to crawl and index UCSB catalog, rate my professors, and daily nexus grades.
+I didn't crawl GOLD, because as a rule of thumb in crawling, you don't crawl logged-in content.
+Instead, I crawled the [Student Affairs Public Catalog](https://my.sa.ucsb.edu/public/curriculum/coursesearch.aspx)
+for the course information, which is public and doesn't require login.
+For rate my professor, I simply crawled the top 6 reviews per professor as overview so that it's fair use,
+and "see more" would link the user directly to rate my professor.
+Finally, for grading trends from Daily Nexus,
+they publish their data as a CSV file on Github anyways, so I just used that.
+You reciprocate favors:
+later on, Daily Nexus asked Plat to use some of Plat's data, to which I generously gave.
+
+In a way, it's like building a mini-Google, but limited to 3 sites about UCSB courses.
+
+Winter break came, I had nothing else to do, so I went all in to build out the actual UCSBPlat.com guided by the prior planning.
+There wasn't Claude Code nor Codex, ChatGPT was pretty shitty back then,
+so I just manually coded out everything.
+I used Python Flask and HTML and Bootstrap 5 for the frontend,
+Selenium + Scrapy + Requests for scraping,
+and at first just PostgreSQL for data storage.
+I would wake up, quickly eat breakfast, and just start coding.
+I was so freaking locked in.
+My eyes would get a bit blurry and dry, my stamina would get exhausted,
+but I just kept going because I believed I was building something big.
+I was happy that I found my calling.
+
+Nowadays whenever I add a new feature or bug fix to Plat,
+I would use Codex and ChatGPT to assist the process,
+but I always steer and code the important stuff myself.
+I believe there's something irreplaceable about human intelligence,
+and AI assitants are called assitants because they are good at telling you what's wrong and doing the straightforward stuff,
+but they can't steer the ship yet.
+If AI can steer the ship, why are AI companies still hiring humans?
+At the moment, humans matter, and AGI isn't here yet.
+
+I later on tried to build a Plat for UCLA, and all the coding tools failed hilariously,
+and I concluded it's not worth my time to build another Plat for a school I don't even go to.
+I will leave this gem idea to whoever next can execute effectively on it at UCLA.
+I guarantee you, there will be a heck ton of users.
+
+God knows how many challenges I ran into while building Plat...
+Professor name abbreviation mismatch, SQL JOIN issues,
+and just mysterious bugs everywhere.
+And which ever issues comes up,
+I just gotta Google search and click through all the StackOverflow and Youtube and blogs to find a solution.
+If none exist already, I just had to try many things out myself.
+Good old times before AI slop came along.
+It felt like 过五关斩六将, the classic Chinese lore of a general having to fight through all the castles before reaching the destination.
+Well, isn't that how every meaningful journey goes? No journey is a journey without challenges.
+You just gotta push through them all.
+
+I'm glad all the previous projects I built in high school prepared me for this moment.
+When everyone was Senioritus-ing the last semester of high school away,
+I leveled up my SQL skills and learned about SQLAlchemy the ORM,
+and they came so clutch for UCSBPlat.
+SQL is already complicated, ORM like SQLAlchemy adds another layer of abstraction and complexity on top,
+so I really struggled to grapple SQLAlchemy at first,
+but thankfully I figured it out eventually and SQLAlchemy saved me so much effort later on.
+
+I proudly showed off my progress to my dad, an iOS veteran developer.
+But he didn't seem to understand what I was doing nor the implication of Plat's possible signifiance.
+I also told many friends about Plat.
+Some courteously said "wow this is great" while most just said "ok cool".
+I mean, I guess when you are trying to innovate and build something new,
+people won't get it at first.
+They shouldn't get it.
+If something is so easily understood by everyone, it won't be waiting for you to build.
+You get the opportunity to build it because only you know it could be a gem when everyone just thinks it's another stone, or doesn't see it exist at all.
+You may be horribly wrong, but if you are right, it pays.
+
+There's so many more moments like UCSBPlat where my idea or proposal gets ignored or scolded,
+and eventually it turns out I'm right and a meaningful innovation is brought forth,
+and occasionally I'm wrong and let it be.
+There are also a few times my friends proposed some strange, seemingly nonsense endeavors that I ignored.
+Sometimes they turn out to be wrong, and other times they are right, make a hit, and I was wrong.
+After all, good innovation ideas should be non-obvious, counter intuitive, and bold.
+It should be surprising.
+
 > This is a commit-history-based skeleton draft.
 > I still need to add the actual story, emotions, mistakes, motivations, launch anecdotes, and hindsight.
 
