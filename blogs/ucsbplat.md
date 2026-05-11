@@ -31,7 +31,28 @@ and various other countries...
 I don't know why someone on the other side of the ocean of UCSB would bother to look at UCSB courses,
 so I suspect these are merely automated scraping bots and ignoed them from the 9,000+ monthly active users calculation.
 
+Actually one more thing: the 9,000+ is the number on a low month, where there isn't an active course registration period happening.
+For months with active course registration that everyone would go on Plat and look around courses information,
+I think the number would range from 10K to 15K.
+
 ![](/static/img/projects/ucsbplat_google_analytics.png)
+
+
+## The Other Side of the Story
+
+My name is Jiaming Liu, UCSB Computer Science Class of 2027.
+I created UCSBPlat.com as my freshman year winter break hobby project and have maintained it ever since.
+In this blog, I want to show you the other side of the story:
+how Plat was built, how it evolved, and how it might go in the future.
+
+While you read, I want to draw your attention to these themes I experienced:
+
+1. It's okay to feel like giving up, as long as you come back to it
+2. It's okay and natural to feel burned out. The good news is that passion will bounce back
+3. What a playground!
+4. Like Warren Buffet said, "Our favorite holding period is... forever."
+
+What do I mean by these themes? Well, keep on reading. Here we go!
 
 > This is a commit-history-based skeleton draft.
 > I still need to add the actual story, emotions, mistakes, motivations, launch anecdotes, and hindsight.
