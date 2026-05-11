@@ -147,6 +147,46 @@ As my other blog article said, [idea is cheap, but execution is gold](/blogs/pro
 People today only know UCSBPlat, but UCSBPlat wasn't the first.
 It's just better.
 
+## But I have to shoot this shot
+
+You know, I'm a busy person.
+Not in the sense that I get overwhelmed by too much work,
+but rather in the sense that, I just can't afford being not busy.
+I can't spend a long period of time not working on something big.
+If I'm not working on something big, I feel sad.
+I have to keep myself busy.
+
+I just started freshman year back then.
+All those accomplishments I did in high school got reset to zero.
+I'm now a nobody freshman rookie in a big university without any titles or anything to hold on to.
+I tried to join the UCSB ICPC competition, but I didn't make the cut.
+I tried to join CoderSB and got rejected
+<small>(I think I got rejected? But I definitely tried to join UCSB ACM a year later, the direct successor of CoderSB club, and got rejected. Ironically I later became the President of UCSB ACM. You never know what could happen in life).</small>
+I tried to replicate my TV newscast experience back in high school here at UCSB,
+and that didn't work either.
+I applied for UCSB TV, never heard back, until I emailed them to which they replied "huh? we didn't see your application".
+I joined The Bottom Line News, which also was lame.
+Really, it just felt that in the first 2 months of college, I was trying this and that and got nowhere in everything I tried.
+
+Maybe UCSBPlat would become one more thing I tried and get nowhere.
+And become a joke.
+You can't afford being a joke when everything isn't working.
+
+But I just can't do nothing. I'm a busy person. I have to be working on something.
+Out of all the things I thought of, Plat is the one last thing I could try.
+Sure, it could fail, but I assured myself that,
+at least I could learn new technologies (ORM, Scrapy, etc.) from this experience,
+and it can go on my resume no matter what.
+
+So, let's just go for it and see where it goes.
+You really can't tell.
+There are many software projects I built before Plat, and after Plat,
+that were meticulously planned and well executed.
+Some of them became lasting and loved by many,
+but many also faired in anonymity.
+But you never know. You just have to try it.
+Shoot the shot.
+
 > This is a commit-history-based skeleton draft.
 > I still need to add the actual story, emotions, mistakes, motivations, launch anecdotes, and hindsight.
 
