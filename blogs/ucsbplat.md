@@ -440,4 +440,76 @@ Plat kept on evolving.
 It's been the same mission, just with better features and better implementations.
 It's a playground for whatever technical takeaways I got from the relic of my TikTok internship and wherever the later technical curiosity took me.
 
-## The Future
+## The Burnouts
+
+There are multiple moments I just thought "that's it, that's enough Plat for me"
+while I was maintaining it or adding new features to it.
+
+For example, if rate my professor change their data format,
+I have to adjust my source code to reflect that change,
+and it's just super annoying when RMP suddenly breaks, you have to go change the code,
+and the next day Daily Nexus' grades format changed too and you have to deal with it.
+
+And whenever I add a new feature,
+my brain just gets overloaded trying to reason out how to make this feature good.
+I hold every feature added to Plat to it's highest standard,
+thus every new feature added simply required so much brain power that made me feel burned out.
+
+I didn't have much magic formula against moments like these.
+I just thought, well, this happened before whenever I tried to add something,
+it's happening now again,
+but I just gotta take such punch in the face and keep going,
+and eventually it will be fine.
+It's really not an elegant solution, but it does work out.
+If it works, it works.
+
+## Wrapping Thoughts
+
+Well, I'm about to graduate in a quarter or two,
+so I've passed the torch of UCSBPlat to a fellow ACM officer.
+
+A week or two prior to writing this article,
+I added what I think would be the one last feature I will ever add to Plat:
+Google Login.
+It's because some other folks at UCSB ACM wanna build on top of UCSBPlat,
+their feature require login,
+so I was like,
+"cool, let me add one last touch to this, and then you can build it from there."
+
+But I also just realized,
+it's the housing season.
+What if UCSBPlat has some housing functionalities?
+Like, a forum for subleasing, finding roomates, and reviewing landlords.
+Existing websites and Facebook group exist,
+but what if it just becomes more consolidated and structuralized,
+jump started by Plat's existing popularity?
+
+I thought really hard about this possibility,
+got burned out a bit in the process,
+and concluded that,
+it's worthy to do,
+but I'm about to be outta here,
+so I'll leave it as a possibility for future builders to explore.
+I think I've had enough stress and worries about perfecting new features onto UCSBPlat.
+
+I hope after I graduated, UCSBPlat can still survive for a few more years,
+until every product inevitably die of age,
+especially for student products.
+
+No matter what,
+I've had a great run with Plat.
+It's the crown jewel of my personal projects portfolio,
+fueled so much of my technical growth as a playground for experimenting whatever new technology I had been learning,
+and it's just something whose impact I'm super proud of.
+
+I went to TikTok shop, saw the tech there,
+and added the takeaways to Plat.
+I'm interning at ChatGPT Ads this summer. Will I add ads into Plat after this summer haha?
+
+Nah, I don't wanna monetize Plat.
+I think it's already a hassle to keep a product alive from a technical perspective,
+and it would be so much more hassle if commercialization gets involved too.
+There's other ways to make money.
+We don't have to make every issue an issue about money.
+
+That's it for now. It's been a good run.
