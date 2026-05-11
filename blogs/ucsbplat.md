@@ -124,6 +124,29 @@ So, on the seventh day, I decided I'm out.
 UCSBPlat was dead again before a single line of code was written.
 My mental mayhem had dragged me down.
 
+While I was planning, I saw that, the idea of UCSBPlat was not _that_ original at all.
+There are already many course catalog wrapper and scheduler at UCSB:
+gauchocourses.com, GoGaucho iOS app, and more.
+After the release of UCSBPlat, these sites all have silently shut down now,
+or aren't as popular as before Plat came and zeized the market.
+But still, when I was planning, I thought,
+_if all the giants before me already exist, why am I qualified enough to wrestle them?_
+In hindsight, the reason is clear:
+the emphsis on existing sites are schedule planning,
+while the emphasis on UCSBPlat is the aggregation with professor reviews, grading trends, and more.
+Plus, UCSBPlat have a much cleaner, intuitive, and prettier UI.
+But the freshman year version of me couldn't tell what my edge was.
+It's important to know your edge.
+
+Really, if you think about many of the great internet software out there,
+they weren't the first. They are just better.
+Before Facebook there was myspace. Before Google there was Yahoo and many search engines.
+Before Amazon there were many ecommerce sites.
+Ideas may be important, but execution is the killer.
+As my other blog article said, [idea is cheap, but execution is gold](/blogs/problem-solution-execution.md).
+People today only know UCSBPlat, but UCSBPlat wasn't the first.
+It's just better.
+
 > This is a commit-history-based skeleton draft.
 > I still need to add the actual story, emotions, mistakes, motivations, launch anecdotes, and hindsight.
 
