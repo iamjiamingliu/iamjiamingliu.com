@@ -54,6 +54,35 @@ While you read, I want to draw your attention to these themes I experienced:
 
 What do I mean by these themes? Well, keep on reading. Here we go!
 
+## The Birth of Plat: the mission and name
+
+When I started my undergrad at UCSB back in fall 2023,
+I was just thoroughly disgusted by the difficulty of use and ugly UI of GOLD (Gaucho Online Data),
+the official curriculum registration platform of UCSB.
+
+I love building websites. Especially websites with beautiful UI.
+I've been building websites since high school.
+So I thought,
+_why not build a GOLD wrapper website with the same data, but just prettier UI?_
+
+But then I realized, no one would want to use a website like that.
+Sure, it looks prettier than GOLD, but so what?
+Do I want to open another tab just to see the same information as GOLD?
+Being a pretty wrapper doesn't seem to give a compelling enough benefit for users to use it.
+Thus, that was the end of UCSBPlat before it was even called UCSBPlat.
+
+Thankfully, as I was wandering around the UCSB lagoon one day,
+I realized what could become a compelling enough reason for users to use website:
+_what if in addition to having all the catalog data from GOLD,
+we also aggregate and present it together with Rate My Professor reviews and Daily Nexus grading trends, all with a really gorgeous UI?_
+After all, I see friends with GOLD, RMP, and Daily Nexus open in browser tabes whenever they are signing up for a course.
+Given that a tiny bit less of user friction would result in a significantly better user experience,
+surely having one site for them all would justify a compelling enough benefit for users.
+
+The same data as GOLD. With a better UI. And aggregated with additional information too.
+It's better than Gold. It's gotta be Platinum.
+Thus, the name and vision for UCSB Platinum, UCSBPlat.com, was born.
+
 > This is a commit-history-based skeleton draft.
 > I still need to add the actual story, emotions, mistakes, motivations, launch anecdotes, and hindsight.
 
