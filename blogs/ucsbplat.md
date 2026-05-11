@@ -83,6 +83,47 @@ The same data as GOLD. With a better UI. And aggregated with additional informat
 It's better than Gold. It's gotta be Platinum.
 Thus, the name and vision for UCSB Platinum, UCSBPlat.com, was born.
 
+## Giving up before a line of code
+
+A lesson I learned from my previous website projects was,
+before any line of code is written, start with a plan first.
+Sure, software engineering is an iterative, discovery, and evolving process,
+but you gotta start with a plan first.
+Without a plan, the code would go nowhere,
+and you would just be wasting time trying to inefficiently juggle between coding and implicitly planning it while you code.
+
+So I went out to sketch out the plan:
+the user story, the UI, the domain design, the scraping workflow, architecture, and the database table design.
+And I realized, oh boy, what the hell of a mess UCSBPlat was gonna be.
+
+Sure, today when you look at UCSBPlat,
+everything is clean: the UI is intuitive, you search for a class, click it, and see the aggregated data.
+But nothing is clean in the beginning.
+In the beginning everything was mayhem.
+Only through so much brain power drainage and iterations would mayhem slowly morph into being clean.
+
+I realized to make UCSBPlat happen, I had to wrestle with a monster with this many arms in front of me:
+
+1. 13 database tables needed to store all the courses, professors, reviews, section, enrollment trends, grading trends, etc.
+2. An enormous Python script needed to scrape courses from GOLD. And do it again with rate my professors. And do it again with Daily Nexus grading trends.
+3. Extra complicated joining logic needed to correctly resolve "Bob Anderson" on rate my professor to the abbreviation "R W Anderson" listed on in GOLD
+4. God knows how many SQL lines are needed to JOIN all the related data together
+
+And many more...
+
+I was living in the Anacapa dorm in my freshman year.
+For a whole week straight,
+I would spend afternoon and late nights there sketching out UCSBPlat UI drafts, database design, and scraping workflow outline
+with pencil and letter paper I grabbed from downstairs printer tray.
+I don't know Figma or anything complicated, just pencil and paper.
+I still use pencil and paper.
+The more I sketched, the more I realized what kind of monster lies in front of me.
+
+Maybe the best way to deal with a bottomless pit is to just don't go into it.
+So, on the seventh day, I decided I'm out.
+UCSBPlat was dead again before a single line of code was written.
+My mental mayhem had dragged me down.
+
 > This is a commit-history-based skeleton draft.
 > I still need to add the actual story, emotions, mistakes, motivations, launch anecdotes, and hindsight.
 
