@@ -272,6 +272,85 @@ Sometimes they turn out to be wrong, and other times they are right, make a hit,
 After all, good innovation ideas should be non-obvious, counter intuitive, and bold.
 It should be surprising.
 
+## The Reddit Post, with typo
+
+Time to launch.
+
+But where to launch?
+
+Well I got lazy,
+so I just dropped one post on Reddit and called it a day.
+I thought, _if this reaches enough users, I think it's sufficient and I can just not do other promo._
+So, on January 1st 2024,
+I posted [this Reddit Post](https://www.reddit.com/r/UCSantaBarbara/comments/1aegcjn/introducing_ucsb_platinum_usbplatcom_its_gold_but/)
+in r/UCSantaBarbara and just prayed it would go well.
+And luckily, it did.
+The post gained 29,000 views within 48 hours of its posting,
+although I was afraid to measure how many of them actually clicked to UCSBPlat from the post.
+I made a typo in the post title: "Introducing UCSB Platinum **usbplat**.com - It's GOLD, but Better."
+Oops, USBPlat instead of UCSBPlat.
+
+My friend strongly encouraged me to set up Google Analytics for Plat,
+to which I refused, because I worried the number of visitors might look bad.
+Then I was like fuck nah let's just add it and see the truth,
+and thankfully, the numbers were fine.
+And according to Google Analytics, UCSBPlat organically grew, through word of mouth after the initial Reddit post,
+from 0 to 9,000+ users since then.
+
+If you look at the OG Reddit post,
+there was a feature that no longer exist:
+course recommendation.
+I thought course recommendation would be a hit,
+only to realize that almost no one used it.
+I later tried to use some complicated DAG logic and retrieval pipeline to improve the recommedation,
+but that didn't strike the users too.
+So I just took it down the recommendation feature.
+Nowadays people occasionally say "why don't you add a recommendation feature",
+and I reply "well I did, and no one used it."
+I suspect the failure is because the user would need to upload their transcript PDF,
+which is quite a hassle to do and would raise privacy eyebrows.
+If Plat has a Google login that just knows all the courses automatically so that course recommendation can be shown
+without having to take an extra step of uploading the transcript,
+I'm guessing the feature could be very popular instead of fairing badly in anonymity.
+After all, any extra friction in the user experience would kill the usage.
+Imagine Amazon shopping recommendation would require you to upload all of your shopping receipts from the past;
+I doubt anyone would use that.
+But if Amazon just tracks all the stuff you've browsed and purchased so far automatically
+and show recommendation without you having to ask for it first,
+then people will use it.
+Friction kills.
+
+The person who created gauchocourses.com saw the Reddit post and reached out to me to build a feature on Plat.
+I thought he was trying to scam me or hack into UCSBPlat.
+After all, GauchoCourses.com is a competitor.
+But after we got on a Discord call and introduced ourselves, I saw he meant no harm.
+He's just another Gaucho technologist who likes building things, so I let him built the feature.
+We've become good friend since then, he's an officer on the SBHacks organizing team,
+so I stayed on the SBHacks organizing team for the next 2 years because of him.
+
+Two years later, the alumni from 7 years ago who GoGaucho iOS app reached out to me on Instagram.
+I was shocked to see how he found me, and he said it's because the current maintainers of GoGaucho was talking about Plat,
+which is how he heard.
+He was an international Chinese student just like me, so, we conversed in Mandarin and had a good time.
+I then became VP of UCSB ACM and interviewed this guy for the ACM Alumni Spotlight Series.
+
+I reached out to UC Berkeley's Plat equivalent BerkeleyTime.com.
+I got on a call with their project manager,
+talked about Plat,
+discussed issues that apparently both BerkeleyTime and Plat face,
+and had a good time.
+But I can't help but laugh at the fact that,
+BerkeleyTime has a team of 10 to 20 students just to maintain the site.
+Plat was all me, built and maintained.
+To be precise, my friends added a few lines of code here and there, but 99% of the commits are from me.
+No way BerkeleyTime needs 20 people just to maintain their site.
+And their site is actually shittier than UCSBPlat:
+the grading trends and enrollment trends require separate lookup on different pages,
+and it doesn't even have professor reviews.
+
+Great. I didn't build a failure. People started using Plat.
+It was the first Reddit post I ever made, and I'm glad my first Reddit post was about UCSBPlat.
+
 > This is a commit-history-based skeleton draft.
 > I still need to add the actual story, emotions, mistakes, motivations, launch anecdotes, and hindsight.
 
