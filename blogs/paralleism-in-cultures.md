@@ -16,20 +16,22 @@ doom-scrolling,
 hanging out with friends,
 and reading.
 
-One thing that really struck me from the books I've read is that,
-there's so much parallelism of equivalent concepts across languages.
+One thing that really struck me from the books I’ve read is that
+there’s so much parallelism across languages.
+I’ve only read Mandarin and English,
+but I strongly suspect this pattern generalizes to adjacent languages too:
+Japanese, Korean, Spanish, French, and probably many more.
+Mandarin influenced many languages in Asia.
+English co-evolved with many languages in Europe.
+So if Mandarin and English already share so many equivalent concepts,
+it seems reasonable to suspect that many other languages do too.
 
-I've only read Mandarin and English,
-but I strongly suspect this duality would generalize to adjacent languages like Japanese and Korean and Spanish and French,
-as Mandarin influenced many languages in Asia, and English co-evolved with many languages in Europe,
-thus parallelism of equivalent concepts in Mandarin and English
-should reasonably induct to equivalent concepts to many other languages too.
-
-For almost every concept in Mandarin, expressed from proverbs to slang,
-you can find its counterpart in English.
-Vice versa, for proverbs and slang in English,
-you can find counterparts in Mandarin too.
-
+For almost every concept in Mandarin,
+whether expressed through proverbs, idioms, or slang,
+you can find some counterpart in English.
+And vice versa:
+for many English proverbs and slang phrases,
+you can find something close in Mandarin too.
 Let me give a few concrete examples:
 
 | English                             | Mandarin |
@@ -41,81 +43,110 @@ Let me give a few concrete examples:
 
 
 The examples above are old school.
-For the newer and always changing Internet slang,
-there's so many examples of parallelism just as well.
-Here's one very stupid and morally dubious example about dating that
-I saw on Instagram, and Bilibili (Chinese Youtube):
+But even for newer, constantly changing internet slang,
+you see the same kind of parallelism.
+Here’s one very stupid and morally dubious dating example
+that I saw on both Instagram and Bilibili,
+which is basically Chinese YouTube:
 
-Instagram: "It's better to give 20 guys/girls 1 chance each than giving 1 guy/girl 20 chances".
+Instagram:
+“It’s better to give 20 guys/girls 1 chance each
+than to give 1 guy/girl 20 chances.”
 
-Bilibili: 给1个他20次机会，不如给20个他1次机会 (Which is literally word for word equivalent to what I saw on Instagram)
+Bilibili:
+给1个他20次机会，不如给20个他1次机会
 
-Sure, in today's all-connected internet age,
-a few equivalent concepts may have been the result of exchanges that happened across the internet,
-but I surmise that many of such concepts developed independently in the Asian and European continents
-long before the internet age.
+Which is literally almost word-for-word equivalent.
+
+Sure, in today’s hyper-connected internet age,
+some of these equivalent ideas probably spread through online exchange.
+A meme appears in one language, gets translated, mutates, and travels.
+But I strongly suspect many of these equivalences developed independently
+long before the internet.
+People on different continents, speaking different languages,
+still arrived at similar concepts.
 
 ## Why Equivalence
 
-Why so many equivalences?
-The food Asian people eat and the language spoken sound very different from European people,
-and many cultural customs are vastly different too.
-But why so many equivalences of concepts in languages?
+Why are there so many equivalences?
+The food Asian people eat can be very different from European food.
+The languages sound completely different.
+Many customs, rituals, and traditions are also wildly different.
+So why do the concepts rhyme so much?
 
 Well, consider this hypothetical.
-Suppose SpaceX developed a breakthrough in inter-galactic travel today,
-and billions of humans migrate to galaxies far away.
-But suddenly, galaxies lost complete contact with each another,
-and each galaxy's humanity just develop on its own, what might we end up with?
+Suppose SpaceX develops a breakthrough in intergalactic travel today,
+and billions of humans migrate to faraway galaxies.
+Then suddenly, all galaxies lose contact with one another.
+Each galaxy’s humanity develops on its own.
+What might we end up with?
 
-We likely will up with populations that speak languages that sound different,
-eat food that taste differently because we are on different geography,
-and have very different cultural traditions developed from whatever
-random events lead to new canonical traditions established.
-Maybe on hotter galaxies people's skin will get more tanned,
-and on icy planets people's skin will get lighter.
-On oceanary planets people might even develop gills;
-On planets with less air people might develop giant nostrils, or even organs to produce oxygen.
-Superficial things like the food people eat and biological features will diverge.
+Probably populations that speak languages that sound totally different.
+They would eat different food because their planets have different geography.
+They would develop different customs because random historical events
+would become sacred traditions over time.
+Maybe on hotter planets, people’s skin would get darker.
+On icy planets, people’s skin might get lighter.
+On ocean planets, people might even develop gills.
+On planets with less oxygen, people might develop giant nostrils,
+or even organs to generate air.
 
-What would very likely stay the same though,
-unless in extraordinary different surfaces than planet Earth
-where people might have to all live in lava and can't communicate with each other,
-the human nature would stay the same.
-And I argue that, because the human nature is the same regardless which planet you are living in,
-you will have many equivalent concepts in each other's language.
-This is a slight jump in the argument,
-I can't fully explain the step by step induction behind this reasoning,
-it's just an intuitive feeling.
+Superficial things would diverge:
+food, language, clothing, rituals, maybe even biology.
+But what would likely stay the same?
+Human nature.
+Unless the planets are extraordinarily different from Earth —
+like everyone has to live in lava
+or people can no longer communicate with each other at all —
+the core human condition would probably remain recognizable.
+People would still want friendship.
+People would still betray each other.
+People would still fall in love, get jealous, seek status, fear death, raise children, chase power, admire courage, hate hypocrisy, and try to make meaning out of suffering.
 
-Wait, isn't this inter-galaxy migration what actually happened?
+And because human nature stays mostly the same,
+each civilization would probably invent many equivalent concepts
+in its own language.
+This is admittedly a slight jump in the argument.
+I can’t fully spell out the step-by-step proof.
+It’s more of an intuition.
+But it feels right.
 
-Wasn't it like, the earth was one giant plate together,
-then tectonic shift happened,
-and now we have populations living on different continents
-speaking different languages,
-but fundamentally, we are all humans!
-And sure, different geography have different climate and landscape,
-but the environment humans live in aren't vastly different;
-it's not like people in Asia are living in lava and can't communicate
-and people in Europe turned into fish.
-We are all still living on the planet surface,
-hunting and farming to survive and reproduce.
-Thus, the human nature are able to remain the same across continents.
+Wait — isn’t this intergalactic migration basically what already happened?
+Not literally across galaxies,
+but kind of.
+For a second, I thought:
+wasn’t Earth once one giant landmass,
+then tectonic shifts separated everything,
+and now we have different populations on different continents
+speaking different languages?
+Then I googled and ChatGPT’d a bit
+to make sure I wasn’t making scientific errors.
+Turns out I was.
+Tectonic shifts happened long before humans existed.
+Humans did not ride the continents apart like passengers on giant stone boats.
+The actual story is that humans originated in Africa
+and later migrated outward across the world.
 
-Wait hold on, I googled and ChatGPT'd a bit to make sure I'm not making scientific errors.
-Turns out I did. Tectonic shift happened before humans existed,
-but there was a great human migration and divergence out of Africa;
-humans originated in African and spread out from there.
-So, my big idea still holds.
+But honestly, that correction makes the idea even cleaner.
+Humans started from one place,
+spread into different continents,
+developed different languages, foods, rituals, and customs,
+but deep down, we remained the same species
+facing the same basic problems.
+Different geography changes the surface.
+Different history changes the costume.
+Different language changes the sound.
+But the underlying drama is still human.
+We all need to survive.
+We all need other people.
+We all suffer from pride, fear, love, ambition, envy, loyalty, betrayal, hope, and regret.
 
-So,
-humans originated in one place,
-spread out to different continents,
-which resulted in different languages, food, and customs,
-but deep down,
-the human nature stay the same,
-which explains equivalent concepts across languages.
+So of course languages contain equivalent concepts.
+Because beneath Mandarin and English,
+beneath Asia and Europe,
+beneath internet slang and ancient proverbs,
+we are still describing the same animal:
+humans trying to live.
 
 ## So What?
 
@@ -159,7 +190,7 @@ Here we go.
 BBC Planet Earth Season 10, Episode 1:
 Homo sapiens, narrated by, Sir Jiaming Liu.
 
-## Chapter 1: The Great Homo Sapiens
+## The Great Homo Sapiens
 
 You are about see the greatest species that ever roamed the Planet Earth: homo-sapiens. Or, humans, for short.
 
@@ -260,8 +291,15 @@ and making decision on its own.
 Humans are at the top of the food-chain and have the unique ability to shape the environment they are in because of tools,
 powered by their brain and hands.
 
-## Chapter 2: The Social Animal
+One human alone couldn't come up all the tools and have the time before its death to conquer all the other animals and shape all the landscapes.
+Humans, being social mammals, accomplished such feats by collaboration and education,
+powered by a sophistication of communication no other animals possess
+and the unique system of writing that allow knowledge to be passed down to generations.
 
-## Chapter 3: The Lifecycle of a Human
+In the most recent 500 years of their history,
+which is less than the blink of a second compared to the entire planet earth's history,
+human knowledge and tools reached another unprecedented level due to two events:
+scientific revolution, and the industrial revolution.
+[TODO]
 
 ## Maybe we should...
