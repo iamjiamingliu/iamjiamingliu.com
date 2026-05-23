@@ -217,114 +217,121 @@ narrated by Sir Jiaming Liu.
 
 ## The Great Homo Sapiens
 
-You are about see the greatest species that ever roamed the Planet Earth: homo-sapiens. Or, humans, for short.
+> For this part, I wrote out word by word in a sprint and asked ChatGPT "revise grammar but keep it my voice and wording"
 
-While only existed in less than the most recent 0.01% time of Planet Earth,
-humans have proved themselves to be a miraculous specifies,
-perhaps the most miraculous specifies,
-that have spawned on Earth so far,
-all in such a crazily short period of time.
+You are about to see the greatest species that ever roamed Planet Earth: **Homo sapiens**. Or, humans, for short.
 
-This, is a homo-sapien you are looking at,
-and yes, it's quite strange in many ways.
-As a mammal, humans have so little hair compared to other mammals like dogs.
-As predators, humans are super slow relative to cheetahs at the top of the chart or even dogs,
-and their strength and kill power is no match to tigers at the top of the chart or even chimpanzees.
-Physically, we would nowhere consider homo-sapiens are "great".
+Humans have existed for less than the most recent 0.01% of Earth’s history, yet in this absurdly short time, they have proved themselves to be a miraculous species. Perhaps the most miraculous species Earth has spawned so far.
 
-But don't be fooled by the tiny two-legged mammals.
-Humans are, surprisingly, the apex-predator on the entire Planet Earth.
-Migrating out of the Africa continent 50 thousands years ago,
-humans have preyed on almost every other animal specifies they saw along the way
-for food, or even for entertainment.
-If there's a specifies they haven't met or bothered to kill yet,
-they certainly can if they want to.
+This is a Homo sapien. And yes, it is quite strange in many ways.
 
-Besides being the apex-predator on earth dominating over all other specifies,
-homo-sapiens are also the only specifies capable of dominating over and shaping earth itself in significant ways.
-Sure, beavers and termites may transform a small pond and tree,
-no other specifies can shape the environment they are in to an extreme, previously unheard-of extent humans can.
-Homo-sapiens can chop down forests after forests,
-blast through mountains,
-and even drain oceans if they really want to.
-But destruction is only the start of a more meaningful purpose for humans: construction.
-Once the terrain is cleared,
-human ingenuity allow them to build things like farmland,
-which is a place they use to grow plants and eat them.
-Or apartments, which is where they live in and can span up to the height of mountains.
-Or a thing called swimming pool,
-which is like a small ocean they fiddle around without worrying about other animals or dirt getting in.
-And most importantly,
-humans are able to build something called "road",
-which connect other homo-sapiens together.
+As a mammal, humans have surprisingly little hair compared to other mammals like dogs, wolves, bears, or chimpanzees. As predators, humans are physically unimpressive. They cannot outrun cheetahs. They cannot overpower tigers. They cannot bite like crocodiles, fly like eagles, or swim like dolphins. They cannot even beat chimpanzees in raw strength, despite chimpanzees looking like their unemployed cousins.
 
-Humans' greatness don't stop there.
-Besides such feats they build on the landscape they live on,
-it's the all sorts of objects beyond land constructions,
-not seen in any other specifies,
-that push homo-spiens' further apart from all else.
-Homo sapiens can build things called "vehicles" to move them faster than cheetahs,
-and things called "planes" to let them fly faster than falcons.
-Homo sapiens have something called spears and later guns that can kill elephants and even tigers a mile away.
-And in the recent 50 years, they built something called "nuclear bomb" that can destroy all living creatures on an entire planet in seconds!
-Indeed, they lack the physical speed and prowess,
-but somehow they are able to produce objects that they then use
-with speed and prowess no other specifies wield.
+Judged purely by body, Homo sapiens do not look great at all.
+But do not be fooled by these fragile, hairless, two-legged mammals. Humans are, somehow, the apex predators of Planet Earth.
+After migrating out of Africa tens of thousands of years ago, humans spread across continents and entered forests, grasslands, mountains, deserts, islands, and ice. Along the way, they preyed on almost every animal species they encountered, for food, clothing, tools, sport, status, entertainment, or sometimes just because they could.
 
-And there's more to humans' greatness beyond concrete feats like skyscrapers and planes.
-It's the insanely complicated systems in the abstract that power humans to a level efficiency no other specifies have.
-For example, whereas lions and eagles have to fight their lives out for territory,
-humans seemed to have developed something called "law" that allow each other to fight out for territory without physical bloodshed.
-But law and order don't always work,
-so, for almost always in their history,
-homo-sapiens would resort back to bloodshed,
-aided by stuff they built called guns that can kill each other faster and longer than a tiger's bite and bombs that can wipe out thousands in an instant.
-In the good times homo-sapiens aren't fighting,
-they would resort to something called trade,
-which means some humans would give, say, cows, to some other humans,
-and those others would give back, say, fish.
-Or in some cases those others would give back guns so that those with cows can use guns to kill their neighbors and loot their cows and come back for more guns.
-But sometimes trading cows is too cumbersome,
-so humans invented something called money that all other objects can be traded for,
-so that now, humans can just use money to trade for any objects or service,
-whether it's food, housing, or even sex.
-And actually, money might be the only thing homo-sapiens care about,
-because without it,
-there appears to be little ways for homo-sapiens to secure the basic neccesities of life or the desired objects of life.
-And to keep track of money, exchanges, and every other thing that happen in their lives,
-homo-sapiens created something called math,
-which lead to the creation of other fields physics and finance.
+If there is an animal humans have not killed, it is usually not because humans cannot kill it. It is because they have not met it, not cared enough, or decided to protect it from other humans.
 
-Really, there's no other specifies ever as powerful and sophisticated as homo-sapiens.
-And all of humans' feats were achieved in less than 0.01% time of Planet Earth that they have spawned on.
+That is the strange power of Homo sapiens. A tiger is terrifying only when you are near the tiger. A human is terrifying even when it is nowhere near you. It can sit in a room, press a button, send a machine across the sky, and kill something from a distance far beyond the imagination of any natural predator.
+No claw. No fang. No great muscle. Just brain, hand, tool, and intention.
 
-But how are humans able to do all of this?
-What's in the human nature that allow them to accomplish such feats?
+But human dominance does not stop at animals. Homo sapiens are also the only species capable of reshaping Earth itself on a planetary scale.
+Sure, beavers can build dams. Termites can build mounds. Corals can build reefs. Very impressive. But no beaver has ever looked at a mountain and thought: this should become a tunnel. No termite has ever looked at a forest and thought: this should become a shopping mall. No coral has ever looked at the night sky and thought: we should put a satellite there.
+Humans can chop down forests, blast through mountains, redirect rivers, drain wetlands, dig mines, pave roads, build cities, and turn wild landscapes into maps of their own desire.
 
-It seems that human greatness start with their insanely large brain relative to their body size,
-which connected to a pair of hands with a level of precision, control, and versatility ungifted in any other specifies.
-With this unprecedented biological combination of brain and hand,
-homo-sapiens are able to create, use, and improve tools that amplify their speed, power, and even intelligence,
-which lead to even better tools that lead to even more speed, power, and intelligence.
-They started with simple wood sticks and stones for beating other animals and cooking,
-to metals that allowed them to build axe to plowing farm lands more efficiently and creating big buildings,
-with steam and diesel and now electric engines that moved things.
-And now, they created a tool called computer,
-which aid with intelligence itself by keeping track of information,
-controlling other tools,
-and making decision on its own.
-Humans are at the top of the food-chain and have the unique ability to shape the environment they are in because of tools,
-powered by their brain and hands.
+But destruction is only the beginning. Once the land is cleared, humans construct.
+They build farmland, which is land reorganized to produce food on command. They build houses, which are artificial caves with better furniture. They build apartments, which are vertical caves stacked into the sky. They build swimming pools, which are fake oceans with no sharks, no seaweed, and a monthly maintenance fee.
 
-One human alone couldn't come up all the tools and have the time before its death to conquer all the other animals and shape all the landscapes.
-Humans, being social mammals, accomplished such feats by collaboration and education,
-powered by a sophistication of communication no other animals possess
-and the unique system of writing that allow knowledge to be passed down to generations.
+Most importantly, humans build roads.
+A road is not just a flat piece of ground. A road is a promise. It says: this place is connected to that place. This village is connected to that city. This city is connected to that nation. This nation is connected to the rest of the species.
+Roads turn scattered animals into civilization.
+And once humans are connected, their power multiplies. They build vehicles so they can move faster than cheetahs. They build planes so they can fly faster than falcons. They build ships so they can cross oceans without evolving fins. They build submarines so they can travel underwater despite being land mammals with anxiety. They build rockets so they can escape the planet itself, which is a deeply ungrateful thing to do after Earth spent billions of years creating them.
 
-In the most recent 500 years of their history,
-which is less than the blink of a second compared to the entire planet earth's history,
-human knowledge and tools reached another unprecedented level due to two events:
-scientific revolution, and the industrial revolution.
-[TODO]
+Humans also build weapons.
+At first, they used sticks and stones. Then spears. Then bows. Then swords. Then guns. Then bombs. Then nuclear bombs, which are tools so powerful they gave humans the ability to threaten life on Earth itself.
+This is perhaps the darkest proof of human greatness. A lion can kill a zebra. A human can invent a system where one decision in one room can destroy a city full of humans it has never met.
+No other species has ever held that kind of power.
+
+But the true strangeness of Homo sapiens is not just their physical inventions. It is their invisible inventions.
+Humans live inside abstractions.
+
+They invent law, which is a system that tells millions of violent apes to please stop hitting each other and file a complaint instead. They invent government, which is a group of humans given permission to organize the behavior of other humans, often by claiming they know what they are doing. They invent money, which is imaginary value printed onto paper, stored as numbers, or represented by shiny rocks, and somehow everyone agrees to take it seriously.
+
+They invent trade, which allows one human to give cows to another human in exchange for fish, guns, software, therapy, or access to a JPEG of a monkey. They invent finance, which is what happens when money becomes so abstract that even the people moving it around need spreadsheets to pretend they understand it. They invent math, which begins as counting sheep and somehow ends with black holes, machine learning, and people losing money on options.
+
+They invent science, which is a method for asking reality questions and forcing it to answer without caring about human feelings. They invent religion, which tries to explain why humans exist, why they suffer, what they should do, and whether someone is watching when nobody else is. They invent art, which is what happens when survival is not enough and the animal wants beauty too.
+
+Really, there is no species on Earth as powerful, sophisticated, ridiculous, or dangerous as Homo sapiens.
+
+But how?
+
+How did this physically unimpressive animal rise above every claw, fang, wing, horn, shell, and muscle on Earth?
+
+The answer begins with a strange biological combination: a large brain, and a pair of precise hands.
+The human brain is not merely big. It is flexible. It can imagine things that do not exist. It can simulate the future. It can remember the past. It can guess what another human is thinking. It can learn patterns, tell stories, make plans, and ask stupid questions at 2AM that somehow become philosophy.
+
+But a brain alone is not enough. Dolphins are intelligent, but they have no hands. Octopuses are brilliant, but they mostly live alone and do not build universities. Crows can use tools, but they cannot build factories.
+The human brain is connected to human hands. And human hands are insanely underrated.
+Opposable thumbs allow humans to grip, pinch, twist, hold, throw, carve, write, type, weld, cut, paint, code, and build. The hand turns thought into action. The brain imagines the spear. The hand makes the spear. The spear kills what the body cannot.
+That is the basic trick.
+
+Humans are weak animals that learned to outsource strength into tools.
+A stick extends the arm. A knife extends the tooth. A spear extends the claw. A wheel extends the leg. A book extends memory. A computer extends thought. The internet extends communication. Artificial intelligence may extend intelligence itself.
+Every tool begins as compensation. Humans cannot run fast enough, so they build vehicles. Humans cannot fly, so they build planes. Humans cannot remember everything, so they build writing. Humans cannot calculate fast enough, so they build computers. Humans cannot be everywhere, so they build networks. Humans cannot live forever, so they build civilization, hoping that something of themselves survives.
+
+This is the core engine of Homo sapiens: brain creates tool, hand builds tool, tool amplifies human ability, amplified ability creates better tools, and better tools create even greater ability.
+A loop begins. And the loop accelerates.
+From stone tools, to bronze, to iron, to engines, to electricity, to computers, to artificial intelligence. At first, humans shaped stone. Then they shaped metal. Then they shaped energy. Then they shaped information. Now, they are beginning to shape intelligence.
+
+But one human alone could not have done all of this. One human alone cannot invent agriculture, language, law, calculus, engines, vaccines, rockets, and TikTok before dying at age thirty-two from an infected toe.
+The true power of humans is not just intelligence. It is collective intelligence.
+Humans collaborate. They hunt together, farm together, build together, trade together, fight together, raise children together, teach each other, copy each other, compete with each other, steal from each other, and improve on each other.
+A single human is fragile. A group of humans is terrifying. A civilization of humans is almost a geological force.
+
+This is where communication enters.
+Many animals communicate, but human communication is different in scale and precision. Humans do not merely say: danger. They can say: there is a tiger near the river, I saw it yesterday, it attacked someone at sunset, so tomorrow we should approach from the hill, carry spears, and maybe let Kevin go first because Kevin has been annoying lately.
+Language allows humans to coordinate around things that are not physically present: past events, future plans, invisible gods, legal rights, national borders, mathematical truths, startup valuations, and family drama.
+Language lets humans share not only information, but imagination. And once imagination becomes shared, humans can cooperate at massive scale.
+A thousand humans can build a temple because they believe in the same god. A million humans can follow the same law because they believe in the same state. A billion humans can use the same currency because they believe other humans believe in it too.
+
+This is absurd. And it works.
+Then humans invented writing, which may be one of the most important technologies in their entire history.
+Speech lets knowledge travel across space. Writing lets knowledge travel across time.
+Without writing, knowledge dies with the brain. With writing, a dead human can still teach a living human thousands of years later.
+
+This is deeply strange. A person can die, decompose, disappear completely, and still have their thoughts enter the mind of another person centuries later.
+Writing turns individual intelligence into cumulative intelligence. Each generation does not have to restart from zero. Children inherit language. Students inherit math. Scientists inherit theories. Engineers inherit tools. Artists inherit styles. Founders inherit mistakes. Societies inherit institutions.
+This is why human progress compounds over generations.
+
+The first stone tool took immense discovery. The second stone tool was easier. The thousandth stone tool was tradition. Eventually, someone improved it. Then someone improved the improvement. Then someone taught it. Then someone wrote it down. Then someone built a school. Then someone standardized the curriculum. Then someone complained the homework was useless.
+This is how civilization works. Not as one genius suddenly becoming great, but as generations stacking tiny upgrades on top of previous generations.
+
+In the most recent few hundred years, this compounding process reached a new level through two explosive events: the Scientific Revolution and the Industrial Revolution.
+The Scientific Revolution gave humans a new way to produce truth. Instead of relying only on tradition, authority, myth, or vibes, humans began systematically testing the world.
+Observe. Hypothesize. Experiment. Measure. Repeat.
+Reality became something to interrogate. And once humans learned how to ask reality better questions, reality began giving them more powerful answers.
+
+They discovered laws of motion. They studied electricity. They understood disease. They mapped the body. They split the atom. They decoded DNA. They learned that the universe is far older, larger, and stranger than their ancestors ever imagined.
+
+Then came the Industrial Revolution, which gave humans a new way to produce power.
+Before industrialization, human civilization was mostly powered by muscles: human muscles, animal muscles, wind, water, and fire. Then humans learned to harness machines at massive scale.
+Steam engines. Factories. Railroads. Electric grids. Combustion engines. Assembly lines.
+Suddenly, one human with a machine could do the work of hundreds. One factory could produce what once required villages. One train could move goods faster than caravans. One city could consume resources from entire continents.
+
+The Scientific Revolution told humans how the world works. The Industrial Revolution gave humans machines to exploit that knowledge. Together, they turned Homo sapiens from a clever animal into a planet-shaping force.
+
+And now, in the current age, humans have built one more strange tool: the computer.
+The computer is not like the spear, which extends the arm. It is not like the car, which extends the leg. It is not like the plane, which extends the wing humans never had.
+The computer extends the mind.
+It stores memory, processes symbols, controls machines, connects billions of humans, simulates worlds, automates decisions, and turns information into power.
+And with artificial intelligence, humans are now attempting something even stranger: building tools that can think with them, and perhaps someday, think beyond them.
+
+This is why Homo sapiens are great.
+Not because they are the strongest. They are not. Not because they are the fastest. They are not. Not because they are the most peaceful, moral, or rational. Definitely not.
+
+Humans are great because they combine brain, hand, tool, language, collaboration, education, memory, and imagination into one self-reinforcing machine.
+
+A human sees weakness and invents compensation. A human sees distance and invents transportation. A human sees death and invents legacy. A human sees chaos and invents law. A human sees loneliness and invents love songs. A human sees the stars and invents rockets. A human sees its own mind and invents philosophy, psychology, neuroscience, and then, for some reason, personality quizzes.
 
 ## Maybe we should...
