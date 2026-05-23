@@ -240,16 +240,11 @@ But the true strangeness of Homo sapiens is not just their physical inventions. 
 Really, there is no species on Earth as powerful, sophisticated, ridiculous, or dangerous as Homo sapiens.
 
 But how?
-
 How did this physically unimpressive animal rise above every claw, fang, wing, horn, shell, and muscle on Earth?
 
-The answer begins with a strange biological combination: a large brain, and a pair of precise hands.
-The human brain is not merely big. It is flexible. It can imagine things that do not exist. It can simulate the future. It can remember the past. It can guess what another human is thinking. It can learn patterns, tell stories, make plans, and ask stupid questions at 2AM that somehow become philosophy.
 
-But a brain alone is not enough. Dolphins are intelligent, but they have no hands. Octopuses are brilliant, but they mostly live alone and do not build universities. Crows can use tools, but they cannot build factories.
-The human brain is connected to human hands. And human hands are insanely underrated.
-Opposable thumbs allow humans to grip, pinch, twist, hold, throw, carve, write, type, weld, cut, paint, code, and build. The hand turns thought into action. The brain imagines the spear. The hand makes the spear. The spear kills what the body cannot.
-That is the basic trick.
+The answer begins with a powerful biological combination: a large brain connected to a pair of precise hands. The human brain can imagine things that do not exist, simulate the future, remember the past, guess what other humans are thinking, recognize patterns, tell stories, make plans, and ask stupid questions at 2AM that somehow become philosophy. But a brain alone is not enough. Dolphins are intelligent, but they have no hands. Human hands turn thought into action: they grip, pinch, twist, carve, write, type, weld, cut, paint, code, and build. The brain imagines the spear. The hand makes the spear. The spear kills what the body cannot. That is the basic trick.
+
 
 Humans are weak animals that learned to outsource strength into tools.
 A stick extends the arm. A knife extends the tooth. A spear extends the claw. A wheel extends the leg. A book extends memory. A computer extends thought. The internet extends communication. Artificial intelligence may extend intelligence itself.
@@ -257,7 +252,7 @@ Every tool begins as compensation. Humans cannot run fast enough, so they build 
 
 This is the core engine of Homo sapiens: brain creates tool, hand builds tool, tool amplifies human ability, amplified ability creates better tools, and better tools create even greater ability.
 A loop begins. And the loop accelerates.
-From stone tools, to bronze, to iron, to engines, to electricity, to computers, to artificial intelligence. At first, humans shaped stone. Then they shaped metal. Then they shaped energy. Then they shaped information. Now, they are beginning to shape intelligence.
+From stone tools, to bronze, to iron, to engines, to electricity, to computers, to artificial intelligence. At first, humans shaped stone. Then they shaped metal. Then they shaped energy. Then they shaped information. Now, they are beginning to shape intelligence itself.
 
 But one human alone could not have done all of this. One human alone cannot invent agriculture, language, law, calculus, engines, vaccines, rockets, and TikTok before dying at age thirty-two from an infected toe.
 The true power of humans is not just intelligence. It is collective intelligence.
