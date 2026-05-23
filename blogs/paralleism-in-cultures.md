@@ -104,3 +104,31 @@ Turns out I did. Tectonic shift happened before humans existed,
 but there was a great human migration and divergence out of Africa;
 humans originated in African and spread out from there.
 So, my big idea still holds.
+
+So,
+humans originated in one place,
+spread out to different continents,
+which resulted in different languages, food, and customs,
+but deep down,
+the human nature stay the same,
+which explains equivalent concepts across languages.
+
+Great. But so what?
+Is my whole essay's point just to explain why
+English-speaking Instagram and Chinese Bilibili
+internet slang have the same catchphrases?
+
+Yes that's a point, but not the full point.
+To level up the spicy-ness of this essay,
+I'm going to end it with an unserious yet mostly true essay
+about human nature.
+We spent so much words reasoning how human nature cause equivalence in languages,
+and now,
+it's worth it to reason out what human nature is itself.
+
+Across languages,
+you see concepts like
+bravery, persistence, innovation, power, leadership,
+romance, love, betrayal, disappointment, sadness,
+you name it.
+These words capture the different facades of human nature.
