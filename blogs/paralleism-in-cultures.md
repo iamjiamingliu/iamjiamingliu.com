@@ -273,3 +273,17 @@ exist and are so equivalent to each other.
 Because they all describe the same traits and experience of humanity.
 
 ## Maybe we should...
+
+So what should we as human beings do with our lives,
+after thinking all this about what humanity really is?
+The greatest specifies ever roamed earth, you say, huh?
+
+We should keep doing what makes us great.
+We should keep imagining, building, learning, teaching, experimenting, collaborating, and making tools that help us become more than what our bodies alone allow us to be.
+
+We should also remember that being powerful is not the same as being good.
+If humans are the planet-shaping species, then we should care about the planet we are shaping. We should care about other species, because they live under the consequences of our decisions. And we should care about each other, because behind all the tools, laws, money, and technologies, we are still fragile mammals trying to be loved, respected, and understood.
+
+Finally, we need to keep on shaping the future,
+because we as homo-sapiens are uniquely on earth able to do so,
+and it would be a shame if we don't make progress.
