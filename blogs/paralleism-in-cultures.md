@@ -132,3 +132,19 @@ bravery, persistence, innovation, power, leadership,
 romance, love, betrayal, disappointment, sadness,
 you name it.
 These words capture the different facades of human nature.
+So, in my following description of human nature,
+I need to somehow embody at least the most important concepts from the above list.
+
+But there's so many different concepts about human nature!
+Where do I even start?
+
+Aha. We are about human _nature_ right?
+So, why not narrate about human nature,
+and the greater human specifies,
+from the voice of a nature documentary?
+Imagine Sir David Attenborough in the latest episode of Planet Earth,
+where the subject is not African lions or Antarctica penguin,
+but,
+the apex predator in the entire Earth food chain and ecosystem,
+a species with a level of intelligence (really?) far above everyone else:
+**homo-sapiens**.
