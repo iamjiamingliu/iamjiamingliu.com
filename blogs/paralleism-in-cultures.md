@@ -57,3 +57,44 @@ Why so many equivalences?
 The food Asian people eat and the language spoken sound very different from European people,
 and many cultural customs are vastly different too.
 But why so many equivalences of concepts in languages?
+
+Well, consider this hypothetical.
+Suppose SpaceX developed a breakthrough in inter-galactic travel today,
+and billions of humans migrate to galaxies far away.
+But suddenly, galaxies lost complete contact with each another,
+and each galaxy's humanity just develop on its own, what might we end up with?
+
+We likely will up with populations that speak languages that sound different,
+eat food that taste differently because we are on different geography,
+and have very different cultural traditions developed from whatever
+random events lead to new canonical traditions established.
+Maybe on hotter galaxies people's skin will get more tanned,
+and on icy planets people's skin will get lighter.
+On oceanary planets people might even develop gills;
+On planets with less air people might develop giant nostrils, or even organs to produce oxygen.
+Superficial things like the food people eat and biological features will diverge.
+
+What would very likely stay the same though,
+unless in extraordinary different surfaces than planet Earth
+where people might have to all live in lava and can't communicate with each other,
+the human nature would stay the same.
+And I argue that, because the human nature is the same regardless which planet you are living in,
+you will have many equivalent concepts in each other's language.
+This is a slight jump in the argument,
+I can't fully explain the step by step induction behind this reasoning,
+it's just an intuitive feeling.
+
+Wait, isn't this inter-galaxy migration what actually happened?
+
+Wasn't it like, the earth was one giant plate together,
+then tectonic shift happened,
+and now we have populations living on different continents
+speaking different languages,
+but fundamentally, we are all humans!
+And sure, different geography have different climate and landscape,
+but the environment humans live in aren't vastly different;
+it's not like people in Asia are living in lava and can't communicate
+and people in Europe turned into fish.
+We are all still living on the planet surface,
+hunting and farming to survive and reproduce.
+Thus, the human nature are able to remain the same across continents.
