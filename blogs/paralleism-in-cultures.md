@@ -230,24 +230,9 @@ As a mammal, humans have surprisingly little hair compared to other mammals like
 Judged purely by body, Homo sapiens do not look great at all.
 But do not be fooled by these fragile, hairless, two-legged mammals. Humans are, somehow, the apex predators of Planet Earth.
 After migrating out of Africa tens of thousands of years ago, humans spread across continents and entered forests, grasslands, mountains, deserts, islands, and ice. Along the way, they preyed on almost every animal species they encountered, for food, clothing, tools, sport, status, entertainment, or sometimes just because they could.
-
 If there is an animal humans have not killed, it is usually not because humans cannot kill it. It is because they have not met it, not cared enough, or decided to protect it from other humans.
 
-That is the strange power of Homo sapiens. A tiger is terrifying only when you are near the tiger. A human is terrifying even when it is nowhere near you. It can sit in a room, press a button, send a machine across the sky, and kill something from a distance far beyond the imagination of any natural predator.
-No claw. No fang. No great muscle. Just brain, hand, tool, and intention.
-
-But human dominance does not stop at animals. Homo sapiens are also the only species capable of reshaping Earth itself on a planetary scale.
-Sure, beavers can build dams. Termites can build mounds. Corals can build reefs. Very impressive. But no beaver has ever looked at a mountain and thought: this should become a tunnel. No termite has ever looked at a forest and thought: this should become a shopping mall. No coral has ever looked at the night sky and thought: we should put a satellite there.
-Humans can chop down forests, blast through mountains, redirect rivers, drain wetlands, dig mines, pave roads, build cities, and turn wild landscapes into maps of their own desire.
-
-But destruction is only the beginning. Once the land is cleared, humans construct.
-They build farmland, which is land reorganized to produce food on command. They build houses, which are artificial caves with better furniture. They build apartments, which are vertical caves stacked into the sky. They build swimming pools, which are fake oceans with no sharks, no seaweed, and a monthly maintenance fee.
-
-Most importantly, humans build roads.
-A road is not just a flat piece of ground. A road is a promise. It says: this place is connected to that place. This village is connected to that city. This city is connected to that nation. This nation is connected to the rest of the species.
-Roads turn scattered animals into civilization.
-And once humans are connected, their power multiplies. They build vehicles so they can move faster than cheetahs. They build planes so they can fly faster than falcons. They build ships so they can cross oceans without evolving fins. They build submarines so they can travel underwater despite being land mammals with anxiety. They build rockets so they can escape the planet itself, which is a deeply ungrateful thing to do after Earth spent billions of years creating them.
-
+But human dominance does not stop at animals. Homo sapiens are also the only species capable of reshaping Earth itself on a planetary scale. Humans chop down forests, blast through mountains, redirect rivers, drain wetlands, dig mines, pave roads, build cities, and turn wild landscapes into maps of their own desire. They build farmland to make nature produce food on command, houses and apartments to turn shelter into architecture, swimming pools as fake oceans without sharks, factories to mass-produce objects, dams to command rivers, airports to organize the sky, and skyscrapers to stack human life upward into the clouds. Once the environment is not enough, humans remake it. Once distance is annoying, humans compress it. They build vehicles to outrun cheetahs, planes to outfly falcons, ships to cross oceans without fins, submarines to travel underwater despite being land mammals with anxiety, and rockets to escape the planet itself.
 Humans also build weapons.
 At first, they used sticks and stones. Then spears. Then bows. Then swords. Then guns. Then bombs. Then nuclear bombs, which are tools so powerful they gave humans the ability to threaten life on Earth itself.
 This is perhaps the darkest proof of human greatness. A lion can kill a zebra. A human can invent a system where one decision in one room can destroy a city full of humans it has never met.
