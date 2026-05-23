@@ -257,31 +257,12 @@ From stone tools, to bronze, to iron, to engines, to electricity, to computers, 
 But one human alone could not have done all of this. One human alone cannot invent agriculture, language, law, calculus, engines, vaccines, rockets, and TikTok before dying at age thirty-two from an infected toe. Human greatness depends on collective intelligence: humans communicate, collaborate, teach, copy, and improve on each other. Language lets them coordinate beyond the present moment, talking not just about danger, food, and mating, but about yesterday’s tiger, tomorrow’s plan, invisible gods, legal rights, national borders, mathematical truths, startup valuations, and family drama. Then humans invented writing, which may be one of the most important technologies in their history. Speech lets knowledge travel across space; writing lets knowledge travel across time. Without writing, knowledge dies with the brain. With writing, a dead human can still teach a living human thousands of years later. This is how education turns individual intelligence into cumulative intelligence: each generation does not restart from zero, but inherits language, math, theories, tools, mistakes, institutions, and homework to complain about. Civilization is not one genius suddenly becoming great. It is generations of humans stacking tiny upgrades on top of previous generations.
 
 
-In the most recent few hundred years, this compounding process reached a new level through two explosive events: the Scientific Revolution and the Industrial Revolution.
-The Scientific Revolution gave humans a new way to produce truth. Instead of relying only on tradition, authority, myth, or vibes, humans began systematically testing the world.
-Observe. Hypothesize. Experiment. Measure. Repeat.
-Reality became something to interrogate. And once humans learned how to ask reality better questions, reality began giving them more powerful answers.
 
-They discovered laws of motion. They studied electricity. They understood disease. They mapped the body. They split the atom. They decoded DNA. They learned that the universe is far older, larger, and stranger than their ancestors ever imagined.
+Then, in the most recent 500 years, this compounding process went completely insane. For thousands of years before that, humans already had cities, empires, money, writing, philosophy, religion, agriculture, ships, weapons, and trade. Very impressive. But compared to what happened recently, the previous 4500 years almost look slow. In just a few centuries, humans discovered the laws of motion, harnessed electricity, built factories, invented trains, cars, planes, vaccines, antibiotics, nuclear bombs, computers, the internet, rockets, satellites, smartphones, and artificial intelligence. For most of recorded history, a king traveling across his empire was still limited by horses, roads, weather, and human muscle. Now a random teenager can sit in bed, order food, FaceTime someone across the planet, watch a rocket landing, argue with strangers, generate images with AI, and lose money trading options before breakfast. This is the ridiculous acceleration of Homo sapiens: for thousands of years, progress crawled; then suddenly, in the final few pages of the story, everything exploded.
 
-Then came the Industrial Revolution, which gave humans a new way to produce power.
-Before industrialization, human civilization was mostly powered by muscles: human muscles, animal muscles, wind, water, and fire. Then humans learned to harness machines at massive scale.
-Steam engines. Factories. Railroads. Electric grids. Combustion engines. Assembly lines.
-Suddenly, one human with a machine could do the work of hundreds. One factory could produce what once required villages. One train could move goods faster than caravans. One city could consume resources from entire continents.
-
-The Scientific Revolution told humans how the world works. The Industrial Revolution gave humans machines to exploit that knowledge. Together, they turned Homo sapiens from a clever animal into a planet-shaping force.
-
-And now, in the current age, humans have built one more strange tool: the computer.
-The computer is not like the spear, which extends the arm. It is not like the car, which extends the leg. It is not like the plane, which extends the wing humans never had.
-The computer extends the mind.
-It stores memory, processes symbols, controls machines, connects billions of humans, simulates worlds, automates decisions, and turns information into power.
-And with artificial intelligence, humans are now attempting something even stranger: building tools that can think with them, and perhaps someday, think beyond them.
 
 This is why Homo sapiens are great.
 Not because they are the strongest. They are not. Not because they are the fastest. They are not. Not because they are the most peaceful, moral, or rational. Definitely not.
-
 Humans are great because they combine brain, hand, tool, language, collaboration, education, memory, and imagination into one self-reinforcing machine.
-
-A human sees weakness and invents compensation. A human sees distance and invents transportation. A human sees death and invents legacy. A human sees chaos and invents law. A human sees loneliness and invents love songs. A human sees the stars and invents rockets. A human sees its own mind and invents philosophy, psychology, neuroscience, and then, for some reason, personality quizzes.
 
 ## Maybe we should...
