@@ -254,28 +254,8 @@ This is the core engine of Homo sapiens: brain creates tool, hand builds tool, t
 A loop begins. And the loop accelerates.
 From stone tools, to bronze, to iron, to engines, to electricity, to computers, to artificial intelligence. At first, humans shaped stone. Then they shaped metal. Then they shaped energy. Then they shaped information. Now, they are beginning to shape intelligence itself.
 
-But one human alone could not have done all of this. One human alone cannot invent agriculture, language, law, calculus, engines, vaccines, rockets, and TikTok before dying at age thirty-two from an infected toe.
-The true power of humans is not just intelligence. It is collective intelligence.
-Humans collaborate. They hunt together, farm together, build together, trade together, fight together, raise children together, teach each other, copy each other, compete with each other, steal from each other, and improve on each other.
-A single human is fragile. A group of humans is terrifying. A civilization of humans is almost a geological force.
+But one human alone could not have done all of this. One human alone cannot invent agriculture, language, law, calculus, engines, vaccines, rockets, and TikTok before dying at age thirty-two from an infected toe. Human greatness depends on collective intelligence: humans communicate, collaborate, teach, copy, and improve on each other. Language lets them coordinate beyond the present moment, talking not just about danger, food, and mating, but about yesterday’s tiger, tomorrow’s plan, invisible gods, legal rights, national borders, mathematical truths, startup valuations, and family drama. Then humans invented writing, which may be one of the most important technologies in their history. Speech lets knowledge travel across space; writing lets knowledge travel across time. Without writing, knowledge dies with the brain. With writing, a dead human can still teach a living human thousands of years later. This is how education turns individual intelligence into cumulative intelligence: each generation does not restart from zero, but inherits language, math, theories, tools, mistakes, institutions, and homework to complain about. Civilization is not one genius suddenly becoming great. It is generations of humans stacking tiny upgrades on top of previous generations.
 
-This is where communication enters.
-Many animals communicate, but human communication is different in scale and precision. Humans do not merely say: danger. They can say: there is a tiger near the river, I saw it yesterday, it attacked someone at sunset, so tomorrow we should approach from the hill, carry spears, and maybe let Kevin go first because Kevin has been annoying lately.
-Language allows humans to coordinate around things that are not physically present: past events, future plans, invisible gods, legal rights, national borders, mathematical truths, startup valuations, and family drama.
-Language lets humans share not only information, but imagination. And once imagination becomes shared, humans can cooperate at massive scale.
-A thousand humans can build a temple because they believe in the same god. A million humans can follow the same law because they believe in the same state. A billion humans can use the same currency because they believe other humans believe in it too.
-
-This is absurd. And it works.
-Then humans invented writing, which may be one of the most important technologies in their entire history.
-Speech lets knowledge travel across space. Writing lets knowledge travel across time.
-Without writing, knowledge dies with the brain. With writing, a dead human can still teach a living human thousands of years later.
-
-This is deeply strange. A person can die, decompose, disappear completely, and still have their thoughts enter the mind of another person centuries later.
-Writing turns individual intelligence into cumulative intelligence. Each generation does not have to restart from zero. Children inherit language. Students inherit math. Scientists inherit theories. Engineers inherit tools. Artists inherit styles. Founders inherit mistakes. Societies inherit institutions.
-This is why human progress compounds over generations.
-
-The first stone tool took immense discovery. The second stone tool was easier. The thousandth stone tool was tradition. Eventually, someone improved it. Then someone improved the improvement. Then someone taught it. Then someone wrote it down. Then someone built a school. Then someone standardized the curriculum. Then someone complained the homework was useless.
-This is how civilization works. Not as one genius suddenly becoming great, but as generations stacking tiny upgrades on top of previous generations.
 
 In the most recent few hundred years, this compounding process reached a new level through two explosive events: the Scientific Revolution and the Industrial Revolution.
 The Scientific Revolution gave humans a new way to produce truth. Instead of relying only on tradition, authority, myth, or vibes, humans began systematically testing the world.
