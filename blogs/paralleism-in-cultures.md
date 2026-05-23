@@ -151,44 +151,69 @@ humans trying to live.
 ## So What?
 
 Great. But so what?
-Is my whole essay's point just to explain why
+Is the whole point of this essay just to explain why
 English-speaking Instagram and Chinese Bilibili
-internet slang have the same catchphrases?
+have the same stupid dating catchphrases?
 
-Yes that's a point, but not the full point.
-To level up the spicy-ness of this essay,
-I'm going to end it with an unserious yet mostly true essay
-about human nature.
-We spent so much words reasoning how human nature cause equivalence in languages,
-and now,
-it's worth it to reason out what human nature is itself.
+Yes, that is a point.
+But that is not the full point.
+To level up the spiciness of this essay,
+I want to end with an unserious but mostly true meditation
+on human nature.
+
+So far,
+I’ve spent way too many words arguing that
+shared human nature creates equivalent concepts across languages.
+Now it is worth asking the deeper question:
+What is human nature itself?
 
 Across languages,
 you see concepts like
-bravery, persistence, innovation, power, leadership,
+bravery, persistence, ambition, innovation, power, leadership,
 romance, love, betrayal, disappointment, sadness,
-you name it.
-These words capture the different facades of human nature.
-So, in my following description of human nature,
-I need to somehow embody at least the most important concepts from the above list.
+loyalty, envy, hope, shame, pride,
+and so on.
+These concepts are not random.
+They are different names for different faces of human nature.
+So if I want to describe human nature,
+I need to somehow capture the most important ideas behind these words.
+Not all of them perfectly,
+but at least the big ones.
 
-But there's so many different concepts about human nature!
+But there are so many concepts about human nature.
 Where do I even start?
 
-Aha. We are about human _nature_ right?
-So, why not narrate about human nature,
-and the greater human specifies,
+Aha.
+
+We are talking about human _nature_, right?
+So why not describe human nature,
+and the greater human species,
 from the voice of a nature documentary?
 Imagine Sir David Attenborough in the latest episode of Planet Earth,
-where the subject is not African lions or Antarctica penguin,
-but,
-the apex predator in the entire Earth food chain and ecosystem,
-a species with a level of intelligence (really?) far above everyone else:
-**homo-sapiens**.
+except the subject is not African lions,
+Antarctic penguins,
+or some tiny poisonous frog with the most dramatic mating ritual known to science.
+The subject is us: humans.
+
+The apex predator of Earth’s food chain.
+The dominant engineer of Earth’s ecosystem.
+A species with intelligence allegedly far above everyone else’s:
+**Homo sapiens**.
+
+A creature that builds cities,
+writes poetry,
+starts wars,
+falls in love,
+betrays its friends,
+invents gods,
+launches rockets,
+doom-scrolls in bed,
+and then has the audacity to call itself wise.
 
 Here we go.
 BBC Planet Earth Season 10, Episode 1:
-Homo sapiens, narrated by, Sir Jiaming Liu.
+**Homo sapiens**,
+narrated by Sir Jiaming Liu.
 
 ## The Great Homo Sapiens
 
