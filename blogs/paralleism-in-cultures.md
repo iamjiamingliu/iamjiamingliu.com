@@ -242,6 +242,23 @@ which lead to the creation of other fields physics and finance.
 Really, there's no other specifies ever as powerful and sophisticated as homo-sapiens.
 And all of humans' feats were achieved in less than 0.01% time of Planet Earth that they have spawned on.
 
+But how are humans able to do all of this?
+What's in the human nature that allow them to accomplish such feats?
+
+It seems that human greatness start with their insanely large brain relative to their body size,
+which connected to a pair of hands with a level of precision, control, and versatility ungifted in any other specifies.
+With this unprecedented biological combination of brain and hand,
+homo-sapiens are able to create, use, and improve tools that amplify their speed, power, and even intelligence,
+which lead to even better tools that lead to even more speed, power, and intelligence.
+They started with simple wood sticks and stones for beating other animals and cooking,
+to metals that allowed them to build axe to plowing farm lands more efficiently and creating big buildings,
+with steam and diesel and now electric engines that moved things.
+And now, they created a tool called computer,
+which aid with intelligence itself by keeping track of information,
+controlling other tools,
+and making decision on its own.
+Humans are at the top of the food-chain and have the unique ability to shape the environment they are in because of tools,
+powered by their brain and hands.
 
 ## Chapter 2: The Social Animal
 
