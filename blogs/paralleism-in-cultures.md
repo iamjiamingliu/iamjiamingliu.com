@@ -251,4 +251,25 @@ Then, in the most recent 500 years, this compounding process went completely ins
 
 Humans are great because they combine brain, hand, stamina, tool, language, collaboration, education, memory, and imagination into one self-reinforcing system across generations called humanity.
 
+
+## Concepts in Human Nature
+
+Human nature is not some mysterious separate thing floating above biology. Human nature, in particular, the parallel concepts we see across languages, emerges from the same machinery that made Homo sapiens great.
+
+Because humans have brain and thus feelings and imagination, they can think beyond the present moment. This creates concepts like long-term thinking, ambition, anxiety, hope, regret, and the strange ability to suffer from futures that have not happened yet.
+
+Because humans have stamina, they can keep going after exhaustion, which becomes our appreciative concepts of perseverance, discipline, obsession, endurance, and sometimes stubborn stupidity.
+
+Because humans have hands and tools, they can change the world instead of merely accepting it. This creates our concepts of innovation, craftsmanship, control, greed, conquest, and the constant feeling that reality is not enough yet.
+
+Because humans have language, they can share not only facts, but feelings, myths, insults, promises, lies, poetry, laws, and love confessions at 2AM. This creates trust, betrayal, reputation, shame, persuasion, ideology, and drama.
+
+Because humans collaborate, they need each other. This creates friendship, family, loyalty, leadership, romance, sacrifice, jealousy, status games, and hatred. A human alone wants survival. A human among other humans wants recognition.
+
+Because humans educate, each generation inherits the dreams and mistakes of the previous one. This creates tradition, rebellion, progress, resentment, gratitude, and the eternal student feeling that someone dead 500 years ago is still assigning homework.
+
+So that's why all these concepts, regardless of which language is it described in,
+exist and are so equivalent to each other.
+Because they all describe the same traits and experience of humanity.
+
 ## Maybe we should...
