@@ -98,3 +98,9 @@ and people in Europe turned into fish.
 We are all still living on the planet surface,
 hunting and farming to survive and reproduce.
 Thus, the human nature are able to remain the same across continents.
+
+Wait hold on, I googled and ChatGPT'd a bit to make sure I'm not making scientific errors.
+Turns out I did. Tectonic shift happened before humans existed,
+but there was a great human migration and divergence out of Africa;
+humans originated in African and spread out from there.
+So, my big idea still holds.
