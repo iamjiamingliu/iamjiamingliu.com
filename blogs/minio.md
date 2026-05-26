@@ -5,7 +5,6 @@ tags: [ Internal Architecture ]
 category: Tech
 created_at: 2026-03-10 14:36:57
 updated_at: 2026-05-25 20:59:57
-excludes_from_index: True
 ---
 
 ## Why Object Storage
@@ -238,9 +237,38 @@ and its architecture could degenerate into a simple HTTP wrapper over the file s
 But MinIO must care about fault tolerance and scalability,
 thus its architecture must be orchestrated around the complexity of erasure coding.
 
-## Content Delivery Network
+## Friends of Object Storage
 
-## HDFS
+This concludes the discussion of object storage as a concept and MinIO as a concrete software.
+We now go on the tangent to briefly touch on two related concepts: content delivery network (CDN) and HDFS.
+
+### Content Delivery Network
+
+For global enterprises and software, think TikTok and Instagram for examples,
+user uploaded content will be fetched by many other users across the world.
+If the uploader is in California and fetcher is also in California, then the latency is tens of ms and it's fine.
+But if the fetcher is on the East coast or on the other end of the world,
+latency would spike to 100 ms to 300 ms and could get even laggier in bad networks.
+
+The solution is Content Delivery Network (CDN):
+it's kind of like object store, but distributed around the globe,
+so that an Instagram story would be distributed to East Coast and around the world,
+and whenever someone wants to fetch,
+geo based DNS and IP routing would return the object from the closest CDN server,
+thus ensuring the latency stays low and avoiding transatlantic trips.
+
+Given contents popularity age out after a while,
+along with the fact that many content won't be popular ever,
+CDN doesn't need to distribute every object around the world.
+It usually only keeps the recent and popular ones.
+Thus, CDN is usually configured to be a cache in front of the object store,
+serving recent and frequently accessed content from the edge
+while routing old and less popular content from the OG object store.
+
+In terms of AWS billing, CDN is much more expensive than object store.
+Thus, usually only rich enterprises sensitive to every ms of user experience would be willing to spend money on it.
+
+### HDFS
 
 ## One More Thought
 
