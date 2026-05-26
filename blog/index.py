@@ -96,7 +96,7 @@ def ensure_articles_are_valid(
 def load_articles_index(
     blogs_root: Path,
     *,
-    latest_n: int = 12,
+    latest_n: int = 48,
     exts: set[str] = _DEFAULT_EXTS,
     followlinks: bool = True,
     include_hidden: bool = False,
