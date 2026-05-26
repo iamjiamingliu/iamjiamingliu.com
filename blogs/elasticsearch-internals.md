@@ -791,3 +791,32 @@ try (Directory directory = FSDirectory.open(indexPath)) {   // open the disk dir
 IOUtils.rm(indexPath);
 }
 ```
+
+
+## ElasticSearch
+
+Okay so we just spent 6000 words discussing the nitty-gritty of Lucene.
+I'm very tired from thinking and writing all of this bruh,
+so Imma just pay a lip service to ElasticSearch.
+
+As said in the very beginning,
+all the core functionality is powered by Lucene the java library that we just talked about,
+and ElasticSearch kind of just wraps around Lucene to expose a higher level query language, HTTP interface, and standalone instance.
+
+When you install ElasticSearch,
+you install and executable,
+and when you start it from the CLI,
+it's a standalone server instance running on the machine forever.
+
+When you want to define an index,
+you don't write raw java code nor all the `DirectoryReader` and stuff.
+You write a JSON based high level definition to ElasticSearch's HTTP API,
+and it will translate that to the underlying Lucene java code and execute it.
+Similarly, when you create some document, it's a `POST` request to ElasticSearch's HTTP endpoint instead of java code.
+Same for querying. HTTP request instead of raw Lucene java code.
+
+The benefits are:
+
+1. Now, any language can use the underlying search engine without having to speak Java
+2. Server maintenance, up-time, and configuration is a standalone thing
+3. For large scale deployment, you can have replication and sharding in ElasticSearch
