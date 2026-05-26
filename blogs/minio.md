@@ -264,4 +264,9 @@ just use the local file system.
 And at the end of the day, object storage, relational databases, KV store...
 they are all just some abstractions over the file system,
 which by transitivity abstracts over the underlying disk or SSD.
-At the end of the day, the bytes need to be stored somewhere.
+At the end of the day,
+the bytes have to live somewhere,
+and at the hardware level,
+it always means RAM and disk.
+But we won't directly interact with RAM and disk,
+so we have abstractions like file system, object storage, and PostgreSQL on top.
