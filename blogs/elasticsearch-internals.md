@@ -5,7 +5,6 @@ tags: [ Internal Architecture ]
 category: Tech
 created_at: 2026-02-20 23:19:13
 updated_at: 2026-05-25 23:19:13
-excludes_from_index: True
 ---
 
 ## Foreword
