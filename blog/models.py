@@ -37,6 +37,7 @@ class ArticleIndexEntry(BaseModel):
 
 class ArticlesIndex(BaseModel):
     categories: list[str]
+    must_read: list[ArticleIndexEntry]
     latest: list[ArticleIndexEntry]
     per_category: dict[str, list[ArticleIndexEntry]]
     new_count: int

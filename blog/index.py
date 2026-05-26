@@ -160,6 +160,7 @@ def load_articles_index(
 
     return ArticlesIndex(
         categories=categories,
+        must_read=[entry for entry in all_sorted if entry.metadata.must_read],
         latest=all_sorted[:latest_n],
         per_category=per_category,
         new_count=len([c for c in all_sorted if c.metadata.is_new]),
