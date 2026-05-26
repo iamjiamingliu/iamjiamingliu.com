@@ -5,6 +5,7 @@ tags: []
 category: Thinking
 created_at: 2026-04-13 14:11:57
 updated_at: 2026-04-13 14:11:57
+must_read: True
 ---
 
 ## Tinolympics

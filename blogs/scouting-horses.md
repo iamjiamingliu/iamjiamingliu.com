@@ -7,6 +7,7 @@ category: Thinking
 created_at: 2026-05-20 01:53:57
 updated_at: 2026-05-20 01:53:57
 excludes_from_index: False
+must_read: True
 ---
 
 吾自幼常观常思：何为人中吕布，何为马中赤兔？
