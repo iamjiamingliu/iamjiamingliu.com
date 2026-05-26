@@ -4,7 +4,7 @@ description: What's happening under the hood?
 tags: [ Internal Architecture ]
 category: Tech
 created_at: 2026-03-10 14:36:57
-updated_at: 2026-03-10 14:36:57
+updated_at: 2026-05-25 20:59:57
 excludes_from_index: True
 ---
 
@@ -184,14 +184,57 @@ which I don't understand fully, so I will leave it to you the reader to carry ou
 
 ### MinIO's Implementation
 
-TODO
+In the most simple scenario where,
+perhaps as a hobby project,
+MinIO only has 1 node configured,
+the core mechanism of erasure coding doesn't really kick in because one node alone can't provide any fault tolerance,
+so it behaves very much like an HTTP wrapper for file storage (excuse me, object storage).
 
-### All the Overhead, For What?
+In the robust scenario where,
+for enterprises and whatever other serious use case demands,
+MinIO would have multiple nodes configured together,
+and the core mechanism of erasure coding does kick in.
+This is where its purpose shines.
 
-Arguably, if MinIO doesn't care about fault tolerance or scalability,
+The logical hierarchy for MinIO's nodes in a robust deployment goes like this:
+
+1. At the very bottom, you have physical hard drives, preferably NVME or faster instead of slower HDD
+2. Multiple physical hard drives would be bundled together, along with other important stuff like RAM and CPU, to form a machine. That machines would then be running the MinIO executable. This is considered a node.
+3. Multiple machines, aka nodes, would be bundled together, to logically form an erasure set
+4. Finally, all the erasure sets together logically make up the entire MinIO server pool (aka cluster)
+
+This is a diagram from MinIO's documentation to illustrate the above point:
+
+![](https://docs.min.io/aistor/operations/core-concepts/images/erasure-coding-erasure-set.svg)
+
+Whenever a new object is created,
+the write path goes like this:
+
+1. Based on the hash of the object key, it will be routed to an erasure set
+2. The object is split up into K data chunks, and then their M parity chunks are computed
+3. The data and parity chunks will then be stored onto the nodes in that erasure set, along with metadata
+
+Whenever an object needs to be fetched,
+the read path goes like this:
+
+1. Based on the hash of the object key, determine which erasure set this object is stored
+2. Go fetch up the object's data chunks from the nodes in that erasure set. Given the property of erasure coding, any K data chunks would suffice because the complements can just be reconstructed using Reed Solomon
+3. Return the merged result as one unified object
+4. If any repair needs to be done, such as a data or parity chunk missing or corrupted, it can do so
+
+So, it's a classic load balancing topology
+based on the hash of the object key and then routed to the appropriate erasure set.
+But you can imagine a problem with such hash based routing scheme is,
+if any new node or erasure set is added, we need to somehow rebalance the existing routing schemes.
+But it's not like resizing happens all the time, most likely, it only happens when the existing server pool runs out of space.
+So, MinIO's solution is just:
+
+1. It doesn't support downsizing well
+2. If you want to upsize, you just add a new server pool (aka cluster), and then MinIO would have to check every server pool whenever it wants to write or retrieve an object
+
+Once again, if MinIO doesn't care about fault tolerance or scalability,
 then doesn't need erasure coding,
 and its architecture could degenerate into a simple HTTP wrapper over the file system.
-
 But MinIO must care about fault tolerance and scalability,
 thus its architecture must be orchestrated around the complexity of erasure coding.
 
