@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Blog · Jiaming Liu{% endblock %}
 
-{% macro must_read_card(entry) %}
+{% macro article_card(entry, force_must_read_badge=False) %}
     {% set m = entry.metadata %}
     <div class="col-12">
         <a href="/blogs/{{ entry.file_path }}" class="text-decoration-none">
@@ -24,93 +24,7 @@
 
                         <div class="flex-grow-1">
                             <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                                <span class="badge rounded-pill text-bg-warning border">
-                                    Must read
-                                </span>
-                                {% if m.is_new %}
-                                    <span class="badge rounded-pill text-bg-info border bg-info text-white">
-                                        New
-                                    </span>
-                                {% elif m.is_recently_updated %}
-                                    <span class="badge rounded-pill text-bg-info border bg-info text-white">
-                                        Recently updated
-                                    </span>
-                                {% endif %}
-                                <span class="badge rounded-pill text-bg-light border text-dark">
-                                    {{ m.category }}
-                                </span>
-                                {% if m.tags %}
-                                    {% for t in m.tags[:4] %}
-                                        <span class="badge rounded-pill text-bg-light border text-dark">
-                                            {{ t }}
-                                        </span>
-                                    {% endfor %}
-                                    {% if m.tags|length > 4 %}
-                                        <span class="text-muted small">+{{ m.tags|length - 4 }}</span>
-                                    {% endif %}
-                                {% endif %}
-                            </div>
-
-                            <div class="h5 fw-semibold text-dark mb-1">
-                                {{ m.title }}
-                            </div>
-                            <div class="text-muted mb-2">
-                                {{ m.description }}
-                            </div>
-
-                            <div class="d-flex flex-wrap gap-3 text-muted small">
-                                <div>
-                                    Updated {{ m.updated_at.strftime("%b %d, %Y") }}
-                                </div>
-                                <div>
-                                    Created {{ m.created_at.strftime("%b %d, %Y") }}
-                                </div>
-                                <div>
-                                    {{ m.word_count }} words
-                                </div>
-                                <div>
-                                    {{ (m.estimated_reading_time.total_seconds() / 60) | int }} minutes read
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="d-none d-md-flex align-items-center">
-                            <span class="btn btn-sm btn-outline-dark rounded-pill px-3">
-                                Read <i class="bi bi-arrow-right ms-1"></i>
-                            </span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-{% endmacro %}
-
-{% macro latest_card(entry) %}
-    {% set m = entry.metadata %}
-    <div class="col-12">
-        <a href="/blogs/{{ entry.file_path }}" class="text-decoration-none">
-            <div class="card border-0 shadow-sm rounded-4 h-100 hover-lift">
-                <div class="card-body p-4 p-lg-4">
-                    <div class="d-flex flex-column flex-md-row gap-3">
-
-                        {# Thumbnail (optional) #}
-                        {% if m.img_url %}
-                            <div class="flex-shrink-0" style="width: 140px;">
-                                <img
-                                        src="{{ m.img_url }}"
-                                        alt="{{ m.title }}"
-                                        class="img-fluid rounded-3 border"
-                                        style="width: 140px; height: 92px; object-fit: cover;"
-                                        loading="lazy"
-                                >
-                            </div>
-                        {% endif %}
-
-                        <div class="flex-grow-1">
-                            <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
-                                {% if m.must_read %}
+                                {% if force_must_read_badge or m.must_read %}
                                     <span class="badge rounded-pill text-bg-warning border">
                                         Must read
                                     </span>
@@ -254,14 +168,14 @@
 
                         <div class="row g-3 mb-5" id="mustReadList">
                             {% for entry in index.must_read[:2] %}
-                                {{ must_read_card(entry) }}
+                                {{ article_card(entry, force_must_read_badge=True) }}
                             {% endfor %}
 
                             {% if index.must_read|length > 2 %}
                                 <div class="collapse col-12" id="mustReadMore">
                                     <div class="row g-3">
                                         {% for entry in index.must_read[2:] %}
-                                            {{ must_read_card(entry) }}
+                                            {{ article_card(entry, force_must_read_badge=True) }}
                                         {% endfor %}
                                     </div>
                                 </div>
@@ -297,14 +211,14 @@
 
                     <div class="row g-3 mb-5" id="latestList">
                         {% for entry in index.latest[:8] %}
-                            {{ latest_card(entry) }}
+                            {{ article_card(entry) }}
                         {% endfor %}
 
                         {% if index.latest|length > 8 %}
                             <div class="collapse col-12" id="latestMore">
                                 <div class="row g-3">
                                     {% for entry in index.latest[8:] %}
-                                        {{ latest_card(entry) }}
+                                        {{ article_card(entry) }}
                                     {% endfor %}
                                 </div>
                             </div>
