@@ -270,6 +270,32 @@ Thus, usually only rich enterprises sensitive to every ms of user experience wou
 
 ### HDFS
 
+Before object storage came along,
+Hadoop Distributed File System (HDFS) was the answer to distributed data storage.
+
+Conceptually, HDFS and object storage achieve equivalent purposes.
+In practice, developers adopted AWS S3 object storage for its convenience,
+thus today,
+object storage,
+whether it's AWS S3 or self-hosted MinIO,
+is used more than HDFS.
+There are finer differences between HDFS and object storage,
+such as how HDFS was designed to tightly couple with the Hadoop map reduce computation scheme,
+but really, both HDFS and object storage achieve equivalent purposes.
+It's the convenience of object storage that won, as HDFS looks daunting to set up.
+
+I feel like this is a trend of new technologies coming up,
+serving the equivalent purpose as some older systems but being easier to set up, understand, and use,
+and eventually taking the crown as the go-to solution in the domain.
+As a perhaps not very accurate example,
+look at Kafka,
+and look at how it replaced the legacy Enterprise Message Bus.
+I think they accomplish equivalent purposes,
+it's just that Kafka is easier to set up, understand, and use.
+
+After all, software don't only serve their end users, but also the developers.
+Developer experience matter.
+
 ## One More Thought
 
 Why do we need object storage?
