@@ -4,7 +4,7 @@ description: What's happening under the hood?
 tags: [ Internal Architecture ]
 category: Tech
 created_at: 2026-02-20 23:19:13
-updated_at: 2026-02-20 23:19:13
+updated_at: 2026-05-25 23:19:13
 excludes_from_index: True
 ---
 
@@ -705,9 +705,32 @@ For 2D fields like `coordinate`, then it behaves like KDTree.
 
 #### DocValues
 
+Whereas `BKDTree` is used to filter docIDs whose values are in a range,
+`DocValues` is used to, given some or all docIDs, fetch all the relevant values,
+and then perform sorting or aggregations as the search query specifies.
+
+`DocValues` is columnar storage.
+Thus conceptually, `DocValues` is just an array of a particular column values.
+For example, `price` field would have `DocValues` of `[345.98, 23.99, 158.00, ...]`.
+
 #### Stored Values
 
+`DocValues` is columnar, and `Stored Values` is just row storage.
+Given a docID, it returns the original value of the document.
+And the purpose of `Stored Values` doesn't exceed beyond simply returning it to the user.
+Because for filtering, we already have `BKDTree`. For sorting and aggregation, we have `DocValues`.
+
 #### HNSW
+
+In the AI age,
+BM25 full text search is here to stay but vector embedding based ANN retrieval has saw tremendous rise.
+Lucene supports vector search with the HNSW data structure.
+
+There's a billion articles on HNSW already, such as [this one](https://www.pinecone.io/learn/series/faiss/hnsw/) from the vector DB Pinecone,
+so I won't spend more words explaining how HNSW works.
+I just want to highlight that,
+HNSW doesn't support on the fly mutations very well and is instead designed for a static batch of data,
+and this fits super well with Lucene's architecture of batch flushing documents, forming a segment, and merging segments afterward as opposed to modification on the fly.
 
 ### Let's search!
 
