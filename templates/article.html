@@ -16,7 +16,12 @@
                                 <div class="d-flex align-items-center justify-content-between mb-3">
                                     <a class="text-decoration-none small text-muted" href="{{ url_for('blogs') }}">←
                                         Back</a>
-                                    <span class="badge text-bg-secondary">{{ article.metadata.category }}</span>
+                                    <div class="d-flex flex-wrap justify-content-end gap-2">
+                                        {% if article.metadata.must_read %}
+                                            <span class="badge text-bg-warning border">Must read</span>
+                                        {% endif %}
+                                        <span class="badge text-bg-secondary">{{ article.metadata.category }}</span>
+                                    </div>
                                 </div>
 
                                 <div class="fw-semibold lh-sm mb-3">{{ article.metadata.title }}</div>
@@ -55,6 +60,12 @@
                             <h4 class="text-secondary">{{ article.metadata.description }}</h4>
 
                             <div class="d-flex flex-wrap align-items-center gap-2 text-muted small">
+                                {% if article.metadata.must_read %}
+                                    <span class="badge rounded-pill text-bg-warning border">
+                                        Must read
+                                    </span>
+                                    <span class="text-muted">·</span>
+                                {% endif %}
                                 <span>{{ article.metadata.category }}</span>
                                 <span class="text-muted">·</span>
                                 <span>Created {{ article.metadata.created_at.strftime('%b %d, %Y') }}</span>

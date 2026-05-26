@@ -99,6 +99,11 @@
 
                                                 <div class="flex-grow-1">
                                                     <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+                                                    {% if m.must_read %}
+                                                        <span class="badge rounded-pill text-bg-warning border">
+                                                            Must read
+                                                        </span>
+                                                    {% endif %}
                                                     {% if m.is_new %}
                                                         <span class="badge rounded-pill text-bg-info border bg-info text-white">
                                                             New
@@ -211,7 +216,14 @@
                                                             >
                                                         {% endif %}
                                                         <div class="flex-grow-1">
-                                                            <div class="fw-semibold text-dark mb-1">{{ m.title }}</div>
+                                                            <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+                                                                <div class="fw-semibold text-dark">{{ m.title }}</div>
+                                                                {% if m.must_read %}
+                                                                    <span class="badge rounded-pill text-bg-warning border">
+                                                                        Must read
+                                                                    </span>
+                                                                {% endif %}
+                                                            </div>
                                                             <div class="text-muted small">{{ m.description }}</div>
 
                                                             {% if m.tags %}

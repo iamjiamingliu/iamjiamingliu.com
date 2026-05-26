@@ -11,6 +11,7 @@ class ArticleMetadata(BaseModel):
     created_at: datetime
     updated_at: datetime
     excludes_from_index: bool = False
+    must_read: bool = False
     word_count: int
     estimated_reading_time: timedelta
     is_new: bool = False
