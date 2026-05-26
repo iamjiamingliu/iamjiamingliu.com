@@ -734,6 +734,20 @@ and this fits super well with Lucene's architecture of batch flushing documents,
 
 ### Let's search!
 
+We have documents.
+We have them flushed to segments,
+encoded with inverted index, BKDTree, and whatever data structures (aka Codec) warrant.
+Now it's time to search.
+
+To search an index in Lucene,
+you need to specify its directory,
+create a query with all the booleans clauses and scoring weights,
+and then Lucene would just execute your query by coordinating the appropriate codecs from all the segments in the index and doing aggregations, sorting, and scoring.
+
+This process is analogous to [query execution in PostgreSQL](/blogs/postgresql-internals.md#executing-query).
+
+> I wrote everything before `DocValues` super in depth in February 2026. I was pretty burned out from all the brain work during the process RIP. So, I'm just gonna quickly wrap up the discussion and call it a day LOL.
+
 ### Putting it all together
 
 This is the official starter code from Lucene's docs that illustrate all the concepts we talked about.
