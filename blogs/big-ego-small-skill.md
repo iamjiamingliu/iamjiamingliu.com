@@ -3,8 +3,8 @@ title: Big Ego, Small Skill
 description: What creates big ego, and some ways to mitigate
 tags: []
 category: Thinking
-created_at: 2026-05-27 12:59:57
-updated_at: 2026-05-27 12:59:57
+created_at: 2026-05-27 00:59:57
+updated_at: 2026-05-27 00:59:57
 ---
 
 I had an ego problem back in high school.
