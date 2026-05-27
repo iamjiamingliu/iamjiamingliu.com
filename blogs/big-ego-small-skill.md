@@ -26,7 +26,7 @@ my features eventually made it to production,
 but the impression of 10x Senior Devs juggling all the dashboards and crazy features are here to stay.
 
 Now, whenever I go around, my view becomes more refined:
-"there's many people who work less than I do, but there's also many people who work more and excel more than I am, around my age, above my age, and even below my age".
+"there are many people who work less than I do, but there are also many people who work more and excel more than I am, around my age, above my age, and even below my age".
 I see where I fit in the grand scheme of things.
 
 A few peers from high school took off in college with their insane drive and execution.
@@ -39,7 +39,7 @@ and you are the most hardworking and talented farmer in your place.
 Then, it's easy to pick up an ego because your pig is the biggest,
 unless all of you peasants were starving and can't afford ego.
 But once you bring your pig to the county fair,
-your pig no longer the biggest,
+your pig is no longer the biggest,
 some buffalos outshine pigs completely,
 and there might even be an exotic elephant giant.
 And once you bring your pig to the city,
@@ -47,12 +47,12 @@ the Venetian merchant bankers would laugh at you for being a peasant no matter h
 
 You might think you are working the hardest and winning the most in a field,
 until you zoom out to regional or any higher scale.
-And there's many adjacent fields too whose prize and participants' drive simply wow you.
-And eventually, you realize, there's people who don't need to compete in your field at all,
+And there are many adjacent fields too whose prize and participants' drive simply wow you.
+And eventually, you realize, there are people who don't need to compete in your field at all,
 because your field is for middle-class families who want to make a big salary,
 but their field is old money whose kids' monthly allowance shy the salary you earned with the hard work and ingenuity you are so proud of.
 
-Ego exist because the view is limited.
+Ego exists because the view is limited.
 You broaden your view a bit, look farther, look around, look above,
 and you get humbled, and your ego reduce.
 
