@@ -34,12 +34,12 @@ In parallel to Charlie Munger's imperfect math argument
 and machine learning's lack of a closed-form optimal solution,
 I argue the following:
 in real life,
-for almost every objective we are optimizing for --
+for almost every objective we optimize for --
 such as one's career,
 an organization's org chart,
 the design of a piece of software,
 the implementation of software, or anything else --
-whatever scope or type of objective we are optimizing for,
+whatever the scope or type of objective,
 no closed-form solution exists,
 and iterative improvement is the only way to go.
 Simply put,
@@ -59,13 +59,13 @@ a closed-form optimal solution certainly does not exist.
 And real life makes the problem messier in the following ways.
 First,
 the objective is never perfectly defined,
-and it will even change over time.
+and it may even change over time.
 Second,
 the implementation is also imperfectly defined,
 and there are many roughly equivalent implementations to accomplish the same goal.
 Finally,
 the environment variables change -- the greater economy we are in, politics, random events, new discoveries -- and can
-reshape if not completely override the feasibility and strength of prior objectives and implementations at unexpected times.
+reshape, if not completely override, the feasibility and strength of prior objectives and implementations at unexpected times.
 
 
 ## Accepting Imperfection and Embracing Evolution
@@ -76,7 +76,7 @@ for whatever endeavor it is -- be it a software codebase,
 a company's operations,
 or one's life trajectory -- having no closed-form optimal solution with evolving objectives
 means that we are never at a perfect settling point,
-and something, however big or small, will always feel wrong and intolerable.
+and something, however big or small, will always feel wrong or intolerable.
 
 As a kid, then a teen, and now an adult,
 I hear people complaining all the time about whatever grievances are troubling them
@@ -84,7 +84,7 @@ I hear people complaining all the time about whatever grievances are troubling t
 For a long while,
 I had been confused and saddened by all the grievances I heard,
 and I believed living in this world meant being inevitably doomed with all these grievances and imperfections.
-Now I realize that's simply the way of life,
+Now I realize that's simply the way life is,
 because no closed-form perfection exists,
 thus we are always in a state with many imperfections waiting to be improved in the next iteration.
 
@@ -107,17 +107,17 @@ It doesn't matter if one attempt to improve fails, backfires, or accomplishes li
 it just matters that we are improving something while the window of opportunity allows.
 In one go, attempts can swing wildly.
 Across many attempts and across years,
-attempts to improve will add up and compound,
+attempts to improve can add up and compound,
 and grievances will be much more likely to be alleviated over the evolution of our attempts.
 
 
 ## History, and Human Evolution
 
-The arguments above also implies that,
+The arguments above also imply that,
 since changes usually come as improvements over some prior problems,
-it means that changes usually won't happen until something is wrong, or feels wrong.
+changes usually won't happen until something is wrong, or feels wrong.
 
-Put it in the perspective of a time horizon,
+Viewed from the perspective of a time horizon,
 it means the lineage of change would closely follow the lineage of problems that prompted the change.
 
 This lineage phenomenon is especially prominent in fields like,
@@ -125,13 +125,13 @@ say,
 law,
 where one financial or political or criminal case triggered outrage and prompted legislators to act.
 Another example more relevant to us software engineers is computer security,
-where one hacking event or cracking of a cryptographic algorithm lead to a stronger algorithm.
+where one hacking event or cracking of a cryptographic algorithm leads to a stronger algorithm.
 
 At a personal level, this is roughly how an individual learns too.
 We learn from mistakes.
 
 It also means,
-whenever we want to understand how a subject matter -- be it an academic field, a distributed software system, an organization, whatever -- we for sure should examine the problems it faced, solutions tried, and solutions accepted.
+whenever we want to understand a subject matter -- be it an academic field, a distributed software system, an organization, whatever -- we should examine the problems it faced, the solutions tried, and the solutions accepted.
 The lineage of change should explain the present state more effectively than only looking at the present state.
 
 Much like biological evolution,
@@ -149,9 +149,9 @@ think "technical debt" or "historical reasons".
 
 Finally, the thinking point is,
 can changes occur purely because something can be done for the better for the sake of being better,
-even when status quo doesn't expose serious problems?
+even when the status quo doesn't expose serious problems?
 In other words,
-do changes only come from problems, or changes can come simply because they can?
+do changes only come from problems, or can changes come simply because they can?
 
 I believe changes for sure can also happen simply for the sake of being better.
 And in this case,
@@ -161,11 +161,11 @@ the problem is not a problem relative to the status quo.
 The status quo may work _fine_,
 but the future may work _better_.
 The status quo is not a deficiency relative to _today_,
-it's a deficiency relative to _tomorrow_ .
+it's a deficiency relative to _tomorrow_.
 
 And perhaps, that's how many great innovations happen.
 Not because something is horribly wrong today,
-but something will be horribly by tomorrow's standard,
+but because something will be horribly inadequate by tomorrow's standard,
 and the future can be done much better.
 
 And unfortunately, much pomposity and impracticality occur too as a byproduct.
