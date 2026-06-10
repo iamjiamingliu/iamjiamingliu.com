@@ -109,3 +109,63 @@ In one go, attempts can swing wildly.
 Across many attempts and across years,
 attempts to improve will add up and compound,
 and grievances will be much more likely to be alleviated over the evolution of our attempts.
+
+
+## History, and Human Evolution
+
+The arguments above also implies that,
+since changes usually come as improvements over some prior problems,
+it means that changes usually won't happen until something is wrong, or feels wrong.
+
+Put it in the perspective of a time horizon,
+it means the lineage of change would closely follow the lineage of problems that prompted the change.
+
+This lineage phenomenon is especially prominent in fields like,
+say,
+law,
+where one financial or political or criminal case triggered outrage and prompted legislators to act.
+Another example more relevant to us software engineers is computer security,
+where one hacking event or cracking of a cryptographic algorithm lead to a stronger algorithm.
+
+At a personal level, this is roughly how an individual learns too.
+We learn from mistakes.
+
+It also means,
+whenever we want to understand how a subject matter -- be it an academic field, a distributed software system, an organization, whatever -- we for sure should examine the problems it faced, solutions tried, and solutions accepted.
+The lineage of change should explain the present state more effectively than only looking at the present state.
+
+Much like biological evolution,
+a species cannot be properly understood unless evolution is factored into account.
+In so many books and articles I've come across,
+from _Poor Charlie's Almanac_ to Paul Graham's blogs,
+human evolution is a common root cause for explaining social behaviors like greed, collaboration, jealousy, to name a few.
+And actually,
+in topics like this,
+human evolution has been the only explanation I've seen.
+Thus, arguably, sometimes a present phenomenon exists for no other reason than its history of change.
+
+If you are in the software industry,
+think "technical debt" or "historical reasons".
+
+Finally, the thinking point is,
+can changes occur purely because something can be done for the better for the sake of being better,
+even when status quo doesn't expose serious problems?
+In other words,
+do changes only come from problems, or changes can come simply because they can?
+
+I believe changes for sure can also happen simply for the sake of being better.
+And in this case,
+it's still a problem-solution driven change,
+with the subtle difference that,
+the problem is not a problem relative to the status quo.
+The status quo may work _fine_,
+but the future may work _better_.
+The status quo is not a deficiency relative to _today_,
+it's a deficiency relative to _tomorrow_ .
+
+And perhaps, that's how many great innovations happen.
+Not because something is horribly wrong today,
+but something will be horribly by tomorrow's standard,
+and the future can be done much better.
+
+And unfortunately, much pomposity and impracticality occur too as a byproduct.
