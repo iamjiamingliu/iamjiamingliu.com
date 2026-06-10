@@ -66,3 +66,46 @@ and there are many roughly equivalent implementations to accomplish the same goa
 Finally,
 the environment variables change -- the greater economy we are in, politics, random events, new discoveries -- and can
 reshape if not completely override the feasibility and strength of prior objectives and implementations at unexpected times.
+
+
+## Accepting Imperfection and Embracing Evolution
+
+By prior arguments,
+it means that,
+for whatever endeavor it is -- be it a software codebase,
+a company's operations,
+or one's life trajectory -- having no closed-form optimal solution with evolving objectives
+means that we are never at a perfect settling point,
+and something, however big and small, will always feel wrong and intolerable.
+
+As a kid, then teen, and now adult,
+I hear people complaining all the time whatever grievances are troubling them
+-- on text messages, on gossips, whatever medium it may be, about school, work, relationships, whatever subject it may be.
+For a long while,
+I had been confused and sorrow by all the grievances I hear,
+and I believed living in this world means inevitably doomed with all these grievances and imperfections.
+Now I realized that's simply the way of life,
+because no closed-form perfection exist,
+thus we are always in a state with many impefections waiting to be improved in the next iteration.
+
+"To be improved" is the emphasis point.
+Imperfections exist, we could accept them as a way of life, cry over it, and do nothing,
+or we could try, when the right opportunity window seemingly emerges, to improve them.
+We don't have capacity to improve everything,
+we won't always have the opportunity window to improve something,
+and many times,
+when we strive to improve something,
+the effects might be trivial, if not backfire.
+But once again,
+even in the mathematical real of machine learning,
+each step of gradient descent doesn't always guarantee getting closer to the objective,
+and backfiring zig-zags in progress exist too,
+in the real world,
+attempts to improve something certainly follow this pattern as well.
+
+It doesn't matter one attempt to improve fails, or backfires, or accomplish little,
+it just matters that we are improving something while opportunity window allows.
+In one go, attempts can swing wildly.
+Across many go's across years,
+attempts to improvement will add up and compound,
+and grievances will much more likely alleviate over the evolution of our attempts.
