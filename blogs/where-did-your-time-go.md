@@ -120,3 +120,11 @@ the meaningful distinction exists between **THE MOST OF US** and **THE HIGH ACHI
 as their numbers are large and there aren't much extreme discipline required
 compared to **THE ADDICT GAMER** on one extreme or **THE GODS** on the other.
 Now, we can analyze and compare at the breakdown of time spent to infer what's the juice behind differences in achievements.
+
+
+## The Juice Behind Differences in Achievements
+
+1. Beyond classroom learning
+2. Reasonably disciplined entertainment and social time
+3. Compounding over time
+4. Avoiding useless time commitments
