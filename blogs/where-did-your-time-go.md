@@ -5,6 +5,7 @@ tags: []
 category: Thinking
 created_at: 2026-06-11 00:42:57
 updated_at: 2026-06-11 00:42:57
+excludes_from_index: True
 ---
 
 ## 4 Years Later
