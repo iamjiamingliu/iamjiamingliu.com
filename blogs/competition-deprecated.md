@@ -6,6 +6,7 @@ category: Thinking
 language: zh
 created_at: 2026-06-29 21:20:57
 updated_at: 2026-06-29 21:20:57
+excludes_from_index: True
 ---
 
 ## 隔壁的偶遇
@@ -254,3 +255,5 @@ UCSBPlat有很多用户，但是UCSBPlat之后我写的几个网站没有用户�
 都这么牛，还有前人。那我怎么出人头地？
 
 10年后？20年后？老了？提前死了？
+
+whats after graduation?
