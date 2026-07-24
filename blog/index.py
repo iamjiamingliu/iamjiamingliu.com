@@ -1,12 +1,15 @@
 import os
 import traceback
+from collections.abc import Iterable, Sequence
 from pathlib import Path
-from typing import Iterable, Sequence
 
+from yaml import YAMLError
+
+from .models import ArticleIndexEntry, ArticlesIndex
 from .render import render_to_markdown
-from .models import ArticlesIndex, ArticleIndexEntry
 
 _DEFAULT_EXTS = {".md", ".markdown", ".mdx"}
+_ARTICLE_RENDER_ERRORS = (OSError, TypeError, ValueError, YAMLError)
 
 
 def _iter_article_files(
@@ -38,7 +41,7 @@ def _iter_article_files(
 def _relpath(path: Path, root: Path) -> str:
     try:
         return path.resolve().relative_to(root.resolve()).as_posix()
-    except Exception:
+    except ValueError:
         # if for some reason relative_to fails, fall back to absolute posix
         return path.resolve().as_posix()
 
@@ -83,7 +86,7 @@ def ensure_articles_are_valid(
     ):
         try:
             render_to_markdown(fpath.as_posix())
-        except Exception:
+        except _ARTICLE_RENDER_ERRORS:
             msg = f"Could not render article {fpath.as_posix()}:\n{traceback.format_exc()}"
             if stop_on_first_error:
                 raise ValueError(msg)
@@ -126,7 +129,7 @@ def load_articles_index(
             metadata = md.metadata
             if metadata.excludes_from_index:
                 continue
-        except Exception:
+        except _ARTICLE_RENDER_ERRORS:
             if skip_bad_articles:
                 continue
             raise ValueError(

@@ -1,10 +1,11 @@
-from . import models
+import re
+from datetime import datetime, timedelta
 from pathlib import Path
+
 import frontmatter
 import markdown2
-from datetime import timedelta, datetime
-import re
 
+from . import models
 
 NEW_THRESHOLD = timedelta(days=7)
 
@@ -17,6 +18,10 @@ def count_words(text: str) -> int:
 def estimate_reading_time(word_count: int, wpm=200) -> timedelta:
     minutes = word_count / wpm
     return timedelta(seconds=minutes * 60)
+
+
+def _is_recent(timestamp: datetime) -> bool:
+    return (datetime.now(tz=timestamp.tzinfo) - timestamp) < NEW_THRESHOLD
 
 
 def render_to_markdown(file_path: Path | str) -> models.ArticleMD:
@@ -34,12 +39,10 @@ def render_to_markdown(file_path: Path | str) -> models.ArticleMD:
     metadata = models.ArticleMetadata(
         **payload.to_dict(),
         word_count=word_count,
-        estimated_reading_time=estimated_reading_time
+        estimated_reading_time=estimated_reading_time,
     )
-    metadata.is_new = (datetime.now() - metadata.created_at) < NEW_THRESHOLD
-    metadata.is_recently_updated = (
-        datetime.now() - metadata.updated_at
-    ) < NEW_THRESHOLD
+    metadata.is_new = _is_recent(metadata.created_at)
+    metadata.is_recently_updated = _is_recent(metadata.updated_at)
     return models.ArticleMD(metadata=metadata, content=payload.content)
 
 

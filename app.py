@@ -1,7 +1,9 @@
-from flask import Flask, render_template, abort
-from flask_bootstrap import Bootstrap5
-import blog
 import pathlib
+
+from flask import Flask, abort, render_template
+from flask_bootstrap import Bootstrap5
+
+import blog
 
 app = Flask(__name__)
 Bootstrap5(app)
