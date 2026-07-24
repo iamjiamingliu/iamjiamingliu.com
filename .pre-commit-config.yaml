@@ -5,10 +5,20 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
-  - repo: https://github.com/psf/black
-    rev: 22.10.0
+  - repo: local
     hooks:
-      - id: black
+      - id: ruff-check
+        name: ruff check
+        entry: ruff check --fix
+        language: python
+        additional_dependencies: [ruff==0.16.0]
+        types_or: [python, pyi]
+      - id: ruff-format
+        name: ruff format
+        entry: ruff format
+        language: python
+        additional_dependencies: [ruff==0.16.0]
+        types_or: [python, pyi]
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.24.2
     hooks:

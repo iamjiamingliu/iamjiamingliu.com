@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+set -e
+
+script_dir=${0:A:h}
+project_dir=${script_dir:h}
+ruff="$project_dir/.venv/bin/ruff"
+
+if [[ ! -x "$ruff" ]]; then
+  print -u2 "Ruff is not installed at $ruff"
+  exit 1
+fi
+
+"$ruff" check --fix "$@"
+"$ruff" format "$@"
