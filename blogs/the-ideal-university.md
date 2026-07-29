@@ -8,8 +8,6 @@ updated_at: 2026-07-26 11:17:57
 ---
 
 
-# The Ideal University
-
 I am a university undergraduate student.
 A super common rant topic among friends
 -- especially the more vocal and opinionated ones --
