@@ -116,3 +116,45 @@ I have a few friends with chronic sleep problems.
 Their eyes always seem half open and their words sound feeble,
 and I feel sad for them.
 Imagine how much cooler and happier and productive and amazing they can be if they can also sleep 8 hours a day.
+
+### Safety
+
+I am living in SF Tenderloin district this summer,
+notorious for its scary streets with drug abuse and high density of crimes.
+Oh boy do I have some stuff to say about safety in one's hierarchy of needs.
+
+After I get my burger and water from Sam Wang and that 8 hours of sleep on good days,
+I open the door and I know,
+"here's another Odyssey across tenderloin street I guess."
+
+Foul smell of human feces around the valleys and streets,
+actual human feces on the streets,
+shabby homeless individuals shouting at passer-bys or at each other
+-- safety is not just the physical baseline of not being harmed,
+but more frequently the psychological perception that you can live through another day.
+Police and ambulance sirens every half an hour...
+oh boy, center of the AI revolution they said.
+
+I knew SF Tenderloin would be bad, but I didn't know it would be this bad.
+Every night I get out of the Waymo, I just hurry up and zoom past the foul street and into the apartment door
+while scanning my head around the environment like how those Lidars on Waymo spin around.
+
+One time some interns hosted a birthday party,
+we got back to the apartment at 11:30pm;
+15 minutes later as I was able to take a shower,
+I heard 10 loud pongs on the plaza outside the apartment building,
+then I heard crowd (just a few people) screaming and scattering and shouting "take cover and stay down",
+then I heard police and ambulance rushing towards my apartment, rescuing a few guys on the sketchers and shutting down the scene with yellow warning day,
+and the next day on major news:
+
+![](https://cdn.abcotvs.com/dip/images/19581208_072626-kgo-market-st-shooting-img.jpg?w=1024)
+
+**ABC News: 4 injured in shooting after trying to break up argument in SF Tenderloin, police say.**
+
+Hell nah. The worst way to end one's life is dying in a summer internship because you lived in Tenderloin.
+Whenever I go back home to Cupertino the suburb,
+I just say,
+wow,
+what a quiet and safe and peaceful place to be that I just took for granted.
+I'm never living in the city again.
+At least not in Tenderloin spinning my head like Waymo lidars everyday.
