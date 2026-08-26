@@ -158,3 +158,108 @@ wow,
 what a quiet and safe and peaceful place to be that I just took for granted.
 I'm never living in the city again.
 At least not in Tenderloin spinning my head like Waymo lidars everyday.
+
+By Wikipedia,
+"safety" in pyramid of needs goes beyond physical safety to job safety and financial safety too.
+In the age of AI,
+no one -- not even people within the AI companies -- concur whether AI will completely outclass humans or greatly supplement us.
+Things are moving fast,
+predictions back when Cursor came out like "software engineers will be replaced by 2025" didn't happenm,
+but it doesn't mean it won't happen a few years from now.
+
+I guess one theory I am willing to accept and cope with the most is,
+if AI at most supplements us, then we are fine;
+otherwise if they outclass some of us,
+it likely will outclass us bottom up in terms of expertise and talent,
+so that just raises the bar for a good-enough human to get a job.
+And there's also the possibility of AI unlocking new human opportunities, so stay tuned for that as well.
+
+Finally in terms of financial safety,
+I'm doing fine this summer.
+I eat company food on the week days and go out friends on the weekends,
+so I am able to save up.
+
+Fuck the rent though. It's $2,000 per person per month.
+
+I overcome an Odyssey across the Tenderloin street to work,
+come back with a paycheck that Uncle Sam take a share first,
+and then the landlord takes another hit?
+All the hours stayed at the office just for the landlord?
+
+### Love and Belonging
+
+Thankfully,
+I live with 3 other interns in Tenderloin,
+and we get along nicely.
+On the weekends we would grab food and travel to nearby places.
+And at work, there's also many who I can smile and wave and chat a little bit too, so that's nice.
+
+And when I go back to Cupertino on some weekends,
+perfect,
+I have even more folks to hold on to.
+These days thanks to social media,
+I can also always send reels and memes and funny stuff over Instagram and Discord and Wechat.
+
+It's nice to have friends.
+Throughout my time as a student from Kindergarten to high school,
+I'm always the new guy who joined late.
+I started Kindergarten 2 years later than everyone else because I would get sick too often and my mom and dad thought I wouldn't make it,
+so when I started Kindergarten,
+I just ate quietly and didn't have many folks I call as friends.
+Elementary school and middle school were alright,
+but once I got to the U.S.,
+at least for the first few weeks,
+things are a little rough.
+After all,
+people have known each other from elementary school,
+to middle school,
+and then high school;
+their parents know each other,
+their friends are each other's friends,
+everything overlap already,
+and it's hard to blend in as a newcomer.
+
+Thankfully,
+I was still able to find my own little circle of friends.
+In middle school, it was a bunch of international Chinese homies that we go to each others house, go to volunteering events, and do silly stuff together.
+Since high school, my friends had been from tech bros I met via clubs and various projects we did together.
+You don't realize the value of friends until all of a sudden,
+you are dropped into the middle of nowhere,
+and you go home every night tired and empty on the weekends realizing,
+dang,
+I have nothing to do.
+This is what happened to me in [summer 2024](/blogs/jiaming-at-bytedance.md) when I interned in China in a City with no friends or family.
+So yeah, it's nice to have friends.
+
+It's nice to feel like you belong, because I clearly have an example of what happens when you don't.
+I joined Cupertino ASB (student government) back in my high school junior year - it was not a welcoming place at first.
+Due to the popular kids effect - that is, whoever is in student government is usually the clique of popular kids -
+I didn't fit in. I knew nobody when I first joined ASB.
+And, whenever I tried to talk to someone else about getting a task done, a new idea proposal,
+or even a friendly small talk,
+it seems as if their time is more valuable than a YC partner's investor pitch.
+Their head just turns away.
+And, oh boy, at such a young age, they already mastered corporate golden phrases from
+"I will get back to you on this" (of course, they never) to "I agree, but..." (it means fuck you, hell no).
+Yeah, it's not nice to not feel welcomed.
+Feeling welcome is never about the explicit things,
+it's always about the small things that subconsciously add up to a conclusion of "you are not welcome here."
+And when it comes to feelings, subconsciously is usually the truth, because truth is by definition subjective when it comes to feelings which is subjective.
+So, I thought about quitting.
+I was doing meaningfully work.
+I was making an impact.
+But I didn't feel welcome.
+And that's all it takes to make me want to quit.
+Fortunately, I just grinded my teeth through the first semester.
+And in the second semester,
+I was able to pick up my solo journey to found Tino News Today (the school TV newscast) program,
+so I distanced myself from the unwelcome hell with an adventure, and that certainly helped.
+If you don't feel welcomed, just distance yourself away - well, that's an unfortunate solution.
+The next year, I was able to meet a few like-minded peers in ASB, and I was no longer lonely, and I stayed for the rest of my high school.
+
+Every aspect of pyramid of need I talked about so far mostly relates to one's self
+-- not being attacked on the street, getting enough water and sleep, not going broke, etc --
+and starting from here and levels of the pyramid above,
+it's not just a solo problem anymore,
+but a social problem.
+Belonging, confidence, morality, creativity -- these are mostly determined by social acceptances more than an individual's passive state.
