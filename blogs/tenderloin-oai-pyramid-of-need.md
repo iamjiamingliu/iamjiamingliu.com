@@ -264,3 +264,130 @@ and starting from here and levels of the pyramid above,
 it's not just a solo problem anymore,
 but a social problem.
 Belonging, confidence, morality, creativity -- these are mostly determined by social acceptances more than an individual's passive state.
+
+Where are we at now? Let me grab the diagram again...
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Maslow%27s_Hierarchy_of_Needs.svg/1920px-Maslow%27s_Hierarchy_of_Needs.svg.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=thumbnail)
+
+Right, esteem, and then self-actualization.
+
+### Esteem
+
+I think the lower levels of the pyramids - safety, love and belonging -
+compared to the upper levels of esteem and self actualization,
+is what draws the line between personal and professional.
+
+With the line between personal and professional
+comes with many age-old dichotomy and irreconcilable trade-offs
+in people's personalities, qualities, and way of doing things
+that usually make someone either an unwelcome jerk at home but an effective demon at work,
+or a loved-by-everybody cutie patootie at home but an imbecile at work.
+
+How to reconcile both?
+
+Well, I think you just need to have two different versions of you,
+a silly goose at home,
+and a fierce executor at work.
+People already implicitly do that anyways, I'm just pointing that out explicitly here.
+Trade-offs can be overcome with a switch that handles each case separately.
+
+Back to esteem.
+As now we are stepping into the professional layers of needs of esteem and self actualization next,
+I'm going to shift away from talking about surviving physiologically in Tenderloin SF
+to the work space, which for my 2026 summer was OpenAI's ChatGPT Ads team.
+
+Ah yeah yeah yeah one headline after another about its IPO,
+another model release that would change everything,
+another security incident that might take over the world,
+whatever.
+I was overwhelmed at first, but gradually I got to used these information.
+
+When I got assigned my first intern task this summer,
+I was overwhelmed by the complexity of ChatGPT ads system,
+in terms of its domain design, business rules, technical architecture, and codebase layout.
+Trying to make any new feature happen was like...
+I can't even think about a good analogy,
+but it's like,
+finding a needle in the haystack on identifying what code needs to be touched and changed,
+understanding the surrounding sub systems and data flows to know how it should be changed,
+and finally getting it to work correctly and not breaking other stuff.
+
+With AI tools like Codex, identifying what code needs to be touched got very straight forward,
+you just need to describe a rough idea, and it traces through the code files to identify where your feature should sit.
+Understanding surrounding parts and flows are tricky though,
+because sure, some semantics are in the code already and Codex and just infer the semantics from the code,
+but in any system developed with more than 1 person,
+there's still so much semantics around what's deprecated, what's live, what's in development, and what's happening next
+that isn't recoded anywhere, so you need to resort to asking them in Slack or in a meeting.
+Once you finally understood what's happening,
+you have to think about how to implement it,
+and even for one feature - not even a full-on system - there's already
+so many nuanced technical or product decisions, tradeoffs, and pathways to consider and execute.
+Sure, there is a product requirement from the PM,
+but there's many subtle details that don't emerge until the programmer start implementing,
+so then you have to fill in the blank yourself or sync with PM to concur on it.
+And if one thing changes, then you might have to redo a large chunk of your thing again.
+And along the way, you realize that your upstream needs to be changed to accommodate for something,
+and if they say "we can't do that because of [scalability / correctness / too much effort] but instead we can give you this"
+then you might have to redo another chunk of your thing again.
+And finally if you eventually implemented it,
+then, you have to do AB test to experiment it,
+only to realize oh shit I got this wrong or oh shit this part is suboptimal and you are back to the next iteration again.
+
+Yeah, software is an iterative, explorational, and flexible activity.
+If we know ahead of time what exactly the blueprint should be,
+then software engineering would become a construction job, where the architect and the workers are totally separate.
+But it's not.
+You lay a few bricks, and realize some parts of the blueprints need to change,
+or the neighboring building need to change,
+so,
+you are both an architect, a builder, a coordinator, a mini-PM, a mini-salesperson, all at once.
+Which makes the job fun though.
+
+Sure, Codex can do so much of this lifecycle of product development,
+but I still insist on coding the most important part myself by hand,
+because it forces me to be the one coming up with the semantics, understanding it correctly (because I came up with it),
+give it the right abstractions,
+and make sure it's correct and scalable.
+And then, the rest of the integrations, testings, config, or small utils, those are all AI-doable.
+We need to control the shape of it, and AI does the rest, which is nice.
+
+But we are talking about esteem here, so, let me connect back to that.
+You can imagine,
+amidst all the complexity of a software,
+you will for sure get overwhelmed at first,
+struggle with even understanding it even with AI,
+feel like a total idiot in the first few meetings,
+and just - feel no confidence in yourself, feel no esteem in yourself.
+And that was me at first indeed.
+At first, every step seemed to take so long,
+because you are fighting against understanding the existing system's complexity,
+the new feature's requirements,
+the upstream and downstream semantics,
+the company's developer tools and links,
+user permissions,
+and basically everything is fighting against you at first.
+Oh by the way, since ChatGPT ads is new, your understanding of a subsystem or module will become obsolete as people are constantly making changes too.
+So in my first week or so I just feel like shit because I felt stupid.
+I'm usually the smart one and the one explaining to others what I did,
+but now, I am struggling to be the one understanding what others did and I am the stupid one.
+
+Had I felt like this for the whole internship,
+then that would be a very sad experience for my esteem in the pyramid of needs.
+Thankfully, all it takes is some time.
+The first feature might take 5 weeks to develop.
+But the next one would take just 2 weeks,
+because you have already navigated through the complexity,
+and your esteem is now up by conquering the complexity.
+
+So, this is self-confidence.
+The other big concept in this layer of pyramid is respect from others.
+
+I didn't get much respect from others at first,
+because among MIT Stanford Berkeley, my school isn't up there.
+Sure, I did USACO Gold and ICPC coding competition, but people here at IOI and USACO Platinum, so that's not much either.
+But later on in the summer, brands and name tags fade away and individual character emerge more.
+So, peers went on to see me as a good engineer who knows what he's doing, and I received respect for that, which is nice.
+I'm certainly not a larper, so, just not being a larper gets respect too.
+
+### Self Actualization
