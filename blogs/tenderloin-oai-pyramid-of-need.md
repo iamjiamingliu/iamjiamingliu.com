@@ -32,6 +32,7 @@ Are you chasing to become an AI researcher or joining a quantitative trading fir
 Are you trying to stay in the current role as an engineer and try to have a bigger impact and leadereship roles?
 And then what? See [The Rat Race](/blogs/rat-race.md) for full context.
 
+So, what do we _really need_ next?
 And then I thought about Maslov's psychological definition of Pyramid of Needs.
 Well, that helped answer some uncertainty in my thinking, at least it provided a structure to my thinking.
 And I realized how my summer interning at OpenAI is able to touch some of the lowest parts of the pyramid of needs
