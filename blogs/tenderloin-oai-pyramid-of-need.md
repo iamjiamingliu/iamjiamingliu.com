@@ -5,6 +5,7 @@ tags: []
 category: Thinking
 created_at: 2026-08-09 00:37:57
 updated_at: 2026-08-09 00:37:57
+excludes_from_index: True
 ---
 
 ## The Context
