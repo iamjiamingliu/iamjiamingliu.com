@@ -8,6 +8,8 @@ created_at: 2026-11-17 14:44:57
 updated_at: 2026-11-17 14:44:57
 ---
 
+## So You Want to Start a Club
+
 You are applying to create a new club at Cupertino High School.
 Because you care about coding / gardening / guitar / your culture and ethnicity / pickle ball / whatever.
 Just kidding, you of course don't.
@@ -43,3 +45,35 @@ hours speaking in front of the mirror to prepare for the interview,
 become a few sentences of "this is good" or "this is bad"
 with at most a few minutes of verbal discussions
 for club commissioners.
+
+How do I know this?
+Because I spent my first 2 years trying to create new clubs at Cupertino High School,
+then my last 2 years sitting on the other side of the table serving as ASB Clubs Commissioner.
+And no I didn't know the ASB President since kid, I was an outsider.
+I tried to meticulously think through each application,
+argue for cases,
+but some of my peers' inaction or frivolousness really made me sad for the matrix.
+
+## The Asymmetry
+
+I'm about to graduate college and enter the workforce now,
+but I still like to recount examples from things I did in high school because,
+some universal principles seem to exist no matter where you are and no matter if you are dealing with kids or adults.
+Adults are just kids born a few years earlier.
+
+In this case, the principle seems to be that,
+there's such a significant asymmetry in power and diligence between those asking and those approving.
+It could be high school new club applications.
+It could be college admission applications.
+It could be consulting club project applications.
+It could be internship applications.
+It could be grant applications.
+It could be anything that require an approval.
+
+And, you can spend so much time, effort, stress, and worry about your application,
+but all those hours just become a few minutes of writing and talking on the other side of the table,
+sometimes diligently and other times frivolously.
+But at most a few minutes.
+And you might make it to the next stage,
+but more often or not,
+you don't.
