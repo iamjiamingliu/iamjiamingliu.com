@@ -1,6 +1,6 @@
 ---
 title: 一句话而已
-description: 你的不可能，只是上面人的一句话
+description: 你的可能，只是上面人的一句话
 tags: []
 category: Thinking
 language: zh
@@ -114,3 +114,9 @@ and 50 stupid people,
 but you are hiring 100 people.
 So you lower the bar and get them all.
 Supply and demand, unfortunately.
+
+## 一句话
+
+Your hours of effort boil down to a few minutes of thinking and a yes or no on the decider.
+They might say yes simply because they are in a jolly mood, or vice versa.
+A sentence from their mouth is what makes all the difference.
