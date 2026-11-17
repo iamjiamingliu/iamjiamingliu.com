@@ -7,7 +7,7 @@ created_at: 2026-11-17 12:30:57
 updated_at: 2026-11-17 12:30:57
 ---
 
-> The subtitle description of this article is a mock on unnecessarily complicated names and expressions.
+> The subtitle description of this article is a parody of unnecessarily complicated names and expressions.
 
 ## Complicated Names
 
@@ -16,28 +16,28 @@ I learn about new concepts all the time.
 Too frequently,
 a concept would be named in some of the most verbose, complicated, and fancy phrases
 that, whenever you see it,
-it just makes you lose motivation to learn more about it further
-because its name makes it seems too complicated and scary to tackle.
+it just makes you lose motivation to learn more about it
+because its name makes it seem too complicated and scary to tackle.
 If somehow you had the grit to read it further to its description,
 it might confuse you more, or it might make you realize, "oh, that's what it is".
 Then you might see some examples and diagrams and,
 hopefully after some time,
-you eventually end up with realizing,
+you eventually end up realizing,
 "oh yeah that's what it is. It just means XYZ.
-The naming is just beyond necessarily complicated for a simple concept like this."
+The naming is just more complicated than necessary for a simple concept like this."
 
-Here's some examples.
+Here are some examples.
 I am a CS student.
 So,
 names like "stochastic gradient descent",
 "retrieval-augmented generation",
 or more mathy,
-"monte Carlo simulation"
+"Monte Carlo simulation"
 get thrown around.
 And the lecture PDF,
-filled with too much Latex math symbols
+filled with too many LaTeX math symbols
 and formal definitions,
-only make their naming complications worse.
+only makes their naming complications worse.
 But once you get to code out something,
 then,
 you would soon realize,
@@ -45,9 +45,9 @@ you would soon realize,
 Those lecture notes and names are really too unnecessarily complicated to describe the ideas.
 
 If you are a biology, chemistry, or physics student
--- actually, I'll go to argue that, in every discipline
+-- actually, I'd argue that, in every discipline
 -- you will see what I mean here.
-Your disciplines definitely have many examples of simple concepts masked behind unnecessary complicated names.
+Your disciplines definitely have many examples of simple concepts masked behind unnecessarily complicated names.
 
 ## Why Complicated Names
 
@@ -61,7 +61,7 @@ I'm sure many concepts, especially in engineering, started as somebody realized 
 To canonize these tricks by giving them some name,
 you can't just name it childishly like "randomly-calculate-some-subset-data-and-use-that-to-upgrade-model-weights".
 The name is too long and too naive to be taken seriously.
-Random you said? Stochastic. Upgrading models weights you said? Gradient descent.
+Random you said? Stochastic. Upgrading model weights you said? Gradient descent.
 Ok, the deeper reason is that these names already exist in math but,
 my point is: I think many names emerged as simple concepts,
 but due to the political constraint that you can't just create names naively otherwise people won't take you seriously,
@@ -73,7 +73,7 @@ Have you written, or read,
 academic papers with long complicated names?
 I think those are pinnacle examples of names being complicated for the sake of sounding smart.
 
-Here's some god-tier paper names:
+Here are some god-tier paper names:
 
 _Does the Inertia of a Body Depend on Its Energy Content_
 -- EINSTEIN, in which he established E = MC^2
@@ -84,9 +84,9 @@ _A Mathematical Theory of Communication_
 _MapReduce: Simplified Data Processing on Large Clusters_
 -- Google's Jeff Dean, which laid the foundation for today's distributed data processing
 
-On the other hand, here's some, uhm, papers.
+On the other hand, here are some, uhm, papers.
 I asked ChatGPT to find funny long names from UCSB, and tell me the concise names they should have been.
-I'm sure you can recall similar examples of paperes from your college too:
+I'm sure you can recall similar examples of papers from your college too:
 
 _Student Perceptions of Multicultural Awareness Development Through Participation in a Multicultural Living-Learning Community_
 -- Concise name: What Students Learn from Diverse Dorms
@@ -101,35 +101,35 @@ And the list goes on.
 
 ## Sounding Smart In General
 
-Whereas we just saw examples of smart papers sounding straight forward,
+Whereas we just saw examples of smart papers sounding straightforward,
 and dumb papers sounding complicated,
-this inverse relationship seem to exist in being smart and sounding smart in general.
+this inverse relationship seems to exist in being smart and sounding smart in general.
 
-If you open Youtube and watch Ted talks of all-time legends in Math, Finance, and many domains,
+If you open YouTube and watch TED Talks of all-time legends in Math, Finance, and many domains,
 they speak clearly and directly.
 No big words.
-No buzz words.
-No complicated grammars.
+No buzzwords.
+No complicated grammar.
 Vice versa,
-if you go to LinkedIn guru's posts or hear a "founder"'s
-(quote unquote because real founders speak simple, while these founders in question are guru founders) pitch,
+if you go to LinkedIn gurus' posts or hear a "founder"'s
+(quote unquote because real founders speak simply, while these founders in question are guru founders) pitch,
 they are speaking... LinkedIn.
 
 I think it's because genuinely smart people dealing with genuinely complicated subjects:
 
-1. Doesn't have time and capacity to make things sound more complicated than they already are.
+1. Don't have time and capacity to make things sound more complicated than they already are.
 In fact, they have to do the opposite when communicating: make complicated stuff simple to understand.
-2. Doesn't need to sound smart, because they already have the reputation
+2. Don't need to sound smart, because they already have the reputation
 3. Their peers are smart too, so sounding buzz-word smart will lose respect fast
 
 And vice versa are the causes of LinkedIn speak.
 
 ## Necessarily Complicated Names
 
-There's also times when,
+There are also times when,
 even without the intention to pump up the complexity to sound smart,
 names are complicated because:
 
 1. Naming is the abstract, compressed representation of the underlying idea or process
-2. From the underlying idea to a textual description, subtle meanings get lost or require significant words to describe them. This is because words have limits. You can't describe Mona Lisa the way you can see it. Thus, there's a layer of complexity here
+2. From the underlying idea to a textual description, subtle meanings get lost or require many words to describe them. This is because words have limits. You can't describe Mona Lisa the way you can see it. Thus, there's a layer of complexity here
 3. Finally, compressing that textual description into a name would make the name sound strange and awkward because, by Claude Shannon's definition of information, information is surprise, so compressing information into a name would end up with a name that sounds awkward, because each word in that name would be somewhat surprising to appear together
