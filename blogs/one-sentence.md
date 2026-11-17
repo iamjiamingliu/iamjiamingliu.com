@@ -77,3 +77,40 @@ But at most a few minutes.
 And you might make it to the next stage,
 but more often or not,
 you don't.
+
+## Sunk In Applications
+
+As a kid,
+we spent so much time applying to be a club officer,
+found a new club,
+and college app.
+Then in college,
+we do the same thing,
+with more things to worry about whether it's research or internship.
+And I'm sure as adults,
+much time is spent on grants, new project proposals, I don't know...
+
+But my point is,
+so much time is spent doing applications.
+
+And some roles really don't need that many steps or thousand-words essays.
+I feel like at a certain point,
+application processes are puffed up to be complicated
+so that the position or opportunity in question can appear more enticing and valuable.
+It's making it complicated for the sake of appearing worthy.
+As another factor,
+you might have 1 opportunity with 20 really qualified people looking for it,
+so if you are on the other side of the table,
+you can every right to raise your application process as hard as you want
+as long as 1 person can be expected to pass it.
+The difficulty and time-consumingness is not about the true value of the opportunity being applied to,
+but the highest bidder's bid in an auction.
+
+Vice versa,
+you also have times where,
+there's 20 really qualified people,
+30 less so,
+and 50 stupid people,
+but you are hiring 100 people.
+So you lower the bar and get them all.
+Supply and demand, unfortunately.
