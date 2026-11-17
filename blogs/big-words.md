@@ -39,3 +39,24 @@ then,
 you would soon realize,
 "oh that's what it is. Monte Carlo is just simulating random stuff. RAG is just feeding search results into prompts."
 Those lecture notes and names are really too unnecessarily complicated to describe the ideas.
+
+If you are a biology, chemistry, or physics student
+-- actually, I'll go to argue that, in every discipline
+-- you will see what I mean here.
+Your disciplines definitely have many examples of simple concepts masked behind unnecessary complicated names.
+
+So, why would simple ideas end up wearing complicated names?
+
+Here's my guess. No rigorous proof or evidence. Just a guess.
+
+
+I'm guessing it's about formality.
+I'm sure many concepts, especially in engineering, started as somebody realized some tricks, being that "oh ho ho if you do ABC then we make XYZ better somehow".
+To canonize these tricks by giving them some name,
+you can't just name it childishly like "randomly-calculate-some-subset-data-and-use-that-to-upgrade-model-weights".
+The name is too long and too naive to be taken seriously.
+Random you said? Stochastic. Upgrading models weights you said? Gradient descent.
+Ok, the deeper reason is that these names already exist in math but,
+my point is: I think many names emerged as simple concepts,
+but due to the political constraint that you can't just create names naively otherwise people won't take you seriously,
+complicated erudite names become the only choice.
