@@ -7,6 +7,8 @@ created_at: 2026-11-17 12:30:57
 updated_at: 2026-11-17 12:30:57
 ---
 
+> The subtitle description of this article is a mock on unnecessarily complicated names and expressions.
+
 ## Complicated Names
 
 I am a student.
