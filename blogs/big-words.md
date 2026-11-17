@@ -60,3 +60,37 @@ Ok, the deeper reason is that these names already exist in math but,
 my point is: I think many names emerged as simple concepts,
 but due to the political constraint that you can't just create names naively otherwise people won't take you seriously,
 complicated erudite names become the only choice.
+
+Have you written, or read,
+academic papers with long complicated names?
+I think those are pinnacle examples of names being complicated for the sake of sounding smart.
+
+Here's some god-tier paper names:
+
+_Does the Inertia of a Body Depend on Its Energy Content_
+-- EINSTEIN, in which he established E = MC^2
+
+_A Mathematical Theory of Communication_
+-- Claude Shannon, in which he connected information theory to math
+
+_MapReduce: Simplified Data Processing on Large Clusters_
+-- Google's Jeff Dean, which laid the foundation for today's distributed data processing
+
+On the other hand, here's some, uhm, papers.
+I asked ChatGPT to find funny long names from UCSB, and tell me the concise names they should have been.
+I'm sure you can recall similar examples of paperes from your college too:
+
+_Student Perceptions of Multicultural Awareness Development Through Participation in a Multicultural Living-Learning Community_
+-- Concise name: What Students Learn from Diverse Dorms
+
+_Learning to Engage Multilingual Learners in Opportunities for Rich Language: An Investigation of Preservice Secondary Science and Mathematics Teachers_
+-- Teaching Future Teachers to Help Multilingual Students
+
+_Charting The Winds of Fate: Exploring the Role of Wind Stress as a Driver of Coastal Sage Scrub Plant Community Assemblage_
+-- "How Wind Shapes Coastal Plants"
+
+And the list goes on.
+
+Claude
+
+People sounding smart
