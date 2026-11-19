@@ -7,7 +7,7 @@ created_at: 2026-11-18 20:02:57
 updated_at: 2026-11-18 20:02:57
 ---
 
-I created and maintains UCSBPlat.com.
+I created and maintain UCSBPlat.com.
 And every once in a while, this happens:
 
 1. Something feels awkward and wrong; or something new and exciting can be added
@@ -19,16 +19,16 @@ And every once in a while, this happens:
 7. And the process repeats
 
 
-Just when I thought I reached the end and achieved a equilibrium of perfection,
+Just when I thought I'd reached the end and achieved an equilibrium of perfection,
 a new intrigue opens,
 and I'm back to the drawing table.
 
-And seems like this experience exist for many, many things.
+And it seems like this experience exists for many, many things.
 
 I guess it's what makes life fun.
 If life is a video game and you know all the chapters ahead of time,
 like,
-if there's really a magic mirror and you ask it "how would I be in the next 20 years"
+if there's really a magic mirror and you ask it, "How will I be over the next 20 years?"
 and you hear the answer describing every step you will go through,
 would you still want to play the game of life? Wouldn't it spoil the plot?
 
@@ -40,8 +40,8 @@ Zoom in further on the edge,
 it recursively expands to stuff you otherwise might not have even anticipated before.
 
 You wouldn't even know what steps there are ahead.
-Some steps that exist today might not exist tomorrow;
-vice versa it means some steps that exist tomorrow haven't been born yet.
+Some steps that exist today might not exist tomorrow,
+and some steps that will exist tomorrow haven't been born yet.
 
 
 ![](https://www.rozmichelle.com/wp-content/uploads/mandelbrotroz-e1508212408972.png)
