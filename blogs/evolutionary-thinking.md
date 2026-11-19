@@ -4,7 +4,7 @@ description: Iterative improvement, accepting imperfection, and human evolution
 tags: []
 category: Thinking
 created_at: 2026-06-09 18:25:57
-updated_at: 2026-06-09 18:25:57
+updated_at: 2026-11-18 20:38:57
 ---
 
 ## The Imperfect Math
@@ -169,3 +169,21 @@ but because something will be horribly inadequate by tomorrow's standard,
 and the future can be done much better.
 
 And unfortunately, much pomposity and impracticality occur too as a byproduct.
+
+## How to Make Something, and Planning
+
+_Updated November 18th, 2026_
+
+2 questions:
+
+1. How to make something really complicated?
+2. How to make plans and why make plans at all, when plans always eventually change?
+
+And seems like evolution is the answer to both.
+Start somewhere simple.
+And go from there.
+The plan is the local branching out blueprint,
+and as you branch out more,
+of course plans change -- it grows.
+Big trees don't become big and complicated all at once.
+They start simple and, along the way, grow into branches as needed when something feels off.
